@@ -1,11 +1,20 @@
 import { forwardRef, type HTMLAttributes } from 'react';
 import { cn } from '@/lib/cn';
 
+/**
+ * Rounded chip for labels and counts. Matches DESIGN.md spec:
+ * 4px radius or pill-shape. Light Slate bg with Slate text.
+ *
+ * ```tsx
+ * <Pill>React</Pill>
+ * <Pill variant="success">Completed</Pill>
+ * ```
+ */
 const variants = {
-  default: 'bg-primary text-primary-foreground',
-  secondary: 'bg-secondary text-secondary-foreground',
-  outline: 'border border-border text-foreground',
-  destructive: 'bg-destructive text-destructive-foreground',
+  default: 'bg-secondary-container text-on-secondary-container',
+  success: 'bg-success/10 text-tertiary',
+  outline: 'border border-border text-on-surface',
+  destructive: 'bg-destructive/10 text-destructive',
 } as const;
 
 export type PillVariant = keyof typeof variants;
@@ -14,14 +23,6 @@ export interface PillProps extends HTMLAttributes<HTMLDivElement> {
   variant?: PillVariant;
 }
 
-/**
- * Rounded chip for labels and counts.
- *
- * ```tsx
- * <Pill>React</Pill>
- * <Pill variant="secondary">TypeScript</Pill>
- * ```
- */
 const Pill = forwardRef<HTMLDivElement, PillProps>(
   ({ className, variant = 'default', ...props }, ref) => (
     <div

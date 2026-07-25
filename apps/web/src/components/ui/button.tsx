@@ -1,13 +1,26 @@
 import { forwardRef, type ButtonHTMLAttributes } from 'react';
 import { cn } from '@/lib/cn';
 
+/**
+ * Primary action button. Matches DESIGN.md spec:
+ * - Primary: Solid Cobalt Blue (#2B4EFF), white text, 8px radius
+ * - Secondary: White bg, 1px hairline border (#E2E8F0), Ink Navy text
+ * - Tertiary: Ink Navy text, no border
+ * - Hover: Primary darkens 10%, Secondary gains Cobalt Blue border
+ *
+ * ```tsx
+ * <Button>Save changes</Button>
+ * <Button variant="secondary">Cancel</Button>
+ * <Button variant="tertiary">Learn more</Button>
+ * ```
+ */
 const variants = {
-  default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-  secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-  outline: 'border border-border bg-transparent hover:bg-accent hover:text-accent-foreground',
-  ghost: 'hover:bg-accent hover:text-accent-foreground',
-  destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-  link: 'text-primary underline-offset-4 hover:underline',
+  primary:
+    'bg-primary text-primary-foreground hover:bg-primary-container border border-transparent',
+  secondary:
+    'bg-surface-container-lowest text-on-surface border border-border hover:border-primary',
+  tertiary: 'bg-transparent text-on-surface hover:bg-accent border border-transparent',
+  destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90 border border-transparent',
 } as const;
 
 const sizes = {
@@ -25,17 +38,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
 }
 
-/**
- * Primary action button.
- *
- * ```tsx
- * <Button>Save changes</Button>
- * <Button variant="outline" size="sm">Cancel</Button>
- * <Button variant="destructive">Delete</Button>
- * ```
- */
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'default', ...props }, ref) => {
     return (
       <button
         ref={ref}

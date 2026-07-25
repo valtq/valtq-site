@@ -24,12 +24,12 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
       <div
         ref={ref}
         className={cn(
-          'relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted',
+          'relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-surface-container-high',
           className,
         )}
       >
         {showFallback ? (
-          <span className="text-sm font-medium text-muted-foreground">
+          <span className="text-sm font-medium text-on-surface-variant">
             {fallback ?? '?'}
           </span>
         ) : (

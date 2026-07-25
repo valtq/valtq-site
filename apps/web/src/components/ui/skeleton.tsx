@@ -4,7 +4,7 @@ import { cn } from '@/lib/cn';
 export type SkeletonProps = HTMLAttributes<HTMLDivElement>;
 
 /**
- * Loading placeholder.
+ * Loading placeholder. Uses surface-dim for a subtle pulse effect.
  *
  * ```tsx
  * <Skeleton className="h-4 w-[250px]" />
@@ -14,7 +14,7 @@ export type SkeletonProps = HTMLAttributes<HTMLDivElement>;
 const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('animate-pulse rounded-md bg-muted', className)}
+    className={cn('animate-pulse rounded-md bg-surface-dim', className)}
     {...props}
   />
 ));

@@ -1,12 +1,24 @@
 import { forwardRef, type HTMLAttributes } from 'react';
 import { cn } from '@/lib/cn';
 
+/**
+ * Card container. Matches DESIGN.md spec:
+ * White background, 1px border (#E2E8F0), 12px radius.
+ * Padding: 24px (default) or 40px (xl).
+ *
+ * ```tsx
+ * <Card>
+ *   <CardHeader><CardTitle>Title</CardTitle></CardHeader>
+ *   <CardContent>Content</CardContent>
+ * </Card>
+ * ```
+ */
 const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
       className={cn(
-        'rounded-xl border border-border bg-card text-card-foreground shadow-sm',
+        'rounded-xl border border-border bg-card text-card-foreground',
         className,
       )}
       {...props}
@@ -26,7 +38,10 @@ const CardTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingEleme
   ({ className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn('text-lg font-semibold leading-none tracking-tight', className)}
+      className={cn(
+        'font-display text-lg font-semibold leading-none tracking-tight text-on-surface',
+        className,
+      )}
       {...props}
     />
   ),
@@ -35,7 +50,7 @@ CardTitle.displayName = 'CardTitle';
 
 const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
   ({ className, ...props }, ref) => (
-    <p ref={ref} className={cn('text-sm text-muted-foreground', className)} {...props} />
+    <p ref={ref} className={cn('text-sm text-on-surface-variant', className)} {...props} />
   ),
 );
 CardDescription.displayName = 'CardDescription';

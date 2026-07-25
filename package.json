@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@11.17.0",
   "scripts": {
-    "dev": "pnpm --filter web dev & pnpm --filter api dev",
+    "dev": "bash scripts/dev.sh",
     "build": "pnpm --filter web build && pnpm --filter api build",
     "lint": "pnpm --filter web lint && pnpm --filter api lint",
     "typecheck": "pnpm --filter @valtq/types typecheck && pnpm --filter web typecheck && pnpm --filter api typecheck",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@valtq/config": "workspace:*",
+    "concurrently": "^10.0.3",
     "eslint": "^9.17.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",

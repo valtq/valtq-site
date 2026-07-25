@@ -1,17 +1,87 @@
 @import 'tailwindcss';
 
 @theme {
+  /* ── Color tokens ─────────────────────────────────────── */
   --color-background: #ffffff;
   --color-foreground: #0a0a0a;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #0a0a0a;
+
   --color-primary: #1a1a2e;
   --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f5f5f5;
+  --color-secondary-foreground: #1a1a2e;
+
   --color-muted: #f5f5f5;
   --color-muted-foreground: #737373;
+
+  --color-accent: #f0f0f0;
+  --color-accent-foreground: #1a1a2e;
+
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+
   --color-border: #e5e5e5;
+  --color-input: #e5e5e5;
+  --color-ring: #1a1a2e;
+
+  /* ── Border radius ────────────────────────────────────── */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ──────────────────────────────────────────── */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
+    monospace;
 }
 
+/* ── Dark theme ─────────────────────────────────────────── */
+.dark {
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+
+  --color-card: #111111;
+  --color-card-foreground: #fafafa;
+
+  --color-primary: #e2e8f0;
+  --color-primary-foreground: #0a0a0a;
+
+  --color-secondary: #1e1e1e;
+  --color-secondary-foreground: #fafafa;
+
+  --color-muted: #1e1e1e;
+  --color-muted-foreground: #a1a1aa;
+
+  --color-accent: #1e1e1e;
+  --color-accent-foreground: #fafafa;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #27272a;
+  --color-input: #27272a;
+  --color-ring: #e2e8f0;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+/* ── Base styles ────────────────────────────────────────── */
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
 }

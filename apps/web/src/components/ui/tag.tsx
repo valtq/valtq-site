@@ -3,9 +3,19 @@
 import { forwardRef, type HTMLAttributes, type MouseEvent } from 'react';
 import { cn } from '@/lib/cn';
 
+/**
+ * Removable tag with close button. Matches DESIGN.md spec:
+ * 4px radius, Slate bg/text for neutral. Cyan for success states.
+ *
+ * ```tsx
+ * <Tag>Filter: Active</Tag>
+ * <Tag variant="outline" onRemove={() => clear()}>Status: Published</Tag>
+ * ```
+ */
 const variants = {
-  default: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-  outline: 'border border-border text-foreground hover:bg-accent',
+  default: 'bg-secondary-container text-on-secondary-container hover:bg-secondary-container/80',
+  outline: 'border border-border text-on-surface hover:bg-accent',
+  success: 'bg-success/10 text-tertiary hover:bg-success/15',
   destructive: 'bg-destructive/10 text-destructive hover:bg-destructive/20',
 } as const;
 
@@ -16,20 +26,12 @@ export interface TagProps extends HTMLAttributes<HTMLDivElement> {
   onRemove?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-/**
- * Removable tag with close button.
- *
- * ```tsx
- * <Tag>Filter: Active</Tag>
- * <Tag variant="outline" onRemove={() => clear()}>Status: Published</Tag>
- * ```
- */
 const Tag = forwardRef<HTMLDivElement, TagProps>(
   ({ className, variant = 'default', onRemove, children, ...props }, ref) => (
     <div
       ref={ref}
       className={cn(
-        'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-sm font-medium transition-colors',
+        'inline-flex items-center gap-1.5 rounded px-2.5 py-1 text-sm font-medium transition-colors',
         variants[variant],
         className,
       )}

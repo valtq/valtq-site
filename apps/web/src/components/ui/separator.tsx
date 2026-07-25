@@ -7,7 +7,8 @@ export interface SeparatorProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Visual divider line.
+ * Visual divider. Matches DESIGN.md spec:
+ * Clean hairline (#E2E8F0), sharp caps (no rounding) for schematic style.
  *
  * ```tsx
  * <Separator />

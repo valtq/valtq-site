@@ -13,7 +13,7 @@ import { Avatar } from '@/components/ui/avatar';
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="space-y-3">
-      <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
+      <h2 className="font-display text-lg font-semibold tracking-tight text-on-surface">{title}</h2>
       {children}
     </section>
   );
@@ -22,7 +22,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function DemoRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="space-y-1.5">
-      <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{label}</p>
+      <p className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">{label}</p>
       <div className="flex flex-wrap items-center gap-3">{children}</div>
     </div>
   );
@@ -32,21 +32,21 @@ export function DesignSystemDemo() {
   return (
     <div className="space-y-10 p-8 max-w-4xl mx-auto">
       <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">Design System</h1>
-        <p className="text-muted-foreground">
-          UI primitives, tokens, and design foundations for ValtQ.
+        <h1 className="font-display text-3xl font-bold tracking-tight text-on-surface">
+          Design System
+        </h1>
+        <p className="text-on-surface-variant">
+          ValtQ Engineering System — UI primitives, tokens, and design foundations.
         </p>
       </header>
 
       {/* ── Buttons ─────────────────────────────────────── */}
       <Section title="Button">
         <DemoRow label="Variants">
-          <Button>Default</Button>
+          <Button>Primary</Button>
           <Button variant="secondary">Secondary</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="ghost">Ghost</Button>
+          <Button variant="tertiary">Tertiary</Button>
           <Button variant="destructive">Destructive</Button>
-          <Button variant="link">Link</Button>
         </DemoRow>
         <DemoRow label="Sizes">
           <Button size="sm">Small</Button>
@@ -61,7 +61,7 @@ export function DesignSystemDemo() {
         </DemoRow>
         <DemoRow label="Disabled">
           <Button disabled>Disabled</Button>
-          <Button variant="outline" disabled>Disabled</Button>
+          <Button variant="secondary" disabled>Disabled</Button>
         </DemoRow>
       </Section>
 
@@ -87,13 +87,13 @@ export function DesignSystemDemo() {
               <CardDescription>This is a description of the card content.</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Cards compose with Header, Content, and Footer sections.
+              <p className="text-sm text-on-surface-variant">
+                Cards compose with Header, Content, and Footer sections. 12px radius, hairline border.
               </p>
             </CardContent>
             <CardFooter className="gap-2">
               <Button size="sm">Save</Button>
-              <Button size="sm" variant="outline">Cancel</Button>
+              <Button size="sm" variant="secondary">Cancel</Button>
             </CardFooter>
           </Card>
         </div>
@@ -105,9 +105,9 @@ export function DesignSystemDemo() {
       <Section title="Badge">
         <DemoRow label="Variants">
           <Badge>Default</Badge>
-          <Badge variant="secondary">Secondary</Badge>
+          <Badge variant="success">Complete</Badge>
           <Badge variant="outline">Outline</Badge>
-          <Badge variant="destructive">Destructive</Badge>
+          <Badge variant="destructive">Error</Badge>
         </DemoRow>
       </Section>
 
@@ -117,7 +117,7 @@ export function DesignSystemDemo() {
       <Section title="Pill">
         <DemoRow label="Variants">
           <Pill>Default</Pill>
-          <Pill variant="secondary">Secondary</Pill>
+          <Pill variant="success">Success</Pill>
           <Pill variant="outline">Outline</Pill>
           <Pill variant="destructive">Destructive</Pill>
         </DemoRow>
@@ -130,12 +130,13 @@ export function DesignSystemDemo() {
         <DemoRow label="Variants">
           <Tag>Filter: Active</Tag>
           <Tag variant="outline">Status: Published</Tag>
+          <Tag variant="success">Complete</Tag>
           <Tag variant="destructive">Priority: High</Tag>
         </DemoRow>
         <DemoRow label="Removable">
           <Tag onRemove={() => {}}>React</Tag>
           <Tag variant="outline" onRemove={() => {}}>TypeScript</Tag>
-          <Tag variant="destructive" onRemove={() => {}}>Remove me</Tag>
+          <Tag variant="success" onRemove={() => {}}>Deployed</Tag>
         </DemoRow>
       </Section>
 
@@ -164,18 +165,21 @@ export function DesignSystemDemo() {
       <Separator />
 
       {/* ── RTL Demo ────────────────────────────────────── */}
-      <Section title="RTL Support">
+      <Section title="RTL Support (Arabic)">
         <div className="rounded-xl border border-border p-6 space-y-4" dir="rtl">
-          <p className="text-sm font-medium text-muted-foreground">Right-to-Left (Arabic)</p>
+          <p className="text-sm font-semibold text-on-surface-variant">Right-to-Left Layout</p>
           <div className="flex flex-wrap items-center gap-3">
             <Button>حفظ</Button>
-            <Button variant="outline">إلغاء</Button>
+            <Button variant="secondary">إلغاء</Button>
+            <Button variant="tertiary"> المزيد</Button>
             <Button variant="destructive">حذف</Button>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Badge>جديد</Badge>
+            <Badge variant="success">مكتمل</Badge>
             <Pill>React</Pill>
             <Tag onRemove={() => {}}>فلتر: نشط</Tag>
+            <Tag variant="success" onRemove={() => {}}>تم النشر</Tag>
           </div>
           <div className="max-w-sm">
             <Input placeholder="البريد الإلكتروني" />
@@ -185,7 +189,7 @@ export function DesignSystemDemo() {
             <Card className="max-w-sm">
               <CardHeader>
                 <CardTitle>بطاقة</CardTitle>
-                <CardDescription>هذه بطاقة تجريبية</CardDescription>
+                <CardDescription>هذه بطاقة تجريبية بالعربية</CardDescription>
               </CardHeader>
             </Card>
           </div>

@@ -1,9 +1,10 @@
 {
   "name": "valtq",
   "private": true,
+  "packageManager": "pnpm@11.17.0",
   "scripts": {
-    "dev": "pnpm --filter \"@valtq/*\" dev",
-    "build": "pnpm --filter \"@valtq/*\" build",
+    "dev": "pnpm --filter web dev & pnpm --filter api dev",
+    "build": "pnpm --filter web build && pnpm --filter api build",
     "lint": "pnpm --filter web lint && pnpm --filter api lint",
     "typecheck": "pnpm --filter @valtq/types typecheck && pnpm --filter web typecheck && pnpm --filter api typecheck",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",

@@ -4,7 +4,7 @@ import type { ProjectType, ProjectBudget, ProjectTimeline } from '@valtq/types';
 
 const STORAGE_KEY = 'valtq-discovery-v1';
 const TOTAL_STEPS = 6;
-const MAX_IMPLEMENTED_STEP = 4;
+const MAX_IMPLEMENTED_STEP = 5;
 
 interface DiscoveryState {
   currentStep: number;

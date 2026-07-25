@@ -28,7 +28,7 @@ interface BudgetTimelineScreenProps {
 /**
  * Screen 4: Budget & Timeline selection.
  * Single-select radio-style cards for budget and timeline.
- * Continue is disabled until Screen 5 is implemented in Phase 3.
+ * Continue is disabled until both budget and timeline are selected.
  */
 function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
   const copy = discoveryCopy[locale];
@@ -37,6 +37,9 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
   const setBudget = useDiscoveryStore((s) => s.setBudget);
   const setTimeline = useDiscoveryStore((s) => s.setTimeline);
   const previousStep = useDiscoveryStore((s) => s.previousStep);
+  const nextStep = useDiscoveryStore((s) => s.nextStep);
+
+  const canContinue = budget !== null && timeline !== null;
 
   const handleBudgetSelect = useCallback(
     (value: ProjectBudget) => {
@@ -152,11 +155,7 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
         <Button variant="secondary" size="lg" onClick={previousStep}>
           {copy.actions.back}
         </Button>
-        {/* Screen 5 (Contact Information) is introduced in Phase 3 */}
-        <Button
-          size="lg"
-          disabled
-        >
+        <Button size="lg" disabled={!canContinue} onClick={nextStep}>
           {copy.actions.continue}
         </Button>
       </div>

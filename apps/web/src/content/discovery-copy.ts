@@ -47,6 +47,22 @@ interface DiscoveryCopy {
     budgetOptions: Record<ProjectBudget, { label: string }>;
     timelineOptions: Record<ProjectTimeline, { label: string }>;
   };
+  contactInformation: {
+    phaseLabel: string;
+    subLabel: string;
+    heading: string;
+    description: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    companyLabel: string;
+    companyPlaceholder: string;
+    optionalFieldLabel: string;
+    nameRequiredError: string;
+    emailRequiredError: string;
+    emailInvalidError: string;
+  };
   actions: {
     back: string;
     continue: string;
@@ -150,6 +166,23 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
         '6-plus-months': { label: '6+ months' },
       },
     },
+    contactInformation: {
+      phaseLabel: 'Discovery Phase',
+      subLabel: 'Contact Information',
+      heading: 'Contact Information',
+      description:
+        'Tell us how to reach you and where you work so we can prepare for your consultation.',
+      nameLabel: 'Full Name',
+      namePlaceholder: 'John Doe',
+      emailLabel: 'Business Email',
+      emailPlaceholder: 'john@company.com',
+      companyLabel: 'Company',
+      companyPlaceholder: 'Acme Inc.',
+      optionalFieldLabel: 'Optional',
+      nameRequiredError: 'Please enter your name so we know who to address.',
+      emailRequiredError: 'Please enter your email address so we can contact you.',
+      emailInvalidError: 'Please enter a valid email address.',
+    },
     actions: {
       back: 'Back',
       continue: 'Continue',
@@ -250,6 +283,23 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
         '4-6-months': { label: '٤ – ٦ أشهر' },
         '6-plus-months': { label: '٦+ أشهر' },
       },
+    },
+    contactInformation: {
+      phaseLabel: 'مرحلة الاستكشاف',
+      subLabel: 'معلومات الاتصال',
+      heading: 'معلومات الاتصال',
+      description:
+        'أخبرنا كيف نتواصل معك وأين تعمل حتى نتمكن من التحضير لاستشارتك.',
+      nameLabel: 'الاسم الكامل',
+      namePlaceholder: 'محمد أحمد',
+      emailLabel: 'البريد الإلكتروني للعمل',
+      emailPlaceholder: 'mohamed@company.com',
+      companyLabel: 'الشركة',
+      companyPlaceholder: 'شركة أكما',
+      optionalFieldLabel: 'اختياري',
+      nameRequiredError: 'يرجى إدخال اسمك حتى نعرف مَن نخاطب.',
+      emailRequiredError: 'يرجى إدخال بريدك الإلكتروني حتى نتمكن من التواصل معك.',
+      emailInvalidError: 'يرجى إدخال بريد إلكتروني صالح.',
     },
     actions: {
       back: 'رجوع',

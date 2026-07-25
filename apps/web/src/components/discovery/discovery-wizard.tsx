@@ -15,6 +15,7 @@ import { IntroScreen } from './intro-screen';
 import { ProjectTypeScreen } from './project-type-screen';
 import { ProjectBriefScreen } from './project-brief-screen';
 import { BudgetTimelineScreen } from './budget-timeline-screen';
+import { ContactInformationScreen } from './contact-information-screen';
 
 const TOTAL_STEPS = 6;
 
@@ -49,7 +50,7 @@ interface DiscoveryWizardProps {
 /**
  * Discovery wizard. Client component that manages screen rendering,
  * hydration, and animated transitions between steps.
- * Screens 1–4 are implemented in Phase 1 and Phase 2.
+ * Screens 1–5 are implemented in Phase 1, Phase 2, and Phase 3.
  */
 function DiscoveryWizard({ locale }: DiscoveryWizardProps) {
   const copy = discoveryCopy[locale];
@@ -89,6 +90,7 @@ function DiscoveryWizard({ locale }: DiscoveryWizardProps) {
     2: copy.projectType.subLabel,
     3: copy.projectBrief.subLabel,
     4: copy.budgetTimeline.heading,
+    5: copy.contactInformation.subLabel,
   };
 
   const stepText = copy.stepCounter(currentStep, TOTAL_STEPS, locale);
@@ -104,6 +106,8 @@ function DiscoveryWizard({ locale }: DiscoveryWizardProps) {
         return <ProjectBriefScreen locale={locale} />;
       case 4:
         return <BudgetTimelineScreen locale={locale} />;
+      case 5:
+        return <ContactInformationScreen locale={locale} />;
       default:
         return null;
     }

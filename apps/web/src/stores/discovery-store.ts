@@ -4,7 +4,24 @@ import type { ProjectType, ProjectBudget, ProjectTimeline } from '@valtq/types';
 
 const STORAGE_KEY = 'valtq-discovery-v1';
 const TOTAL_STEPS = 6;
-const MAX_IMPLEMENTED_STEP = 5;
+const MAX_IMPLEMENTED_STEP = 6;
+
+function normalizeStep(value: unknown): number {
+  if (typeof value !== 'number' || !Number.isFinite(value)) {
+    return 1;
+  }
+
+  return Math.max(
+    1,
+    Math.min(Math.trunc(value), MAX_IMPLEMENTED_STEP),
+  );
+}
+
+function normalizeNavigationDirection(
+  value: unknown,
+): 'forward' | 'backward' {
+  return value === 'backward' ? 'backward' : 'forward';
+}
 
 interface DiscoveryState {
   currentStep: number;
@@ -70,21 +87,32 @@ export const useDiscoveryStore = create<DiscoveryState & DiscoveryActions>()(
 
       nextStep: () =>
         set((state) => ({
-          currentStep: Math.min(state.currentStep + 1, TOTAL_STEPS),
+          currentStep: Math.min(
+            normalizeStep(state.currentStep) + 1,
+            TOTAL_STEPS,
+          ),
           navigationDirection: 'forward',
         })),
 
       previousStep: () =>
         set((state) => ({
-          currentStep: Math.max(state.currentStep - 1, 1),
+          currentStep: Math.max(
+            normalizeStep(state.currentStep) - 1,
+            1,
+          ),
           navigationDirection: 'backward',
         })),
 
       goToStep: (step) =>
-        set((state) => ({
-          currentStep: Math.max(1, Math.min(step, TOTAL_STEPS)),
-          navigationDirection: step > state.currentStep ? 'forward' : 'backward',
-        })),
+        set((state) => {
+          const normalizedTarget = normalizeStep(step);
+          const normalizedCurrent = normalizeStep(state.currentStep);
+          return {
+            currentStep: normalizedTarget,
+            navigationDirection:
+              normalizedTarget > normalizedCurrent ? 'forward' : 'backward',
+          };
+        }),
 
       reset: () =>
         set((state) => ({
@@ -109,11 +137,41 @@ export const useDiscoveryStore = create<DiscoveryState & DiscoveryActions>()(
         company: state.company,
       }),
       merge: (persistedState, currentState) => {
-        const merged = { ...currentState, ...(persistedState as Partial<DiscoveryState>) };
-        if (merged.currentStep > MAX_IMPLEMENTED_STEP) {
-          merged.currentStep = MAX_IMPLEMENTED_STEP;
-          merged.navigationDirection = 'backward';
-        }
+        const persisted =
+          persistedState !== null &&
+          typeof persistedState === 'object'
+            ? (persistedState as Record<string, unknown>)
+            : {};
+        const merged: DiscoveryState & DiscoveryActions = {
+          ...currentState,
+          currentStep: normalizeStep(persisted.currentStep),
+          navigationDirection: normalizeNavigationDirection(
+            persisted.navigationDirection,
+          ),
+          projectType: (persisted.projectType as ProjectType | null) ?? currentState.projectType,
+          description:
+            typeof persisted.description === 'string'
+              ? persisted.description
+              : currentState.description,
+          budget: (persisted.budget as ProjectBudget | null) ?? currentState.budget,
+          timeline: (persisted.timeline as ProjectTimeline | null) ?? currentState.timeline,
+          features: Array.isArray(persisted.features)
+            ? (persisted.features as string[])
+            : currentState.features,
+          name:
+            typeof persisted.name === 'string'
+              ? persisted.name
+              : currentState.name,
+          email:
+            typeof persisted.email === 'string'
+              ? persisted.email
+              : currentState.email,
+          company:
+            typeof persisted.company === 'string'
+              ? persisted.company
+              : currentState.company,
+          hasHydrated: currentState.hasHydrated,
+        };
         return merged;
       },
       onRehydrateStorage: () => (state) => {

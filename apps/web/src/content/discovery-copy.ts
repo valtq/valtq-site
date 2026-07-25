@@ -63,10 +63,28 @@ interface DiscoveryCopy {
     emailRequiredError: string;
     emailInvalidError: string;
   };
+  booking: {
+    phaseLabel: string;
+    subLabel: string;
+    heading: string;
+    description: string;
+    loadingMessage: string;
+    widgetTitle: string;
+    missingConfigTitle: string;
+    missingConfigDescription: string;
+    loadErrorTitle: string;
+    loadErrorDescription: string;
+    retryAction: string;
+    successHeading: string;
+    successDescription: string;
+    responseExpectation: string;
+    returnHomeAction: string;
+  };
   actions: {
     back: string;
     continue: string;
     start: string;
+    returnHome: string;
   };
   stepCounter: (current: number, total: number, locale: Locale) => string;
 }
@@ -183,10 +201,32 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
       emailRequiredError: 'Please enter your email address so we can contact you.',
       emailInvalidError: 'Please enter a valid email address.',
     },
+    booking: {
+      phaseLabel: 'Discovery Phase',
+      subLabel: 'Consultation Booking',
+      heading: 'Book Your Consultation',
+      description:
+        'Choose a time that works for you. Your project details will help our engineering team prepare for the conversation.',
+      loadingMessage: 'Loading booking calendar…',
+      widgetTitle: 'Schedule a consultation',
+      missingConfigTitle: 'Booking unavailable',
+      missingConfigDescription:
+        'The scheduling system is not configured yet. Please contact us directly to arrange a consultation.',
+      loadErrorTitle: 'Unable to load calendar',
+      loadErrorDescription:
+        'The booking calendar could not be loaded. Please check your connection and try again.',
+      retryAction: 'Try again',
+      successHeading: 'Booking confirmed',
+      successDescription: 'Your consultation has been successfully scheduled.',
+      responseExpectation:
+        'You will receive a confirmation email with the meeting details shortly.',
+      returnHomeAction: 'Return home',
+    },
     actions: {
       back: 'Back',
       continue: 'Continue',
       start: 'Start Discovery',
+      returnHome: 'Return home',
     },
     stepCounter: (current: number, total: number) =>
       `Step ${current} of ${total}`,
@@ -301,10 +341,32 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
       emailRequiredError: 'يرجى إدخال بريدك الإلكتروني حتى نتمكن من التواصل معك.',
       emailInvalidError: 'يرجى إدخال بريد إلكتروني صالح.',
     },
+    booking: {
+      phaseLabel: 'مرحلة الاستكشاف',
+      subLabel: 'حجز الاستشارة',
+      heading: 'احجز استشارتك',
+      description:
+        'اختر الوقت المناسب لك. ستساعد تفاصيل مشروعك فريق الهندسة في التحضير للمحادثة.',
+      loadingMessage: 'جارٍ تحميل تقويم الحجز…',
+      widgetTitle: 'تحديد موعد استشارة',
+      missingConfigTitle: 'الحجز غير متاح',
+      missingConfigDescription:
+        'لم يتم تكوين نظام الجدولة بعد. يرجى التواصل معنا مباشرة لترتيب استشارة.',
+      loadErrorTitle: 'تعذر تحميل التقويم',
+      loadErrorDescription:
+        'تعذر تحميل تقويم الحجز. يرجى التحقق من اتصالك والمحاولة مرة أخرى.',
+      retryAction: 'حاول مرة أخرى',
+      successHeading: 'تم تأكيد الحجز',
+      successDescription: 'تم جدولة استشارتك بنجاح.',
+      responseExpectation:
+        'ستتلقى رسالة تأكيد بالبريد الإلكتروني مع تفاصيل الاجتماع قريباً.',
+      returnHomeAction: 'العودة إلى الصفحة الرئيسية',
+    },
     actions: {
       back: 'رجوع',
       continue: 'متابعة',
       start: 'ابدأ الاستكشاف',
+      returnHome: 'العودة إلى الصفحة الرئيسية',
     },
     stepCounter: (current: number, total: number) =>
       `الخطوة ${localizeDigits(current, 'ar')} من ${localizeDigits(total, 'ar')}`,

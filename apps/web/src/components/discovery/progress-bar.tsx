@@ -28,7 +28,9 @@ function ProgressBar({ currentStep, totalSteps, ariaLabel }: ProgressBarProps) {
       />
       <div
         className="absolute top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-success shadow-[0_0_8px_var(--color-success)] transition-all duration-500 ease-out"
-        style={{ insetInlineStart: `calc(${progress}% - 4px)` }}
+        style={{
+          insetInlineStart: `clamp(0px, calc(${progress}% - 4px), calc(100% - 8px))`,
+        }}
       />
     </div>
   );

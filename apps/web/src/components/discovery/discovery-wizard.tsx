@@ -16,6 +16,7 @@ import { ProjectTypeScreen } from './project-type-screen';
 import { ProjectBriefScreen } from './project-brief-screen';
 import { BudgetTimelineScreen } from './budget-timeline-screen';
 import { ContactInformationScreen } from './contact-information-screen';
+import { BookingScreen } from './booking-screen';
 
 const TOTAL_STEPS = 6;
 
@@ -50,7 +51,7 @@ interface DiscoveryWizardProps {
 /**
  * Discovery wizard. Client component that manages screen rendering,
  * hydration, and animated transitions between steps.
- * Screens 1–5 are implemented in Phase 1, Phase 2, and Phase 3.
+ * Screens 1–6 are implemented in Phase 1, Phase 2, Phase 3, and Phase 4.
  */
 function DiscoveryWizard({ locale }: DiscoveryWizardProps) {
   const copy = discoveryCopy[locale];
@@ -67,7 +68,15 @@ function DiscoveryWizard({ locale }: DiscoveryWizardProps) {
 
   const isReady = mounted && hasHydrated;
 
-  const showBack = currentStep > 1;
+  const safeCurrentStep =
+    Number.isFinite(currentStep) &&
+    Number.isInteger(currentStep) &&
+    currentStep >= 1 &&
+    currentStep <= TOTAL_STEPS
+      ? currentStep
+      : 1;
+
+  const showBack = safeCurrentStep > 1;
   const previousStep = useDiscoveryStore((s) => s.previousStep);
 
   const isRtl = locale === 'ar';
@@ -91,13 +100,14 @@ function DiscoveryWizard({ locale }: DiscoveryWizardProps) {
     3: copy.projectBrief.subLabel,
     4: copy.budgetTimeline.heading,
     5: copy.contactInformation.subLabel,
+    6: copy.booking.subLabel,
   };
 
-  const stepText = copy.stepCounter(currentStep, TOTAL_STEPS, locale);
+  const stepText = copy.stepCounter(safeCurrentStep, TOTAL_STEPS, locale);
   const progressAriaLabel = copy.progressAriaLabel;
 
   const renderScreen = () => {
-    switch (currentStep) {
+    switch (safeCurrentStep) {
       case 1:
         return <IntroScreen locale={locale} />;
       case 2:
@@ -108,21 +118,23 @@ function DiscoveryWizard({ locale }: DiscoveryWizardProps) {
         return <BudgetTimelineScreen locale={locale} />;
       case 5:
         return <ContactInformationScreen locale={locale} />;
+      case 6:
+        return <BookingScreen locale={locale} />;
       default:
-        return null;
+        return <IntroScreen locale={locale} />;
     }
   };
 
-  const screenKey = `screen-${currentStep}`;
+  const screenKey = `screen-${safeCurrentStep}`;
 
   return (
     <WizardShell
-      currentStep={currentStep}
+      currentStep={safeCurrentStep}
       totalSteps={TOTAL_STEPS}
       locale={locale}
       progressLabel={copy.progressLabel}
       progressAriaLabel={progressAriaLabel}
-      subLabel={subLabels[currentStep] ?? ''}
+      subLabel={subLabels[safeCurrentStep] ?? ''}
       stepText={stepText}
       showBack={showBack}
       onBack={previousStep}

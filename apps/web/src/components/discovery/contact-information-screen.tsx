@@ -15,7 +15,7 @@ interface ContactInformationScreenProps {
  * Screen 5: Contact Information form.
  * Validates name (required) and email (required) using the shared
  * DiscoverySubmissionSchema field schemas. Company is optional.
- * Continue is disabled until Screen 6 (Cal.com Booking) is implemented in Phase 4.
+ * Continue navigates to Screen 6 (Cal.com Booking).
  */
 function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
   const copy = discoveryCopy[locale];
@@ -24,6 +24,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
   const company = useDiscoveryStore((s) => s.company);
   const setContactField = useDiscoveryStore((s) => s.setContactField);
   const previousStep = useDiscoveryStore((s) => s.previousStep);
+  const nextStep = useDiscoveryStore((s) => s.nextStep);
 
   const [touchedFields, setTouchedFields] = useState<{
     name: boolean;
@@ -34,6 +35,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
   const isNameValid = DiscoverySubmissionSchema.shape.name.safeParse(name.trim()).success;
   const isEmailValid = DiscoverySubmissionSchema.shape.email.safeParse(email.trim()).success;
   const isCompanyValid = DiscoverySubmissionSchema.shape.company.safeParse(company).success;
+  const isFormValid = isNameValid && isEmailValid && isCompanyValid;
 
   const showNameError = touchedFields.name && !isNameValid;
   const showEmailError = touchedFields.email && !isEmailValid;
@@ -71,6 +73,12 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
   const handleCompanyBlur = useCallback(() => {
     setTouchedFields((prev) => ({ ...prev, company: true }));
   }, []);
+
+  const handleContinue = useCallback(() => {
+    if (isFormValid) {
+      nextStep();
+    }
+  }, [isFormValid, nextStep]);
 
   return (
     <div className="space-y-8">
@@ -184,8 +192,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
         <Button variant="secondary" size="lg" onClick={previousStep}>
           {copy.actions.back}
         </Button>
-        {/* Screen 6 (Cal.com Booking) is implemented in Phase 4 */}
-        <Button size="lg" disabled>
+        <Button size="lg" disabled={!isFormValid} onClick={handleContinue}>
           {copy.actions.continue}
         </Button>
       </div>

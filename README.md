@@ -1,6 +1,6 @@
 # ValtQ
 
-The official website for ValtQ — a premium software development agency
+The official website for ValtQ - a premium software development agency
 building web, mobile, AI-integrated, and backend/cloud products for
 startups and businesses.
 

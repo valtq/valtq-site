@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "title": "ValtQ — Premium Software Development",
+    "description": "Building web, mobile, AI-integrated, and backend/cloud products for startups and businesses."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "process": "Process",
+    "pricing": "Pricing",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Get a Quote",
+    "menu": "Menu",
+    "close": "Close menu",
+    "language": "العربية"
+  },
+  "hero": {
+    "home": {
+      "tag": "Premium Software Development",
+      "title": "Engineering Digital Products with Precision",
+      "description": "We build web, mobile, AI-integrated, and cloud-native products for startups and enterprises. From concept to deployment — engineered for scale.",
+      "primaryCta": "Get a Quote",
+      "secondaryCta": "Our Process"
+    },
+    "services": {
+      "tag": "What We Build",
+      "title": "End-to-End Software Engineering",
+      "description": "From frontend to infrastructure, we deliver complete digital products with the precision of an in-house team."
+    },
+    "process": {
+      "tag": "How We Work",
+      "title": "A Process Built for Clarity",
+      "description": "Every project follows our battle-tested methodology — transparent, structured, and designed to eliminate risk at every stage."
+    },
+    "pricing": {
+      "tag": "Transparent Pricing",
+      "title": "Investment Tiers That Scale With You",
+      "description": "No hidden fees. No scope creep surprises. Choose the engagement model that fits your stage."
+    },
+    "about": {
+      "tag": "About ValtQ",
+      "title": "A Team Built on Engineering Excellence",
+      "description": "We are a boutique software engineering agency — small by design, relentless about quality."
+    },
+    "faq": {
+      "tag": "FAQ",
+      "title": "Answers to Common Questions",
+      "description": "Everything you need to know before working with us."
+    }
+  },
+  "stats": {
+    "projects": { "value": "50+", "label": "Projects Delivered" },
+    "clients": { "value": "30+", "label": "Happy Clients" },
+    "uptime": { "value": "99.9%", "label": "Uptime Guarantee" },
+    "experience": { "value": "8+", "label": "Years of Experience" }
+  },
+  "homeServices": {
+    "title": "What We Deliver",
+    "description": "Full-spectrum software engineering, tailored to your business goals.",
+    "items": [
+      {
+        "title": "Web Applications",
+        "description": "Modern, responsive web apps built with React, Next.js, and TypeScript. Optimized for performance and accessibility."
+      },
+      {
+        "title": "Mobile Applications",
+        "description": "Native and cross-platform mobile apps using React Native and Flutter. Seamless experiences on every device."
+      },
+      {
+        "title": "AI & Machine Learning",
+        "description": "Intelligent features powered by LLMs, computer vision, and predictive models — integrated into your product."
+      },
+      {
+        "title": "Cloud & Infrastructure",
+        "description": "Scalable cloud architecture on AWS, GCP, and Azure. CI/CD pipelines, monitoring, and DevOps as a service."
+      }
+    ]
+  },
+  "services": {
+    "web": {
+      "title": "Web Applications",
+      "description": "From single-page apps to complex dashboards, we build performant web applications using modern frameworks like React, Next.js, and Vue. Every project is responsive, accessible, and engineered for speed.",
+      "features": ["React & Next.js", "TypeScript", "Performance Optimization", "SEO-Ready Architecture"]
+    },
+    "mobile": {
+      "title": "Mobile Applications",
+      "description": "Native-quality mobile experiences using React Native and Flutter. We handle everything from UI/UX design to App Store submission and ongoing maintenance.",
+      "features": ["React Native & Flutter", "iOS & Android", "Offline-First Design", "App Store Optimization"]
+    },
+    "ai": {
+      "title": "AI & Machine Learning",
+      "description": "Embed intelligence into your products with custom AI solutions. From LLM integration and RAG systems to computer vision and predictive analytics.",
+      "features": ["LLM & RAG Integration", "Computer Vision", "Predictive Analytics", "MLOps & Deployment"]
+    },
+    "cloud": {
+      "title": "Cloud & Backend",
+      "description": "Scalable, secure backend systems and cloud infrastructure. We design microservices, build APIs, and manage deployment pipelines across AWS, GCP, and Azure.",
+      "features": ["Microservices Architecture", "REST & GraphQL APIs", "AWS / GCP / Azure", "CI/CD & DevOps"]
+    }
+  },
+  "processSteps": {
+    "title": "Our Six-Step Process",
+    "description": "A structured methodology that eliminates guesswork and delivers results.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery & Strategy",
+        "description": "We deep-dive into your business goals, users, and technical landscape. Deliverable: a strategic roadmap with clear milestones."
+      },
+      {
+        "number": "02",
+        "title": "Architecture & Design",
+        "description": "System architecture, database design, and UI/UX wireframes. We define the technical blueprint before writing a single line of code."
+      },
+      {
+        "number": "03",
+        "title": "Sprint Development",
+        "description": "Agile 2-week sprints with working demos every iteration. You see progress in real-time, not at the end."
+      },
+      {
+        "number": "04",
+        "title": "Quality Assurance",
+        "description": "Automated testing, code reviews, performance audits, and security scans. Every release is battle-tested."
+      },
+      {
+        "number": "05",
+        "title": "Deployment & Launch",
+        "description": "Zero-downtime deployments, infrastructure provisioning, monitoring setup, and a comprehensive handoff."
+      },
+      {
+        "number": "06",
+        "title": "Support & Evolution",
+        "description": "Post-launch support, performance monitoring, and iterative improvements. We stay with you as your product grows."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "description": "Flexible engagement models designed for different stages of growth.",
+    "popular": "Most Popular",
+    "tiers": [
+      {
+        "name": "Starter",
+        "price": "$5K",
+        "period": "/project",
+        "description": "Perfect for MVPs and focused feature builds.",
+        "features": [
+          "Up to 8 weeks of development",
+          "1-2 developers assigned",
+          "Weekly progress demos",
+          "Source code ownership",
+          "30-day post-launch support"
+        ],
+        "cta": "Start a Project",
+        "popular": false
+      },
+      {
+        "name": "Growth",
+        "price": "$15K",
+        "period": "/month",
+        "description": "For scaling products and dedicated teams.",
+        "features": [
+          "Dedicated 2-4 person team",
+          "Agile sprints with bi-weekly demos",
+          "Full CI/CD pipeline setup",
+          "Architecture & code reviews",
+          "Performance monitoring",
+          "Priority support channel"
+        ],
+        "cta": "Scale Your Team",
+        "popular": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "description": "Complex, mission-critical product development.",
+        "features": [
+          "Custom team composition",
+          "Dedicated project manager",
+          "SLA-backed delivery guarantees",
+          "Security & compliance audits",
+          "24/7 monitoring & support",
+          "Quarterly business reviews"
+        ],
+        "cta": "Contact Us",
+        "popular": false
+      }
+    ]
+  },
+  "about": {
+    "mission": {
+      "title": "Our Mission",
+      "description": "To be the engineering partner that startups and enterprises trust with their most critical digital products. We don't just write code — we engineer solutions that scale."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": [
+        { "title": "Engineering Excellence", "description": "We hold ourselves to the highest technical standards. Every line of code, every architecture decision, every deployment — engineered with care." },
+        { "title": "Radical Transparency", "description": "No black boxes. We share our process, our progress, and our challenges openly. You always know where your project stands." },
+        { "title": "Owner Mindset", "description": "We treat your product as if it were our own. That means making recommendations that serve your long-term success, not just the current sprint." },
+        { "title": "Relentless Delivery", "description": "We ship. Working software, on time, at quality. Our process is designed to eliminate ambiguity and keep momentum." }
+      ]
+    },
+    "team": {
+      "title": "The Team",
+      "description": "A lean team of senior engineers, architects, and designers — each with 8+ years of production experience.",
+      "members": [
+        { "name": "Ahmad", "role": "Lead Engineer" },
+        { "name": "Sara", "role": "Senior Architect" },
+        { "name": "Omar", "role": "Senior Engineer" },
+        { "name": "Lina", "role": "Lead Designer" }
+      ]
+    }
+  },
+  "faq": {
+    "items": [
+      {
+        "question": "How long does a typical project take?",
+        "answer": "Timelines vary by scope. An MVP can take 6-8 weeks. A full-scale product typically runs 3-6 months. We provide detailed estimates after our discovery phase."
+      },
+      {
+        "question": "Do you work with startups or only enterprises?",
+        "answer": "Both. We've built MVPs for seed-stage startups and scaled platforms for enterprise clients. Our process adapts to your stage and budget."
+      },
+      {
+        "question": "What technologies do you use?",
+        "answer": "We're technology-agnostic but opinionated. Our core stack includes React, Next.js, TypeScript, Node.js, Python, and cloud platforms (AWS, GCP, Azure). We choose the right tool for the job."
+      },
+      {
+        "question": "How do you handle project communication?",
+        "answer": "Every project gets a dedicated Slack/Teams channel, weekly sync calls, and access to our project dashboard. You'll never wonder what's happening."
+      },
+      {
+        "question": "What happens after launch?",
+        "answer": "We offer ongoing support and maintenance plans. Most clients transition to a monthly retainer for continuous improvements, monitoring, and feature development."
+      },
+      {
+        "question": "Do you provide design services?",
+        "answer": "Yes. Our team includes UI/UX designers who work alongside engineers. We design interfaces that are both beautiful and technically feasible."
+      },
+      {
+        "question": "Can you work with our existing team?",
+        "answer": "Absolutely. We frequently augment internal teams with senior engineers. We adapt to your processes, tools, and coding standards."
+      },
+      {
+        "question": "What's your pricing model?",
+        "answer": "We offer fixed-price projects, monthly retainers, and dedicated team arrangements. Pricing depends on scope, team size, and engagement duration. Contact us for a custom quote."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Build Something Exceptional?",
+    "description": "Let's discuss your project. No commitment, no sales pitch — just a straightforward conversation about your goals.",
+    "primaryCta": "Get a Free Quote",
+    "secondaryCta": "View Our Process"
+  },
+  "footer": {
+    "description": "Premium software engineering for startups and enterprises.",
+    "company": "Company",
+    "services": "Services",
+    "resources": "Resources",
+    "legal": "Legal",
+    "about": "About Us",
+    "careers": "Careers",
+    "blog": "Blog",
+    "contact": "Contact",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "copyright": "© 2026 ValtQ. All rights reserved.",
+    "home": "Home",
+    "process": "Process",
+    "pricing": "Pricing",
+    "faq": "FAQ"
+  }
+}

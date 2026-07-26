@@ -103,7 +103,7 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
                     : 'flex items-center justify-center rounded-lg border border-outline-variant bg-card px-4 py-3 text-sm font-medium text-on-surface transition-all duration-200 hover:border-primary hover:bg-surface-container-low focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
                 }
               >
-                {option.label}
+                {option!.label}
               </button>
             );
           })}
@@ -143,7 +143,7 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
                     : 'flex items-center justify-center rounded-lg border border-outline-variant bg-card px-4 py-3 text-sm font-medium text-on-surface transition-all duration-200 hover:border-primary hover:bg-surface-container-low focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
                 }
               >
-                {option.label}
+                {option!.label}
               </button>
             );
           })}

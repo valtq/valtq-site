@@ -91,13 +91,17 @@
   --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
     monospace;
 
-  /* ── Spacing (8px base) ──────────────────────────────── */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 40px;
-  --spacing-2xl: 64px;
+}
+
+/* ── Design-system spacing (8px base) ──────────────── */
+/* Preserved outside @theme to avoid colliding with Tailwind's spacing scale. */
+:root {
+  --valtq-space-xs: 4px;
+  --valtq-space-sm: 8px;
+  --valtq-space-md: 16px;
+  --valtq-space-lg: 24px;
+  --valtq-space-xl: 40px;
+  --valtq-space-2xl: 64px;
 }
 
 /* ── Dark theme ─────────────────────────────────────────── */
@@ -158,6 +162,12 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
   --shadow-md: 0 2px 4px -1px rgb(0 0 0 / 0.3);
   --shadow-lg: 0 4px 8px -2px rgb(0 0 0 / 0.3);
+}
+
+/* ── Arabic font override for Discovery wizard ────────── */
+.discovery-ar {
+  --font-display: var(--font-arabic);
+  --font-sans: var(--font-arabic);
 }
 
 /* ── Base styles ────────────────────────────────────────── */

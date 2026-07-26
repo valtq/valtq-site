@@ -26,19 +26,23 @@ export function HomeServices({ dict }: { dict: Dictionary }) {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {serviceKeys.map((key, i) => (
-            <Card key={key} className="group transition-colors hover:border-primary">
-              <CardHeader>
-                <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container">
-                  {icons[i]}
-                </div>
-                <CardTitle>{dict.homeServices.items[i].title}</CardTitle>
-              </CardHeader>
-              <CardDescription className="px-8 pb-8">
-                {dict.homeServices.items[i].description}
-              </CardDescription>
-            </Card>
-          ))}
+          {serviceKeys.map((key, i) => {
+            const item = dict.homeServices.items[i];
+            if (!item) return null;
+            return (
+              <Card key={key} className="group transition-colors hover:border-primary">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container">
+                    {icons[i]}
+                  </div>
+                  <CardTitle>{item.title}</CardTitle>
+                </CardHeader>
+                <CardDescription className="px-8 pb-8">
+                  {item.description}
+                </CardDescription>
+              </Card>
+            );
+          })}
         </div>
       </Container>
     </Section>

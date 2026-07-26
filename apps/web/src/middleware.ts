@@ -7,7 +7,7 @@ function getLocaleFromHeaders(request: NextRequest): string {
 
   const preferred = acceptLanguage
     .split(',')
-    .map((lang) => lang.split(';')[0].trim().toLowerCase().slice(0, 2))
+    .map((lang) => lang.split(';')[0]?.trim().toLowerCase().slice(0, 2) ?? '')
     .find((lang): lang is (typeof locales)[number] =>
       locales.includes(lang as (typeof locales)[number]),
     );

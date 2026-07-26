@@ -1,9 +1,5 @@
-import { DesignSystemDemo } from '@/components/sections/design-system-demo';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  return (
-    <main>
-      <DesignSystemDemo />
-    </main>
-  );
+export default function RootPage() {
+  redirect('/en');
 }

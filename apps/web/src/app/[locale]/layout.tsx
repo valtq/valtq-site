@@ -1,22 +1,32 @@
+import { notFound } from 'next/navigation';
+import { locales, type Locale } from '@/i18n/config';
+import { getTranslations } from '@/i18n/get-dictionary';
+import { DictionaryProvider } from '@/i18n/provider';
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
+import { LocaleHtmlAttrs } from '@/components/layout/locale-html-attrs';
+
 const RTL_LOCALES = ['ar', 'fa', 'he', 'ur'];
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'ar' }];
+  return locales.map((locale) => ({ locale }));
 }
 
-export default function LocaleLayout({
-  children,
+export async function generateMetadata({
   params,
-}: Readonly<{
-  children: React.ReactNode;
+}: {
   params: Promise<{ locale: string }>;
-}>) {
-  // Note: in Next.js 15, params is a Promise in server components.
-  // We use a sync wrapper for the dir attribute.
-  return <LocaleDirWrapper params={params}>{children}</LocaleDirWrapper>;
+}) {
+  const { locale } = await params;
+  if (!locales.includes(locale as Locale)) notFound();
+  const dict = await getTranslations(locale as Locale);
+  return {
+    title: dict.meta.title,
+    description: dict.meta.description,
+  };
 }
 
-async function LocaleDirWrapper({
+export default async function LocaleLayout({
   children,
   params,
 }: Readonly<{
@@ -24,11 +34,19 @@ async function LocaleDirWrapper({
   params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
+  if (!locales.includes(locale as Locale)) notFound();
+
   const dir = RTL_LOCALES.includes(locale) ? 'rtl' : 'ltr';
+  const dict = await getTranslations(locale as Locale);
 
   return (
-    <div dir={dir} lang={locale}>
-      {children}
+    <div dir={dir} className="flex min-h-screen flex-col">
+      <LocaleHtmlAttrs locale={locale as Locale} />
+      <DictionaryProvider dictionary={dict}>
+        <Header locale={locale as Locale} />
+        <main className="flex-1">{children}</main>
+        <Footer locale={locale as Locale} />
+      </DictionaryProvider>
     </div>
   );
 }

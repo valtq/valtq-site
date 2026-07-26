@@ -47,6 +47,36 @@
       "tag": "FAQ",
       "title": "Answers to Common Questions",
       "description": "Everything you need to know before working with us."
+    },
+    "contact": {
+      "tag": "Contact Us",
+      "title": "Let's Build Something Together",
+      "description": "Have a project in mind? Tell us about your goals and we'll get back to you within 24 hours."
+    },
+    "careers": {
+      "tag": "Careers",
+      "title": "Join Our Engineering Team",
+      "description": "We're always looking for exceptional engineers who care about craft. Check out our open roles."
+    },
+    "blog": {
+      "tag": "Blog",
+      "title": "Insights & Engineering Notes",
+      "description": "Thoughts on software engineering, architecture, and building products that scale."
+    },
+    "terms": {
+      "tag": "Legal",
+      "title": "Terms of Service",
+      "description": "Please read these terms carefully before using our services."
+    },
+    "privacy": {
+      "tag": "Legal",
+      "title": "Privacy Policy",
+      "description": "How we collect, use, and protect your personal information."
+    },
+    "cookies": {
+      "tag": "Legal",
+      "title": "Cookie Policy",
+      "description": "How we use cookies and similar technologies on our website."
     }
   },
   "stats": {

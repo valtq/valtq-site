@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from '@/i18n/types';
@@ -21,6 +21,24 @@ export function Header({ locale }: { locale: Locale }) {
   const dict = useTranslations();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  const closeMobile = () => {
+    setMobileOpen(false);
+    menuButtonRef.current?.focus();
+  };
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    }
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [mobileOpen]);
 
   const otherLocale = locale === 'en' ? 'ar' : 'en';
   const switchPath = pathname.replace(`/${locale}`, `/${otherLocale}`) || `/${otherLocale}`;
@@ -36,15 +54,25 @@ export function Header({ locale }: { locale: Locale }) {
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
-            {navLinks.map(({ key, href }) => (
-              <Link
-                key={key}
-                href={`/${locale}${href}`}
-                className="rounded-md px-3 py-2 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent hover:text-on-surface"
-              >
-                {dict.nav[key]}
-              </Link>
-            ))}
+            {navLinks.map(({ key, href }) => {
+              const fullHref = `/${locale}${href}`;
+              const isActive = pathname === fullHref || pathname.startsWith(`${fullHref}/`);
+              return (
+                <Link
+                  key={key}
+                  href={fullHref}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={cn(
+                    'rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-on-surface',
+                    isActive
+                      ? 'bg-accent text-on-surface'
+                      : 'text-on-surface-variant',
+                  )}
+                >
+                  {dict.nav[key]}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-2">
@@ -60,10 +88,12 @@ export function Header({ locale }: { locale: Locale }) {
             </Link>
 
             <button
+              ref={menuButtonRef}
               type="button"
               className="inline-flex h-10 w-10 items-center justify-center rounded-md text-on-surface-variant transition-colors hover:bg-accent md:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? dict.nav.close : dict.nav.menu}
+              aria-expanded={mobileOpen}
             >
               {mobileOpen ? (
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -88,27 +118,37 @@ export function Header({ locale }: { locale: Locale }) {
           )}
         >
           <nav className="flex flex-col gap-1">
-            {navLinks.map(({ key, href }) => (
-              <Link
-                key={key}
-                href={`/${locale}${href}`}
-                className="rounded-md px-3 py-2 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent hover:text-on-surface"
-                onClick={() => setMobileOpen(false)}
-              >
-                {dict.nav[key]}
-              </Link>
-            ))}
+            {navLinks.map(({ key, href }) => {
+              const fullHref = `/${locale}${href}`;
+              const isActive = pathname === fullHref || pathname.startsWith(`${fullHref}/`);
+              return (
+                <Link
+                  key={key}
+                  href={fullHref}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={cn(
+                    'rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-on-surface',
+                    isActive
+                      ? 'bg-accent text-on-surface'
+                      : 'text-on-surface-variant',
+                  )}
+                  onClick={closeMobile}
+                >
+                  {dict.nav[key]}
+                </Link>
+              );
+            })}
             <Link
               href={switchPath}
               className="rounded-md px-3 py-2 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent"
-              onClick={() => setMobileOpen(false)}
+              onClick={closeMobile}
             >
               {dict.nav.language}
             </Link>
             <Link
               href={`/${locale}/contact`}
               className="mt-2"
-              onClick={() => setMobileOpen(false)}
+              onClick={closeMobile}
             >
               <Button className="w-full" size="sm">
                 {dict.nav.contact}

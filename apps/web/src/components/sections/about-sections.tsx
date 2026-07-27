@@ -1,20 +1,23 @@
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { ScrollReveal, StaggerReveal, StaggerItem } from '@/components/ui/scroll-reveal';
 import type { Dictionary } from '@/i18n/get-dictionary';
 
 export function AboutMission({ dict }: { dict: Dictionary }) {
   return (
     <Section>
       <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
-            {dict.about.mission.title}
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-on-surface-variant">
-            {dict.about.mission.description}
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
+              {dict.about.mission.title}
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-on-surface-variant">
+              {dict.about.mission.description}
+            </p>
+          </div>
+        </ScrollReveal>
       </Container>
     </Section>
   );
@@ -31,27 +34,31 @@ export function AboutValues({ dict }: { dict: Dictionary }) {
   return (
     <Section variant="muted">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
-            {dict.about.values.title}
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
+              {dict.about.values.title}
+            </h2>
+          </div>
+        </ScrollReveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <StaggerReveal className="mt-12 grid gap-6 sm:grid-cols-2">
           {dict.about.values.items.map((value, i) => (
-            <Card key={value.title} className="group transition-colors hover:border-primary">
-              <CardHeader>
-                <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container">
-                  {valueIcons[i]}
-                </div>
-                <CardTitle>{value.title}</CardTitle>
-              </CardHeader>
-              <CardDescription className="px-8 pb-8">
-                {value.description}
-              </CardDescription>
-            </Card>
+            <StaggerItem key={value.title}>
+              <Card className="group transition-colors hover:border-primary">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container">
+                    {valueIcons[i]}
+                  </div>
+                  <CardTitle>{value.title}</CardTitle>
+                </CardHeader>
+                <CardDescription className="px-8 pb-8">
+                  {value.description}
+                </CardDescription>
+              </Card>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerReveal>
       </Container>
     </Section>
   );
@@ -61,28 +68,32 @@ export function AboutTeam({ dict }: { dict: Dictionary }) {
   return (
     <Section>
       <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
-            {dict.about.team.title}
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-on-surface-variant">
-            {dict.about.team.description}
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
+              {dict.about.team.title}
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-on-surface-variant">
+              {dict.about.team.description}
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-6 sm:grid-cols-4">
+        <StaggerReveal className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-6 sm:grid-cols-4">
           {dict.about.team.members.map((member) => (
-            <div key={member.name} className="flex flex-col items-center gap-3">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-surface-container-high font-display text-xl font-bold text-on-surface-variant">
-                {member.name.charAt(0)}
+            <StaggerItem key={member.name}>
+              <div className="flex flex-col items-center gap-3">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-surface-container-high font-display text-xl font-bold text-on-surface-variant">
+                  {member.name.charAt(0)}
+                </div>
+                <div className="text-center">
+                  <p className="text-sm font-semibold text-on-surface">{member.name}</p>
+                  <p className="text-xs text-on-surface-variant">{member.role}</p>
+                </div>
               </div>
-              <div className="text-center">
-                <p className="text-sm font-semibold text-on-surface">{member.name}</p>
-                <p className="text-xs text-on-surface-variant">{member.role}</p>
-              </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerReveal>
       </Container>
     </Section>
   );

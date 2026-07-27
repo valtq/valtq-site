@@ -2,6 +2,7 @@ import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import type { Dictionary } from '@/i18n/get-dictionary';
 
 const serviceKeys = ['web', 'mobile', 'ai', 'cloud'] as const;
@@ -32,7 +33,7 @@ export function ServicesSection({ dict }: { dict: Dictionary }) {
           <Section key={key} id={key} variant={isEven ? 'default' : 'muted'}>
             <Container>
               <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
-                <div className={isEven ? '' : 'lg:order-2'}>
+                <ScrollReveal direction={isEven ? 'left' : 'right'} className={isEven ? '' : 'lg:order-2'}>
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-primary-container text-on-primary-container">
                     {icons[key]}
                   </div>
@@ -42,22 +43,24 @@ export function ServicesSection({ dict }: { dict: Dictionary }) {
                   <p className="mt-4 text-lg leading-relaxed text-on-surface-variant">
                     {service.description}
                   </p>
-                </div>
+                </ScrollReveal>
 
-                <Card className={isEven ? 'lg:order-2' : ''}>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {service.features.map((feature) => (
-                        <Badge key={feature} variant="outline">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <ScrollReveal direction={isEven ? 'right' : 'left'} delay={0.1} className={isEven ? 'lg:order-2' : ''}>
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {service.features.map((feature) => (
+                          <Badge key={feature} variant="outline">
+                            {feature}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </ScrollReveal>
               </div>
             </Container>
           </Section>

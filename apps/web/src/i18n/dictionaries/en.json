@@ -3,8 +3,9 @@
     "title": "ValtQ — Premium Software Development",
     "description": "Building web, mobile, AI-integrated, and backend/cloud products for startups and businesses."
   },
-  "nav": {
+    "nav": {
     "home": "Home",
+    "work": "Work",
     "services": "Services",
     "process": "Process",
     "pricing": "Pricing",
@@ -47,6 +48,11 @@
       "tag": "FAQ",
       "title": "Answers to Common Questions",
       "description": "Everything you need to know before working with us."
+    },
+    "work": {
+      "tag": "Our Work",
+      "title": "Projects That Deliver Results",
+      "description": "A selection of our engineering work — each project engineered for performance, scale, and measurable impact."
     },
     "contact": {
       "tag": "Contact Us",
@@ -280,6 +286,16 @@
       }
     ]
   },
+  "work": {
+    "viewCaseStudy": "View Case Study",
+    "backToWork": "Back to Work",
+    "challenge": "The Challenge",
+    "solution": "Our Solution",
+    "results": "The Results",
+    "metrics": "Key Metrics",
+    "startProject": "Start a similar project",
+    "startProjectDescription": "Have a similar challenge? Let's discuss how we can engineer the right solution for you."
+  },
   "cta": {
     "title": "Ready to Build Something Exceptional?",
     "description": "Let's discuss your project. No commitment, no sales pitch — just a straightforward conversation about your goals.",
@@ -301,6 +317,7 @@
     "cookies": "Cookie Policy",
     "copyright": "© 2026 ValtQ. All rights reserved.",
     "home": "Home",
+    "work": "Work",
     "process": "Process",
     "pricing": "Pricing",
     "faq": "FAQ"

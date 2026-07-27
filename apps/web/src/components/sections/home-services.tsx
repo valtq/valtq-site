@@ -1,6 +1,7 @@
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { ScrollReveal, StaggerReveal, StaggerItem } from '@/components/ui/scroll-reveal';
 import type { Dictionary } from '@/i18n/get-dictionary';
 
 const icons = [
@@ -16,34 +17,38 @@ export function HomeServices({ dict }: { dict: Dictionary }) {
   return (
     <Section>
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
-            {dict.homeServices.title}
-          </h2>
-          <p className="mt-4 text-lg text-on-surface-variant">
-            {dict.homeServices.description}
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
+              {dict.homeServices.title}
+            </h2>
+            <p className="mt-4 text-lg text-on-surface-variant">
+              {dict.homeServices.description}
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerReveal className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {serviceKeys.map((key, i) => {
             const item = dict.homeServices.items[i];
             if (!item) return null;
             return (
-              <Card key={key} className="group transition-colors hover:border-primary">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container">
-                    {icons[i]}
-                  </div>
-                  <CardTitle>{item.title}</CardTitle>
-                </CardHeader>
-                <CardDescription className="px-8 pb-8">
-                  {item.description}
-                </CardDescription>
-              </Card>
+              <StaggerItem key={key}>
+                <Card className="group transition-colors hover:border-primary">
+                  <CardHeader>
+                    <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container">
+                      {icons[i]}
+                    </div>
+                    <CardTitle>{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardDescription className="px-8 pb-8">
+                    {item.description}
+                  </CardDescription>
+                </Card>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerReveal>
       </Container>
     </Section>
   );

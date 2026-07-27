@@ -8,7 +8,7 @@ import { Separator } from '@/components/ui/separator';
 
 const companyLinks = ['about', 'careers', 'blog', 'contact'] as const;
 const serviceLinks = ['web', 'mobile', 'ai', 'cloud'] as const;
-const resourceLinks = ['process', 'pricing', 'faq'] as const;
+const resourceLinks = ['work', 'process', 'pricing', 'faq'] as const;
 const legalLinks = ['terms', 'privacy', 'cookies'] as const;
 
 const serviceHrefs: Record<string, string> = {

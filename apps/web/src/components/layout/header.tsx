@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/cn';
 
 const navLinks = [
+  { key: 'work' as const, href: '/work' },
   { key: 'services' as const, href: '/services' },
   { key: 'process' as const, href: '/process' },
   { key: 'pricing' as const, href: '/pricing' },

@@ -13,3 +13,7 @@ coverage
 prisma/*.db
 prisma/*.db-journal
 *.tsbuildinfo
+# SQLite
+*.db
+*.db-journal
+*.tsbuildinfo

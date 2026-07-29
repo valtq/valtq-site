@@ -14,4 +14,4 @@ npx concurrently \
   --handle-sigint \
   --kill-others \
   "cd apps/web && npx next dev --turbopack --port 3000" \
-  "cd apps/api && npx tsx watch --env-file=.env src/index.ts"
+  "cd apps/api && npx tsx watch --env-file=.env src/server.ts"

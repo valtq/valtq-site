@@ -62,6 +62,9 @@ interface DiscoveryCopy {
     nameRequiredError: string;
     emailRequiredError: string;
     emailInvalidError: string;
+    submittingLabel: string;
+    submitError: string;
+    submitIncompleteError: string;
   };
   booking: {
     phaseLabel: string;
@@ -200,6 +203,11 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
       nameRequiredError: 'Please enter your name so we know who to address.',
       emailRequiredError: 'Please enter your email address so we can contact you.',
       emailInvalidError: 'Please enter a valid email address.',
+      submittingLabel: 'Submitting…',
+      submitError:
+        'We could not save your discovery brief. Please check your connection and try again.',
+      submitIncompleteError:
+        'Please complete the previous discovery steps before continuing.',
     },
     booking: {
       phaseLabel: 'Discovery Phase',
@@ -340,6 +348,11 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
       nameRequiredError: 'يرجى إدخال اسمك حتى نعرف مَن نخاطب.',
       emailRequiredError: 'يرجى إدخال بريدك الإلكتروني حتى نتمكن من التواصل معك.',
       emailInvalidError: 'يرجى إدخال بريد إلكتروني صالح.',
+      submittingLabel: 'جارٍ الإرسال…',
+      submitError:
+        'تعذر حفظ ملخص الاستكشاف. يرجى التحقق من اتصالك والمحاولة مرة أخرى.',
+      submitIncompleteError:
+        'يرجى إكمال خطوات الاستكشاف السابقة قبل المتابعة.',
     },
     booking: {
       phaseLabel: 'مرحلة الاستكشاف',

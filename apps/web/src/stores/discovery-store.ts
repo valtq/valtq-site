@@ -34,6 +34,7 @@ interface DiscoveryState {
   name: string;
   email: string;
   company: string;
+  leadId: string | null;
   hasHydrated: boolean;
 }
 
@@ -47,6 +48,7 @@ interface DiscoveryActions {
     field: K,
     value: string,
   ) => void;
+  setLeadId: (leadId: string | null) => void;
   nextStep: () => void;
   previousStep: () => void;
   goToStep: (step: number) => void;
@@ -65,6 +67,7 @@ const initialState: DiscoveryState = {
   name: '',
   email: '',
   company: '',
+  leadId: null,
   hasHydrated: false,
 };
 
@@ -73,17 +76,22 @@ export const useDiscoveryStore = create<DiscoveryState & DiscoveryActions>()(
     (set) => ({
       ...initialState,
 
-      setProjectType: (projectType) => set({ projectType }),
+      setProjectType: (projectType) =>
+        set({ projectType, leadId: null }),
 
-      setDescription: (description) => set({ description }),
+      setDescription: (description) =>
+        set({ description, leadId: null }),
 
-      setBudget: (budget) => set({ budget }),
+      setBudget: (budget) => set({ budget, leadId: null }),
 
-      setTimeline: (timeline) => set({ timeline }),
+      setTimeline: (timeline) => set({ timeline, leadId: null }),
 
-      setFeatures: (features) => set({ features }),
+      setFeatures: (features) => set({ features, leadId: null }),
 
-      setContactField: (field, value) => set({ [field]: value }),
+      setContactField: (field, value) =>
+        set({ [field]: value, leadId: null }),
+
+      setLeadId: (leadId) => set({ leadId }),
 
       nextStep: () =>
         set((state) => ({
@@ -135,6 +143,7 @@ export const useDiscoveryStore = create<DiscoveryState & DiscoveryActions>()(
         name: state.name,
         email: state.email,
         company: state.company,
+        leadId: state.leadId,
       }),
       merge: (persistedState, currentState) => {
         const persisted =
@@ -170,6 +179,10 @@ export const useDiscoveryStore = create<DiscoveryState & DiscoveryActions>()(
             typeof persisted.company === 'string'
               ? persisted.company
               : currentState.company,
+          leadId:
+            typeof persisted.leadId === 'string'
+              ? persisted.leadId
+              : currentState.leadId,
           hasHydrated: currentState.hasHydrated,
         };
         return merged;

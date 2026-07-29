@@ -84,6 +84,12 @@ export function Header({ locale }: { locale: Locale }) {
               {dict.nav.language}
             </Link>
 
+            <Link href={`/${locale}/discovery`} className="hidden sm:block">
+              <Button size="sm" variant="secondary">
+                {dict.nav.discovery}
+              </Button>
+            </Link>
+
             <Link href={`/${locale}/contact`} className="hidden sm:block">
               <Button size="sm">{dict.nav.contact}</Button>
             </Link>
@@ -145,6 +151,15 @@ export function Header({ locale }: { locale: Locale }) {
               onClick={closeMobile}
             >
               {dict.nav.language}
+            </Link>
+            <Link
+              href={`/${locale}/discovery`}
+              className="mt-2"
+              onClick={closeMobile}
+            >
+              <Button className="w-full" size="sm" variant="secondary">
+                {dict.nav.discovery}
+              </Button>
             </Link>
             <Link
               href={`/${locale}/contact`}

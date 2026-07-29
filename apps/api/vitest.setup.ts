@@ -1,0 +1,29 @@
+process.env.NODE_ENV = 'test';
+process.env.DATABASE_URL = process.env.DATABASE_URL || 'file:./test.db';
+process.env.CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:3000';
+process.env.RATE_LIMIT_MAX = process.env.RATE_LIMIT_MAX || '1000';
+process.env.RATE_LIMIT_TIME_WINDOW =
+  process.env.RATE_LIMIT_TIME_WINDOW || '1 minute';
+process.env.CAL_WEBHOOK_SECRET =
+  process.env.CAL_WEBHOOK_SECRET || 'test-cal-secret';
+process.env.INTERNAL_NOTIFICATION_EMAIL =
+  process.env.INTERNAL_NOTIFICATION_EMAIL || 'team@valtq.com';
+
+// Clear blank placeholders so Zod optional secrets stay unset.
+for (const key of [
+  'RESEND_API_KEY',
+  'RESEND_FROM_EMAIL',
+  'CAL_API_KEY',
+  'CAL_WEBHOOK_SECRET',
+  'INTERNAL_NOTIFICATION_EMAIL',
+] as const) {
+  if (process.env[key]?.trim() === '') {
+    delete process.env[key];
+  }
+}
+
+// Re-apply test defaults after clearing blanks.
+process.env.CAL_WEBHOOK_SECRET =
+  process.env.CAL_WEBHOOK_SECRET || 'test-cal-secret';
+process.env.INTERNAL_NOTIFICATION_EMAIL =
+  process.env.INTERNAL_NOTIFICATION_EMAIL || 'team@valtq.com';

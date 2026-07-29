@@ -48,3 +48,9 @@ jobs:
 
       - name: Build API
         run: pnpm --filter api build
+
+      - name: Test API
+        run: pnpm --filter api test
+        env:
+          DATABASE_URL: file:./test.db
+          NODE_ENV: test

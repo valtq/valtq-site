@@ -137,6 +137,7 @@ function BookingScreen({ locale }: BookingScreenProps) {
   const bookingCopy = copy.booking;
   const name = useDiscoveryStore((s) => s.name);
   const email = useDiscoveryStore((s) => s.email);
+  const leadId = useDiscoveryStore((s) => s.leadId);
   const reset = useDiscoveryStore((s) => s.reset);
   const router = useRouter();
 
@@ -319,8 +320,8 @@ function BookingScreen({ locale }: BookingScreenProps) {
         if (attemptRef.current !== attemptId) return;
 
         // Step 7: call inline
-        // Company remains in Discovery state but is not sent because no
-        // supported Cal.com company prefill mapping has been verified.
+        // Prefill attendee details and attach leadId so the Cal webhook
+        // can link the booking back to the discovery lead.
         ns('inline', {
           calLink,
           elementOrSelector: '#cal-embed-container',
@@ -328,6 +329,12 @@ function BookingScreen({ locale }: BookingScreenProps) {
             layout: 'month_view',
             ...(name ? { name } : {}),
             ...(email ? { email } : {}),
+            ...(leadId
+              ? {
+                  notes: `Discovery leadId: ${leadId}`,
+                  metadata: { leadId },
+                }
+              : {}),
             iframeAttrs: {
               id: 'discovery-booking-iframe',
             },
@@ -389,7 +396,7 @@ function BookingScreen({ locale }: BookingScreenProps) {
         // Cleanup must remain non-throwing.
       }
     };
-  }, [calLink, name, email, retryKey, bookingCopy.widgetTitle]);
+  }, [calLink, name, email, leadId, retryKey, bookingCopy.widgetTitle]);
 
   // ── #10 Accessibility: focus management ────────────────────────────────
 
@@ -420,11 +427,10 @@ function BookingScreen({ locale }: BookingScreenProps) {
   }, []);
 
   // ── #8 Success action: real localized home navigation ──────────────────
-  // There is no `[locale]/page.tsx`, so the only verified home route is `/`.
   const handleReturnHome = useCallback(() => {
     reset();
-    router.push('/');
-  }, [reset, router]);
+    router.push(`/${locale}`);
+  }, [reset, router, locale]);
 
   // ── #7 No local Back buttons — WizardShell provides the Back button ────
 

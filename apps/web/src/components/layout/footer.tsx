@@ -45,7 +45,7 @@ export function Footer({ locale }: { locale: Locale }) {
                 <li key={key}>
                   <Link
                     href={`/${locale}/${key === 'contact' ? 'contact' : key}`}
-                    className="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                    className="text-sm text-on-surface-variant transition-all duration-150 hover:text-on-surface hover:translate-x-0.5 rtl:hover:-translate-x-0.5 inline-block"
                   >
                     {dict.footer[key]}
                   </Link>
@@ -63,7 +63,7 @@ export function Footer({ locale }: { locale: Locale }) {
                 <li key={key}>
                   <Link
                     href={`/${locale}${serviceHrefs[key]}`}
-                    className="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                    className="text-sm text-on-surface-variant transition-all duration-150 hover:text-on-surface hover:translate-x-0.5 rtl:hover:-translate-x-0.5 inline-block"
                   >
                     {dict.services[key].title}
                   </Link>
@@ -81,7 +81,7 @@ export function Footer({ locale }: { locale: Locale }) {
                 <li key={key}>
                   <Link
                     href={`/${locale}/${key}`}
-                    className="text-sm text-on-surface-variant transition-colors hover:text-on-surface"
+                    className="text-sm text-on-surface-variant transition-all duration-150 hover:text-on-surface hover:translate-x-0.5 rtl:hover:-translate-x-0.5 inline-block"
                   >
                     {dict.footer[key]}
                   </Link>
@@ -100,7 +100,7 @@ export function Footer({ locale }: { locale: Locale }) {
               <Link
                 key={key}
                 href={`/${locale}/${key}`}
-                className="text-xs text-on-surface-variant transition-colors hover:text-on-surface"
+                className="text-xs text-on-surface-variant transition-colors duration-150 hover:text-primary"
               >
                 {dict.footer[key]}
               </Link>

@@ -50,7 +50,7 @@ export function Header({ locale }: { locale: Locale }) {
     <header className="sticky top-0 z-50 border-b border-border bg-surface-container-lowest/80 backdrop-blur-md">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <Link href={`/${locale}`} className="flex items-center" dir="ltr">
+          <Link href={`/${locale}`} className="flex items-center transition-opacity duration-150 hover:opacity-80" dir="ltr">
             <img src="/favicon-light.png" alt="ValtQ" className="h-10 w-10 block dark:hidden" />
             <img src="/favicon-dark.png" alt="ValtQ" className="h-10 w-10 hidden dark:block" />
             <span className="font-display brand-ignore text-lg font-bold tracking-tight text-on-surface">
@@ -84,7 +84,7 @@ export function Header({ locale }: { locale: Locale }) {
             <button
               type="button"
               onClick={toggleTheme}
-              className="hidden rounded-md p-2 text-on-surface-variant transition-colors hover:bg-accent md:block"
+              className="hidden rounded-md p-2 text-on-surface-variant transition-all duration-150 hover:bg-accent hover:text-on-surface active:scale-95 md:block"
               aria-label={theme === 'dark' ? dict.nav.lightMode : dict.nav.darkMode}
             >
               {theme === 'dark' ? (
@@ -108,7 +108,7 @@ export function Header({ locale }: { locale: Locale }) {
 
             <Link
               href={switchPath}
-              className="hidden items-center gap-1 rounded-md px-2 py-1.5 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent md:inline-flex"
+              className="hidden items-center gap-1 rounded-md px-2 py-1.5 text-sm font-medium text-on-surface-variant transition-all duration-150 hover:bg-accent hover:text-on-surface active:scale-95 md:inline-flex"
               aria-label={dict.nav.language}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -132,7 +132,7 @@ export function Header({ locale }: { locale: Locale }) {
             <button
               ref={menuButtonRef}
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md text-on-surface-variant transition-colors hover:bg-accent md:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md text-on-surface-variant transition-all duration-150 hover:bg-accent hover:text-on-surface active:scale-95 md:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? dict.nav.close : dict.nav.menu}
               aria-expanded={mobileOpen}

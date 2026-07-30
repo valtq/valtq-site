@@ -45,12 +45,12 @@ export function AboutValues({ dict }: { dict: Dictionary }) {
         <StaggerReveal className="mt-12 grid gap-6 sm:grid-cols-2">
           {dict.about.values.items.map((value, i) => (
             <StaggerItem key={value.title}>
-              <Card className="group transition-colors hover:border-primary">
+              <Card className="group transition-all duration-200 hover:border-primary hover:shadow-ring">
                 <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container">
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container transition-transform duration-200 group-hover:scale-110">
                     {valueIcons[i]}
                   </div>
-                  <CardTitle>{value.title}</CardTitle>
+                  <CardTitle className="transition-colors duration-200 group-hover:text-primary">{value.title}</CardTitle>
                 </CardHeader>
                 <CardDescription className="px-8 pb-8">
                   {value.description}
@@ -83,11 +83,11 @@ export function AboutTeam({ dict }: { dict: Dictionary }) {
           {dict.about.team.members.map((member) => (
             <StaggerItem key={member.name}>
               <div className="flex flex-col items-center gap-3">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-surface-container-high font-display text-xl font-bold text-on-surface-variant">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-surface-container-high font-display text-xl font-bold text-on-surface-variant transition-all duration-200 hover:border-2 hover:border-primary hover:shadow-ring">
                   {member.name.charAt(0)}
                 </div>
                 <div className="text-center">
-                  <p className="text-sm font-semibold text-on-surface">{member.name}</p>
+                  <p className="text-sm font-semibold text-on-surface transition-colors duration-200 group-hover:text-primary">{member.name}</p>
                   <p className="text-xs text-on-surface-variant">{member.role}</p>
                 </div>
               </div>

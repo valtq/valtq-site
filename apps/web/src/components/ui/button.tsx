@@ -16,11 +16,11 @@ import { cn } from '@/lib/cn';
  */
 const variants = {
   primary:
-    'bg-primary text-primary-foreground hover:bg-primary-container border border-transparent',
+    'bg-primary text-primary-foreground hover:bg-primary-container active:scale-[0.97] border border-transparent',
   secondary:
-    'bg-surface-container-lowest text-on-surface border border-border hover:border-primary',
-  tertiary: 'bg-transparent text-on-surface hover:bg-accent border border-transparent',
-  destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90 border border-transparent',
+    'bg-surface-container-lowest text-on-surface border border-border hover:border-primary hover:bg-surface-container-low active:scale-[0.97]',
+  tertiary: 'bg-transparent text-on-surface hover:bg-accent active:scale-[0.97] border border-transparent',
+  destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90 active:scale-[0.97] border border-transparent',
 } as const;
 
 const sizes = {
@@ -44,7 +44,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          'inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors',
+          'inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-150',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
           'disabled:pointer-events-none disabled:opacity-50',
           variants[variant],

@@ -16,7 +16,7 @@ export function WorkGrid({ dict, locale }: { dict: Dictionary; locale: Locale })
           {caseStudies.map((cs) => (
             <StaggerItem key={cs.slug}>
               <Link href={`/${locale}/work/${cs.slug}`} className="group block">
-                <Card className="transition-colors hover:border-primary">
+                  <Card className="transition-all duration-200 hover:border-primary hover:shadow-ring">
                   <div className="aspect-[16/9] w-full overflow-hidden rounded-t-xl bg-muted">
                     <div className="flex h-full items-center justify-center text-on-surface-variant">
                       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="opacity-30">

@@ -34,7 +34,7 @@ export function ServicesSection({ dict }: { dict: Dictionary }) {
             <Container>
               <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
                 <ScrollReveal direction={isEven ? 'left' : 'right'} className={isEven ? '' : 'lg:order-2'}>
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-primary-container text-on-primary-container">
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-primary-container text-on-primary-container transition-all duration-200 hover:scale-110 hover:shadow-ring">
                     {icons[key]}
                   </div>
                   <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface">

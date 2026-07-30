@@ -236,5 +236,99 @@ html.theme-transition *::after {
   html.theme-transition *::after {
     transition: none !important;
   }
+
+  .valtq-animate-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ── GPU-accelerated entrance animations ───────────────── */
+/* Only transform + opacity — no layout triggers */
+@keyframes valtq-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes valtq-slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes valtq-slide-down {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* RTL-aware horizontal slide — direction flips with dir=rtl */
+:root { --_slide-x: 30px; }
+[dir="rtl"] { --_slide-x: -30px; }
+
+@keyframes valtq-slide-left {
+  from { opacity: 0; transform: translateX(var(--_slide-x)); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes valtq-slide-right {
+  from { opacity: 0; transform: translateX(calc(var(--_slide-x) * -1)); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes valtq-scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Utility classes — will-change is set only while animating */
+.valtq-animate-in {
+  will-change: transform, opacity;
+}
+
+.valtq-fade-in    { animation: valtq-fade-in 0.6s ease-out forwards; }
+.valtq-slide-up   { animation: valtq-slide-up 0.6s ease-out forwards; }
+.valtq-slide-down { animation: valtq-slide-down 0.6s ease-out forwards; }
+.valtq-slide-left { animation: valtq-slide-left 0.6s ease-out forwards; }
+.valtq-slide-right{ animation: valtq-slide-right 0.6s ease-out forwards; }
+.valtq-scale-in   { animation: valtq-scale-in 0.6s ease-out forwards; }
+
+/* Stagger-delay helper (via inline style) — classes for JS-free delays */
+.valtq-delay-100 { animation-delay: 100ms; }
+.valtq-delay-200 { animation-delay: 200ms; }
+.valtq-delay-300 { animation-delay: 300ms; }
+.valtq-delay-400 { animation-delay: 400ms; }
+.valtq-delay-500 { animation-delay: 500ms; }
+
+/* ── Hover state refinements ────────────────────────────── */
+/* Card hover: border lifts to primary + subtle shadow ring */
+.hover\:card-elevate:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-ring);
+}
+
+/* Link hover: subtle underline slide-in */
+.hover\:link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.hover\:link-underline::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: -1px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: var(--_origin, left);
+  transition: transform 0.2s ease;
+}
+
+[dir="rtl"] .hover\:link-underline::after {
+  --_origin: right;
+}
+
+.hover\:link-underline:hover::after {
+  transform: scaleX(1);
 }
 

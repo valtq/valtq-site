@@ -34,12 +34,12 @@ export function HomeServices({ dict }: { dict: Dictionary }) {
             if (!item) return null;
             return (
               <StaggerItem key={key}>
-                <Card className="group transition-colors hover:border-primary">
+                <Card className="group transition-all duration-200 hover:border-primary hover:shadow-ring">
                   <CardHeader>
-                    <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container">
+                    <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container text-on-primary-container transition-transform duration-200 group-hover:scale-110">
                       {icons[i]}
                     </div>
-                    <CardTitle>{item.title}</CardTitle>
+                    <CardTitle className="transition-colors duration-200 group-hover:text-primary">{item.title}</CardTitle>
                   </CardHeader>
                   <CardDescription className="px-8 pb-8">
                     {item.description}

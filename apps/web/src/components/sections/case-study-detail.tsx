@@ -27,7 +27,7 @@ export function CaseStudyDetail({
           <ScrollReveal>
             <Link
               href={`/${locale}/work`}
-              className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-on-surface-variant transition-colors hover:text-primary"
+              className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-on-surface-variant transition-all duration-150 hover:text-primary"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rtl:rotate-180">
                 <path d="m15 18-6-6 6-6" />
@@ -67,7 +67,7 @@ export function CaseStudyDetail({
               {cs.metrics.map((metric) => (
                 <div
                   key={metric.label.en}
-                  className="rounded-xl border border-border bg-card p-6 text-center"
+                  className="rounded-xl border border-border bg-card p-6 text-center transition-all duration-200 hover:border-primary hover:shadow-ring"
                 >
                   <div className="font-display text-3xl font-bold text-primary">
                     {metric.value}

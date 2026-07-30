@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { LocaleHtmlAttrs } from '@/components/layout/locale-html-attrs';
 import { NavigationFeedback } from '@/components/layout/navigation-feedback';
+import { PageTransition } from '@/components/layout/page-transition';
 import { ThemeProvider } from '@/components/layout/theme-provider';
 
 export function generateStaticParams() {
@@ -46,7 +47,9 @@ export default async function LocaleLayout({
         <ThemeProvider>
           <Header locale={locale as Locale} />
           <NavigationFeedback>
-            <main className="flex-1">{children}</main>
+            <main className="flex-1">
+              <PageTransition>{children}</PageTransition>
+            </main>
             <Footer locale={locale as Locale} />
           </NavigationFeedback>
         </ThemeProvider>

@@ -34,7 +34,7 @@ export function ProcessSteps({ dict }: { dict: Dictionary }) {
                   <div
                     className="relative flex items-start gap-6 sm:gap-0"
                   >
-                    <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-surface-container-lowest font-display text-sm font-bold text-primary sm:mx-auto sm:-translate-x-1/2 rtl:sm:translate-x-1/2">
+                    <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-surface-container-lowest font-display text-sm font-bold text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:scale-110 sm:mx-auto sm:-translate-x-1/2 rtl:sm:translate-x-1/2">
                       {step.number}
                     </div>
 

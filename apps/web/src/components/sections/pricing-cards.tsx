@@ -27,10 +27,10 @@ export function PricingCards({ dict, locale }: { dict: Dictionary; locale: Local
           {dict.pricing.tiers.map((tier) => (
             <StaggerItem key={tier.name}>
               <Card
-                className={`relative flex flex-col ${
+                className={`relative flex flex-col transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 ${
                   tier.popular
-                    ? 'border-2 border-primary shadow-md'
-                    : ''
+                    ? 'border-2 border-primary shadow-md hover:border-primary/80'
+                    : 'hover:border-primary'
                 }`}
               >
                 {tier.popular && (

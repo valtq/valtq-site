@@ -12,9 +12,12 @@
     "about": "من نحن",
     "faq": "الأسئلة الشائعة",
     "contact": "احصل على عرض سعر",
+    "discovery": "ابدأ الاستكشاف",
     "menu": "القائمة",
     "close": "إغلاق القائمة",
-    "language": "English"
+    "language": "English",
+    "darkMode": "الوضع الداكن",
+    "lightMode": "الوضع الفاتح"
   },
   "hero": {
     "home": {

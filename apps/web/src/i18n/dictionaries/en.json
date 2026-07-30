@@ -12,9 +12,12 @@
     "about": "About",
     "faq": "FAQ",
     "contact": "Get a Quote",
+    "discovery": "Start Discovery",
     "menu": "Menu",
     "close": "Close menu",
-    "language": "العربية"
+    "language": "العربية",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode"
   },
   "hero": {
     "home": {

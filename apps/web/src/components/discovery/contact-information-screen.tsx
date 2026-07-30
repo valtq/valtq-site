@@ -1,10 +1,11 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useTransition } from 'react';
 import { DiscoverySubmissionSchema } from '@valtq/types';
 import { discoveryCopy, type Locale } from '@/content/discovery-copy';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { ApiError, submitDiscovery } from '@/lib/api';
 import { useDiscoveryStore } from '@/stores/discovery-store';
 
 interface ContactInformationScreenProps {
@@ -13,16 +14,22 @@ interface ContactInformationScreenProps {
 
 /**
  * Screen 5: Contact Information form.
- * Validates name (required) and email (required) using the shared
- * DiscoverySubmissionSchema field schemas. Company is optional.
- * Continue navigates to Screen 6 (Cal.com Booking).
+ * Validates contact fields, submits the full discovery payload to the API,
+ * then advances to booking with the returned leadId.
  */
 function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
   const copy = discoveryCopy[locale];
   const name = useDiscoveryStore((s) => s.name);
   const email = useDiscoveryStore((s) => s.email);
   const company = useDiscoveryStore((s) => s.company);
+  const projectType = useDiscoveryStore((s) => s.projectType);
+  const description = useDiscoveryStore((s) => s.description);
+  const budget = useDiscoveryStore((s) => s.budget);
+  const timeline = useDiscoveryStore((s) => s.timeline);
+  const features = useDiscoveryStore((s) => s.features);
+  const leadId = useDiscoveryStore((s) => s.leadId);
   const setContactField = useDiscoveryStore((s) => s.setContactField);
+  const setLeadId = useDiscoveryStore((s) => s.setLeadId);
   const previousStep = useDiscoveryStore((s) => s.previousStep);
   const nextStep = useDiscoveryStore((s) => s.nextStep);
 
@@ -31,11 +38,15 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
     email: boolean;
     company: boolean;
   }>({ name: false, email: false, company: false });
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isNameValid = DiscoverySubmissionSchema.shape.name.safeParse(name.trim()).success;
   const isEmailValid = DiscoverySubmissionSchema.shape.email.safeParse(email.trim()).success;
   const isCompanyValid = DiscoverySubmissionSchema.shape.company.safeParse(company).success;
   const isFormValid = isNameValid && isEmailValid && isCompanyValid;
+  const busy = isSubmitting || isPending;
 
   const showNameError = touchedFields.name && !isNameValid;
   const showEmailError = touchedFields.email && !isEmailValid;
@@ -43,6 +54,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
 
   const handleNameChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSubmitError(null);
       setContactField('name', e.target.value);
     },
     [setContactField],
@@ -50,6 +62,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
 
   const handleEmailChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSubmitError(null);
       setContactField('email', e.target.value);
     },
     [setContactField],
@@ -57,6 +70,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
 
   const handleCompanyChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSubmitError(null);
       setContactField('company', e.target.value);
     },
     [setContactField],
@@ -75,14 +89,76 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
   }, []);
 
   const handleContinue = useCallback(() => {
-    if (isFormValid) {
-      nextStep();
+    if (!isFormValid || busy) {
+      return;
     }
-  }, [isFormValid, nextStep]);
+
+    if (!projectType || !budget || !timeline) {
+      setSubmitError(copy.contactInformation.submitIncompleteError);
+      return;
+    }
+
+    if (leadId) {
+      startTransition(() => {
+        nextStep();
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    void (async () => {
+      try {
+        const result = await submitDiscovery({
+          name: name.trim(),
+          email: email.trim(),
+          company: company.trim() || undefined,
+          projectType,
+          budget,
+          timeline,
+          description: description.trim(),
+          features: features.length > 0 ? features : undefined,
+        });
+
+        setLeadId(result.leadId);
+        startTransition(() => {
+          nextStep();
+        });
+      } catch (error) {
+        if (error instanceof ApiError) {
+          setSubmitError(
+            error.statusCode >= 500
+              ? copy.contactInformation.submitError
+              : error.message || copy.contactInformation.submitError,
+          );
+        } else {
+          setSubmitError(copy.contactInformation.submitError);
+        }
+      } finally {
+        setIsSubmitting(false);
+      }
+    })();
+  }, [
+    isFormValid,
+    busy,
+    projectType,
+    budget,
+    timeline,
+    leadId,
+    name,
+    email,
+    company,
+    description,
+    features,
+    copy.contactInformation.submitIncompleteError,
+    copy.contactInformation.submitError,
+    setLeadId,
+    nextStep,
+  ]);
 
   return (
     <div className="space-y-8">
-      {/* Header */}
       <div className="space-y-3">
         <span className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
           {copy.contactInformation.phaseLabel}
@@ -95,9 +171,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
         </p>
       </div>
 
-      {/* Form fields */}
       <div className="mx-auto w-full max-w-lg space-y-6">
-        {/* Full Name */}
         <div className="space-y-2">
           <label
             htmlFor="contact-name"
@@ -116,6 +190,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
             aria-required="true"
             aria-invalid={showNameError || undefined}
             aria-describedby={showNameError ? 'contact-name-error' : undefined}
+            disabled={busy}
           />
           {showNameError && (
             <p
@@ -128,7 +203,6 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
           )}
         </div>
 
-        {/* Business Email */}
         <div className="space-y-2">
           <label
             htmlFor="contact-email"
@@ -149,6 +223,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
             aria-required="true"
             aria-invalid={showEmailError || undefined}
             aria-describedby={showEmailError ? 'contact-email-error' : undefined}
+            disabled={busy}
           />
           {showEmailError && (
             <p
@@ -163,7 +238,6 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
           )}
         </div>
 
-        {/* Company */}
         <div className="space-y-2">
           <label
             htmlFor="contact-company"
@@ -183,17 +257,30 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
             onBlur={handleCompanyBlur}
             placeholder={copy.contactInformation.companyPlaceholder}
             aria-invalid={showCompanyError || undefined}
+            disabled={busy}
           />
         </div>
+
+        {submitError && (
+          <p role="alert" className="text-sm font-medium text-destructive">
+            {submitError}
+          </p>
+        )}
       </div>
 
-      {/* Footer navigation */}
       <div className="flex items-center justify-end gap-3 pt-4">
-        <Button variant="secondary" size="lg" onClick={previousStep}>
+        <Button
+          variant="secondary"
+          size="lg"
+          onClick={previousStep}
+          disabled={busy}
+        >
           {copy.actions.back}
         </Button>
-        <Button size="lg" disabled={!isFormValid} onClick={handleContinue}>
-          {copy.actions.continue}
+        <Button size="lg" disabled={!isFormValid || busy} onClick={handleContinue}>
+          {busy
+            ? copy.contactInformation.submittingLabel
+            : copy.actions.continue}
         </Button>
       </div>
     </div>

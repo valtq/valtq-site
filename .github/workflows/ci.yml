@@ -37,14 +37,29 @@ jobs:
       - name: Build packages
         run: pnpm --filter @valtq/types build
 
+      - name: Generate Prisma Client
+        run: pnpm --filter api db:generate
+        env:
+          DATABASE_URL: file:./dev.db
+
       - name: Lint
         run: pnpm lint
 
       - name: Typecheck
         run: pnpm typecheck
+        env:
+          DATABASE_URL: file:./dev.db
 
       - name: Build web
         run: pnpm --filter web build
 
       - name: Build API
         run: pnpm --filter api build
+        env:
+          DATABASE_URL: file:./dev.db
+
+      - name: Test API
+        run: pnpm --filter api test
+        env:
+          DATABASE_URL: file:./test.db
+          NODE_ENV: test

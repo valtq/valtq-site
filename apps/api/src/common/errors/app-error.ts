@@ -36,4 +36,8 @@ export class AppError extends Error {
   static validation(message: string, details?: unknown): AppError {
     return new AppError(400, ErrorCode.VALIDATION_ERROR, message, details);
   }
+
+  static unauthorized(message = 'Unauthorized'): AppError {
+    return new AppError(401, ErrorCode.UNAUTHORIZED, message);
+  }
 }

@@ -8,6 +8,15 @@ import {
   rateLimitPlugin,
 } from './plugins/index.js';
 import healthModule from './modules/health/index.js';
+import discoveryModule from './modules/discovery/index.js';
+import bookingModule from './modules/booking/index.js';
+
+declare module 'fastify' {
+  interface FastifyRequest {
+    /** Raw request body string — required for Cal.com HMAC verification. */
+    rawBody?: string;
+  }
+}
 
 /**
  * Application factory.
@@ -17,11 +26,37 @@ import healthModule from './modules/health/index.js';
 export async function buildApp() {
   const app = Fastify({
     logger: {
-      level: env.NODE_ENV === 'production' ? 'info' : 'debug',
+      level:
+        env.NODE_ENV === 'test'
+          ? 'silent'
+          : env.NODE_ENV === 'production'
+            ? 'info'
+            : 'debug',
     },
     genReqId: () => crypto.randomUUID(),
     requestIdHeader: 'x-request-id',
   });
+
+  // Capture raw body for webhook signature verification
+  app.addContentTypeParser(
+    'application/json',
+    { parseAs: 'string' },
+    (request, body, done) => {
+      const raw = typeof body === 'string' ? body : body.toString('utf8');
+      request.rawBody = raw;
+
+      if (raw.length === 0) {
+        done(null, {});
+        return;
+      }
+
+      try {
+        done(null, JSON.parse(raw) as unknown);
+      } catch (error) {
+        done(error as Error, undefined);
+      }
+    },
+  );
 
   // Infrastructure plugins
   await app.register(corsPlugin);
@@ -33,8 +68,10 @@ export async function buildApp() {
   app.setErrorHandler(errorHandler);
   app.setNotFoundHandler(notFoundHandler);
 
-  // Feature modules (foundation: health only)
+  // Feature modules
   await app.register(healthModule);
+  await app.register(discoveryModule, { prefix: '/api' });
+  await app.register(bookingModule, { prefix: '/api' });
 
   return app;
 }

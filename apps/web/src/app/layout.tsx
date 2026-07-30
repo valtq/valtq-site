@@ -32,9 +32,10 @@ export default function RootLayout({
       className={`${inter.variable} ${geist.variable}`}
     >
       <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap"
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var e=localStorage.getItem("valtq-theme");if(!e){e=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}if(e==="dark"){document.documentElement.classList.add("dark")}}catch(e){}})();`,
+          }}
         />
       </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">

@@ -185,3 +185,54 @@ body {
 [dir="rtl"] .font-display {
   font-family: var(--font-arabic);
 }
+
+/* ── Navigation progress ────────────────────────────────── */
+html[data-navigating],
+html[data-navigating] body {
+  cursor: progress;
+}
+
+@keyframes nav-progress-loading {
+  0% {
+    transform: scaleX(0.08);
+  }
+  40% {
+    transform: scaleX(0.45);
+  }
+  100% {
+    transform: scaleX(0.78);
+  }
+}
+
+.nav-progress-loading {
+  width: 100%;
+  transform-origin: left center;
+  animation: nav-progress-loading 1.15s ease-out forwards;
+}
+
+[dir='rtl'] .nav-progress-loading {
+  transform-origin: right center;
+}
+
+/* ── Smooth theme transition ──────────────────────────── */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-progress-loading {
+    animation: none;
+    transform: scaleX(0.5);
+  }
+
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: none !important;
+  }
+}
+

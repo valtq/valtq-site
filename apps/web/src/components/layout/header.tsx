@@ -106,9 +106,15 @@ export function Header({ locale }: { locale: Locale }) {
 
             <Link
               href={switchPath}
-              className="hidden rounded-md px-2 py-1.5 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent md:block"
+              className="hidden items-center gap-1 rounded-md px-2 py-1.5 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent md:inline-flex"
+              aria-label={dict.nav.language}
             >
-              {dict.nav.language}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" x2="22" y1="12" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+              <span className="text-xs font-semibold uppercase tracking-wide">{otherLocale}</span>
             </Link>
 
             <Link href={`/${locale}/discovery`} className="hidden sm:block">
@@ -198,9 +204,14 @@ export function Header({ locale }: { locale: Locale }) {
             </button>
             <Link
               href={switchPath}
-              className="rounded-md px-3 py-2 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent"
+              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent"
               onClick={closeMobile}
             >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" x2="22" y1="12" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
               {dict.nav.language}
             </Link>
             <Link

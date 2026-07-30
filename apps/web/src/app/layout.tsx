@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Geist, IBM_Plex_Sans_Arabic } from 'next/font/google';
+import { Inter, Geist } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({
@@ -11,13 +11,6 @@ const inter = Inter({
 const geist = Geist({
   subsets: ['latin'],
   variable: '--font-display',
-  display: 'swap',
-});
-
-const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
-  subsets: ['arabic'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-arabic',
   display: 'swap',
 });
 
@@ -36,8 +29,14 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${geist.variable} ${ibmPlexSansArabic.variable}`}
+      className={`${inter.variable} ${geist.variable}`}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap"
+        />
+      </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         {children}
       </body>

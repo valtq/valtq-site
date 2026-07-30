@@ -50,8 +50,10 @@ export function Header({ locale }: { locale: Locale }) {
     <header className="sticky top-0 z-50 border-b border-border bg-surface-container-lowest/80 backdrop-blur-md">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <Link href={`/${locale}`} className="flex items-center gap-2">
-            <span className="font-display text-lg font-bold tracking-tight text-on-surface">
+          <Link href={`/${locale}`} className="flex items-center" dir="ltr">
+            <img src="/favicon-light.png" alt="ValtQ" className="h-10 w-10 block dark:hidden" />
+            <img src="/favicon-dark.png" alt="ValtQ" className="h-10 w-10 hidden dark:block" />
+            <span className="font-display brand-ignore text-lg font-bold tracking-tight text-on-surface">
               ValtQ
             </span>
           </Link>

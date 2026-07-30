@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* ── Color tokens (ValtQ Engineering System) ─────────── */
   /* Surface */
@@ -106,11 +108,11 @@
 
 /* ── Dark theme ─────────────────────────────────────────── */
 .dark {
-  --color-background: #0d1c2f;
+  --color-background: #080f1c;
   --color-foreground: #ebf1ff;
 
-  --color-surface: #0d1c2f;
-  --color-surface-dim: #0d1c2f;
+  --color-surface: #080f1c;
+  --color-surface-dim: #080f1c;
   --color-surface-bright: #374056;
   --color-surface-container-lowest: #080f1c;
   --color-surface-container-low: #151f33;
@@ -182,7 +184,7 @@ body {
   font-family: var(--font-arabic);
 }
 
-[dir="rtl"] .font-display {
+[dir="rtl"] .font-display:not(.brand-ignore) {
   font-family: var(--font-arabic);
 }
 

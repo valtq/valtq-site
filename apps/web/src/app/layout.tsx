@@ -32,6 +32,8 @@ export default function RootLayout({
       className={`${inter.variable} ${geist.variable}`}
     >
       <head>
+        <link rel="icon" href="/favicon-dark.png" media="(prefers-color-scheme:dark)" />
+        <link rel="icon" href="/favicon-light.png" media="(prefers-color-scheme:light)" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var e=localStorage.getItem("valtq-theme");if(!e){e=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}if(e==="dark"){document.documentElement.classList.add("dark")}}catch(e){}})();`,

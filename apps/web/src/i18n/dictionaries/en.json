@@ -15,7 +15,9 @@
     "discovery": "Start Discovery",
     "menu": "Menu",
     "close": "Close menu",
-    "language": "العربية"
+    "language": "العربية",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode"
   },
   "hero": {
     "home": {

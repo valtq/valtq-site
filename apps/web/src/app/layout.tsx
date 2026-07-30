@@ -38,6 +38,13 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${geist.variable} ${ibmPlexSansArabic.variable}`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var e=localStorage.getItem("valtq-theme");if(!e){e=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}if(e==="dark"){document.documentElement.classList.add("dark")}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         {children}
       </body>

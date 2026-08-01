@@ -3,13 +3,8 @@ import { locales, type Locale } from '@/i18n/config';
 import { getTranslations } from '@/i18n/get-dictionary';
 import { Hero } from '@/components/sections/hero';
 import { WorkGrid } from '@/components/sections/work-grid';
-import { CTA } from '@/components/sections/cta';
 
-export default async function WorkPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function WorkPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) notFound();
 
@@ -19,7 +14,6 @@ export default async function WorkPage({
     <>
       <Hero dict={dict} variant="work" locale={locale as Locale} />
       <WorkGrid dict={dict} locale={locale as Locale} />
-      <CTA dict={dict} locale={locale as Locale} />
     </>
   );
 }

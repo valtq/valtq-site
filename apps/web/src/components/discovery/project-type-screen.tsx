@@ -156,13 +156,14 @@ function ProjectTypeScreen({ locale }: ProjectTypeScreenProps) {
       {/* Header */}
       <div className="space-y-3">
         <div className="flex items-center gap-3">
-          <span className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
+          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
             {copy.projectType.badge}
           </span>
         </div>
-        <h2 className="font-display text-3xl font-bold leading-tight tracking-tight text-on-surface">
+        <h1 className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl">
           {copy.projectType.headline}
-        </h2>
+        </h1>
         <p className="text-lg leading-relaxed text-on-surface-variant">
           {copy.projectType.description}
         </p>
@@ -190,25 +191,25 @@ function ProjectTypeScreen({ locale }: ProjectTypeScreenProps) {
               onClick={() => handleSelect(type)}
               onKeyDown={(e) => handleKeyDown(e, type)}
               className={cn(
-                'flex flex-col items-start gap-4 rounded-xl border p-6 text-start transition-all duration-200',
+                'group relative flex min-h-[188px] flex-col items-start gap-4 rounded-2xl border p-6 text-start transition-all duration-200',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
                 isSelected
-                  ? 'border-primary bg-on-primary-container shadow-sm'
-                  : 'border-outline-variant bg-card hover:border-primary hover:bg-surface-container-low',
+                  ? 'border-primary bg-primary/5 shadow-sm'
+                  : 'border-border bg-card hover:border-primary/50 hover:bg-surface-container-low',
               )}
             >
               <div
                 className={cn(
                   'flex h-12 w-12 items-center justify-center rounded-lg transition-colors',
                   isSelected
-                    ? 'bg-primary text-on-primary-container'
-                    : 'bg-surface-container-high text-primary',
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-surface-container-high text-primary group-hover:bg-primary/10',
                 )}
                 aria-hidden="true"
               >
                 {PROJECT_TYPE_ICONS[type]}
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <p className="font-display text-lg font-semibold text-on-surface">
                   {option.label}
                 </p>
@@ -222,16 +223,18 @@ function ProjectTypeScreen({ locale }: ProjectTypeScreenProps) {
       </div>
 
       {/* Footer navigation */}
-      <div className="flex items-center justify-end gap-3 pt-4">
+      <div className="flex flex-col-reverse items-stretch gap-3 pt-4 sm:flex-row sm:justify-end">
         <Button
           variant="secondary"
           size="lg"
+          className="min-h-12"
           onClick={previousStep}
         >
           {copy.actions.back}
         </Button>
         <Button
           size="lg"
+          className="min-h-12"
           disabled={projectType === null}
           onClick={() => {
             if (projectType) {

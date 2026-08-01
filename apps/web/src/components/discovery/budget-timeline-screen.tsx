@@ -59,12 +59,13 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
     <div className="space-y-10">
       {/* Header */}
       <div className="space-y-3">
-        <span className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+        <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
           {copy.budgetTimeline.phaseLabel}
         </span>
-        <h2 className="font-display text-3xl font-bold leading-tight tracking-tight text-on-surface">
+        <h1 className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl">
           {copy.budgetTimeline.heading}
-        </h2>
+        </h1>
         <p className="text-lg leading-relaxed text-on-surface-variant">
           {copy.budgetTimeline.description}
         </p>
@@ -99,8 +100,8 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
                 }}
                 className={
                   isSelected
-                    ? 'flex items-center justify-center rounded-lg border border-primary bg-primary/5 px-4 py-3 text-sm font-medium text-primary shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
-                    : 'flex items-center justify-center rounded-lg border border-outline-variant bg-card px-4 py-3 text-sm font-medium text-on-surface transition-all duration-200 hover:border-primary hover:bg-surface-container-low focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
+                    ? 'flex min-h-12 items-center justify-center rounded-xl border border-primary bg-primary/5 px-4 py-3 text-sm font-semibold text-primary shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
+                    : 'flex min-h-12 items-center justify-center rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-on-surface transition-all duration-200 hover:border-primary hover:bg-surface-container-low focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
                 }
               >
                 {option!.label}
@@ -139,8 +140,8 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
                 }}
                 className={
                   isSelected
-                    ? 'flex items-center justify-center rounded-lg border border-primary bg-primary/5 px-4 py-3 text-sm font-medium text-primary shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
-                    : 'flex items-center justify-center rounded-lg border border-outline-variant bg-card px-4 py-3 text-sm font-medium text-on-surface transition-all duration-200 hover:border-primary hover:bg-surface-container-low focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
+                    ? 'flex min-h-12 items-center justify-center rounded-xl border border-primary bg-primary/5 px-4 py-3 text-sm font-semibold text-primary shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
+                    : 'flex min-h-12 items-center justify-center rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-on-surface transition-all duration-200 hover:border-primary hover:bg-surface-container-low focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
                 }
               >
                 {option!.label}
@@ -151,11 +152,11 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
       </div>
 
       {/* Footer navigation */}
-      <div className="flex items-center justify-end gap-3 pt-4">
-        <Button variant="secondary" size="lg" onClick={previousStep}>
+      <div className="flex flex-col-reverse items-stretch gap-3 pt-4 sm:flex-row sm:justify-end">
+        <Button variant="secondary" size="lg" className="min-h-12 sm:w-auto" onClick={previousStep}>
           {copy.actions.back}
         </Button>
-        <Button size="lg" disabled={!canContinue} onClick={nextStep}>
+        <Button size="lg" className="min-h-12 sm:w-auto" disabled={!canContinue} onClick={nextStep}>
           {copy.actions.continue}
         </Button>
       </div>

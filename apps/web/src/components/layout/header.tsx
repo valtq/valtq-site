@@ -33,6 +33,9 @@ export function Header({ locale }: { locale: Locale }) {
 
   useEffect(() => {
     if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
         setMobileOpen(false);
@@ -40,7 +43,10 @@ export function Header({ locale }: { locale: Locale }) {
       }
     }
     document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
   }, [mobileOpen]);
 
   const otherLocale = locale === 'en' ? 'ar' : 'en';
@@ -49,16 +55,16 @@ export function Header({ locale }: { locale: Locale }) {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface-container-lowest/80 backdrop-blur-md">
       <Container>
-        <div className="flex h-16 items-center justify-between">
-          <Link href={`/${locale}`} className="flex items-center transition-opacity duration-150 hover:opacity-80" dir="ltr">
-            <img src="/favicon-light.png" alt="ValtQ" className="h-10 w-10 block dark:hidden" />
-            <img src="/favicon-dark.png" alt="ValtQ" className="h-10 w-10 hidden dark:block" />
-            <span className="font-display brand-ignore text-lg font-bold tracking-tight text-on-surface">
+        <div className="flex h-[72px] items-center justify-between gap-6">
+          <Link href={`/${locale}`} className="flex shrink-0 items-center gap-2.5 transition-opacity duration-150 hover:opacity-80" dir="ltr">
+            <img src="/favicon-light.png" alt="ValtQ" className="block h-10 w-10 dark:hidden" />
+            <img src="/favicon-dark.png" alt="ValtQ" className="hidden h-10 w-10 dark:block" />
+            <span className="font-display brand-ignore text-xl font-bold tracking-tight text-on-surface">
               ValtQ
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-1.5 md:flex">
             {navLinks.map(({ key, href }) => {
               const fullHref = `/${locale}${href}`;
               const isActive = pathname === fullHref || pathname.startsWith(`${fullHref}/`);
@@ -68,7 +74,7 @@ export function Header({ locale }: { locale: Locale }) {
                   href={fullHref}
                   aria-current={isActive ? 'page' : undefined}
                   className={cn(
-                    'rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-on-surface',
+                    'rounded-md px-3 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-on-surface',
                     isActive
                       ? 'bg-accent text-on-surface'
                       : 'text-on-surface-variant',
@@ -84,7 +90,7 @@ export function Header({ locale }: { locale: Locale }) {
             <button
               type="button"
               onClick={toggleTheme}
-              className="hidden rounded-md p-2 text-on-surface-variant transition-all duration-150 hover:bg-accent hover:text-on-surface active:scale-95 md:block"
+              className="hidden rounded-md p-2 text-on-surface-variant transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-on-surface active:scale-95 md:block"
               aria-label={theme === 'dark' ? dict.nav.lightMode : dict.nav.darkMode}
             >
               {theme === 'dark' ? (
@@ -108,7 +114,7 @@ export function Header({ locale }: { locale: Locale }) {
 
             <Link
               href={switchPath}
-              className="hidden rounded-md p-2 text-on-surface-variant transition-colors hover:bg-accent md:block"
+              className="hidden rounded-md p-2 text-on-surface-variant transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent md:block"
               aria-label={dict.nav.language}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -119,22 +125,24 @@ export function Header({ locale }: { locale: Locale }) {
             </Link>
 
             <Link href={`/${locale}/discovery`} className="hidden sm:block">
-              <Button size="sm" variant="secondary">
+              <Button size="sm">
                 {dict.nav.discovery}
               </Button>
             </Link>
 
             <Link href={`/${locale}/contact`} className="hidden sm:block">
-              <Button size="sm">{dict.nav.contact}</Button>
+              <Button size="sm" variant="secondary">{dict.nav.contact}</Button>
             </Link>
 
             <button
               ref={menuButtonRef}
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md text-on-surface-variant transition-all duration-150 hover:bg-accent hover:text-on-surface active:scale-95 md:hidden"
+              id="mobile-menu-button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-on-surface-variant transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-on-surface active:scale-95 md:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? dict.nav.close : dict.nav.menu}
               aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileOpen ? (
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -153,12 +161,13 @@ export function Header({ locale }: { locale: Locale }) {
         </div>
 
         <div
+          id="mobile-navigation"
           className={cn(
-            'overflow-hidden transition-all duration-200 md:hidden',
-            mobileOpen ? 'max-h-96 pb-4' : 'max-h-0',
+            'overflow-y-auto transition-[max-height,opacity] duration-200 md:hidden',
+            mobileOpen ? 'max-h-[calc(100svh-72px)] pb-5 opacity-100' : 'max-h-0 opacity-0',
           )}
         >
-          <nav className="flex flex-col gap-1">
+          <nav className="flex flex-col gap-1 border-t border-border pt-3">
             {navLinks.map(({ key, href }) => {
               const fullHref = `/${locale}${href}`;
               const isActive = pathname === fullHref || pathname.startsWith(`${fullHref}/`);
@@ -168,7 +177,7 @@ export function Header({ locale }: { locale: Locale }) {
                   href={fullHref}
                   aria-current={isActive ? 'page' : undefined}
                   className={cn(
-                    'rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-on-surface',
+                    'min-h-11 rounded-md px-3 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-on-surface',
                     isActive
                       ? 'bg-accent text-on-surface'
                       : 'text-on-surface-variant',
@@ -182,7 +191,7 @@ export function Header({ locale }: { locale: Locale }) {
             <button
               type="button"
               onClick={() => { toggleTheme(); closeMobile(); }}
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent"
+              className="flex min-h-11 items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-on-surface-variant transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent"
             >
               {theme === 'dark' ? (
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -205,7 +214,7 @@ export function Header({ locale }: { locale: Locale }) {
             </button>
             <Link
               href={switchPath}
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-on-surface-variant transition-colors hover:bg-accent"
+              className="flex min-h-11 items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-on-surface-variant transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent"
               onClick={closeMobile}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
@@ -220,7 +229,7 @@ export function Header({ locale }: { locale: Locale }) {
               className="mt-2"
               onClick={closeMobile}
             >
-              <Button className="w-full" size="sm" variant="secondary">
+              <Button className="w-full" size="sm">
                 {dict.nav.discovery}
               </Button>
             </Link>
@@ -229,7 +238,7 @@ export function Header({ locale }: { locale: Locale }) {
               className="mt-2"
               onClick={closeMobile}
             >
-              <Button className="w-full" size="sm">
+              <Button className="w-full" size="sm" variant="secondary">
                 {dict.nav.contact}
               </Button>
             </Link>

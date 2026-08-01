@@ -44,13 +44,16 @@ function WizardShell({
       <ProgressBar currentStep={currentStep} totalSteps={totalSteps} ariaLabel={progressAriaLabel} />
 
       {/* Header */}
-      <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-border bg-background/80 px-6 backdrop-blur-md">
-        <div className="flex items-center gap-4">
-          {showBack ? (
+      <header className="sticky top-0 z-10 flex min-h-[72px] items-center justify-between gap-4 border-b border-border bg-background/90 px-4 backdrop-blur-md sm:px-6">
+        <div className="flex min-w-0 items-center gap-4">
+          <span className="font-display shrink-0 text-xl font-bold tracking-tight text-on-surface">
+            ValtQ
+          </span>
+          {showBack && (
             <button
               type="button"
               onClick={onBack}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-on-surface-variant transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="inline-flex min-h-10 min-w-10 items-center gap-1.5 rounded-md px-2 text-sm font-semibold text-on-surface-variant transition-colors hover:bg-accent hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,12 +72,6 @@ function WizardShell({
               </svg>
               {backLabel}
             </button>
-          ) : (
-            <div className="flex items-center gap-2">
-              <span className="font-display text-xl font-bold text-on-surface">
-                ValtQ
-              </span>
-            </div>
           )}
         </div>
         <StepCounter
@@ -85,8 +82,10 @@ function WizardShell({
       </header>
 
       {/* Main content */}
-      <main className="flex flex-1 items-start justify-center overflow-y-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="w-full max-w-4xl">{children}</div>
+      <main className="flex flex-1 items-start justify-center overflow-x-hidden overflow-y-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <div className="w-full max-w-4xl overflow-hidden rounded-[1.75rem] border border-border bg-surface-container-lowest p-5 shadow-sm sm:p-8 lg:p-10">
+          {children}
+        </div>
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import { type ReactNode } from 'react';
+import { type ReactNode, useSyncExternalStore } from 'react';
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'scale' | 'fade' | 'up-lg';
 
@@ -16,9 +16,27 @@ interface ScrollRevealProps {
 
 const easeOut = [0.25, 0.1, 0.25, 1] as const;
 
-function getRtlDirection(direction: Direction): Direction {
-  if (typeof document === 'undefined') return direction;
-  const isRtl = document.documentElement.dir === 'rtl';
+function subscribeToDocumentDirection(onChange: () => void) {
+  if (typeof document === 'undefined') return () => {};
+
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['dir'],
+  });
+
+  return () => observer.disconnect();
+}
+
+function getDocumentIsRtl() {
+  return typeof document !== 'undefined' && document.documentElement.dir === 'rtl';
+}
+
+function getServerIsRtl() {
+  return false;
+}
+
+function getRtlDirection(direction: Direction, isRtl: boolean): Direction {
   if (!isRtl) return direction;
   if (direction === 'left') return 'right';
   if (direction === 'right') return 'left';
@@ -43,12 +61,17 @@ export function ScrollReveal({
   gpu = true,
 }: ScrollRevealProps) {
   const prefersReducedMotion = useReducedMotion();
+  const isRtl = useSyncExternalStore(
+    subscribeToDocumentDirection,
+    getDocumentIsRtl,
+    getServerIsRtl,
+  );
 
   if (prefersReducedMotion) {
     return <div className={className}>{children}</div>;
   }
 
-  const dir = getRtlDirection(direction);
+  const dir = getRtlDirection(direction, isRtl);
 
   return (
     <motion.div

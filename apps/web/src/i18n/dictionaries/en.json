@@ -24,8 +24,8 @@
       "tag": "Premium Software Development",
       "title": "Engineering Digital Products with Precision",
       "description": "We build web, mobile, AI-integrated, and cloud-native products for startups and enterprises. From concept to deployment — engineered for scale.",
-      "primaryCta": "Get a Quote",
-      "secondaryCta": "Our Process"
+      "primaryCta": "Tell Us About Your Project",
+      "secondaryCta": "How We Work"
     },
     "services": {
       "tag": "What We Build",
@@ -100,19 +100,19 @@
     "items": [
       {
         "title": "Web Applications",
-        "description": "Modern, responsive web apps built with React, Next.js, and TypeScript. Optimized for performance and accessibility."
+        "description": "Fast, responsive web applications engineered with React, Next.js, and TypeScript. Built for performance, accessibility, and long-term scalability."
       },
       {
         "title": "Mobile Applications",
-        "description": "Native and cross-platform mobile apps using React Native and Flutter. Seamless experiences on every device."
+        "description": "High-quality mobile experiences on iOS and Android. Built with React Native and Flutter to launch faster and reach more users."
       },
       {
         "title": "AI & Machine Learning",
-        "description": "Intelligent features powered by LLMs, computer vision, and predictive models — integrated into your product."
+        "description": "Practical AI that drives measurable results. LLMs, computer vision, and predictive models engineered directly into your product."
       },
       {
         "title": "Cloud & Infrastructure",
-        "description": "Scalable cloud architecture on AWS, GCP, and Azure. CI/CD pipelines, monitoring, and DevOps as a service."
+        "description": "Resilient, cost-efficient cloud architecture on AWS, GCP, and Azure. Automated pipelines and monitoring that keep your product reliable."
       }
     ]
   },
@@ -302,8 +302,8 @@
   "cta": {
     "title": "Ready to Build Something Exceptional?",
     "description": "Let's discuss your project. No commitment, no sales pitch — just a straightforward conversation about your goals.",
-    "primaryCta": "Get a Free Quote",
-    "secondaryCta": "View Our Process"
+    "primaryCta": "Book a Discovery Call",
+    "secondaryCta": "How We Work"
   },
   "footer": {
     "description": "Premium software engineering for startups and enterprises.",

@@ -9,7 +9,7 @@ export default function LocaleLoading() {
         aria-hidden="true"
         className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent"
       />
-      <span className="sr-only">Loading</span>
+      <span className="sr-only">Loading page…</span>
     </div>
   );
 }

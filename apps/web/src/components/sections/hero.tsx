@@ -2,11 +2,11 @@ import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
 import { Pill } from '@/components/ui/pill';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
-import Image from 'next/image';
 import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/get-dictionary';
 import { HeroGraphic } from './hero-graphic';
+import { HeroVisual } from './hero-visual';
 
 interface HeroProps {
   dict: Dictionary;
@@ -89,19 +89,7 @@ export function Hero({ dict, variant, locale }: HeroProps) {
             </div>
 
             <ScrollReveal direction="scale" delay={0.12} className="min-w-0 lg:col-span-6">
-              <div className="relative mx-auto w-full max-w-full">
-                <div className="absolute -inset-4 rounded-[2rem] bg-primary/10 blur-2xl" aria-hidden="true" />
-                <div className="relative min-h-[300px] w-full max-w-full overflow-hidden rounded-[1.75rem] border border-border bg-surface-container-low shadow-lg sm:min-h-[340px] lg:aspect-[4/3] lg:min-h-[460px]">
-                  <Image
-                    src="/images/home/valtq-hero.webp"
-                    alt={homeContent.imageAlt}
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 58vw, 720px"
-                    className="object-cover object-[60%_center] sm:object-[58%_center] lg:object-[62%_center]"
-                  />
-                </div>
-              </div>
+              <HeroVisual />
             </ScrollReveal>
           </div>
         </Container>

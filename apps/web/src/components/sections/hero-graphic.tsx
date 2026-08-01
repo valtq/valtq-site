@@ -125,7 +125,7 @@ export function HeroGraphic() {
               animate={
                 prefersReducedMotion
                   ? undefined
-                  : { r: [node.r, node.r * 1.4, node.r] }
+                  : { opacity: [0.35, 0.7, 0.35] }
               }
               transition={
                 prefersReducedMotion

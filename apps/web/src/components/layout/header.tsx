@@ -108,15 +108,14 @@ export function Header({ locale }: { locale: Locale }) {
 
             <Link
               href={switchPath}
-              className="hidden items-center gap-1 rounded-md px-2 py-1.5 text-sm font-medium text-on-surface-variant transition-all duration-150 hover:bg-accent hover:text-on-surface active:scale-95 md:inline-flex"
+              className="hidden rounded-md p-2 text-on-surface-variant transition-colors hover:bg-accent md:block"
               aria-label={dict.nav.language}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="2" x2="22" y1="12" y2="12" />
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
-              <span className="text-xs font-semibold uppercase tracking-wide">{otherLocale}</span>
             </Link>
 
             <Link href={`/${locale}/discovery`} className="hidden sm:block">

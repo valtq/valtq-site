@@ -8,6 +8,8 @@ import { LocaleHtmlAttrs } from '@/components/layout/locale-html-attrs';
 import { NavigationFeedback } from '@/components/layout/navigation-feedback';
 import { PageTransition } from '@/components/layout/page-transition';
 import { ThemeProvider } from '@/components/layout/theme-provider';
+import { WhatsAppButton } from '@/components/layout/whatsapp-button';
+import { SITE_URL, SITE_NAME } from '@/config/site';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -21,9 +23,35 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) notFound();
   const dict = await getTranslations(locale as Locale);
+  const title = dict.meta.title;
+  const description = dict.meta.description;
   return {
-    title: dict.meta.title,
-    description: dict.meta.description,
+    title,
+    description,
+    alternates: {
+      languages: {
+        en: '/en',
+        ar: '/ar',
+        'x-default': '/en',
+      },
+    },
+    openGraph: {
+      siteName: SITE_NAME,
+      title,
+      description,
+      type: 'website',
+      url: `${SITE_URL}/${locale}`,
+      locale: locale === 'ar' ? 'ar_SA' : 'en_US',
+    },
+    twitter: {
+      card: 'summary',
+      title,
+      description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
@@ -52,6 +80,7 @@ export default async function LocaleLayout({
             </main>
             <Footer locale={locale as Locale} />
           </NavigationFeedback>
+          <WhatsAppButton label={dict.whatsapp.floatingLabel} />
         </ThemeProvider>
       </DictionaryProvider>
     </div>

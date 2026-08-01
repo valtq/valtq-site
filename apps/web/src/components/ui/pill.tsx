@@ -28,7 +28,7 @@ const Pill = forwardRef<HTMLDivElement, PillProps>(
     <div
       ref={ref}
       className={cn(
-        'inline-flex items-center rounded-full px-3 py-1 text-sm font-medium transition-colors',
+        'inline-flex items-center rounded-full px-3 py-1 text-sm font-medium transition-all duration-150',
         variants[variant],
         className,
       )}

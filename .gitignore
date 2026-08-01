@@ -12,6 +12,8 @@ build
 coverage
 prisma/*.db
 prisma/*.db-journal
-
-# TypeScript incremental build cache
 *.tsbuildinfo
+
+# SQLite
+*.db
+*.db-journal

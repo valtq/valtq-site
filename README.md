@@ -15,6 +15,7 @@ pnpm --filter api dev     # http://localhost:4000
 
 ## How We Work
 
+
 - **Branches:** `main` (production), `develop` (integration), `feature/*`, `fix/*`
 - **Commits:** Conventional Commits format: `feat(scope): description`
 - **PRs:** Branch from `develop`, one PR per issue, squash-merge

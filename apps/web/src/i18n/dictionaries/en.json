@@ -20,7 +20,15 @@
   },
   "hero": {
     "home": {
-
+      "tag": "Digital product strategy, design & engineering",
+      "title": "From ambitious ideas to digital products built to scale.",
+      "titleAccent": "built to scale.",
+      "description": "ValtQ helps teams validate opportunities, design intuitive experiences, and engineer reliable software through one clear delivery journey.",
+      "primaryCta": "Start your project",
+      "secondaryCta": "Explore our work",
+      "capabilitiesLabel": "What we do",
+      "capabilities": ["Product Strategy", "Experience Design", "Software Engineering"],
+      "imageAlt": "ValtQ team collaborating in a modern workspace"
     },
     "services": {
       "tag": "What We Build",
@@ -306,6 +314,37 @@
     "startProject": "Start a similar project",
     "startProjectDescription": "Have a similar challenge? Let's discuss how we can engineer the right solution for you."
   },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "tryAgain": "Try again",
+    "backHome": "Back to home"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "social": {
+    "followUs": "Follow us",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "snapchat": "Snapchat"
+  },
+  "whatsapp": {
+    "floatingLabel": "Chat with us",
+    "chatCta": "Start a conversation",
+    "chatDescription": "Prefer chatting? Message us on WhatsApp and we'll get back to you within minutes."
+  },
+  "contactPage": {
+    "title": "Let's Build Something Together",
+    "description": "Tell us about your project and we'll respond within 24 hours.",
+    "whatsappTitle": "Chat on WhatsApp",
+    "socialTitle": "Follow us",
+    "socialDescription": "Stay up to date with our latest work and engineering insights."
+  },
+  "loading": "Loading...",
   "footer": {
     "description": "Premium software engineering for startups and enterprises.",
     "company": "Company",

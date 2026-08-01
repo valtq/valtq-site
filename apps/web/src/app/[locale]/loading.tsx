@@ -1,5 +1,3 @@
-import { LoadingMessage } from '@/components/layout/loading-message';
-
 export default function LocaleLoading() {
   return (
     <div

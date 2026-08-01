@@ -55,12 +55,9 @@ export function Header({ locale }: { locale: Locale }) {
     <header className="sticky top-0 z-50 border-b border-border bg-surface-container-lowest/80 backdrop-blur-md">
       <Container>
         <div className="flex h-[72px] items-center justify-between gap-6">
-          <Link href={`/${locale}`} className="flex shrink-0 items-center gap-2.5 transition-opacity duration-150 hover:opacity-80" dir="ltr">
-            <img src="/favicon-light.png" alt="ValtQ" className="block h-10 w-10 dark:hidden" />
-            <img src="/favicon-dark.png" alt="ValtQ" className="hidden h-10 w-10 dark:block" />
-            <span className="font-display brand-ignore text-xl font-bold tracking-tight text-on-surface">
-              ValtQ
-            </span>
+          <Link href={`/${locale}`} className="flex shrink-0 items-center transition-opacity duration-150 hover:opacity-80" aria-label="ValtQ" dir="ltr">
+            <img src="/favicon-light.png" alt="" className="block h-12 w-12 dark:hidden" />
+            <img src="/favicon-dark.png" alt="" className="hidden h-12 w-12 dark:block" />
           </Link>
 
           <nav className="hidden items-center gap-1.5 md:flex">

@@ -3,13 +3,8 @@ import { locales, type Locale } from '@/i18n/config';
 import { getTranslations } from '@/i18n/get-dictionary';
 import { Hero } from '@/components/sections/hero';
 import { PricingCards } from '@/components/sections/pricing-cards';
-import { CTA } from '@/components/sections/cta';
 
-export default async function PricingPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) notFound();
 
@@ -19,7 +14,6 @@ export default async function PricingPage({
     <>
       <Hero dict={dict} variant="pricing" locale={locale as Locale} />
       <PricingCards dict={dict} locale={locale as Locale} />
-      <CTA dict={dict} locale={locale as Locale} />
     </>
   );
 }

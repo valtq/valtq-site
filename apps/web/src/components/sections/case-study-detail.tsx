@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
@@ -50,6 +51,17 @@ export function CaseStudyDetail({
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-on-surface-variant">
               {cs.description[lang]}
             </p>
+
+            <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-border bg-muted shadow-sm">
+              <Image
+                src={cs.image}
+                alt={cs.imageAlt[lang]}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                className="object-cover"
+              />
+            </div>
           </ScrollReveal>
         </Container>
       </Section>

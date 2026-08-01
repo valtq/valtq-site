@@ -22,30 +22,31 @@ function IntroScreen({ locale }: IntroScreenProps) {
     <div className="mx-auto max-w-2xl space-y-10">
       {/* Badge & sub-label */}
       <div className="space-y-2">
-        <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary">
+        <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
           {copy.intro.badge}
         </span>
-        <p className="text-sm font-medium text-on-surface-variant">
+        <p className="text-base font-medium text-on-surface-variant">
           {copy.intro.subLabel}
         </p>
       </div>
 
       {/* Headline */}
-      <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-on-surface sm:text-5xl">
+      <h1 className="font-display text-balance text-4xl font-bold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">
         {copy.intro.headline}
       </h1>
 
       {/* Description */}
-      <p className="text-lg leading-relaxed text-on-surface-variant">
+      <p className="max-w-2xl text-lg leading-relaxed text-on-surface-variant">
         {copy.intro.description}
       </p>
 
       {/* Benefits */}
-      <ul className="space-y-4" role="list">
+      <ul className="space-y-4 border-s border-border ps-5" role="list">
         {copy.intro.benefits.map((benefit) => (
           <li key={benefit.title} className="flex items-start gap-4">
             <span
-              className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/5"
+              className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/5"
               aria-hidden="true"
             >
               <svg
@@ -79,7 +80,7 @@ function IntroScreen({ locale }: IntroScreenProps) {
       <div className="space-y-3">
         <Button
           size="lg"
-          className="w-full"
+          className="h-12 w-full px-6"
           onClick={nextStep}
         >
           {copy.intro.cta}

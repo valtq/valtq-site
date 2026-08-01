@@ -443,16 +443,17 @@ function BookingScreen({ locale }: BookingScreenProps) {
           aria-live="polite"
           className="space-y-3"
         >
-          <span className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+            <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
             {bookingCopy.phaseLabel}
           </span>
-          <h2
+          <h1
             ref={headingRef}
             tabIndex={-1}
-            className="font-display text-3xl font-bold leading-tight tracking-tight text-on-surface outline-none"
+            className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface outline-none sm:text-4xl"
           >
             {bookingCopy.missingConfigTitle}
-          </h2>
+          </h1>
           <p className="text-lg leading-relaxed text-on-surface-variant">
             {bookingCopy.missingConfigDescription}
           </p>
@@ -470,22 +471,23 @@ function BookingScreen({ locale }: BookingScreenProps) {
           aria-live="assertive"
           className="space-y-3"
         >
-          <span className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+            <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
             {bookingCopy.phaseLabel}
           </span>
-          <h2
+          <h1
             ref={headingRef}
             tabIndex={-1}
-            className="font-display text-3xl font-bold leading-tight tracking-tight text-on-surface outline-none"
+            className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface outline-none sm:text-4xl"
           >
             {bookingCopy.loadErrorTitle}
-          </h2>
+          </h1>
           <p className="text-lg leading-relaxed text-on-surface-variant">
             {bookingCopy.loadErrorDescription}
           </p>
         </div>
-        <div className="flex items-center justify-end gap-3 pt-4">
-          <Button size="lg" onClick={handleRetry}>
+        <div className="flex justify-end pt-4">
+          <Button size="lg" className="min-h-12 w-full sm:w-auto" onClick={handleRetry}>
             {bookingCopy.retryAction}
           </Button>
         </div>
@@ -497,7 +499,7 @@ function BookingScreen({ locale }: BookingScreenProps) {
   if (status === 'success') {
     return (
       <div className="mx-auto w-full max-w-2xl">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-surface-container-lowest shadow-lg">
+        <div className="relative overflow-hidden rounded-[1.75rem] border border-border bg-surface-container-lowest shadow-md">
           <div
             aria-hidden="true"
             className="h-1 w-full bg-primary"
@@ -507,7 +509,7 @@ function BookingScreen({ locale }: BookingScreenProps) {
             tabIndex={-1}
             role="status"
             aria-live="polite"
-            className="flex flex-col items-center px-6 pb-6 pt-10 text-center outline-none sm:px-10 sm:pb-8 sm:pt-12"
+            className="flex flex-col items-center px-6 pb-8 pt-10 text-center outline-none sm:px-10 sm:pb-10 sm:pt-14"
           >
             <div
               aria-hidden="true"
@@ -527,12 +529,12 @@ function BookingScreen({ locale }: BookingScreenProps) {
                 <path d="M20 6 9 17l-5-5" />
               </svg>
             </div>
-            <span className="mb-3 text-xs font-semibold uppercase tracking-wide text-primary">
+            <span className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
               {bookingCopy.phaseLabel}
             </span>
-            <h2 className="font-display text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl">
+            <h1 className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl">
               {bookingCopy.successHeading}
-            </h2>
+            </h1>
             <p className="mt-4 max-w-lg text-lg leading-relaxed text-on-surface-variant">
               {bookingCopy.successDescription}
             </p>
@@ -542,7 +544,7 @@ function BookingScreen({ locale }: BookingScreenProps) {
               </p>
             </div>
           </div>
-          <div className="flex justify-center bg-surface-container-low px-6 py-5 sm:px-10">
+          <div className="flex justify-center border-t border-border bg-surface-container-low px-6 py-5 sm:px-10">
             <Button
               size="lg"
               className="w-full sm:w-auto sm:min-w-48"
@@ -560,17 +562,18 @@ function BookingScreen({ locale }: BookingScreenProps) {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <span className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+        <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
           {bookingCopy.phaseLabel}
         </span>
-        <h2
+        <h1
           id={BOOKING_HEADING_ID}
           ref={headingRef}
           tabIndex={-1}
-          className="font-display text-3xl font-bold leading-tight tracking-tight text-on-surface outline-none"
+          className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface outline-none sm:text-4xl"
         >
           {bookingCopy.heading}
-        </h2>
+        </h1>
         <p className="text-lg leading-relaxed text-on-surface-variant">
           {bookingCopy.description}
         </p>
@@ -579,13 +582,13 @@ function BookingScreen({ locale }: BookingScreenProps) {
       <div
         role="region"
         aria-labelledby={BOOKING_HEADING_ID}
-        className="relative min-w-0 w-full max-w-full overflow-hidden rounded-xl border border-border bg-surface-container-lowest"
+        className="relative min-w-0 w-full max-w-full overflow-hidden rounded-2xl border border-border bg-surface-container-low"
       >
         {status === 'loading' && (
           <div
             role="status"
             aria-live="polite"
-            className="flex min-h-[480px] flex-col items-center justify-center gap-3"
+            className="flex min-h-[480px] flex-col items-center justify-center gap-3 bg-surface-container-lowest"
           >
             <div
               aria-hidden="true"

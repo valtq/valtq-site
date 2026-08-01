@@ -160,12 +160,13 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <span className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+        <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
           {copy.contactInformation.phaseLabel}
         </span>
-        <h2 className="font-display text-3xl font-bold leading-tight tracking-tight text-on-surface">
+        <h1 className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl">
           {copy.contactInformation.heading}
-        </h2>
+        </h1>
         <p className="text-lg leading-relaxed text-on-surface-variant">
           {copy.contactInformation.description}
         </p>
@@ -175,7 +176,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
         <div className="space-y-2">
           <label
             htmlFor="contact-name"
-            className="text-sm font-medium text-on-surface"
+            className="text-base font-semibold text-on-surface"
           >
             {copy.contactInformation.nameLabel}
           </label>
@@ -206,7 +207,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
         <div className="space-y-2">
           <label
             htmlFor="contact-email"
-            className="text-sm font-medium text-on-surface"
+            className="text-base font-semibold text-on-surface"
           >
             {copy.contactInformation.emailLabel}
           </label>
@@ -241,7 +242,7 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
         <div className="space-y-2">
           <label
             htmlFor="contact-company"
-            className="flex items-center gap-2 text-sm font-medium text-on-surface"
+            className="flex items-center gap-2 text-base font-semibold text-on-surface"
           >
             {copy.contactInformation.companyLabel}
             <span className="text-xs font-normal text-on-surface-variant">
@@ -268,16 +269,17 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
         )}
       </div>
 
-      <div className="flex items-center justify-end gap-3 pt-4">
+      <div className="flex flex-col-reverse items-stretch gap-3 pt-4 sm:flex-row sm:justify-end">
         <Button
           variant="secondary"
           size="lg"
+          className="min-h-12 sm:w-auto"
           onClick={previousStep}
           disabled={busy}
         >
           {copy.actions.back}
         </Button>
-        <Button size="lg" disabled={!isFormValid || busy} onClick={handleContinue}>
+        <Button size="lg" className="min-h-12 sm:w-auto" disabled={!isFormValid || busy} onClick={handleContinue}>
           {busy
             ? copy.contactInformation.submittingLabel
             : copy.actions.continue}

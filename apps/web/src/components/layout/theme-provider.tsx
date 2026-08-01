@@ -18,7 +18,9 @@ function getStoredTheme(): Theme | null {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === 'light' || stored === 'dark') return stored;
-  } catch {}
+  } catch {
+    // localStorage may be unavailable in privacy-restricted environments.
+  }
   return null;
 }
 
@@ -64,7 +66,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     applyTheme(newTheme);
     try {
       localStorage.setItem(STORAGE_KEY, newTheme);
-    } catch {}
+    } catch {
+      // Keep theme switching functional when localStorage is unavailable.
+    }
   }, []);
 
   const toggleTheme = useCallback(() => {

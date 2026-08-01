@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
@@ -13,18 +14,19 @@ export function WorkGrid({ dict, locale }: { dict: Dictionary; locale: Locale })
     <Section>
       <Container>
         <StaggerReveal className="grid gap-6 sm:grid-cols-2 lg:gap-8">
-          {caseStudies.map((cs) => (
+          {caseStudies.map((cs, index) => (
             <StaggerItem key={cs.slug}>
               <Link href={`/${locale}/work/${cs.slug}`} className="group block">
                   <Card className="transition-all duration-200 hover:border-primary hover:shadow-ring">
-                  <div className="aspect-[16/9] w-full overflow-hidden rounded-t-xl bg-muted">
-                    <div className="flex h-full items-center justify-center text-on-surface-variant">
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="opacity-30">
-                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-                        <circle cx="9" cy="9" r="2" />
-                        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                      </svg>
-                    </div>
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-xl bg-muted">
+                    <Image
+                      src={cs.image}
+                      alt={cs.imageAlt[locale]}
+                      fill
+                      priority={index < 2}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
                   </div>
                   <CardContent className="p-6 sm:p-8">
                     <h3 className="font-display text-xl font-semibold tracking-tight text-on-surface transition-colors group-hover:text-primary">

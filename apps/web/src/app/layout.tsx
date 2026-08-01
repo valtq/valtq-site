@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Geist } from 'next/font/google';
+import { SITE_URL, SITE_NAME } from '@/config/site';
 import './globals.css';
 
 const inter = Inter({
@@ -15,9 +16,24 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'ValtQ — Premium Software Development',
   description:
     'Building web, mobile, AI-integrated, and backend/cloud products for startups and businesses.',
+  openGraph: {
+    siteName: SITE_NAME,
+    title: 'ValtQ — Premium Software Development',
+    description:
+      'Building web, mobile, AI-integrated, and backend/cloud products for startups and businesses.',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'ValtQ — Premium Software Development',
+    description:
+      'Building web, mobile, AI-integrated, and backend/cloud products for startups and businesses.',
+  },
 };
 
 export default function RootLayout({

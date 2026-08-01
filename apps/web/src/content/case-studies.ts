@@ -9,6 +9,7 @@ export interface CaseStudy {
   description: { en: string; ar: string };
   tags: { en: string; ar: string }[];
   image: string;
+  imageAlt: { en: string; ar: string };
   metrics: CaseStudyMetric[];
   challenge: { en: string; ar: string };
   solution: { en: string; ar: string };
@@ -32,7 +33,11 @@ export const caseStudies: CaseStudy[] = [
       { en: 'Real-Time Data', ar: 'بيانات في الوقت الحقيقي' },
       { en: 'FinTech', ar: 'تقنية مالية' },
     ],
-    image: '/images/case-studies/novapay.svg',
+    image: '/images/case-studies/novapay.webp',
+    imageAlt: {
+      en: 'NovaPay real-time fintech dashboard',
+      ar: 'لوحة تحكم NovaPay المالية في الوقت الحقيقي',
+    },
     metrics: [
       { label: { en: 'Daily Transactions', ar: 'المعاملات اليومية' }, value: '2M+' },
       { label: { en: 'Query Response', ar: 'استجابة الاستعلام' }, value: '<200ms' },
@@ -68,7 +73,11 @@ export const caseStudies: CaseStudy[] = [
       { en: 'Healthcare', ar: 'رعاية صحية' },
       { en: 'HIPAA Compliant', ar: 'متوافق مع HIPAA' },
     ],
-    image: '/images/case-studies/meditrack.svg',
+    image: '/images/case-studies/meditrack.webp',
+    imageAlt: {
+      en: 'MediTrack patient management mobile app',
+      ar: 'تطبيق MediTrack لإدارة المرضى',
+    },
     metrics: [
       { label: { en: 'Clinics Served', ar: 'العيادات المخدومة' }, value: '200+' },
       { label: { en: 'Patient Intake Time', ar: 'وقت استقبال المريض' }, value: '-65%' },
@@ -104,7 +113,11 @@ export const caseStudies: CaseStudy[] = [
       { en: 'E-Commerce', ar: 'تجارة إلكترونية' },
       { en: 'Microservices', ar: 'الخدمات المصغرة' },
     ],
-    image: '/images/case-studies/shopvelocity.svg',
+    image: '/images/case-studies/shopvelocity.webp',
+    imageAlt: {
+      en: 'ShopVelocity scalable e-commerce platform',
+      ar: 'منصة ShopVelocity للتجارة الإلكترونية القابلة للتوسع',
+    },
     metrics: [
       { label: { en: 'Peak Concurrent Users', ar: 'ذروة المستخدمين المتزامنين' }, value: '100K+' },
       { label: { en: 'Page Load Time', ar: 'وقت تحميل الصفحة' }, value: '1.2s' },
@@ -140,7 +153,11 @@ export const caseStudies: CaseStudy[] = [
       { en: 'Content Platform', ar: 'منصة محتوى' },
       { en: 'Real-Time Inference', ar: 'استدلال في الوقت الحقيقي' },
     ],
-    image: '/images/case-studies/contentai.svg',
+    image: '/images/case-studies/contentai.webp',
+    imageAlt: {
+      en: 'ContentAI personalization recommendation engine',
+      ar: 'محرك توصيات ContentAI للتخصيص',
+    },
     metrics: [
       { label: { en: 'Engagement Lift', ar: 'زيادة التفاعل' }, value: '3x' },
       { label: { en: 'Recommendation Accuracy', ar: 'دقة التوصيات' }, value: '94%' },

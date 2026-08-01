@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/i18n/config';
 import { getTranslations } from '@/i18n/get-dictionary';
 import { Hero } from '@/components/sections/hero';
-import { Stats } from '@/components/sections/stats';
 import { HomeServices } from '@/components/sections/home-services';
 import { ProcessSteps } from '@/components/sections/process-steps';
 import { CTA } from '@/components/sections/cta';
@@ -20,7 +19,6 @@ export default async function HomePage({
   return (
     <>
       <Hero dict={dict} variant="home" locale={locale as Locale} />
-      <Stats dict={dict} />
       <HomeServices dict={dict} />
       <ProcessSteps dict={dict} />
       <CTA dict={dict} locale={locale as Locale} />

@@ -21,11 +21,15 @@
   },
   "hero": {
     "home": {
-      "tag": "Premium Software Development",
-      "title": "Engineering Digital Products with Precision",
-      "description": "We build web, mobile, AI-integrated, and cloud-native products for startups and enterprises. From concept to deployment — engineered for scale.",
-      "primaryCta": "Get a Quote",
-      "secondaryCta": "Our Process"
+      "tag": "Digital product strategy, design & engineering",
+      "title": "From ambitious ideas to digital products built to scale.",
+      "titleAccent": "built to scale.",
+      "description": "ValtQ helps teams validate opportunities, design intuitive experiences, and engineer reliable software through one clear delivery journey.",
+      "primaryCta": "Start your project",
+      "secondaryCta": "Explore our work",
+      "capabilitiesLabel": "What we do",
+      "capabilities": ["Product Strategy", "Experience Design", "Software Engineering"],
+      "imageAlt": "ValtQ team collaborating in a modern workspace"
     },
     "services": {
       "tag": "What We Build",
@@ -139,6 +143,7 @@
     }
   },
   "processSteps": {
+    "eyebrow": "How we deliver",
     "title": "Our Six-Step Process",
     "description": "A structured methodology that eliminates guesswork and delivers results.",
     "steps": [

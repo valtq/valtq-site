@@ -51,12 +51,13 @@ function ProjectBriefScreen({ locale }: ProjectBriefScreenProps) {
     <div className="space-y-8">
       {/* Header */}
       <div className="space-y-3">
-        <span className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+        <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
           {copy.projectBrief.phaseLabel}
         </span>
-        <h2 className="font-display text-3xl font-bold leading-tight tracking-tight text-on-surface">
+        <h1 className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl">
           {copy.projectBrief.heading}
-        </h2>
+        </h1>
         <p className="text-lg leading-relaxed text-on-surface-variant">
           {copy.projectBrief.description}
         </p>
@@ -66,7 +67,7 @@ function ProjectBriefScreen({ locale }: ProjectBriefScreenProps) {
       <div className="space-y-2">
         <label
           htmlFor="project-brief-textarea"
-          className="text-sm font-medium text-on-surface"
+          className="text-base font-semibold text-on-surface"
         >
           {copy.projectBrief.textareaLabel}
         </label>
@@ -80,6 +81,7 @@ function ProjectBriefScreen({ locale }: ProjectBriefScreenProps) {
           aria-invalid={showError || undefined}
           aria-describedby={showError ? 'project-brief-error' : 'project-brief-guidance'}
           rows={7}
+          className="min-h-[190px]"
         />
         {showError ? (
           <p
@@ -100,11 +102,11 @@ function ProjectBriefScreen({ locale }: ProjectBriefScreenProps) {
       </div>
 
       {/* Footer navigation */}
-      <div className="flex items-center justify-end gap-3 pt-4">
-        <Button variant="secondary" size="lg" onClick={previousStep}>
+      <div className="flex flex-col-reverse items-stretch gap-3 pt-4 sm:flex-row sm:justify-end">
+        <Button variant="secondary" size="lg" className="min-h-12 sm:w-auto" onClick={previousStep}>
           {copy.actions.back}
         </Button>
-        <Button size="lg" disabled={!isValid} onClick={handleContinue}>
+        <Button size="lg" className="min-h-12 sm:w-auto" disabled={!isValid} onClick={handleContinue}>
           {copy.actions.continue}
         </Button>
       </div>

@@ -20,14 +20,14 @@ function ProgressBar({ currentStep, totalSteps, ariaLabel }: ProgressBarProps) {
       aria-valuemin={1}
       aria-valuemax={totalSteps}
       aria-label={ariaLabel}
-      className="relative h-1 w-full bg-surface-container-high"
+      className="relative h-1.5 w-full bg-surface-container-high"
     >
       <div
         className="absolute inset-y-0 start-0 bg-primary transition-all duration-500 ease-out"
         style={{ width: `${progress}%` }}
       />
       <div
-        className="absolute top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-success shadow-[0_0_8px_var(--color-success)] transition-all duration-500 ease-out"
+        className="absolute top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full border-2 border-surface-container-lowest bg-tertiary transition-all duration-500 ease-out"
         style={{
           insetInlineStart: `clamp(0px, calc(${progress}% - 4px), calc(100% - 8px))`,
         }}
@@ -52,8 +52,8 @@ function StepCounter({
   stepText,
 }: StepCounterProps) {
   return (
-    <div className="flex flex-col gap-0.5">
-      <span className="text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+    <div className="flex min-w-0 flex-col gap-0.5 text-end">
+      <span className="truncate text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
         {label}
       </span>
       <div className="flex items-center gap-2">

@@ -14,7 +14,7 @@ export function WorkGrid({ dict, locale }: { dict: Dictionary; locale: Locale })
     <Section>
       <Container>
         <StaggerReveal className="grid gap-6 sm:grid-cols-2 lg:gap-8">
-          {caseStudies.map((cs) => (
+          {caseStudies.map((cs, index) => (
             <StaggerItem key={cs.slug}>
               <Link href={`/${locale}/work/${cs.slug}`} className="group block">
                   <Card className="transition-all duration-200 hover:border-primary hover:shadow-ring">
@@ -23,6 +23,7 @@ export function WorkGrid({ dict, locale }: { dict: Dictionary; locale: Locale })
                       src={cs.image}
                       alt={cs.imageAlt[locale]}
                       fill
+                      priority={index < 2}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />

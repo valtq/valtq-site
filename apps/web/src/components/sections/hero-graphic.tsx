@@ -5,6 +5,12 @@ import { motion, useReducedMotion } from 'framer-motion';
 const ACCENT = 'var(--color-primary)';
 const ACCENT_LIGHT = 'var(--color-primary-container)';
 
+function getSafeRadius(radius: unknown) {
+  return typeof radius === 'number' && Number.isFinite(radius) && radius > 0
+    ? radius
+    : 4;
+}
+
 const nodes = [
   { cx: 120, cy: 80, r: 3 },
   { cx: 200, cy: 40, r: 2 },
@@ -114,31 +120,35 @@ export function HeroGraphic() {
           ))}
 
           {/* Nodes */}
-          {nodes.map((node, i) => (
-            <motion.circle
-              key={`n${i}`}
-              cx={node.cx}
-              cy={node.cy}
-              r={node.r}
-              fill={i % 3 === 0 ? ACCENT_LIGHT : ACCENT}
-              opacity={0.6}
-              animate={
-                prefersReducedMotion
-                  ? undefined
-                  : { opacity: [0.35, 0.7, 0.35] }
-              }
-              transition={
-                prefersReducedMotion
-                  ? undefined
-                  : {
-                      duration: 3 + (i % 4),
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                      delay: i * 0.15,
-                    }
-              }
-            />
-          ))}
+          {nodes.map((node, i) => {
+            const safeRadius = getSafeRadius(node.r);
+
+            return (
+              <motion.circle
+                key={`n${i}`}
+                cx={node.cx}
+                cy={node.cy}
+                r={safeRadius}
+                fill={i % 3 === 0 ? ACCENT_LIGHT : ACCENT}
+                opacity={0.6}
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : { opacity: [0.35, 0.7, 0.35] }
+                }
+                transition={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        duration: 3 + (i % 4),
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                        delay: i * 0.15,
+                      }
+                }
+              />
+            );
+          })}
 
           {/* Overlapping accent circles */}
           <motion.circle
@@ -222,7 +232,7 @@ export function HeroGraphic() {
               key={`t-n${i}`}
               cx={node.cx}
               cy={node.cy}
-              r={node.r * 0.8}
+              r={getSafeRadius(node.r) * 0.8}
               fill={ACCENT}
               opacity={0.45}
             />

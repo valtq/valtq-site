@@ -344,23 +344,23 @@ export function ServicesJourney({ dict, locale }: { dict: Dictionary; locale: Lo
   const content = dict.servicesPage.journey;
 
   return (
-    <section className="relative overflow-hidden border-y border-inverse-surface bg-inverse-surface py-16 sm:py-20 lg:py-24">
+    <section className="relative isolate overflow-hidden border-b border-border bg-background py-16 sm:py-20 lg:py-24">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-primary/20 blur-3xl rtl:-left-32 rtl:right-auto" />
-        <div className="absolute inset-y-0 start-1/4 w-px bg-inverse-on-surface/5" />
+        <div className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-primary/10 blur-3xl rtl:-left-32 rtl:right-auto" />
+        <div className="absolute inset-y-0 start-1/4 w-px bg-primary/5" />
       </div>
 
       <Container className="relative z-10">
         <ScrollReveal>
           <div className="max-w-2xl">
-            <div className="flex items-center gap-3 text-sm font-semibold tracking-[0.04em] text-inverse-primary sm:text-base">
+            <div className="flex items-center gap-3 text-sm font-semibold tracking-[0.04em] text-primary sm:text-base">
               <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
               <span>{content.eyebrow}</span>
             </div>
-            <h2 className="mt-5 max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-inverse-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+            <h2 className="mt-5 max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
               {content.heading}
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-inverse-on-surface/75">
+            <p className="mt-5 text-lg leading-relaxed text-on-surface-variant">
               {content.description}
             </p>
           </div>
@@ -369,16 +369,16 @@ export function ServicesJourney({ dict, locale }: { dict: Dictionary; locale: Lo
         <ScrollReveal delay={0.1}>
           <div className="relative mt-14">
             <div
-              className="pointer-events-none absolute start-[12.5%] end-[12.5%] top-7 hidden h-px bg-inverse-on-surface/15 lg:block"
+              className="pointer-events-none absolute start-[12.5%] end-[12.5%] top-7 hidden h-px bg-primary/15 lg:block"
               aria-hidden="true"
             />
             <ol className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
               {content.stages.map((stage, index) => (
                 <li key={stage} className="relative flex flex-col items-center text-center">
-                  <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-inverse-primary/40 bg-inverse-surface font-mono text-sm font-semibold text-inverse-primary">
+                  <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-background font-mono text-sm font-semibold text-primary">
                     0{index + 1}
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold tracking-tight text-inverse-on-surface">
+                  <h3 className="mt-5 font-display text-lg font-semibold tracking-tight text-on-surface">
                     {stage}
                   </h3>
                 </li>

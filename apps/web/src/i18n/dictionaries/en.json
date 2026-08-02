@@ -160,6 +160,286 @@
       ]
     }
   },
+  "servicesPage": {
+    "hero": {
+      "eyebrow": "Software engineering services",
+      "titleStart": "Design, build, and evolve digital products with one connected ",
+      "titleHighlight": "engineering partner.",
+      "description": "ValtQ brings product strategy, experience design, software engineering, and cloud delivery into one practical workflow. We help teams turn complex requirements into reliable web platforms, mobile products, AI-enabled experiences, and scalable technical foundations.",
+      "primaryCta": "Start Discovery",
+      "secondaryCta": "Explore Our Process",
+      "capabilitiesLabel": "Core capabilities",
+      "capabilities": [
+        "Product strategy",
+        "Web and mobile engineering",
+        "AI integration",
+        "Cloud delivery"
+      ],
+      "visual": {
+        "central": "Product Platform",
+        "nodes": [
+          "Web Platforms",
+          "Mobile Products",
+          "AI Workflows",
+          "Cloud Systems"
+        ]
+      }
+    },
+    "overview": {
+      "eyebrow": "Services overview",
+      "title": "A connected set of engineering services",
+      "description": "Six service areas that support one another across the product journey — from first scope decisions through design, engineering, and ongoing operation.",
+      "viewLabel": "View service",
+      "items": [
+        {
+          "title": "Web Applications",
+          "description": "Customer-facing platforms, internal tools, and data-driven interfaces built to remain maintainable as they grow."
+        },
+        {
+          "title": "Mobile Applications",
+          "description": "iOS and Android products designed for daily use, offline-aware workflows, and dependable releases."
+        },
+        {
+          "title": "AI & Machine Learning",
+          "description": "Practical AI integrated into real product workflows with clear system boundaries."
+        },
+        {
+          "title": "Cloud & Infrastructure",
+          "description": "APIs, data, and deployment foundations designed for secure, observable operation."
+        },
+        {
+          "title": "Product Strategy & Experience Design",
+          "description": "Clarify scope and shape the experience before committing time and budget."
+        },
+        {
+          "title": "Quality & Product Evolution",
+          "description": "Quality practices, monitoring, and iteration that continue after the first release."
+        }
+      ]
+    },
+    "web": {
+      "eyebrow": "01 — Web application engineering",
+      "heading": "Web platforms designed around real workflows and long-term maintainability.",
+      "description": "We build customer-facing products, internal platforms, operational dashboards, portals, and data-driven applications. The work starts with the business workflow and user journey, then moves into architecture, interface design, implementation, testing, and deployment.",
+      "paragraph": "Our focus is not limited to producing pages or isolated features. We structure the frontend, backend integrations, data flow, permissions, performance, and deployment model so the product remains understandable and maintainable as its scope grows.",
+      "supportLabel": "What we can support",
+      "support": [
+        "Marketing and customer-facing platforms",
+        "Internal operations dashboards",
+        "Role-based portals",
+        "Workflow and approval systems",
+        "Data-intensive interfaces",
+        "API integrations",
+        "Multilingual and RTL experiences",
+        "Performance and accessibility improvements"
+      ],
+      "techLabel": "Technical capabilities",
+      "tech": [
+        "React and Next.js",
+        "TypeScript",
+        "Component-driven user interfaces",
+        "Server-side rendering and static generation",
+        "API and third-party service integration",
+        "Authentication and authorization flows",
+        "Responsive and accessible UI implementation",
+        "Performance and SEO foundations"
+      ]
+    },
+    "mobile": {
+      "eyebrow": "02 — Mobile product development",
+      "heading": "Mobile experiences designed for daily use, changing networks, and evolving product requirements.",
+      "description": "We develop mobile products for iOS and Android with attention to navigation, state management, API reliability, device behavior, accessibility, and release readiness. Depending on product constraints, we can use cross-platform development to maintain a shared product foundation while preserving a platform-appropriate experience.",
+      "paragraph": "Mobile delivery includes more than implementing screens. We consider session handling, slow or interrupted connections, local state, notifications, permissions, secure storage, analytics integration, and the operational work required to release and maintain the application.",
+      "supportLabel": "What we can support",
+      "support": [
+        "Customer and member applications",
+        "Field and operations applications",
+        "Booking and service applications",
+        "Content and community products",
+        "Offline-aware workflows",
+        "Camera, location, and device integrations",
+        "Push-notification flows",
+        "Store-release preparation"
+      ],
+      "techLabel": "Technical capabilities",
+      "tech": [
+        "React Native",
+        "Flutter where appropriate",
+        "iOS and Android delivery",
+        "Shared component and design systems",
+        "Secure local storage",
+        "API synchronization",
+        "Deep links and notifications",
+        "Mobile testing and release workflows"
+      ]
+    },
+    "ai": {
+      "eyebrow": "03 — AI-enabled products",
+      "heading": "Practical AI capabilities connected to product workflows and controlled by clear system boundaries.",
+      "description": "We integrate AI where it can improve a real product workflow: helping users find information, supporting internal decisions, extracting structured data, classifying content, generating assisted responses, or automating repetitive steps.",
+      "paragraph": "AI functionality should not operate as an isolated demo. We connect it to the product’s data, permissions, review process, fallback behavior, and monitoring. For knowledge-based assistants, we can structure retrieval workflows that ground responses in approved sources and expose relevant references to users or reviewers.",
+      "supportLabel": "What we can support",
+      "support": [
+        "AI assistants and copilots",
+        "Retrieval-augmented generation",
+        "Knowledge search",
+        "Document extraction and classification",
+        "Recommendation and personalization workflows",
+        "Content-assistance tools",
+        "Workflow automation",
+        "Human-review and escalation paths"
+      ],
+      "techLabel": "Engineering considerations",
+      "tech": [
+        "Prompt and context design",
+        "Model-provider integration",
+        "Access control around retrieved data",
+        "Structured output validation",
+        "Source attribution",
+        "Confidence and fallback handling",
+        "Observability and usage controls",
+        "Human-in-the-loop workflows"
+      ]
+    },
+    "cloud": {
+      "eyebrow": "04 — Cloud and infrastructure",
+      "heading": "Backend and cloud foundations designed for secure delivery and operational clarity.",
+      "description": "We design and implement APIs, data models, background processing, service integrations, deployment workflows, and cloud environments that support the product’s actual traffic, reliability, security, and operational needs.",
+      "paragraph": "The goal is not to introduce infrastructure complexity for its own sake. We choose deployment patterns based on the product stage, team capacity, expected usage, security requirements, and recovery needs. The resulting setup should remain observable, repeatable, and understandable to the people who operate it.",
+      "supportLabel": "What we can support",
+      "support": [
+        "API and backend development",
+        "Relational and document databases",
+        "Authentication and role-based access",
+        "Background jobs and queues",
+        "Object and document storage",
+        "Third-party integrations",
+        "Cloud deployment",
+        "Continuous integration and delivery",
+        "Monitoring and operational logging",
+        "Environment and configuration management"
+      ],
+      "techLabel": "Technology directions",
+      "tech": [
+        "Node.js and TypeScript",
+        "Python and FastAPI where appropriate",
+        "PostgreSQL and document databases",
+        "Redis and background queues",
+        "Docker",
+        "AWS, GCP, or Azure depending on requirements",
+        "CI/CD pipelines",
+        "Logging and application monitoring"
+      ]
+    },
+    "strategy": {
+      "eyebrow": "05 — Product strategy and experience design",
+      "heading": "Clarify what should be built before committing time and budget to delivery.",
+      "description": "We help teams translate business goals, user needs, operational constraints, and technical requirements into a product direction that engineering can execute. This may include discovery workshops, workflow mapping, feature prioritization, information architecture, interface design, and an initial delivery roadmap.",
+      "paragraph": "",
+      "supportLabel": "Supporting points",
+      "support": [
+        "Problem and opportunity framing",
+        "User and stakeholder workflows",
+        "Functional scope definition",
+        "Feature prioritization",
+        "Information architecture",
+        "Wireframes and interface design",
+        "Design-system foundations",
+        "Technical feasibility review",
+        "Delivery-roadmap preparation"
+      ],
+      "techLabel": "",
+      "tech": []
+    },
+    "quality": {
+      "eyebrow": "06 — Quality and product evolution",
+      "heading": "Quality practices that continue beyond the first release.",
+      "description": "A production release is one stage of the product lifecycle. We structure quality assurance, code review, automated checks, observability, release processes, and maintenance planning so teams can continue improving the product without losing control of its technical foundation.",
+      "paragraph": "",
+      "supportLabel": "Quality activities may include",
+      "support": [
+        "Acceptance criteria and test planning",
+        "Code review",
+        "Automated unit and integration tests",
+        "End-to-end testing where appropriate",
+        "Accessibility review",
+        "Performance review",
+        "Security-minded implementation",
+        "Release checklists",
+        "Error monitoring",
+        "Technical-debt prioritization",
+        "Post-release iteration"
+      ],
+      "techLabel": "",
+      "tech": []
+    },
+    "why": {
+      "eyebrow": "Why ValtQ",
+      "heading": "Engineering decisions connected to product outcomes.",
+      "description": "Our role is to keep product goals, user experience, implementation, and operations connected. That reduces handoff gaps and helps teams make technical decisions with a clear understanding of their product impact.",
+      "principles": [
+        {
+          "title": "Product context before implementation",
+          "description": "We begin by understanding the workflow, users, constraints, and purpose of the requested feature."
+        },
+        {
+          "title": "Architecture proportional to the product",
+          "description": "We avoid both fragile shortcuts and unnecessary complexity, selecting a foundation appropriate to the current stage and expected growth."
+        },
+        {
+          "title": "Visible delivery",
+          "description": "Work is divided into reviewable increments so decisions, risks, and progress remain visible."
+        },
+        {
+          "title": "Quality built into the workflow",
+          "description": "Review, testing, accessibility, performance, and operational readiness are treated as delivery activities rather than final-stage cleanup."
+        },
+        {
+          "title": "Clear ownership and communication",
+          "description": "Scope, decisions, dependencies, and blockers should remain explicit throughout the engagement."
+        },
+        {
+          "title": "Maintainability after launch",
+          "description": "Code structure, documentation, environments, and deployment workflows should support the team that will continue operating the product."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Engagement models",
+      "heading": "Engagement shaped around the stage of your product.",
+      "items": [
+        {
+          "title": "Discovery and technical definition",
+          "description": "Suitable when the problem is understood but scope, architecture, or delivery priorities still need clarification."
+        },
+        {
+          "title": "Focused product build",
+          "description": "Suitable for a defined product, module, platform, or application that needs design and engineering delivery."
+        },
+        {
+          "title": "Embedded product engineering",
+          "description": "Suitable for teams that need additional product, frontend, backend, mobile, AI, or infrastructure capacity integrated into their existing workflow."
+        },
+        {
+          "title": "Product evolution and modernization",
+          "description": "Suitable for existing systems that need performance improvement, interface renewal, architecture changes, new capabilities, or safer deployment practices."
+        }
+      ],
+      "note": "The right model depends on the product stage, existing team, technical constraints, and clarity of the current scope. Discovery is used to determine an appropriate path rather than applying the same delivery model to every project."
+    },
+    "journey": {
+      "eyebrow": "Connected delivery",
+      "heading": "One delivery journey, not disconnected service handoffs.",
+      "description": "Product strategy defines the right problem and scope. Experience design turns that scope into understandable workflows. Engineering implements the product and its integrations. Cloud and quality practices prepare it for reliable operation and continued evolution.",
+      "stages": ["Define", "Design", "Build", "Operate and evolve"],
+      "cta": "Explore our delivery process"
+    },
+    "finalCta": {
+      "heading": "Bring us the product challenge, not a preselected solution.",
+      "description": "Share the goals, users, constraints, current system, and delivery stage. We’ll use the discovery process to clarify the most appropriate technical path.",
+      "cta": "Start Discovery"
+    }
+  },
   "processSteps": {
     "eyebrow": "How we deliver",
     "title": "Our Six-Step Process",

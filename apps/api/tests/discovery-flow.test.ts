@@ -1,8 +1,9 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { PrismaPg } from '@prisma/adapter-pg';
 import { execSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../src/generated/prisma/client.js';
 import { buildApp } from '../src/app.js';
 import type { App } from '../src/app.js';
 import { createCalWebhookSignature } from '../src/modules/booking/cal-signature.js';
@@ -15,7 +16,9 @@ const testDbUrl =
 
 describe('Discovery + Booking HTTP flow', () => {
   let app: App;
-  const prisma = new PrismaClient();
+  const prisma = new PrismaClient({
+    adapter: new PrismaPg({ connectionString: testDbUrl }),
+  });
   const webhookSecret = 'test-cal-secret';
 
   beforeAll(async () => {

@@ -1,2 +1,2 @@
-export * from './discovery';
-export * from './api';
+export * from './discovery.js';
+export * from './api.js';

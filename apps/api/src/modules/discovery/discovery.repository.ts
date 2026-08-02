@@ -1,4 +1,4 @@
-import type { Lead, PrismaClient } from '@prisma/client';
+import type { Lead, PrismaClient } from '../../generated/prisma/client.js';
 
 export type CreateLeadInput = {
   name: string;

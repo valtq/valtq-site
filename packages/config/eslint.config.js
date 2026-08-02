@@ -18,6 +18,13 @@ export default tseslint.config(
     },
   },
   {
-    ignores: ['node_modules', 'dist', 'build', '.next', '*.config.*'],
+    ignores: [
+      'node_modules',
+      'dist',
+      'build',
+      '.next',
+      '*.config.*',
+      '**/src/generated/**',
+    ],
   },
 );

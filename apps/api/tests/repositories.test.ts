@@ -1,5 +1,6 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import { PrismaClient } from '../src/generated/prisma/client.js';
 import { execSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,7 +15,9 @@ const testDbUrl =
   'postgresql://postgres:postgres@localhost:5432/valtq_test?schema=public';
 
 describe('Repositories', () => {
-  const prisma = new PrismaClient();
+  const prisma = new PrismaClient({
+    adapter: new PrismaPg({ connectionString: testDbUrl }),
+  });
   const leadRepository = new LeadRepository(prisma);
   const bookingRepository = new BookingRepository(prisma);
   const notificationRepository = new NotificationLogRepository(prisma);

@@ -1,7 +1,8 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
 import fp from 'fastify-plugin';
 import type { FastifyPluginAsync } from 'fastify';
 import { env } from '../config/env.js';
+import { PrismaClient } from '../generated/prisma/client.js';
 
 declare module 'fastify' {
   interface FastifyInstance {
@@ -9,15 +10,23 @@ declare module 'fastify' {
   }
 }
 
-/**
- * Prisma client lifecycle plugin.
- * Decorates `app.prisma` and disconnects cleanly on shutdown.
- * SQLite is configured via DATABASE_URL in prisma/schema.prisma.
- */
-const prismaPlugin: FastifyPluginAsync = async (app) => {
-  const prisma = new PrismaClient({
+function createPrismaClient(): PrismaClient {
+  const connectionString = env.DATABASE_URL;
+  const isLocal = /localhost|127\.0\.0\.1|::1/.test(connectionString);
+
+  const adapter = new PrismaPg({
+    connectionString,
+    ...(isLocal ? {} : { ssl: { rejectUnauthorized: false } }),
+  });
+
+  return new PrismaClient({
+    adapter,
     log: env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
   });
+}
+
+const prismaPlugin: FastifyPluginAsync = async (app) => {
+  const prisma = createPrismaClient();
 
   await prisma.$connect();
 

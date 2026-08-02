@@ -47,9 +47,20 @@
       "description": "We are a boutique software engineering agency — small by design, relentless about quality."
     },
     "faq": {
-      "tag": "FAQ",
-      "title": "Answers to Common Questions",
-      "description": "Everything you need to know before working with us."
+      "tag": "Frequently asked questions",
+      "title": "Clear answers before your product journey begins.",
+      "description": "Learn how ValtQ approaches discovery, product design, software engineering, delivery, collaboration, ownership, and post-launch support.",
+      "supportingLine": "Can’t find what you need? Contact us and share the context of your question.",
+      "primaryCta": "Browse questions",
+      "secondaryCta": "Contact us",
+      "visual": {
+        "questionLabel": "Question",
+        "categories": ["Discovery", "Delivery", "Engineering", "Support"],
+        "answerLabel": "Answer",
+        "decisionLabel": "Clear decision",
+        "captionStart": "Questions",
+        "captionEnd": "Clear decisions"
+      }
     },
     "work": {
       "tag": "Our Work",
@@ -892,40 +903,160 @@
     }
   },
   "faq": {
+    "sectionTitle": "Questions and answers",
+    "searchLabel": "Search questions",
+    "searchPlaceholder": "Search questions, services, or delivery topics...",
+    "clearSearch": "Clear search",
+    "resultsSummary": "Showing {count} of {total}",
+    "noResults": "No matching questions found. Try another phrase or contact us.",
+    "noResultsCta": "Contact us",
+    "categoryLabel": "Browse by category",
+    "allQuestions": "All questions",
+    "categories": [
+      {
+        "id": "starting",
+        "label": "Starting a project"
+      },
+      {
+        "id": "services",
+        "label": "Services and technology"
+      },
+      {
+        "id": "process",
+        "label": "Process and collaboration"
+      },
+      {
+        "id": "delivery",
+        "label": "Delivery, quality, and launch"
+      },
+      {
+        "id": "ownership",
+        "label": "Ownership, security, and support"
+      }
+    ],
     "items": [
       {
-        "question": "How long does a typical project take?",
-        "answer": "Timelines vary by scope. An MVP can take 6-8 weeks. A full-scale product typically runs 3-6 months. We provide detailed estimates after our discovery phase."
+        "id": "how-does-a-project-begin",
+        "category": "starting",
+        "question": "How does a project with ValtQ begin?",
+        "answer": "Most engagements begin with Discovery. We review the product goal, users, current workflow, existing systems, constraints, open questions, and delivery priorities. The purpose is to clarify the problem and define an appropriate scope before major design or engineering decisions are made."
       },
       {
-        "question": "Do you work with startups or only enterprises?",
-        "answer": "Both. We've built MVPs for seed-stage startups and scaled platforms for enterprise clients. Our process adapts to your stage and budget."
+        "id": "do-i-need-a-complete-specification",
+        "category": "starting",
+        "question": "Do I need a complete specification before contacting ValtQ?",
+        "answer": "No. You can begin with a problem, an opportunity, an existing system, or an initial product idea. Discovery is used to organize the available information, identify missing decisions, and determine what should be defined before delivery begins."
       },
       {
-        "question": "What technologies do you use?",
-        "answer": "We're technology-agnostic but opinionated. Our core stack includes React, Next.js, TypeScript, Node.js, Python, and cloud platforms (AWS, GCP, Azure). We choose the right tool for the job."
+        "id": "what-information-should-i-share",
+        "category": "starting",
+        "question": "What information should I share before Discovery?",
+        "answer": "Useful context includes the business objective, target users, current workflow, existing product or systems, required integrations, known constraints, important deadlines, available stakeholders, and the decisions you need help making."
       },
       {
-        "question": "How do you handle project communication?",
-        "answer": "Every project gets a dedicated Slack/Teams channel, weekly sync calls, and access to our project dashboard. You'll never wonder what's happening."
+        "id": "what-products-does-valtq-build",
+        "category": "services",
+        "question": "What types of products does ValtQ build?",
+        "answer": "ValtQ supports web applications, customer and internal platforms, operational dashboards, mobile products, AI-enabled workflows, backend systems, API integrations, and cloud delivery. The exact scope depends on the product stage and requirements."
       },
       {
-        "question": "What happens after launch?",
-        "answer": "We offer ongoing support and maintenance plans. Most clients transition to a monthly retainer for continuous improvements, monitoring, and feature development."
+        "id": "which-technologies-do-you-use",
+        "category": "services",
+        "question": "Which technologies do you use?",
+        "answer": "Technology choices are based on the product requirements, current system, team capacity, security needs, integration boundaries, and expected evolution. The website references capabilities such as React, Next.js, TypeScript, React Native, Node.js, Python, PostgreSQL, document databases, Docker, and cloud platforms, but no single stack is applied to every project."
       },
       {
-        "question": "Do you provide design services?",
-        "answer": "Yes. Our team includes UI/UX designers who work alongside engineers. We design interfaces that are both beautiful and technically feasible."
+        "id": "can-valtq-work-with-an-existing-product",
+        "category": "services",
+        "question": "Can ValtQ work with an existing product or codebase?",
+        "answer": "Yes. Existing-product work may include assessment, feature delivery, performance improvement, interface modernization, architecture changes, integration work, technical-debt review, deployment improvements, or staged migration. The first step is understanding the current system and its constraints."
       },
       {
-        "question": "Can you work with our existing team?",
-        "answer": "Absolutely. We frequently augment internal teams with senior engineers. We adapt to your processes, tools, and coding standards."
+        "id": "can-you-integrate-ai-into-an-existing-product",
+        "category": "services",
+        "question": "Can you integrate AI into an existing product?",
+        "answer": "AI can be integrated when it supports a defined workflow, such as knowledge search, document extraction, assisted responses, classification, recommendations, or automation. The implementation should also address data access, permissions, validation, monitoring, fallback behavior, and human review where required."
       },
       {
-        "question": "What's your pricing model?",
-        "answer": "We offer fixed-price projects, monthly retainers, and dedicated team arrangements. Pricing depends on scope, team size, and engagement duration. Contact us to discuss the right model for your goals."
+        "id": "how-is-the-delivery-process-structured",
+        "category": "process",
+        "question": "How is the delivery process structured?",
+        "answer": "The ValtQ process connects Discovery and Strategy, Architecture and Experience Design, Iterative Development, Quality Assurance, Deployment and Launch, and Support and Product Evolution. The emphasis of each phase is adapted to the product rather than applied as a rigid template."
+      },
+      {
+        "id": "how-will-we-review-progress",
+        "category": "process",
+        "question": "How will we review progress?",
+        "answer": "Progress should be visible through reviewable product increments, current priorities, documented decisions, open questions, known risks, and agreed review points. The specific tools, demonstrations, meetings, and reporting cadence are selected according to the engagement."
+      },
+      {
+        "id": "how-are-changes-in-scope-handled",
+        "category": "process",
+        "question": "How are changes in scope handled?",
+        "answer": "New information and changing priorities are expected during product delivery. Their effect on scope, architecture, dependencies, quality, and release plans should be reviewed explicitly before they are added to the active delivery work."
+      },
+      {
+        "id": "can-valtq-work-with-our-internal-team",
+        "category": "process",
+        "question": "Can ValtQ work with our internal team?",
+        "answer": "Yes. An engagement can be structured around a focused product build or integrated engineering support. Responsibilities, review practices, technical standards, access, environments, and decision ownership should be clarified before implementation begins."
+      },
+      {
+        "id": "how-is-quality-handled-during-delivery",
+        "category": "delivery",
+        "question": "How is quality handled during delivery?",
+        "answer": "Quality is addressed throughout delivery through acceptance criteria, code review, automated checks where appropriate, functional and integration testing, responsive verification, accessibility review, performance considerations, error handling, and release-readiness checks."
+      },
+      {
+        "id": "how-long-does-a-project-take",
+        "category": "delivery",
+        "question": "How long does a project take?",
+        "answer": "Duration depends on scope clarity, product complexity, existing systems, integrations, review availability, quality requirements, and release constraints. Discovery is used to produce a more informed delivery plan rather than providing a generic timeline before the product is understood."
+      },
+      {
+        "id": "what-happens-before-production-launch",
+        "category": "delivery",
+        "question": "What happens before production launch?",
+        "answer": "Launch preparation may include environment and configuration review, deployment workflow confirmation, data or migration preparation, integration verification, monitoring and logging, rollback considerations, release checks, production deployment, and post-release validation."
+      },
+      {
+        "id": "do-you-provide-support-after-launch",
+        "category": "delivery",
+        "question": "Do you provide support after launch?",
+        "answer": "Post-launch work can include production monitoring, issue review, maintenance, performance and reliability improvements, dependency updates, technical-debt review, new-feature discovery, and planning future releases. The scope is agreed according to the product’s operational needs."
+      },
+      {
+        "id": "who-owns-the-source-code",
+        "category": "ownership",
+        "question": "Who owns the source code and project deliverables?",
+        "answer": "Ownership and licensing terms should be defined explicitly in the engagement agreement. The project should also clarify access to repositories, environments, design files, documentation, third-party services, and handover material."
+      },
+      {
+        "id": "how-do-you-approach-security",
+        "category": "ownership",
+        "question": "How do you approach security?",
+        "answer": "Security considerations depend on the product and its risks. Delivery may include secure authentication, role-based access, data validation, secrets and configuration management, dependency review, protected integrations, audit visibility, and security-minded development practices. Formal compliance or penetration-testing claims should only be made when explicitly included in the engagement."
+      },
+      {
+        "id": "can-you-sign-a-confidentiality-agreement",
+        "category": "ownership",
+        "question": "Can you sign a confidentiality agreement?",
+        "answer": "Confidentiality requirements should be discussed before sensitive product, business, user, or technical information is exchanged. The specific agreement and legal terms are reviewed as part of the engagement setup."
+      },
+      {
+        "id": "how-do-we-start",
+        "category": "ownership",
+        "question": "How do we start?",
+        "answer": "Start the Discovery flow and share the product goal, current stage, users, constraints, existing systems, and open questions. That context is used to determine the most appropriate next step."
       }
-    ]
+    ],
+    "support": {
+      "eyebrow": "Still need help?",
+      "heading": "Share the context behind your question.",
+      "description": "Send us the product goal, current situation, or decision you are trying to make, and we’ll direct the conversation to the right next step.",
+      "contactCta": "Contact us",
+      "discoveryCta": "Start Discovery"
+    }
   },
   "work": {
     "viewCaseStudy": "View Case Study",

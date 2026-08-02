@@ -68,9 +68,25 @@
       "description": "A selection of our engineering work — each project engineered for performance, scale, and measurable impact."
     },
     "contact": {
-      "tag": "Contact Us",
-      "title": "Let's Build Something Together",
-      "description": "Have a project in mind? Tell us about your goals and we'll get back to you within 24 hours."
+      "tag": "Contact ValtQ",
+      "title": "Start with the product challenge, goals, and context.",
+      "description": "Tell us what you are building, improving, or trying to understand. Share the current product stage, users, constraints, existing systems, and the decisions you need help making.",
+      "supportingLine": "For early product questions, use Discovery. For a specific inquiry, send the details through the form below.",
+      "primaryCta": "Start Discovery",
+      "secondaryCta": "Go to the contact form",
+      "visual": {
+        "nodeLabel": "Project context",
+        "inputLabel": "Conversation input",
+        "inputs": [
+          { "label": "Product goal" },
+          { "label": "Current stage" },
+          { "label": "Constraints" },
+          { "label": "Existing system" },
+          { "label": "Next decision" }
+        ],
+        "captionStart": "Project context",
+        "captionEnd": "Product conversation"
+      }
     },
     "careers": {
       "tag": "Careers",
@@ -1087,16 +1103,144 @@
     "snapchat": "Snapchat"
   },
   "whatsapp": {
-    "floatingLabel": "Chat with us",
-    "chatCta": "Start a conversation",
-    "chatDescription": "Prefer chatting? Message us on WhatsApp and we'll get back to you within minutes."
+    "floatingLabel": "Chat with us"
   },
   "contactPage": {
-    "title": "Let's Build Something Together",
-    "description": "Tell us about your project and we'll respond within 24 hours.",
-    "whatsappTitle": "Chat on WhatsApp",
-    "socialTitle": "Follow us",
-    "socialDescription": "Stay up to date with our latest work and engineering insights."
+    "eyebrow": "Project inquiry",
+    "title": "Share the context that will shape the discussion.",
+    "description": "The more useful project context you provide, the more prepared we are for the conversation.",
+    "formLabel": "Project inquiry form",
+    "requiredLabel": "Required",
+    "optionalLabel": "Optional",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "Work or contact email",
+    "emailPlaceholder": "you@company.com",
+    "companyLabel": "Company or organization",
+    "companyPlaceholder": "Acme Inc.",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "+966 5X XXX XXXX",
+    "channelLabel": "Preferred contact channel",
+    "channelPlaceholder": "Select a channel",
+    "serviceLabel": "Service area",
+    "servicePlaceholder": "Select a service area",
+    "stageLabel": "Current product stage",
+    "stagePlaceholder": "Select the current product stage",
+    "urlLabel": "Existing product URL",
+    "urlPlaceholder": "https://example.com",
+    "timingLabel": "Target timing",
+    "timingPlaceholder": "Select target timing",
+    "budgetLabel": "Budget range",
+    "budgetPlaceholder": "Select a budget range",
+    "summaryLabel": "Project or inquiry summary",
+    "summaryPlaceholder": "A short summary of the product or decision you want to discuss.",
+    "messageLabel": "Message / project context",
+    "messagePlaceholder": "Describe the product goal, current stage, users, existing systems, constraints, and any open decisions.",
+    "serviceOptions": [
+      "Product discovery and planning",
+      "Web application",
+      "Mobile application",
+      "AI-enabled product or workflow",
+      "Cloud, backend, or infrastructure",
+      "Existing product improvement",
+      "Other"
+    ],
+    "stageOptions": [
+      "Initial idea",
+      "Defining the scope",
+      "Designing the product",
+      "Building an initial version",
+      "Existing product in production",
+      "Modernizing or extending an existing system"
+    ],
+    "channelOptions": ["Email", "WhatsApp", "Phone", "Any channel"],
+    "timingOptions": ["As soon as possible", "Within 1–3 months", "Within 3–6 months", "Flexible / exploring"],
+    "budgetOptions": ["Under $10k", "$10k – $25k", "$25k – $50k", "$50k+", "Not yet determined"],
+    "nameRequiredError": "Please enter your full name.",
+    "emailRequiredError": "Please enter your email address so we can follow up.",
+    "emailInvalidError": "Please enter a valid email address.",
+    "urlInvalidError": "Please enter a valid URL starting with http:// or https://.",
+    "summaryRequiredError": "Please provide a short summary of your inquiry.",
+    "summaryLengthError": "Please keep the summary under 200 characters.",
+    "messageRequiredError": "Please describe your project context and goals.",
+    "messageLengthError": "Please provide at least 10 characters so we can understand the context.",
+    "privacyNote": "We use the information you provide only to review and respond to your inquiry.",
+    "submitLabel": "Send inquiry",
+    "submittingLabel": "Sending…",
+    "errorSummary": "Please review the highlighted fields and correct them before sending.",
+    "successTitle": "Inquiry received",
+    "successMessage": "Your inquiry has been received. Our team will review the context and follow up through the contact details you provided.",
+    "errorTitle": "We couldn't send your inquiry",
+    "errorMessage": "Your information is still available in the form. Please try again, or use one of the direct contact options below.",
+    "channels": {
+      "eyebrow": "Direct contact",
+      "title": "Prefer a direct conversation?",
+      "description": "If you prefer to reach us directly, use the channels below.",
+      "whatsappTitle": "Continue on WhatsApp",
+      "whatsappDescription": "Use WhatsApp for a direct conversation when the configured business number is available.",
+      "whatsappCta": "Open WhatsApp",
+      "whatsappNumberLabel": "Business number",
+      "socialTitle": "Connect with ValtQ",
+      "socialDescription": "Follow our work and engineering notes."
+    },
+    "context": {
+      "eyebrow": "Useful project context",
+      "title": "The right context helps us understand the challenge before discussing a solution.",
+      "description": "Including these details helps the conversation start from a clear point.",
+      "items": [
+        {
+          "title": "Product goal",
+          "description": "What the product or improvement should enable for the business or users."
+        },
+        {
+          "title": "Current stage",
+          "description": "Whether the work is an initial idea, a defined scope, an active build, or an existing production system."
+        },
+        {
+          "title": "Users and workflows",
+          "description": "Who uses the product and which tasks or decisions it supports."
+        },
+        {
+          "title": "Existing systems",
+          "description": "Current products, codebases, APIs, platforms, data, or service integrations."
+        },
+        {
+          "title": "Constraints",
+          "description": "Technical, operational, security, timing, team, or integration constraints."
+        },
+        {
+          "title": "Open decisions",
+          "description": "The questions or trade-offs you need support evaluating."
+        }
+      ]
+    },
+    "next": {
+      "eyebrow": "After you submit",
+      "title": "The next step depends on the clarity and stage of the inquiry.",
+      "description": "No two inquiries are identical, so the process adapts to the context you share.",
+      "items": [
+        {
+          "title": "Context review",
+          "description": "The team reviews the goal, scope, constraints, and contact information."
+        },
+        {
+          "title": "Clarification",
+          "description": "Additional questions may be requested when important details are missing."
+        },
+        {
+          "title": "Recommended next step",
+          "description": "The conversation may continue through Discovery, a focused technical discussion, or another appropriate route."
+        },
+        {
+          "title": "Scope before delivery",
+          "description": "Implementation does not begin until responsibilities, scope, assumptions, and the delivery approach are understood."
+        }
+      ]
+    },
+    "faqLink": {
+      "text": "Have questions about process, services, ownership, or support?",
+      "cta": "Explore the FAQ"
+    }
   },
   "loading": "Loading...",
   "footer": {

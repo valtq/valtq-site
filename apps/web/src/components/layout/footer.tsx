@@ -5,10 +5,11 @@ import { useTranslations } from '@/i18n/types';
 import type { Locale } from '@/i18n/config';
 import { Container } from './container';
 import { Separator } from '@/components/ui/separator';
+import { SocialLinks } from './social-links';
 
 const companyLinks = ['about', 'careers', 'blog', 'contact'] as const;
 const serviceLinks = ['web', 'mobile', 'ai', 'cloud'] as const;
-const resourceLinks = ['work', 'process', 'pricing', 'faq'] as const;
+const resourceLinks = ['work', 'process', 'faq'] as const;
 const legalLinks = ['terms', 'privacy', 'cookies'] as const;
 
 const serviceHrefs: Record<string, string> = {
@@ -24,9 +25,12 @@ export function Footer({ locale }: { locale: Locale }) {
   return (
     <footer className="border-t border-border bg-surface-container-low">
       <Container>
-        <div className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+        <div className="grid gap-8 py-12 sm:grid-cols-2 sm:py-14 lg:grid-cols-4 lg:gap-12">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href={`/${locale}`} className="inline-block">
+            <Link
+              href={`/${locale}`}
+              className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+            >
               <span className="font-display text-lg font-bold tracking-tight text-on-surface">
                 ValtQ
               </span>
@@ -34,6 +38,12 @@ export function Footer({ locale }: { locale: Locale }) {
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-on-surface-variant">
               {dict.footer.description}
             </p>
+            <div className="mt-5">
+              <p className="text-sm font-semibold uppercase tracking-wide text-on-surface">
+                {dict.social.followUs}
+              </p>
+              <SocialLinks className="mt-3" />
+            </div>
           </div>
 
           <div>

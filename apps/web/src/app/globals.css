@@ -179,6 +179,12 @@ body {
   font-family: var(--font-sans);
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 [dir="rtl"] body,
 [dir="rtl"] {
   font-family: var(--font-arabic);
@@ -331,4 +337,3 @@ html.theme-transition *::after {
 .hover\:link-underline:hover::after {
   transform: scaleX(1);
 }
-

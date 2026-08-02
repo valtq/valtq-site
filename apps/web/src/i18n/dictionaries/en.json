@@ -3,15 +3,14 @@
     "title": "ValtQ — Premium Software Development",
     "description": "Building web, mobile, AI-integrated, and backend/cloud products for startups and businesses."
   },
-    "nav": {
+  "nav": {
     "home": "Home",
     "work": "Work",
     "services": "Services",
     "process": "Process",
-    "pricing": "Pricing",
     "about": "About",
     "faq": "FAQ",
-    "contact": "Get a Quote",
+    "contact": "Contact us",
     "discovery": "Start Discovery",
     "menu": "Menu",
     "close": "Close menu",
@@ -40,11 +39,6 @@
       "tag": "How We Work",
       "title": "A Process Built for Clarity",
       "description": "Every project follows our battle-tested methodology — transparent, structured, and designed to eliminate risk at every stage."
-    },
-    "pricing": {
-      "tag": "Transparent Pricing",
-      "title": "Investment Tiers That Scale With You",
-      "description": "No hidden fees. No scope creep surprises. Choose the engagement model that fits your stage."
     },
     "about": {
       "tag": "About ValtQ",
@@ -99,24 +93,27 @@
     "experience": { "value": "8+", "label": "Years of Experience" }
   },
   "homeServices": {
+    "eyebrow": "Capabilities",
     "title": "What We Deliver",
     "description": "Full-spectrum software engineering, tailored to your business goals.",
+    "explore": "Explore our services",
+    "viewService": "View capability",
     "items": [
       {
         "title": "Web Applications",
-        "description": "Modern, responsive web apps built with React, Next.js, and TypeScript. Optimized for performance and accessibility."
+        "description": "Fast, responsive web applications engineered with React, Next.js, and TypeScript. Built for performance, accessibility, and long-term scalability."
       },
       {
         "title": "Mobile Applications",
-        "description": "Native and cross-platform mobile apps using React Native and Flutter. Seamless experiences on every device."
+        "description": "High-quality mobile experiences on iOS and Android. Built with React Native and Flutter to launch faster and reach more users."
       },
       {
         "title": "AI & Machine Learning",
-        "description": "Intelligent features powered by LLMs, computer vision, and predictive models — integrated into your product."
+        "description": "Practical AI that drives measurable results. LLMs, computer vision, and predictive models engineered directly into your product."
       },
       {
         "title": "Cloud & Infrastructure",
-        "description": "Scalable cloud architecture on AWS, GCP, and Azure. CI/CD pipelines, monitoring, and DevOps as a service."
+        "description": "Resilient, cost-efficient cloud architecture on AWS, GCP, and Azure. Automated pipelines and monitoring that keep your product reliable."
       }
     ]
   },
@@ -124,22 +121,42 @@
     "web": {
       "title": "Web Applications",
       "description": "From single-page apps to complex dashboards, we build performant web applications using modern frameworks like React, Next.js, and Vue. Every project is responsive, accessible, and engineered for speed.",
-      "features": ["React & Next.js", "TypeScript", "Performance Optimization", "SEO-Ready Architecture"]
+      "features": [
+        "React & Next.js",
+        "TypeScript",
+        "Performance Optimization",
+        "SEO-Ready Architecture"
+      ]
     },
     "mobile": {
       "title": "Mobile Applications",
       "description": "Native-quality mobile experiences using React Native and Flutter. We handle everything from UI/UX design to App Store submission and ongoing maintenance.",
-      "features": ["React Native & Flutter", "iOS & Android", "Offline-First Design", "App Store Optimization"]
+      "features": [
+        "React Native & Flutter",
+        "iOS & Android",
+        "Offline-First Design",
+        "App Store Optimization"
+      ]
     },
     "ai": {
       "title": "AI & Machine Learning",
       "description": "Embed intelligence into your products with custom AI solutions. From LLM integration and RAG systems to computer vision and predictive analytics.",
-      "features": ["LLM & RAG Integration", "Computer Vision", "Predictive Analytics", "MLOps & Deployment"]
+      "features": [
+        "LLM & RAG Integration",
+        "Computer Vision",
+        "Predictive Analytics",
+        "MLOps & Deployment"
+      ]
     },
     "cloud": {
       "title": "Cloud & Backend",
       "description": "Scalable, secure backend systems and cloud infrastructure. We design microservices, build APIs, and manage deployment pipelines across AWS, GCP, and Azure.",
-      "features": ["Microservices Architecture", "REST & GraphQL APIs", "AWS / GCP / Azure", "CI/CD & DevOps"]
+      "features": [
+        "Microservices Architecture",
+        "REST & GraphQL APIs",
+        "AWS / GCP / Azure",
+        "CI/CD & DevOps"
+      ]
     }
   },
   "processSteps": {
@@ -179,83 +196,76 @@
       }
     ]
   },
-  "pricing": {
-    "title": "Choose Your Plan",
-    "description": "Flexible engagement models designed for different stages of growth.",
-    "popular": "Most Popular",
-    "tiers": [
-      {
-        "name": "Starter",
-        "price": "$5K",
-        "period": "/project",
-        "description": "Perfect for MVPs and focused feature builds.",
-        "features": [
-          "Up to 8 weeks of development",
-          "1-2 developers assigned",
-          "Weekly progress demos",
-          "Source code ownership",
-          "30-day post-launch support"
-        ],
-        "cta": "Start a Project",
-        "popular": false
-      },
-      {
-        "name": "Growth",
-        "price": "$15K",
-        "period": "/month",
-        "description": "For scaling products and dedicated teams.",
-        "features": [
-          "Dedicated 2-4 person team",
-          "Agile sprints with bi-weekly demos",
-          "Full CI/CD pipeline setup",
-          "Architecture & code reviews",
-          "Performance monitoring",
-          "Priority support channel"
-        ],
-        "cta": "Scale Your Team",
-        "popular": true
-      },
-      {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "",
-        "description": "Complex, mission-critical product development.",
-        "features": [
-          "Custom team composition",
-          "Dedicated project manager",
-          "SLA-backed delivery guarantees",
-          "Security & compliance audits",
-          "24/7 monitoring & support",
-          "Quarterly business reviews"
-        ],
-        "cta": "Contact Us",
-        "popular": false
-      }
-    ]
-  },
   "about": {
-    "mission": {
-      "title": "Our Mission",
-      "description": "To be the engineering partner that startups and enterprises trust with their most critical digital products. We don't just write code — we engineer solutions that scale."
+    "hero": {
+      "eyebrow": "About ValtQ",
+      "title": "We bring clarity to complex digital product challenges.",
+      "description": "ValtQ combines product strategy, experience design, and software engineering to help teams move from opportunity to reliable digital delivery.",
+      "visualLabel": "One connected delivery system",
+      "visualItems": ["Product Strategy", "Experience Design", "Software Engineering"]
     },
-    "values": {
-      "title": "Our Values",
+    "whoWeAre": {
+      "title": "A product partner from discovery through delivery.",
+      "paragraphs": [
+        "We work with teams to define the right problem, shape an intuitive product experience, and build the technical foundation required for long-term growth.",
+        "Our process keeps strategy, design, and engineering connected so decisions remain clear and delivery stays focused."
+      ],
+      "panelItems": [
+        "Strategy that frames the opportunity",
+        "Experiences shaped around real needs",
+        "Engineering built to evolve"
+      ]
+    },
+    "principles": {
+      "eyebrow": "How we work",
+      "title": "Principles that keep the work focused.",
       "items": [
-        { "title": "Engineering Excellence", "description": "We hold ourselves to the highest technical standards. Every line of code, every architecture decision, every deployment — engineered with care." },
-        { "title": "Radical Transparency", "description": "No black boxes. We share our process, our progress, and our challenges openly. You always know where your project stands." },
-        { "title": "Owner Mindset", "description": "We treat your product as if it were our own. That means making recommendations that serve your long-term success, not just the current sprint." },
-        { "title": "Relentless Delivery", "description": "We ship. Working software, on time, at quality. Our process is designed to eliminate ambiguity and keep momentum." }
+        {
+          "title": "Clarity before complexity",
+          "description": "We define the problem, priorities, and success criteria before committing to a solution."
+        },
+        {
+          "title": "Design with purpose",
+          "description": "Every interaction should support a real user need and a measurable product objective."
+        },
+        {
+          "title": "Engineering for longevity",
+          "description": "We build maintainable foundations that can evolve with the product and the business."
+        },
+        {
+          "title": "Collaboration without ambiguity",
+          "description": "Teams stay aligned through visible progress, clear ownership, and direct communication."
+        }
       ]
     },
-    "team": {
-      "title": "The Team",
-      "description": "A lean team of senior engineers, architects, and designers — each with 8+ years of production experience.",
-      "members": [
-        { "name": "Ahmad", "role": "Lead Engineer" },
-        { "name": "Sara", "role": "Senior Architect" },
-        { "name": "Omar", "role": "Senior Engineer" },
-        { "name": "Lina", "role": "Lead Designer" }
+    "capabilities": {
+      "eyebrow": "Connected capabilities",
+      "title": "One team across the product journey.",
+      "description": "The strongest products emerge when strategy, experience, engineering, and infrastructure inform one another.",
+      "items": [
+        {
+          "title": "Product Strategy",
+          "description": "Frame the opportunity and decide what matters first."
+        },
+        {
+          "title": "Experience Design",
+          "description": "Turn product intent into clear, useful experiences."
+        },
+        {
+          "title": "Software Engineering",
+          "description": "Build reliable software around the product’s real needs."
+        },
+        {
+          "title": "Cloud & Infrastructure",
+          "description": "Create the foundation for dependable, scalable delivery."
+        }
       ]
+    },
+    "process": {
+      "eyebrow": "Our process",
+      "title": "A clear process keeps every discipline aligned.",
+      "description": "Shared context, visible decisions, and structured delivery help teams move forward with confidence.",
+      "cta": "Explore our process"
     }
   },
   "faq": {
@@ -290,7 +300,7 @@
       },
       {
         "question": "What's your pricing model?",
-        "answer": "We offer fixed-price projects, monthly retainers, and dedicated team arrangements. Pricing depends on scope, team size, and engagement duration. Contact us for a custom quote."
+        "answer": "We offer fixed-price projects, monthly retainers, and dedicated team arrangements. Pricing depends on scope, team size, and engagement duration. Contact us to discuss the right model for your goals."
       }
     ]
   },
@@ -304,11 +314,39 @@
     "startProject": "Start a similar project",
     "startProjectDescription": "Have a similar challenge? Let's discuss how we can engineer the right solution for you."
   },
-  "cta": {
-    "title": "Ready to Build Something Exceptional?",
-    "description": "Let's discuss your project. No commitment, no sales pitch — just a straightforward conversation about your goals.",
-    "primaryCta": "Get a Free Quote",
-    "secondaryCta": "View Our Process"
+  "social": {
+    "followUs": "Follow us",
+    "linkedin": "ValtQ on LinkedIn",
+    "facebook": "ValtQ on Facebook",
+    "instagram": "ValtQ on Instagram",
+    "snapchat": "ValtQ on Snapchat",
+    "whatsapp": "ValtQ on WhatsApp"
+  },
+  "whatsapp": {
+    "floatingLabel": "Chat with us on WhatsApp",
+    "chatTitle": "Chat on WhatsApp",
+    "chatDescription": "The fastest way to get answers about your project. Message our team directly.",
+    "chatCta": "Start a conversation"
+  },
+  "contactPage": {
+    "title": "Prefer to talk directly?",
+    "description": "Reach us on WhatsApp for an immediate conversation, or follow ValtQ on social media for product updates and engineering insights.",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDescription": "The fastest way to get answers. Message our team directly and start the conversation.",
+    "socialTitle": "Follow us",
+    "socialDescription": "Product updates, engineering notes, and behind-the-scenes from the ValtQ team."
+  },
+  "loading": "Loading…",
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "tryAgain": "Try again",
+    "backHome": "Back to home"
   },
   "footer": {
     "description": "Premium software engineering for startups and enterprises.",
@@ -327,7 +365,6 @@
     "home": "Home",
     "work": "Work",
     "process": "Process",
-    "pricing": "Pricing",
     "faq": "FAQ"
   }
 }

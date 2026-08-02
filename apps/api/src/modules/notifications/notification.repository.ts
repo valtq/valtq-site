@@ -1,4 +1,4 @@
-import type { PrismaClient, NotificationLog } from '@prisma/client';
+import type { NotificationLog, PrismaClient } from '../../generated/prisma/client.js';
 
 export type CreateNotificationLogInput = {
   leadId: string;

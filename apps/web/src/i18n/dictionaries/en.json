@@ -28,6 +28,7 @@
       "secondaryCta": "Explore our work",
       "capabilitiesLabel": "What we do",
       "capabilities": ["Product Strategy", "Experience Design", "Software Engineering"],
+      "visualCapabilities": ["Product Strategy", "Experience Design", "Software Engineering", "Cloud & Infrastructure"],
       "imageAlt": "ValtQ team collaborating in a modern workspace"
     },
     "services": {
@@ -314,40 +315,37 @@
     "startProject": "Start a similar project",
     "startProjectDescription": "Have a similar challenge? Let's discuss how we can engineer the right solution for you."
   },
-  "social": {
-    "followUs": "Follow us",
-    "linkedin": "ValtQ on LinkedIn",
-    "facebook": "ValtQ on Facebook",
-    "instagram": "ValtQ on Instagram",
-    "snapchat": "ValtQ on Snapchat",
-    "whatsapp": "ValtQ on WhatsApp"
-  },
-  "whatsapp": {
-    "floatingLabel": "Chat with us on WhatsApp",
-    "chatTitle": "Chat on WhatsApp",
-    "chatDescription": "The fastest way to get answers about your project. Message our team directly.",
-    "chatCta": "Start a conversation"
-  },
-  "contactPage": {
-    "title": "Prefer to talk directly?",
-    "description": "Reach us on WhatsApp for an immediate conversation, or follow ValtQ on social media for product updates and engineering insights.",
-    "whatsappTitle": "WhatsApp",
-    "whatsappDescription": "The fastest way to get answers. Message our team directly and start the conversation.",
-    "socialTitle": "Follow us",
-    "socialDescription": "Product updates, engineering notes, and behind-the-scenes from the ValtQ team."
-  },
-  "loading": "Loading…",
-  "notFound": {
-    "title": "Page not found",
-    "description": "The page you are looking for does not exist or has been moved.",
-    "backHome": "Back to home"
-  },
   "error": {
     "title": "Something went wrong",
     "description": "An unexpected error occurred. Please try again.",
     "tryAgain": "Try again",
     "backHome": "Back to home"
   },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "social": {
+    "followUs": "Follow us",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "snapchat": "Snapchat"
+  },
+  "whatsapp": {
+    "floatingLabel": "Chat with us",
+    "chatCta": "Start a conversation",
+    "chatDescription": "Prefer chatting? Message us on WhatsApp and we'll get back to you within minutes."
+  },
+  "contactPage": {
+    "title": "Let's Build Something Together",
+    "description": "Tell us about your project and we'll respond within 24 hours.",
+    "whatsappTitle": "Chat on WhatsApp",
+    "socialTitle": "Follow us",
+    "socialDescription": "Stay up to date with our latest work and engineering insights."
+  },
+  "loading": "Loading...",
   "footer": {
     "description": "Premium software engineering for startups and enterprises.",
     "company": "Company",

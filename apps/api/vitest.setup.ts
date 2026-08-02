@@ -1,5 +1,10 @@
 process.env.NODE_ENV = 'test';
-process.env.DATABASE_URL = process.env.DATABASE_URL || 'file:./test.db';
+const testDatabaseUrl =
+  process.env.DATABASE_URL ||
+  process.env.TEST_DATABASE_URL ||
+  'postgresql://postgres:postgres@localhost:5432/valtq_test?schema=public';
+process.env.DATABASE_URL = testDatabaseUrl;
+process.env.DIRECT_URL = testDatabaseUrl;
 process.env.CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:3000';
 process.env.RATE_LIMIT_MAX = process.env.RATE_LIMIT_MAX || '1000';
 process.env.RATE_LIMIT_TIME_WINDOW =

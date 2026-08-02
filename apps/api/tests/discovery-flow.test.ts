@@ -1,32 +1,34 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { PrismaPg } from '@prisma/adapter-pg';
 import { execSync } from 'node:child_process';
-import { rmSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../src/generated/prisma/client.js';
 import { buildApp } from '../src/app.js';
 import type { App } from '../src/app.js';
 import { createCalWebhookSignature } from '../src/modules/booking/cal-signature.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const apiRoot = path.resolve(__dirname, '..');
-const dbPath = path.join(apiRoot, 'prisma', 'test.db');
+const testDbUrl =
+  process.env.TEST_DATABASE_URL ||
+  'postgresql://postgres:postgres@localhost:5432/valtq_test?schema=public';
 
 describe('Discovery + Booking HTTP flow', () => {
   let app: App;
-  const prisma = new PrismaClient();
+  const prisma = new PrismaClient({
+    adapter: new PrismaPg({ connectionString: testDbUrl }),
+  });
   const webhookSecret = 'test-cal-secret';
 
   beforeAll(async () => {
-    process.env.DATABASE_URL = 'file:./test.db';
+    process.env.DATABASE_URL = testDbUrl;
 
-    rmSync(dbPath, { force: true });
-    rmSync(`${dbPath}-journal`, { force: true });
     execSync('pnpm exec prisma migrate deploy', {
       cwd: apiRoot,
       env: {
         ...process.env,
-        DATABASE_URL: 'file:./test.db',
+        DATABASE_URL: testDbUrl,
       },
       stdio: 'pipe',
     });
@@ -43,8 +45,6 @@ describe('Discovery + Booking HTTP flow', () => {
   afterAll(async () => {
     await app.close();
     await prisma.$disconnect();
-    rmSync(dbPath, { force: true });
-    rmSync(`${dbPath}-journal`, { force: true });
   });
 
   it('submits a discovery lead', async () => {

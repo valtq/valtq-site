@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import { PrismaClient } from '../src/generated/prisma/client.js';
 import { execSync } from 'node:child_process';
-import { rmSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { LeadRepository } from '../src/modules/discovery/discovery.repository.js';
@@ -10,22 +10,26 @@ import { NotificationLogRepository } from '../src/modules/notifications/notifica
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const apiRoot = path.resolve(__dirname, '..');
-const dbPath = path.join(apiRoot, 'prisma', 'test.db');
+const testDbUrl =
+  process.env.TEST_DATABASE_URL ||
+  'postgresql://postgres:postgres@localhost:5432/valtq_test?schema=public';
 
 describe('Repositories', () => {
-  const prisma = new PrismaClient();
+  const prisma = new PrismaClient({
+    adapter: new PrismaPg({ connectionString: testDbUrl }),
+  });
   const leadRepository = new LeadRepository(prisma);
   const bookingRepository = new BookingRepository(prisma);
   const notificationRepository = new NotificationLogRepository(prisma);
 
-  beforeAll(() => {
-    rmSync(dbPath, { force: true });
-    rmSync(`${dbPath}-journal`, { force: true });
+  beforeAll(async () => {
+    process.env.DATABASE_URL = testDbUrl;
+
     execSync('pnpm exec prisma migrate deploy', {
       cwd: apiRoot,
       env: {
         ...process.env,
-        DATABASE_URL: 'file:./test.db',
+        DATABASE_URL: testDbUrl,
       },
       stdio: 'pipe',
     });
@@ -39,8 +43,6 @@ describe('Repositories', () => {
 
   afterAll(async () => {
     await prisma.$disconnect();
-    rmSync(dbPath, { force: true });
-    rmSync(`${dbPath}-journal`, { force: true });
   });
 
   it('creates and reads leads', async () => {

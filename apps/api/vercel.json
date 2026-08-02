@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd ../.. && pnpm --filter @valtq/types build && pnpm --filter api db:migrate:deploy && pnpm --filter api build",
+  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
+  "framework": "fastify"
+}

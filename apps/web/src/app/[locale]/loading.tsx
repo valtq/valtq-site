@@ -1,5 +1,3 @@
-import { LoadingMessage } from '@/components/layout/loading-message';
-
 export default function LocaleLoading() {
   return (
     <div
@@ -11,7 +9,6 @@ export default function LocaleLoading() {
         aria-hidden="true"
         className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent"
       />
-      <LoadingMessage />
     </div>
   );
 }

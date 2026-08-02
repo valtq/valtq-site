@@ -1,4 +1,4 @@
-import type { Booking, PrismaClient } from '@prisma/client';
+import type { Booking, PrismaClient } from '../../generated/prisma/client.js';
 
 export type CreateBookingInput = {
   leadId: string;

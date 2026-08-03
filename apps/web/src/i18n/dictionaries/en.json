@@ -27,8 +27,17 @@
       "primaryCta": "Start your project",
       "secondaryCta": "Explore our work",
       "capabilitiesLabel": "What we do",
-      "capabilities": ["Product Strategy", "Experience Design", "Software Engineering"],
-      "visualCapabilities": ["Product Strategy", "Experience Design", "Software Engineering", "Cloud & Infrastructure"],
+      "capabilities": [
+        "Product Strategy",
+        "Experience Design",
+        "Software Engineering"
+      ],
+      "visualCapabilities": [
+        "Product Strategy",
+        "Experience Design",
+        "Software Engineering",
+        "Cloud & Infrastructure"
+      ],
       "imageAlt": "ValtQ team collaborating in a modern workspace"
     },
     "services": {
@@ -55,7 +64,12 @@
       "secondaryCta": "Contact us",
       "visual": {
         "questionLabel": "Question",
-        "categories": ["Discovery", "Delivery", "Engineering", "Support"],
+        "categories": [
+          "Discovery",
+          "Delivery",
+          "Engineering",
+          "Support"
+        ],
         "answerLabel": "Answer",
         "decisionLabel": "Clear decision",
         "captionStart": "Questions",
@@ -97,11 +111,21 @@
         "nodeLabel": "Project context",
         "inputLabel": "Conversation input",
         "inputs": [
-          { "label": "Product goal" },
-          { "label": "Current stage" },
-          { "label": "Constraints" },
-          { "label": "Existing system" },
-          { "label": "Next decision" }
+          {
+            "label": "Product goal"
+          },
+          {
+            "label": "Current stage"
+          },
+          {
+            "label": "Constraints"
+          },
+          {
+            "label": "Existing system"
+          },
+          {
+            "label": "Next decision"
+          }
         ],
         "captionStart": "Project context",
         "captionEnd": "Product conversation"
@@ -140,21 +164,6 @@
         "AI & automation",
         "Quality & delivery"
       ]
-    },
-    "terms": {
-      "tag": "Legal",
-      "title": "Terms of Service",
-      "description": "Please read these terms carefully before using our services."
-    },
-    "privacy": {
-      "tag": "Legal",
-      "title": "Privacy Policy",
-      "description": "How we collect, use, and protect your personal information."
-    },
-    "cookies": {
-      "tag": "Legal",
-      "title": "Cookie Policy",
-      "description": "How we use cookies and similar technologies on our website."
     }
   },
   "careers": {
@@ -366,10 +375,22 @@
     }
   },
   "stats": {
-    "projects": { "value": "50+", "label": "Projects Delivered" },
-    "clients": { "value": "30+", "label": "Happy Clients" },
-    "uptime": { "value": "99.9%", "label": "Uptime Guarantee" },
-    "experience": { "value": "8+", "label": "Years of Experience" }
+    "projects": {
+      "value": "50+",
+      "label": "Projects Delivered"
+    },
+    "clients": {
+      "value": "30+",
+      "label": "Happy Clients"
+    },
+    "uptime": {
+      "value": "99.9%",
+      "label": "Uptime Guarantee"
+    },
+    "experience": {
+      "value": "8+",
+      "label": "Years of Experience"
+    }
   },
   "homeServices": {
     "eyebrow": "Capabilities",
@@ -709,7 +730,12 @@
       "eyebrow": "Connected delivery",
       "heading": "One delivery journey, not disconnected service handoffs.",
       "description": "Product strategy defines the right problem and scope. Experience design turns that scope into understandable workflows. Engineering implements the product and its integrations. Cloud and quality practices prepare it for reliable operation and continued evolution.",
-      "stages": ["Define", "Design", "Build", "Operate and evolve"],
+      "stages": [
+        "Define",
+        "Design",
+        "Build",
+        "Operate and evolve"
+      ],
       "cta": "Explore our delivery process"
     },
     "finalCta": {
@@ -763,8 +789,20 @@
       "primaryCta": "Start Discovery",
       "secondaryCta": "Explore Our Services",
       "principlesLabel": "Built on",
-      "principles": ["Clear scope", "Visible decisions", "Reviewable delivery", "Launch readiness"],
-      "visualNodes": ["Define", "Design", "Build", "Validate", "Launch", "Evolve"],
+      "principles": [
+        "Clear scope",
+        "Visible decisions",
+        "Reviewable delivery",
+        "Launch readiness"
+      ],
+      "visualNodes": [
+        "Define",
+        "Design",
+        "Build",
+        "Validate",
+        "Launch",
+        "Evolve"
+      ],
       "visualCaptionStart": "Uncertainty",
       "visualCaptionEnd": "Operational clarity"
     },
@@ -1103,7 +1141,11 @@
       "title": "We bring clarity to complex digital product challenges.",
       "description": "ValtQ combines product strategy, experience design, and software engineering to help teams move from opportunity to reliable digital delivery.",
       "visualLabel": "One connected delivery system",
-      "visualItems": ["Product Strategy", "Experience Design", "Software Engineering"]
+      "visualItems": [
+        "Product Strategy",
+        "Experience Design",
+        "Software Engineering"
+      ]
     },
     "whoWeAre": {
       "title": "A product partner from discovery through delivery.",
@@ -1404,9 +1446,25 @@
       "Existing product in production",
       "Modernizing or extending an existing system"
     ],
-    "channelOptions": ["Email", "WhatsApp", "Phone", "Any channel"],
-    "timingOptions": ["As soon as possible", "Within 1–3 months", "Within 3–6 months", "Flexible / exploring"],
-    "budgetOptions": ["Under $10k", "$10k – $25k", "$25k – $50k", "$50k+", "Not yet determined"],
+    "channelOptions": [
+      "Email",
+      "WhatsApp",
+      "Phone",
+      "Any channel"
+    ],
+    "timingOptions": [
+      "As soon as possible",
+      "Within 1–3 months",
+      "Within 3–6 months",
+      "Flexible / exploring"
+    ],
+    "budgetOptions": [
+      "Under $10k",
+      "$10k – $25k",
+      "$25k – $50k",
+      "$50k+",
+      "Not yet determined"
+    ],
     "nameRequiredError": "Please enter your full name.",
     "emailRequiredError": "Please enter your email address so we can follow up.",
     "emailInvalidError": "Please enter a valid email address.",
@@ -1547,6 +1605,32 @@
       ],
       "browseLabel": "Browse all articles"
     }
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "onThisPage": "On this page",
+    "effectiveLabel": "Effective date",
+    "updatedLabel": "Last updated",
+    "printLabel": "Print document",
+    "relatedTitle": "Related policies",
+    "relatedDescription": "These policies work together. Read the documents that apply to your visit.",
+    "relatedList": {
+      "terms": {
+        "description": "The rules for using this website and its content."
+      },
+      "privacy": {
+        "description": "How we collect, use, and protect personal information."
+      },
+      "cookies": {
+        "description": "How we use cookies and similar browser technologies."
+      }
+    },
+    "storageKeyLabel": "Key",
+    "storageTypeLabel": "Type",
+    "storagePurposeLabel": "Purpose",
+    "storageEssentialLabel": "Essential",
+    "storagePreferenceLabel": "Preference",
+    "readLabel": "Read policy"
   },
   "loading": "Loading...",
   "footer": {

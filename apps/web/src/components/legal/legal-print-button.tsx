@@ -11,7 +11,7 @@ export function LegalPrintButton({ label }: { label: string }) {
       type="button"
       onClick={() => window.print()}
       data-hidden-on-print
-      className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-inverse-on-surface/30 px-3.5 text-sm font-medium text-inverse-on-surface transition-colors hover:border-inverse-on-surface/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-inverse-surface"
+      className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-white/30 px-3.5 text-sm font-medium text-white transition-colors hover:border-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1E36]"
     >
       <svg
         className="h-4 w-4"

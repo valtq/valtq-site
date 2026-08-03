@@ -305,6 +305,42 @@ html.theme-transition *::after {
 .valtq-delay-400 { animation-delay: 400ms; }
 .valtq-delay-500 { animation-delay: 500ms; }
 
+/* ── Smooth in-page scrolling ───────────────────────────── */
+/* Anchored section links (legal TOC, blog) scroll smoothly,
+   unless the user prefers reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ── Print styles for legal documents ───────────────────── */
+/* Chrome, footer, the floating WhatsApp button, the TOC, and the print
+   trigger itself are excluded from the printed output. The document hero is
+   forced to light colors so pages print cleanly. */
+@media print {
+  header,
+  footer,
+  [data-hidden-on-print] {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+  }
+
+  .legal-hero {
+    background: #ffffff !important;
+    color: #0d1c2f !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .legal-hero * {
+    color: #0d1c2f !important;
+    border-color: #e2e8f0 !important;
+  }
+}
+
 /* ── Hover state refinements ────────────────────────────── */
 /* Card hover: border lifts to primary + subtle shadow ring */
 .hover\:card-elevate:hover {

@@ -1,11 +1,11 @@
 'use client';
 
+import { AnimatedValtQMark } from '@/components/ui/animated-valtq-mark';
 import { usePrefersReducedMotion } from '@/components/ui/scroll-reveal';
 import { motion } from 'framer-motion';
 
 const PRIMARY = 'var(--color-primary)';
 const CYAN = 'var(--color-tertiary)';
-const ON_SURFACE = 'var(--color-on-surface)';
 const OUTLINE = 'var(--color-outline-variant)';
 
 const connectorPaths = [
@@ -235,67 +235,13 @@ export function HeroVisual({ capabilities }: HeroVisualProps) {
             }
           >
             <motion.div
-              className="absolute inset-3 rounded-[1.1rem] border border-border"
+              className="absolute inset-3 flex items-center justify-center rounded-[1.1rem] border border-border bg-white/95 dark:bg-[#f4f7fb]"
               initial={reducedMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={reducedMotion ? { duration: 0 } : { duration: 0.4, delay: 0.28 }}
             />
 
-            <svg viewBox="0 0 180 150" className="absolute inset-0 h-full w-full overflow-visible" fill="none">
-              <motion.path
-                d="M25 36 70 120"
-                stroke={ON_SURFACE}
-                strokeWidth="15"
-                strokeLinecap="square"
-                initial={reducedMotion ? false : { pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={
-                  reducedMotion
-                    ? { duration: 0 }
-                    : { pathLength: { duration: 0.55, delay: 0.28 }, opacity: { duration: 0.12, delay: 0.28 } }
-                }
-              />
-              <motion.path
-                d="m70 120 45-84"
-                stroke={PRIMARY}
-                strokeWidth="15"
-                strokeLinecap="square"
-                initial={reducedMotion ? false : { pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={
-                  reducedMotion
-                    ? { duration: 0 }
-                    : { pathLength: { duration: 0.55, delay: 0.48 }, opacity: { duration: 0.12, delay: 0.48 } }
-                }
-              />
-              <motion.circle
-                cx="118"
-                cy="78"
-                r="42"
-                stroke={ON_SURFACE}
-                strokeWidth="14"
-                initial={reducedMotion ? false : { pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={
-                  reducedMotion
-                    ? { duration: 0 }
-                    : { pathLength: { duration: 0.6, delay: 0.75, ease: 'easeInOut' }, opacity: { duration: 0.15, delay: 0.75 } }
-                }
-              />
-              <motion.path
-                d="m145 107 20 23"
-                stroke={CYAN}
-                strokeWidth="10"
-                strokeLinecap="square"
-                initial={reducedMotion ? false : { pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={
-                  reducedMotion
-                    ? { duration: 0 }
-                    : { pathLength: { duration: 0.3, delay: 1.25 }, opacity: { duration: 0.18, delay: 1.25 } }
-                }
-              />
-            </svg>
+            <AnimatedValtQMark className="absolute inset-0 h-full w-full overflow-visible" />
 
             <motion.div
               className="absolute inset-1 rounded-[1.25rem] border border-tertiary/20"

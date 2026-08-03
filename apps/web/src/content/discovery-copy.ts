@@ -133,8 +133,7 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
         },
         'web-app': {
           label: 'Web Application',
-          description:
-            'Complex browser-based applications with dynamic functionality.',
+          description: 'Complex browser-based applications with dynamic functionality.',
         },
         'mobile-app': {
           label: 'Mobile Application',
@@ -174,17 +173,20 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
       budgetLabel: 'Budget Range',
       timelineLabel: 'Project Timeline',
       budgetOptions: {
-        'under-5k': { label: 'Under $5k' },
-        '5k-15k': { label: '$5k – $15k' },
-        '15k-30k': { label: '$15k – $30k' },
-        '30k-50k': { label: '$30k – $50k' },
-        '50k-plus': { label: '$50k+' },
+        UNDER_1000_USD: { label: 'Under $1,000' },
+        USD_1000_3000: { label: '$1,000 – $3,000' },
+        USD_3000_7500: { label: '$3,000 – $7,500' },
+        USD_7500_15000: { label: '$7,500 – $15,000' },
+        OVER_15000_USD: { label: '$15,000+' },
+        NOT_SURE: { label: 'Not sure yet' },
       },
       timelineOptions: {
-        '1-2-months': { label: '1–2 months' },
-        '2-4-months': { label: '2–4 months' },
-        '4-6-months': { label: '4–6 months' },
-        '6-plus-months': { label: '6+ months' },
+        UNDER_1_MONTH: { label: 'Under 1 month' },
+        MONTHS_1_2: { label: '1 – 2 months' },
+        MONTHS_2_4: { label: '2 – 4 months' },
+        MONTHS_4_6: { label: '4 – 6 months' },
+        OVER_6_MONTHS: { label: '6+ months' },
+        NOT_SURE: { label: 'Not sure yet' },
       },
     },
     contactInformation: {
@@ -206,8 +208,7 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
       submittingLabel: 'Submitting…',
       submitError:
         'We could not save your discovery brief. Please check your connection and try again.',
-      submitIncompleteError:
-        'Please complete the previous discovery steps before continuing.',
+      submitIncompleteError: 'Please complete the previous discovery steps before continuing.',
     },
     booking: {
       phaseLabel: 'Discovery Phase',
@@ -236,8 +237,7 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
       start: 'Start Discovery',
       returnHome: 'Return home',
     },
-    stepCounter: (current: number, total: number) =>
-      `Step ${current} of ${total}`,
+    stepCounter: (current: number, total: number) => `Step ${current} of ${total}`,
   },
   ar: {
     wizardName: 'مساعد الاستكشاف',
@@ -319,25 +319,27 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
       budgetLabel: 'نطاق الميزانية',
       timelineLabel: 'الجدول الزمني للمشروع',
       budgetOptions: {
-        'under-5k': { label: 'أقل من ٥٬٠٠٠$' },
-        '5k-15k': { label: '٥٬٠٠٠$ – ١٥٬٠٠٠$' },
-        '15k-30k': { label: '١٥٬٠٠٠$ – ٣٠٬٠٠٠$' },
-        '30k-50k': { label: '٣٠٬٠٠٠$ – ٥٠٬٠٠٠$' },
-        '50k-plus': { label: '٥٠٬٠٠٠$+' },
+        UNDER_1000_USD: { label: 'أقل من ١٬٠٠٠$' },
+        USD_1000_3000: { label: '١٬٠٠٠$ – ٣٬٠٠٠$' },
+        USD_3000_7500: { label: '٣٬٠٠٠$ – ٧٬٥٠٠$' },
+        USD_7500_15000: { label: '٧٬٥٠٠$ – ١٥٬٠٠٠$' },
+        OVER_15000_USD: { label: '١٥٬٠٠٠$+' },
+        NOT_SURE: { label: 'لست متأكداً بعد' },
       },
       timelineOptions: {
-        '1-2-months': { label: '١ – ٢ شهر' },
-        '2-4-months': { label: '٢ – ٤ أشهر' },
-        '4-6-months': { label: '٤ – ٦ أشهر' },
-        '6-plus-months': { label: '٦+ أشهر' },
+        UNDER_1_MONTH: { label: 'أقل من شهر' },
+        MONTHS_1_2: { label: '١ – ٢ شهر' },
+        MONTHS_2_4: { label: '٢ – ٤ أشهر' },
+        MONTHS_4_6: { label: '٤ – ٦ أشهر' },
+        OVER_6_MONTHS: { label: '٦+ أشهر' },
+        NOT_SURE: { label: 'لست متأكداً بعد' },
       },
     },
     contactInformation: {
       phaseLabel: 'مرحلة الاستكشاف',
       subLabel: 'معلومات الاتصال',
       heading: 'معلومات الاتصال',
-      description:
-        'أخبرنا كيف نتواصل معك وأين تعمل حتى نتمكن من التحضير لاستشارتك.',
+      description: 'أخبرنا كيف نتواصل معك وأين تعمل حتى نتمكن من التحضير لاستشارتك.',
       nameLabel: 'الاسم الكامل',
       namePlaceholder: 'محمد أحمد',
       emailLabel: 'البريد الإلكتروني للعمل',
@@ -349,30 +351,25 @@ export const discoveryCopy: Record<Locale, DiscoveryCopy> = {
       emailRequiredError: 'يرجى إدخال بريدك الإلكتروني حتى نتمكن من التواصل معك.',
       emailInvalidError: 'يرجى إدخال بريد إلكتروني صالح.',
       submittingLabel: 'جارٍ الإرسال…',
-      submitError:
-        'تعذر حفظ ملخص الاستكشاف. يرجى التحقق من اتصالك والمحاولة مرة أخرى.',
-      submitIncompleteError:
-        'يرجى إكمال خطوات الاستكشاف السابقة قبل المتابعة.',
+      submitError: 'تعذر حفظ ملخص الاستكشاف. يرجى التحقق من اتصالك والمحاولة مرة أخرى.',
+      submitIncompleteError: 'يرجى إكمال خطوات الاستكشاف السابقة قبل المتابعة.',
     },
     booking: {
       phaseLabel: 'مرحلة الاستكشاف',
       subLabel: 'حجز الاستشارة',
       heading: 'احجز استشارتك',
-      description:
-        'اختر الوقت المناسب لك. ستساعد تفاصيل مشروعك فريق الهندسة في التحضير للمحادثة.',
+      description: 'اختر الوقت المناسب لك. ستساعد تفاصيل مشروعك فريق الهندسة في التحضير للمحادثة.',
       loadingMessage: 'جارٍ تحميل تقويم الحجز…',
       widgetTitle: 'تحديد موعد استشارة',
       missingConfigTitle: 'الحجز غير متاح',
       missingConfigDescription:
         'لم يتم تكوين نظام الجدولة بعد. يرجى التواصل معنا مباشرة لترتيب استشارة.',
       loadErrorTitle: 'تعذر تحميل التقويم',
-      loadErrorDescription:
-        'تعذر تحميل تقويم الحجز. يرجى التحقق من اتصالك والمحاولة مرة أخرى.',
+      loadErrorDescription: 'تعذر تحميل تقويم الحجز. يرجى التحقق من اتصالك والمحاولة مرة أخرى.',
       retryAction: 'حاول مرة أخرى',
       successHeading: 'تم تأكيد الحجز',
       successDescription: 'تم جدولة استشارتك بنجاح.',
-      responseExpectation:
-        'ستتلقى رسالة تأكيد بالبريد الإلكتروني مع تفاصيل الاجتماع قريباً.',
+      responseExpectation: 'ستتلقى رسالة تأكيد بالبريد الإلكتروني مع تفاصيل الاجتماع قريباً.',
       returnHomeAction: 'العودة إلى الصفحة الرئيسية',
     },
     actions: {

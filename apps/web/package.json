@@ -13,6 +13,7 @@
   "dependencies": {
     "@calcom/embed-core": "^1.5.3",
     "@valtq/types": "workspace:*",
+    "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.2",
     "next": "^15.1.0",

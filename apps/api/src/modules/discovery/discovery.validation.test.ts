@@ -7,8 +7,8 @@ describe('DiscoverySubmissionSchema', () => {
     email: 'jane@acme.com',
     company: 'Acme',
     projectType: 'saas' as const,
-    budget: '30k-50k' as const,
-    timeline: '2-4-months' as const,
+    budget: 'USD_7500_15000' as const,
+    timeline: 'MONTHS_2_4' as const,
     description: 'We need a scalable SaaS platform for our customers.',
   };
 

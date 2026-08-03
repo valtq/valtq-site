@@ -12,17 +12,20 @@ import type {
  */
 export const SCORING_WEIGHTS = {
   budget: {
-    'under-5k': 5,
-    '5k-15k': 10,
-    '15k-30k': 15,
-    '30k-50k': 20,
-    '50k-plus': 25,
+    UNDER_1000_USD: 3,
+    USD_1000_3000: 8,
+    USD_3000_7500: 12,
+    USD_7500_15000: 16,
+    OVER_15000_USD: 20,
+    NOT_SURE: 5,
   } satisfies Record<ProjectBudget, number>,
   timeline: {
-    '1-2-months': 15,
-    '2-4-months': 12,
-    '4-6-months': 8,
-    '6-plus-months': 5,
+    UNDER_1_MONTH: 15,
+    MONTHS_1_2: 13,
+    MONTHS_2_4: 10,
+    MONTHS_4_6: 7,
+    OVER_6_MONTHS: 5,
+    NOT_SURE: 5,
   } satisfies Record<ProjectTimeline, number>,
   companySize: {
     '1-10': 4,
@@ -111,22 +114,11 @@ export class ScoringService {
     const budget = SCORING_WEIGHTS.budget[input.budget];
     const timeline = SCORING_WEIGHTS.timeline[input.timeline];
     const projectType = SCORING_WEIGHTS.projectType[input.projectType];
-    const companySize = input.companySize
-      ? SCORING_WEIGHTS.companySize[input.companySize]
-      : 0;
-    const businessEmail = isBusinessEmail(input.email)
-      ? SCORING_WEIGHTS.businessEmail
-      : 0;
-    const decisionMaker = input.isDecisionMaker
-      ? SCORING_WEIGHTS.decisionMaker
-      : 0;
-    const website =
-      input.website && input.website.length > 0
-        ? SCORING_WEIGHTS.websiteExists
-        : 0;
-    const urgency = input.urgency
-      ? SCORING_WEIGHTS.urgency[input.urgency]
-      : 0;
+    const companySize = input.companySize ? SCORING_WEIGHTS.companySize[input.companySize] : 0;
+    const businessEmail = isBusinessEmail(input.email) ? SCORING_WEIGHTS.businessEmail : 0;
+    const decisionMaker = input.isDecisionMaker ? SCORING_WEIGHTS.decisionMaker : 0;
+    const website = input.website && input.website.length > 0 ? SCORING_WEIGHTS.websiteExists : 0;
+    const urgency = input.urgency ? SCORING_WEIGHTS.urgency[input.urgency] : 0;
 
     const total = clampScore(
       budget +

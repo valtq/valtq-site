@@ -10,7 +10,7 @@ import { HeroVisual } from './hero-visual';
 
 interface HeroProps {
   dict: Dictionary;
-  variant: keyof Dictionary['hero'];
+  variant: Exclude<keyof Dictionary['hero'], 'careers'>;
   locale: Locale;
 }
 

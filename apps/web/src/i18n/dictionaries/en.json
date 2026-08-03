@@ -63,9 +63,28 @@
       }
     },
     "work": {
-      "tag": "Our Work",
-      "title": "Projects That Deliver Results",
-      "description": "A selection of our engineering work — each project engineered for performance, scale, and measurable impact."
+      "tag": "Our work",
+      "title": "Product work shaped by clear thinking and thoughtful engineering.",
+      "titleAccent": "thoughtful engineering.",
+      "description": "Explore case studies across web, mobile, AI-enabled products, and digital platforms. Each project shows how product direction, experience design, technical decisions, and delivery planning come together.",
+      "primaryCta": "Explore case studies",
+      "secondaryCta": "Start Discovery",
+      "capabilitiesLabel": "Capabilities",
+      "capabilities": [
+        "Product direction",
+        "Experience design",
+        "Software engineering",
+        "Delivery planning"
+      ],
+      "visual": {
+        "stages": [
+          "Challenge",
+          "Product direction",
+          "Experience",
+          "Engineering"
+        ],
+        "deliveryLabel": "Delivery"
+      }
     },
     "contact": {
       "tag": "Contact ValtQ",
@@ -89,9 +108,26 @@
       }
     },
     "careers": {
-      "tag": "Careers",
-      "title": "Join Our Engineering Team",
-      "description": "We're always looking for exceptional engineers who care about craft. Check out our open roles."
+      "eyebrow": "Careers at ValtQ",
+      "title": "Do thoughtful product and engineering work with clarity, ownership, and care.",
+      "description": "ValtQ brings product strategy, experience design, software engineering, and cloud delivery into one connected workflow. Our work requires people who can understand the product context, communicate decisions clearly, and contribute to reliable, maintainable digital systems.",
+      "supportingLine": "There are no open roles at the moment, but this page explains how we work and what we value in future collaborators.",
+      "primaryCta": "How we work",
+      "secondaryCta": "Explore our work",
+      "visual": {
+        "central": "Product delivery",
+        "nodes": [
+          "Product Strategy",
+          "Experience Design",
+          "Frontend Engineering",
+          "Backend Engineering",
+          "Quality",
+          "Cloud Delivery"
+        ],
+        "checkpointLabel": "Review",
+        "captionStart": "Connected disciplines",
+        "captionEnd": "Shared product"
+      }
     },
     "blog": {
       "tag": "Blog",
@@ -112,6 +148,214 @@
       "tag": "Legal",
       "title": "Cookie Policy",
       "description": "How we use cookies and similar technologies on our website."
+    }
+  },
+  "careers": {
+    "status": {
+      "eyebrow": "Current opportunities",
+      "title": "No open roles at the moment.",
+      "description": "ValtQ is not currently recruiting for a specific position. When an approved role becomes available, it will be listed on this page with its scope, responsibilities, requirements, working arrangement, and application method.",
+      "note": "We do not display placeholder vacancies or collect applications through a form that is not connected to a real recruitment workflow."
+    },
+    "why": {
+      "eyebrow": "The work environment",
+      "title": "Product context and engineering quality stay connected.",
+      "intro": "The quality of a technical solution depends on more than implementation speed. The team needs a shared understanding of the users, workflow, constraints, system boundaries, and decisions that shape the product.",
+      "items": [
+        {
+          "title": "Meaningful product context",
+          "description": "Engineering work begins with an understanding of the product objective, users, workflow, constraints, and expected operational behavior."
+        },
+        {
+          "title": "Clear delivery",
+          "description": "Scope, priorities, dependencies, decisions, and progress should remain visible to the people contributing to the product."
+        },
+        {
+          "title": "Engineering with purpose",
+          "description": "Technology is selected according to the product stage and requirements, rather than applied as the same stack to every problem."
+        },
+        {
+          "title": "Quality throughout delivery",
+          "description": "Code review, testing, accessibility, performance, and operational readiness are treated as part of implementation."
+        },
+        {
+          "title": "Cross-functional collaboration",
+          "description": "Product, design, frontend, backend, quality, and infrastructure decisions are reviewed as connected concerns."
+        },
+        {
+          "title": "Maintainability after release",
+          "description": "Code structure, documentation, environments, and deployment workflows should support the people responsible for the product after launch."
+        }
+      ]
+    },
+    "howWeWork": {
+      "eyebrow": "How we work",
+      "title": "Work is organized around decisions, reviewable progress, and shared ownership.",
+      "items": [
+        {
+          "title": "Understand before implementing",
+          "description": "The team clarifies the workflow, user need, constraints, and technical context before committing to a solution."
+        },
+        {
+          "title": "Deliver in reviewable increments",
+          "description": "Work is structured so product behavior, technical decisions, and risks can be reviewed while delivery is still in progress."
+        },
+        {
+          "title": "Discuss trade-offs directly",
+          "description": "Architecture, scope, quality, performance, and timing decisions are discussed with their consequences rather than hidden behind implementation details."
+        },
+        {
+          "title": "Review and learn",
+          "description": "Code review, demonstrations, feedback, and technical discussion are used to improve both the product and the team's shared understanding."
+        },
+        {
+          "title": "Document important decisions",
+          "description": "Relevant product and technical decisions should remain understandable after the original conversation ends."
+        },
+        {
+          "title": "Ask for support early",
+          "description": "Ownership includes recognizing uncertainty, raising blockers, and requesting input before a problem grows."
+        }
+      ]
+    },
+    "disciplines": {
+      "eyebrow": "Disciplines",
+      "title": "Disciplines that contribute to ValtQ projects.",
+      "note": "These disciplines describe the work involved in ValtQ projects. They are not a list of current vacancies.",
+      "items": [
+        {
+          "title": "Product Strategy",
+          "description": "Discovery, workflow analysis, scope definition, prioritization, and delivery planning."
+        },
+        {
+          "title": "Experience Design",
+          "description": "User journeys, information architecture, interface design, and design-system foundations."
+        },
+        {
+          "title": "Frontend Engineering",
+          "description": "Responsive interfaces, component systems, accessibility, performance, and frontend integration."
+        },
+        {
+          "title": "Backend Engineering",
+          "description": "APIs, data models, authentication, permissions, integrations, and background processing."
+        },
+        {
+          "title": "Mobile Engineering",
+          "description": "Cross-platform product development, device integrations, offline-aware workflows, and release preparation."
+        },
+        {
+          "title": "AI Engineering",
+          "description": "Knowledge retrieval, model integration, structured outputs, automation, validation, and human-review workflows."
+        },
+        {
+          "title": "Cloud and Infrastructure",
+          "description": "Deployment workflows, environments, configuration, monitoring, reliability, and operational readiness."
+        },
+        {
+          "title": "Quality Engineering",
+          "description": "Acceptance criteria, functional testing, integration testing, accessibility, performance, and release readiness."
+        }
+      ]
+    },
+    "lookFor": {
+      "eyebrow": "Future collaborators",
+      "title": "The way someone approaches the work matters alongside technical knowledge.",
+      "items": [
+        {
+          "title": "Structured thinking",
+          "description": "The ability to break complex work into understandable problems, assumptions, and decisions."
+        },
+        {
+          "title": "Product awareness",
+          "description": "An interest in why a feature exists, who uses it, and how it affects the wider product."
+        },
+        {
+          "title": "Clear communication",
+          "description": "The ability to explain progress, uncertainty, trade-offs, and technical choices to different stakeholders."
+        },
+        {
+          "title": "Quality awareness",
+          "description": "Attention to maintainability, testing, accessibility, performance, and operational behavior."
+        },
+        {
+          "title": "Ownership without isolation",
+          "description": "The willingness to take responsibility while asking for review or support when needed."
+        },
+        {
+          "title": "Constructive feedback",
+          "description": "The ability to review work respectfully, receive feedback, and improve the solution without making discussion personal."
+        },
+        {
+          "title": "Continuous learning",
+          "description": "The willingness to update assumptions, learn unfamiliar areas, and share useful knowledge with others."
+        }
+      ]
+    },
+    "candidateExperience": {
+      "eyebrow": "Candidate experience",
+      "title": "Any future hiring process should be relevant, transparent, and respectful.",
+      "items": [
+        {
+          "title": "Clear role context",
+          "description": "The role should explain its responsibilities, expected contribution, working arrangement, and required experience."
+        },
+        {
+          "title": "Relevant evaluation",
+          "description": "Evaluation should reflect the work involved in the role rather than rely on unrelated exercises."
+        },
+        {
+          "title": "Transparent stages",
+          "description": "Candidates should understand the next step, who they will meet, and what is being evaluated."
+        },
+        {
+          "title": "Respect for candidate work",
+          "description": "Practical evaluations should remain limited, relevant, and clearly separated from unpaid production work."
+        },
+        {
+          "title": "Privacy and access",
+          "description": "Candidate information should only be collected through an approved channel and handled according to the applicable privacy terms."
+        },
+        {
+          "title": "Clear closure",
+          "description": "Candidates should receive a clear outcome when the recruitment workflow and operational capacity allow it."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Candidate FAQ",
+      "title": "Questions about future opportunities at ValtQ.",
+      "items": [
+        {
+          "id": "open-roles",
+          "question": "Are there any open roles right now?",
+          "answer": "No. ValtQ is not currently recruiting for a specific position. Approved roles will be published on this page when they become available."
+        },
+        {
+          "id": "general-application",
+          "question": "Can I send a general application?",
+          "answer": "There is currently no approved general-application channel. Please do not send sensitive personal or employment information through unrelated contact forms."
+        },
+        {
+          "id": "future-roles",
+          "question": "Where will future roles be published?",
+          "answer": "Approved opportunities will appear on this Careers page with the role scope, requirements, working arrangement, and application method."
+        },
+        {
+          "id": "disciplines-open",
+          "question": "Does the disciplines section mean those roles are open?",
+          "answer": "No. The disciplines describe areas involved in ValtQ product delivery. They do not represent current vacancies."
+        },
+        {
+          "id": "contact-cv",
+          "question": "Can I use the Contact page to submit a CV?",
+          "answer": "The Contact page is intended for product and business inquiries. Do not submit a CV or sensitive employment information through it unless ValtQ explicitly adds a recruitment option."
+        },
+        {
+          "id": "internships",
+          "question": "Will internships or graduate opportunities be offered?",
+          "answer": "No internship or graduate program is currently confirmed. Any approved opportunity will be published with its actual requirements and application method."
+        }
+      ]
     }
   },
   "stats": {

@@ -130,9 +130,16 @@
       }
     },
     "blog": {
-      "tag": "Blog",
-      "title": "Insights & Engineering Notes",
-      "description": "Thoughts on software engineering, architecture, and building products that scale."
+      "eyebrow": "ValtQ Insights",
+      "title": "Practical thinking for building and evolving ",
+      "titleAccent": "digital products.",
+      "description": "Notes on product strategy, software engineering, AI, and delivery — grounded in how real products get built and improved. No inflated claims: just the decisions, trade-offs, and details that matter.",
+      "topics": [
+        "Product strategy",
+        "Engineering practice",
+        "AI & automation",
+        "Quality & delivery"
+      ]
     },
     "terms": {
       "tag": "Legal",
@@ -1484,6 +1491,61 @@
     "faqLink": {
       "text": "Have questions about process, services, ownership, or support?",
       "cta": "Explore the FAQ"
+    }
+  },
+  "blog": {
+    "featuredLabel": "Featured",
+    "featuredEyebrow": "Featured article",
+    "searchLabel": "Search articles",
+    "searchPlaceholder": "Search by title or topic…",
+    "clearSearch": "Clear search",
+    "categoryLabel": "Filter articles by category",
+    "allArticles": "All articles",
+    "resultsSummary": "{count} of {total} articles",
+    "noResultsTitle": "No articles found",
+    "noResultsDescription": "Try a different search term, or clear the filters to browse everything.",
+    "clearFilters": "Clear filters",
+    "readArticle": "Read article",
+    "minutesRead": "{count} min read",
+    "publishedLabel": "Published",
+    "updatedLabel": "Updated",
+    "backToArticles": "Back to all articles",
+    "article": {
+      "tableOfContents": "On this page",
+      "relatedTitle": "Related articles",
+      "ctaEyebrow": "Continue the conversation",
+      "ctaTitle": "Bring your product challenge to a focused discussion.",
+      "ctaDescription": "Engineering judgment and structured Discovery, applied to your context — not a template.",
+      "ctaPrimary": "Start Discovery",
+      "ctaSecondary": "Contact ValtQ"
+    },
+    "topics": {
+      "eyebrow": "What we write about",
+      "title": "Practical topics, engineering depth.",
+      "description": "Long-form notes grounded in how real products get built and improved.",
+      "cards": [
+        {
+          "icon": "strategy",
+          "label": "Product strategy",
+          "description": "Discovery, prioritization, and deciding what to build."
+        },
+        {
+          "icon": "layers",
+          "label": "Engineering practice",
+          "description": "Architecture and delivery choices that age well."
+        },
+        {
+          "icon": "ai",
+          "label": "AI & automation",
+          "description": "Where language models create real product value."
+        },
+        {
+          "icon": "quality",
+          "label": "Quality & delivery",
+          "description": "Release readiness, modernization, and operations."
+        }
+      ],
+      "browseLabel": "Browse all articles"
     }
   },
   "loading": "Loading...",

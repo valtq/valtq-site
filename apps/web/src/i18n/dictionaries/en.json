@@ -16,7 +16,8 @@
     "close": "Close menu",
     "language": "العربية",
     "darkMode": "Dark mode",
-    "lightMode": "Light mode"
+    "lightMode": "Light mode",
+    "backToTop": "Back to top"
   },
   "hero": {
     "home": {

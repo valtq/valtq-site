@@ -25,7 +25,7 @@ const utilityIconClass =
 const ctaBaseClass =
   'inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.97]';
 
-const ctaPrimaryClass = 'bg-primary text-primary-foreground hover:bg-primary-container border border-transparent';
+const ctaPrimaryClass = 'bg-primary text-primary-foreground hover:bg-primary-container dark:hover:text-on-primary-container border border-transparent';
 const ctaSecondaryClass = 'bg-surface-container-lowest text-on-surface hover:border-primary hover:bg-surface-container-low border border-border';
 
 function SunIcon() {

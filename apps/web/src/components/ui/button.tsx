@@ -16,7 +16,7 @@ import { cn } from '@/lib/cn';
  */
 const variants = {
   primary:
-    'bg-primary text-primary-foreground hover:bg-primary-container active:scale-[0.97] border border-transparent',
+    'bg-primary text-primary-foreground hover:bg-primary-container dark:hover:text-on-primary-container active:scale-[0.97] border border-transparent',
   secondary:
     'bg-surface-container-lowest text-on-surface border border-border hover:border-primary hover:bg-surface-container-low active:scale-[0.97]',
   tertiary: 'bg-transparent text-on-surface hover:bg-accent active:scale-[0.97] border border-transparent',

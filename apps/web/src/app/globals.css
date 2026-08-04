@@ -26,6 +26,7 @@
   /* Primary */
   --color-primary: #0032de;
   --color-primary-foreground: #ffffff;
+  --color-on-primary: #ffffff;
   --color-primary-container: #2b4eff;
   --color-on-primary-container: #e1e2ff;
   --color-inverse-primary: #bbc3ff;
@@ -128,6 +129,7 @@
 
   --color-primary: #bbc3ff;
   --color-primary-foreground: #002dcc;
+  --color-on-primary: #002dcc;
   --color-primary-container: #1a3ad4;
   --color-on-primary-container: #e1e2ff;
   --color-inverse-primary: #0032de;

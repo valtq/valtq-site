@@ -2,24 +2,86 @@
 
 import { useCallback } from 'react';
 import type { ProjectBudget, ProjectTimeline } from '@valtq/types';
+import { cn } from '@/lib/cn';
 import { discoveryCopy, type Locale } from '@/content/discovery-copy';
 import { Button } from '@/components/ui/button';
 import { useDiscoveryStore } from '@/stores/discovery-store';
 
 const BUDGET_OPTIONS: ProjectBudget[] = [
-  'under-5k',
-  '5k-15k',
-  '15k-30k',
-  '30k-50k',
-  '50k-plus',
+  'UNDER_1000_USD',
+  'USD_1000_3000',
+  'USD_3000_7500',
+  'USD_7500_15000',
+  'OVER_15000_USD',
+  'NOT_SURE',
 ];
 
 const TIMELINE_OPTIONS: ProjectTimeline[] = [
-  '1-2-months',
-  '2-4-months',
-  '4-6-months',
-  '6-plus-months',
+  'UNDER_1_MONTH',
+  'MONTHS_1_2',
+  'MONTHS_2_4',
+  'MONTHS_4_6',
+  'OVER_6_MONTHS',
+  'NOT_SURE',
 ];
+
+interface SelectableOptionProps {
+  label: string;
+  isSelected: boolean;
+  onSelect: () => void;
+}
+
+/**
+ * Single-select radio card. Renders a visible form-control indicator so the
+ * option reads as a selectable control rather than an ordinary button.
+ */
+function SelectableOption({ label, isSelected, onSelect }: SelectableOptionProps) {
+  return (
+    <button
+      type="button"
+      role="radio"
+      aria-checked={isSelected}
+      tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onSelect();
+        }
+      }}
+      className={cn(
+        'group relative flex min-h-14 items-center gap-3 rounded-lg border px-4 py-3 text-start transition-all duration-200',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+        isSelected
+          ? 'border-primary bg-primary/5 shadow-ring'
+          : 'border-border bg-card hover:border-primary/60 hover:bg-surface-container-low',
+      )}
+    >
+      <span
+        className={cn(
+          'flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-200',
+          isSelected ? 'border-primary' : 'border-outline group-hover:border-primary/70',
+        )}
+        aria-hidden="true"
+      >
+        <span
+          className={cn(
+            'h-2 w-2 rounded-full bg-primary transition-transform duration-200',
+            isSelected ? 'scale-100' : 'scale-0',
+          )}
+        />
+      </span>
+      <span
+        className={cn(
+          'text-sm leading-snug transition-colors duration-200',
+          isSelected ? 'font-semibold text-primary' : 'font-medium text-on-surface',
+        )}
+      >
+        {label}
+      </span>
+    </button>
+  );
+}
 
 interface BudgetTimelineScreenProps {
   locale: Locale;
@@ -56,7 +118,7 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
   );
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8">
       {/* Header */}
       <div className="space-y-3">
         <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
@@ -72,7 +134,7 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
       </div>
 
       {/* Budget section */}
-      <div className="space-y-4">
+      <section className="space-y-4">
         <h3 className="text-sm font-semibold uppercase tracking-wide text-on-surface-variant">
           {copy.budgetTimeline.budgetLabel}
         </h3>
@@ -81,82 +143,49 @@ function BudgetTimelineScreen({ locale }: BudgetTimelineScreenProps) {
           role="radiogroup"
           aria-label={copy.budgetTimeline.budgetLabel}
         >
-          {BUDGET_OPTIONS.map((value) => {
-            const isSelected = budget === value;
-            const option = copy.budgetTimeline.budgetOptions[value];
-            return (
-              <button
-                key={value}
-                type="button"
-                role="radio"
-                aria-checked={isSelected}
-                aria-pressed={isSelected}
-                onClick={() => handleBudgetSelect(value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleBudgetSelect(value);
-                  }
-                }}
-                className={
-                  isSelected
-                    ? 'flex min-h-12 items-center justify-center rounded-xl border border-primary bg-primary/5 px-4 py-3 text-sm font-semibold text-primary shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
-                    : 'flex min-h-12 items-center justify-center rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-on-surface transition-all duration-200 hover:border-primary hover:bg-surface-container-low focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
-                }
-              >
-                {option!.label}
-              </button>
-            );
-          })}
+          {BUDGET_OPTIONS.map((value) => (
+            <SelectableOption
+              key={value}
+              label={copy.budgetTimeline.budgetOptions[value].label}
+              isSelected={budget === value}
+              onSelect={() => handleBudgetSelect(value)}
+            />
+          ))}
         </div>
-      </div>
+      </section>
 
       {/* Timeline section */}
-      <div className="space-y-4">
+      <section className="space-y-4">
         <h3 className="text-sm font-semibold uppercase tracking-wide text-on-surface-variant">
           {copy.budgetTimeline.timelineLabel}
         </h3>
         <div
-          className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
           role="radiogroup"
           aria-label={copy.budgetTimeline.timelineLabel}
         >
-          {TIMELINE_OPTIONS.map((value) => {
-            const isSelected = timeline === value;
-            const option = copy.budgetTimeline.timelineOptions[value];
-            return (
-              <button
-                key={value}
-                type="button"
-                role="radio"
-                aria-checked={isSelected}
-                aria-pressed={isSelected}
-                onClick={() => handleTimelineSelect(value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleTimelineSelect(value);
-                  }
-                }}
-                className={
-                  isSelected
-                    ? 'flex min-h-12 items-center justify-center rounded-xl border border-primary bg-primary/5 px-4 py-3 text-sm font-semibold text-primary shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
-                    : 'flex min-h-12 items-center justify-center rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-on-surface transition-all duration-200 hover:border-primary hover:bg-surface-container-low focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
-                }
-              >
-                {option!.label}
-              </button>
-            );
-          })}
+          {TIMELINE_OPTIONS.map((value) => (
+            <SelectableOption
+              key={value}
+              label={copy.budgetTimeline.timelineOptions[value].label}
+              isSelected={timeline === value}
+              onSelect={() => handleTimelineSelect(value)}
+            />
+          ))}
         </div>
-      </div>
+      </section>
 
       {/* Footer navigation */}
       <div className="flex flex-col-reverse items-stretch gap-3 pt-4 sm:flex-row sm:justify-end">
         <Button variant="secondary" size="lg" className="min-h-12 sm:w-auto" onClick={previousStep}>
           {copy.actions.back}
         </Button>
-        <Button size="lg" className="min-h-12 sm:w-auto" disabled={!canContinue} onClick={nextStep}>
+        <Button
+          size="lg"
+          className="min-h-12 w-full sm:w-auto disabled:cursor-not-allowed"
+          disabled={!canContinue}
+          onClick={nextStep}
+        >
           {copy.actions.continue}
         </Button>
       </div>

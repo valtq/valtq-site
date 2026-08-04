@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/i18n/config';
 import { getTranslations } from '@/i18n/get-dictionary';
-import { Hero } from '@/components/sections/hero';
+import { WorkHero } from '@/components/sections/work-hero';
 import { WorkGrid } from '@/components/sections/work-grid';
 
 export default async function WorkPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -12,7 +12,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <Hero dict={dict} variant="work" locale={locale as Locale} />
+      <WorkHero dict={dict} locale={locale as Locale} />
       <WorkGrid dict={dict} locale={locale as Locale} />
     </>
   );

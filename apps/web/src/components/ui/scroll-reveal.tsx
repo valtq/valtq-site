@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { type ReactNode, useSyncExternalStore } from 'react';
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'scale' | 'fade' | 'up-lg';
@@ -36,6 +36,31 @@ function getServerIsRtl() {
   return false;
 }
 
+function subscribeToReducedMotion(onChange: () => void) {
+  if (typeof window === 'undefined') return () => {};
+
+  const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  mediaQuery.addEventListener('change', onChange);
+  return () => mediaQuery.removeEventListener('change', onChange);
+}
+
+function getPrefersReducedMotion() {
+  return typeof window !== 'undefined'
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function getServerPrefersReducedMotion() {
+  return false;
+}
+
+export function usePrefersReducedMotion() {
+  return useSyncExternalStore(
+    subscribeToReducedMotion,
+    getPrefersReducedMotion,
+    getServerPrefersReducedMotion,
+  );
+}
+
 function getRtlDirection(direction: Direction, isRtl: boolean): Direction {
   if (!isRtl) return direction;
   if (direction === 'left') return 'right';
@@ -60,7 +85,7 @@ export function ScrollReveal({
   delay = 0,
   gpu = true,
 }: ScrollRevealProps) {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = usePrefersReducedMotion();
   const isRtl = useSyncExternalStore(
     subscribeToDocumentDirection,
     getDocumentIsRtl,
@@ -68,7 +93,7 @@ export function ScrollReveal({
   );
 
   if (prefersReducedMotion) {
-    return <div className={className}>{children}</div>;
+    return <div className={className} style={{ opacity: 1, transform: 'none' }}>{children}</div>;
   }
 
   const dir = getRtlDirection(direction, isRtl);
@@ -117,10 +142,10 @@ export function StaggerReveal({
   delay?: number;
   gpu?: boolean;
 }) {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   if (prefersReducedMotion) {
-    return <div className={className}>{children}</div>;
+    return <div className={className} style={{ opacity: 1, transform: 'none' }}>{children}</div>;
   }
 
   return (

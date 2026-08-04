@@ -4,6 +4,10 @@ import {
   type DiscoveryResponse,
   type DiscoverySubmission,
 } from '@valtq/types';
+import {
+  ContactFormSchema,
+  type ContactFormValues,
+} from './contact-form-schema';
 
 export class ApiError extends Error {
   readonly statusCode: number;
@@ -97,4 +101,35 @@ export async function submitDiscovery(
   }
 
   return data.data;
+}
+
+/**
+ * Submit a project inquiry from the Contact page.
+ *
+ * NOTE: No contact/inquiry endpoint currently exists in the backend (the API
+ * exposes only `/api/discovery`, booking, and health routes). This integration
+ * point validates the payload and reports a clear "not configured" error so the
+ * form never fakes a successful submission and never silently discards input.
+ *
+ * When a backend contact/lead endpoint is introduced, wire it here following
+ * the same fetch + envelope shape used by `submitDiscovery`.
+ */
+export async function submitContact(
+  payload: ContactFormValues,
+): Promise<{ received: boolean }> {
+  const parsed = ContactFormSchema.safeParse(payload);
+  if (!parsed.success) {
+    throw new ApiError(
+      'Contact form validation failed',
+      400,
+      'VALIDATION_ERROR',
+      parsed.error.flatten(),
+    );
+  }
+
+  throw new ApiError(
+    'Contact submission is not configured yet. The form preserves your input so you can retry once a channel is available.',
+    501,
+    'NOT_CONFIGURED',
+  );
 }

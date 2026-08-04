@@ -9,6 +9,7 @@ import { NavigationFeedback } from '@/components/layout/navigation-feedback';
 import { PageTransition } from '@/components/layout/page-transition';
 import { ThemeProvider } from '@/components/layout/theme-provider';
 import { WhatsAppButton } from '@/components/layout/whatsapp-button';
+import { BackToTop } from '@/components/layout/back-to-top';
 import { SITE_URL, SITE_NAME } from '@/config/site';
 
 export function generateStaticParams() {
@@ -81,6 +82,7 @@ export default async function LocaleLayout({
             <Footer locale={locale as Locale} />
           </NavigationFeedback>
           <WhatsAppButton label={dict.whatsapp.floatingLabel} />
+          <BackToTop label={dict.nav.backToTop} />
         </ThemeProvider>
       </DictionaryProvider>
     </div>

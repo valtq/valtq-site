@@ -1,8 +1,15 @@
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/i18n/config';
 import { getTranslations } from '@/i18n/get-dictionary';
-import { Hero } from '@/components/sections/hero';
-import { ServicesSection } from '@/components/sections/services-section';
+import { ServicesHero } from '@/components/sections/services-hero';
+import {
+  ServicesOverview,
+  ServicesDetails,
+  ServicesWhy,
+  ServicesEngagements,
+  ServicesJourney,
+  ServicesFinalCta,
+} from '@/components/sections/services-sections';
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -12,8 +19,13 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <Hero dict={dict} variant="services" locale={locale as Locale} />
-      <ServicesSection dict={dict} />
+      <ServicesHero dict={dict} locale={locale as Locale} />
+      <ServicesOverview dict={dict} />
+      <ServicesDetails dict={dict} />
+      <ServicesWhy dict={dict} />
+      <ServicesEngagements dict={dict} />
+      <ServicesJourney dict={dict} locale={locale as Locale} />
+      <ServicesFinalCta dict={dict} locale={locale as Locale} />
     </>
   );
 }

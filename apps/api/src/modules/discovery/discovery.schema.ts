@@ -4,14 +4,7 @@
  */
 export const discoveryBodySchema = {
   type: 'object',
-  required: [
-    'name',
-    'email',
-    'projectType',
-    'budget',
-    'timeline',
-    'description',
-  ],
+  required: ['name', 'email', 'projectType', 'budget', 'timeline', 'description'],
   additionalProperties: false,
   properties: {
     name: { type: 'string', minLength: 1, maxLength: 200 },
@@ -22,22 +15,29 @@ export const discoveryBodySchema = {
     website: { type: 'string', maxLength: 500 },
     projectType: {
       type: 'string',
-      enum: [
-        'website',
-        'web-app',
-        'mobile-app',
-        'saas',
-        'ecommerce',
-        'other',
-      ],
+      enum: ['website', 'web-app', 'mobile-app', 'saas', 'ecommerce', 'other'],
     },
     budget: {
       type: 'string',
-      enum: ['under-5k', '5k-15k', '15k-30k', '30k-50k', '50k-plus'],
+      enum: [
+        'UNDER_1000_USD',
+        'USD_1000_3000',
+        'USD_3000_7500',
+        'USD_7500_15000',
+        'OVER_15000_USD',
+        'NOT_SURE',
+      ],
     },
     timeline: {
       type: 'string',
-      enum: ['1-2-months', '2-4-months', '4-6-months', '6-plus-months'],
+      enum: [
+        'UNDER_1_MONTH',
+        'MONTHS_1_2',
+        'MONTHS_2_4',
+        'MONTHS_4_6',
+        'OVER_6_MONTHS',
+        'NOT_SURE',
+      ],
     },
     description: { type: 'string', minLength: 10, maxLength: 5000 },
     features: {

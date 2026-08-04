@@ -16,7 +16,8 @@
     "close": "Close menu",
     "language": "العربية",
     "darkMode": "Dark mode",
-    "lightMode": "Light mode"
+    "lightMode": "Light mode",
+    "backToTop": "Back to top"
   },
   "hero": {
     "home": {
@@ -27,7 +28,17 @@
       "primaryCta": "Start your project",
       "secondaryCta": "Explore our work",
       "capabilitiesLabel": "What we do",
-      "capabilities": ["Product Strategy", "Experience Design", "Software Engineering"],
+      "capabilities": [
+        "Product Strategy",
+        "Experience Design",
+        "Software Engineering"
+      ],
+      "visualCapabilities": [
+        "Product Strategy",
+        "Experience Design",
+        "Software Engineering",
+        "Cloud & Infrastructure"
+      ],
       "imageAlt": "ValtQ team collaborating in a modern workspace"
     },
     "services": {
@@ -37,8 +48,8 @@
     },
     "process": {
       "tag": "How We Work",
-      "title": "A Process Built for Clarity",
-      "description": "Every project follows our battle-tested methodology — transparent, structured, and designed to eliminate risk at every stage."
+      "title": "A Delivery Process Built for Clarity",
+      "description": "A structured delivery framework that connects strategy, design, engineering, quality, and operations through visible decisions and reviewable progress."
     },
     "about": {
       "tag": "About ValtQ",
@@ -46,51 +57,341 @@
       "description": "We are a boutique software engineering agency — small by design, relentless about quality."
     },
     "faq": {
-      "tag": "FAQ",
-      "title": "Answers to Common Questions",
-      "description": "Everything you need to know before working with us."
+      "tag": "Frequently asked questions",
+      "title": "Clear answers before your product journey begins.",
+      "description": "Learn how ValtQ approaches discovery, product design, software engineering, delivery, collaboration, ownership, and post-launch support.",
+      "supportingLine": "Can’t find what you need? Contact us and share the context of your question.",
+      "primaryCta": "Browse questions",
+      "secondaryCta": "Contact us",
+      "visual": {
+        "questionLabel": "Question",
+        "categories": [
+          "Discovery",
+          "Delivery",
+          "Engineering",
+          "Support"
+        ],
+        "answerLabel": "Answer",
+        "decisionLabel": "Clear decision",
+        "captionStart": "Questions",
+        "captionEnd": "Clear decisions"
+      }
     },
     "work": {
-      "tag": "Our Work",
-      "title": "Projects That Deliver Results",
-      "description": "A selection of our engineering work — each project engineered for performance, scale, and measurable impact."
+      "tag": "Our work",
+      "title": "Product work shaped by clear thinking and thoughtful engineering.",
+      "titleAccent": "thoughtful engineering.",
+      "description": "Explore case studies across web, mobile, AI-enabled products, and digital platforms. Each project shows how product direction, experience design, technical decisions, and delivery planning come together.",
+      "primaryCta": "Explore case studies",
+      "secondaryCta": "Start Discovery",
+      "capabilitiesLabel": "Capabilities",
+      "capabilities": [
+        "Product direction",
+        "Experience design",
+        "Software engineering",
+        "Delivery planning"
+      ],
+      "visual": {
+        "stages": [
+          "Challenge",
+          "Product direction",
+          "Experience",
+          "Engineering"
+        ],
+        "deliveryLabel": "Delivery"
+      }
     },
     "contact": {
-      "tag": "Contact Us",
-      "title": "Let's Build Something Together",
-      "description": "Have a project in mind? Tell us about your goals and we'll get back to you within 24 hours."
+      "tag": "Contact ValtQ",
+      "title": "Start with the product challenge, goals, and context.",
+      "description": "Tell us what you are building, improving, or trying to understand. Share the current product stage, users, constraints, existing systems, and the decisions you need help making.",
+      "supportingLine": "For early product questions, use Discovery. For a specific inquiry, send the details through the form below.",
+      "primaryCta": "Start Discovery",
+      "secondaryCta": "Go to the contact form",
+      "visual": {
+        "nodeLabel": "Project context",
+        "inputLabel": "Conversation input",
+        "inputs": [
+          {
+            "label": "Product goal"
+          },
+          {
+            "label": "Current stage"
+          },
+          {
+            "label": "Constraints"
+          },
+          {
+            "label": "Existing system"
+          },
+          {
+            "label": "Next decision"
+          }
+        ],
+        "captionStart": "Project context",
+        "captionEnd": "Product conversation"
+      }
     },
     "careers": {
-      "tag": "Careers",
-      "title": "Join Our Engineering Team",
-      "description": "We're always looking for exceptional engineers who care about craft. Check out our open roles."
+      "eyebrow": "Careers at ValtQ",
+      "title": "Do thoughtful product and engineering work with clarity, ownership, and care.",
+      "description": "ValtQ brings product strategy, experience design, software engineering, and cloud delivery into one connected workflow. Our work requires people who can understand the product context, communicate decisions clearly, and contribute to reliable, maintainable digital systems.",
+      "supportingLine": "There are no open roles at the moment, but this page explains how we work and what we value in future collaborators.",
+      "primaryCta": "How we work",
+      "secondaryCta": "Explore our work",
+      "visual": {
+        "central": "Product delivery",
+        "nodes": [
+          "Product Strategy",
+          "Experience Design",
+          "Frontend Engineering",
+          "Backend Engineering",
+          "Quality",
+          "Cloud Delivery"
+        ],
+        "checkpointLabel": "Review",
+        "captionStart": "Connected disciplines",
+        "captionEnd": "Shared product"
+      }
     },
     "blog": {
-      "tag": "Blog",
-      "title": "Insights & Engineering Notes",
-      "description": "Thoughts on software engineering, architecture, and building products that scale."
+      "eyebrow": "ValtQ Insights",
+      "title": "Practical thinking for building and evolving ",
+      "titleAccent": "digital products.",
+      "description": "Notes on product strategy, software engineering, AI, and delivery — grounded in how real products get built and improved. No inflated claims: just the decisions, trade-offs, and details that matter.",
+      "topics": [
+        "Product strategy",
+        "Engineering practice",
+        "AI & automation",
+        "Quality & delivery"
+      ]
+    }
+  },
+  "careers": {
+    "status": {
+      "eyebrow": "Current opportunities",
+      "title": "No open roles at the moment.",
+      "description": "ValtQ is not currently recruiting for a specific position. When an approved role becomes available, it will be listed on this page with its scope, responsibilities, requirements, working arrangement, and application method.",
+      "note": "We do not display placeholder vacancies or collect applications through a form that is not connected to a real recruitment workflow."
     },
-    "terms": {
-      "tag": "Legal",
-      "title": "Terms of Service",
-      "description": "Please read these terms carefully before using our services."
+    "why": {
+      "eyebrow": "The work environment",
+      "title": "Product context and engineering quality stay connected.",
+      "intro": "The quality of a technical solution depends on more than implementation speed. The team needs a shared understanding of the users, workflow, constraints, system boundaries, and decisions that shape the product.",
+      "items": [
+        {
+          "title": "Meaningful product context",
+          "description": "Engineering work begins with an understanding of the product objective, users, workflow, constraints, and expected operational behavior."
+        },
+        {
+          "title": "Clear delivery",
+          "description": "Scope, priorities, dependencies, decisions, and progress should remain visible to the people contributing to the product."
+        },
+        {
+          "title": "Engineering with purpose",
+          "description": "Technology is selected according to the product stage and requirements, rather than applied as the same stack to every problem."
+        },
+        {
+          "title": "Quality throughout delivery",
+          "description": "Code review, testing, accessibility, performance, and operational readiness are treated as part of implementation."
+        },
+        {
+          "title": "Cross-functional collaboration",
+          "description": "Product, design, frontend, backend, quality, and infrastructure decisions are reviewed as connected concerns."
+        },
+        {
+          "title": "Maintainability after release",
+          "description": "Code structure, documentation, environments, and deployment workflows should support the people responsible for the product after launch."
+        }
+      ]
     },
-    "privacy": {
-      "tag": "Legal",
-      "title": "Privacy Policy",
-      "description": "How we collect, use, and protect your personal information."
+    "howWeWork": {
+      "eyebrow": "How we work",
+      "title": "Work is organized around decisions, reviewable progress, and shared ownership.",
+      "items": [
+        {
+          "title": "Understand before implementing",
+          "description": "The team clarifies the workflow, user need, constraints, and technical context before committing to a solution."
+        },
+        {
+          "title": "Deliver in reviewable increments",
+          "description": "Work is structured so product behavior, technical decisions, and risks can be reviewed while delivery is still in progress."
+        },
+        {
+          "title": "Discuss trade-offs directly",
+          "description": "Architecture, scope, quality, performance, and timing decisions are discussed with their consequences rather than hidden behind implementation details."
+        },
+        {
+          "title": "Review and learn",
+          "description": "Code review, demonstrations, feedback, and technical discussion are used to improve both the product and the team's shared understanding."
+        },
+        {
+          "title": "Document important decisions",
+          "description": "Relevant product and technical decisions should remain understandable after the original conversation ends."
+        },
+        {
+          "title": "Ask for support early",
+          "description": "Ownership includes recognizing uncertainty, raising blockers, and requesting input before a problem grows."
+        }
+      ]
     },
-    "cookies": {
-      "tag": "Legal",
-      "title": "Cookie Policy",
-      "description": "How we use cookies and similar technologies on our website."
+    "disciplines": {
+      "eyebrow": "Disciplines",
+      "title": "Disciplines that contribute to ValtQ projects.",
+      "note": "These disciplines describe the work involved in ValtQ projects. They are not a list of current vacancies.",
+      "items": [
+        {
+          "title": "Product Strategy",
+          "description": "Discovery, workflow analysis, scope definition, prioritization, and delivery planning."
+        },
+        {
+          "title": "Experience Design",
+          "description": "User journeys, information architecture, interface design, and design-system foundations."
+        },
+        {
+          "title": "Frontend Engineering",
+          "description": "Responsive interfaces, component systems, accessibility, performance, and frontend integration."
+        },
+        {
+          "title": "Backend Engineering",
+          "description": "APIs, data models, authentication, permissions, integrations, and background processing."
+        },
+        {
+          "title": "Mobile Engineering",
+          "description": "Cross-platform product development, device integrations, offline-aware workflows, and release preparation."
+        },
+        {
+          "title": "AI Engineering",
+          "description": "Knowledge retrieval, model integration, structured outputs, automation, validation, and human-review workflows."
+        },
+        {
+          "title": "Cloud and Infrastructure",
+          "description": "Deployment workflows, environments, configuration, monitoring, reliability, and operational readiness."
+        },
+        {
+          "title": "Quality Engineering",
+          "description": "Acceptance criteria, functional testing, integration testing, accessibility, performance, and release readiness."
+        }
+      ]
+    },
+    "lookFor": {
+      "eyebrow": "Future collaborators",
+      "title": "The way someone approaches the work matters alongside technical knowledge.",
+      "items": [
+        {
+          "title": "Structured thinking",
+          "description": "The ability to break complex work into understandable problems, assumptions, and decisions."
+        },
+        {
+          "title": "Product awareness",
+          "description": "An interest in why a feature exists, who uses it, and how it affects the wider product."
+        },
+        {
+          "title": "Clear communication",
+          "description": "The ability to explain progress, uncertainty, trade-offs, and technical choices to different stakeholders."
+        },
+        {
+          "title": "Quality awareness",
+          "description": "Attention to maintainability, testing, accessibility, performance, and operational behavior."
+        },
+        {
+          "title": "Ownership without isolation",
+          "description": "The willingness to take responsibility while asking for review or support when needed."
+        },
+        {
+          "title": "Constructive feedback",
+          "description": "The ability to review work respectfully, receive feedback, and improve the solution without making discussion personal."
+        },
+        {
+          "title": "Continuous learning",
+          "description": "The willingness to update assumptions, learn unfamiliar areas, and share useful knowledge with others."
+        }
+      ]
+    },
+    "candidateExperience": {
+      "eyebrow": "Candidate experience",
+      "title": "Any future hiring process should be relevant, transparent, and respectful.",
+      "items": [
+        {
+          "title": "Clear role context",
+          "description": "The role should explain its responsibilities, expected contribution, working arrangement, and required experience."
+        },
+        {
+          "title": "Relevant evaluation",
+          "description": "Evaluation should reflect the work involved in the role rather than rely on unrelated exercises."
+        },
+        {
+          "title": "Transparent stages",
+          "description": "Candidates should understand the next step, who they will meet, and what is being evaluated."
+        },
+        {
+          "title": "Respect for candidate work",
+          "description": "Practical evaluations should remain limited, relevant, and clearly separated from unpaid production work."
+        },
+        {
+          "title": "Privacy and access",
+          "description": "Candidate information should only be collected through an approved channel and handled according to the applicable privacy terms."
+        },
+        {
+          "title": "Clear closure",
+          "description": "Candidates should receive a clear outcome when the recruitment workflow and operational capacity allow it."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Candidate FAQ",
+      "title": "Questions about future opportunities at ValtQ.",
+      "items": [
+        {
+          "id": "open-roles",
+          "question": "Are there any open roles right now?",
+          "answer": "No. ValtQ is not currently recruiting for a specific position. Approved roles will be published on this page when they become available."
+        },
+        {
+          "id": "general-application",
+          "question": "Can I send a general application?",
+          "answer": "There is currently no approved general-application channel. Please do not send sensitive personal or employment information through unrelated contact forms."
+        },
+        {
+          "id": "future-roles",
+          "question": "Where will future roles be published?",
+          "answer": "Approved opportunities will appear on this Careers page with the role scope, requirements, working arrangement, and application method."
+        },
+        {
+          "id": "disciplines-open",
+          "question": "Does the disciplines section mean those roles are open?",
+          "answer": "No. The disciplines describe areas involved in ValtQ product delivery. They do not represent current vacancies."
+        },
+        {
+          "id": "contact-cv",
+          "question": "Can I use the Contact page to submit a CV?",
+          "answer": "The Contact page is intended for product and business inquiries. Do not submit a CV or sensitive employment information through it unless ValtQ explicitly adds a recruitment option."
+        },
+        {
+          "id": "internships",
+          "question": "Will internships or graduate opportunities be offered?",
+          "answer": "No internship or graduate program is currently confirmed. Any approved opportunity will be published with its actual requirements and application method."
+        }
+      ]
     }
   },
   "stats": {
-    "projects": { "value": "50+", "label": "Projects Delivered" },
-    "clients": { "value": "30+", "label": "Happy Clients" },
-    "uptime": { "value": "99.9%", "label": "Uptime Guarantee" },
-    "experience": { "value": "8+", "label": "Years of Experience" }
+    "projects": {
+      "value": "50+",
+      "label": "Projects Delivered"
+    },
+    "clients": {
+      "value": "30+",
+      "label": "Happy Clients"
+    },
+    "uptime": {
+      "value": "99.9%",
+      "label": "Uptime Guarantee"
+    },
+    "experience": {
+      "value": "8+",
+      "label": "Years of Experience"
+    }
   },
   "homeServices": {
     "eyebrow": "Capabilities",
@@ -159,6 +460,291 @@
       ]
     }
   },
+  "servicesPage": {
+    "hero": {
+      "eyebrow": "Software engineering services",
+      "titleStart": "Design, build, and evolve digital products with one connected ",
+      "titleHighlight": "engineering partner.",
+      "description": "ValtQ brings product strategy, experience design, software engineering, and cloud delivery into one practical workflow. We help teams turn complex requirements into reliable web platforms, mobile products, AI-enabled experiences, and scalable technical foundations.",
+      "primaryCta": "Start Discovery",
+      "secondaryCta": "Explore Our Process",
+      "capabilitiesLabel": "Core capabilities",
+      "capabilities": [
+        "Product strategy",
+        "Web and mobile engineering",
+        "AI integration",
+        "Cloud delivery"
+      ],
+      "visual": {
+        "central": "Product Platform",
+        "nodes": [
+          "Web Platforms",
+          "Mobile Products",
+          "AI Workflows",
+          "Cloud Systems"
+        ]
+      }
+    },
+    "overview": {
+      "eyebrow": "Services overview",
+      "title": "A connected set of engineering services",
+      "description": "Six service areas that support one another across the product journey — from first scope decisions through design, engineering, and ongoing operation.",
+      "viewLabel": "View service",
+      "items": [
+        {
+          "title": "Web Applications",
+          "description": "Customer-facing platforms, internal tools, and data-driven interfaces built to remain maintainable as they grow."
+        },
+        {
+          "title": "Mobile Applications",
+          "description": "iOS and Android products designed for daily use, offline-aware workflows, and dependable releases."
+        },
+        {
+          "title": "AI & Machine Learning",
+          "description": "Practical AI integrated into real product workflows with clear system boundaries."
+        },
+        {
+          "title": "Cloud & Infrastructure",
+          "description": "APIs, data, and deployment foundations designed for secure, observable operation."
+        },
+        {
+          "title": "Product Strategy & Experience Design",
+          "description": "Clarify scope and shape the experience before committing time and budget."
+        },
+        {
+          "title": "Quality & Product Evolution",
+          "description": "Quality practices, monitoring, and iteration that continue after the first release."
+        }
+      ]
+    },
+    "web": {
+      "eyebrow": "01 — Web application engineering",
+      "heading": "Web platforms designed around real workflows and long-term maintainability.",
+      "description": "We build customer-facing products, internal platforms, operational dashboards, portals, and data-driven applications. The work starts with the business workflow and user journey, then moves into architecture, interface design, implementation, testing, and deployment.",
+      "paragraph": "Our focus is not limited to producing pages or isolated features. We structure the frontend, backend integrations, data flow, permissions, performance, and deployment model so the product remains understandable and maintainable as its scope grows.",
+      "supportLabel": "What we can support",
+      "support": [
+        "Marketing and customer-facing platforms",
+        "Internal operations dashboards",
+        "Role-based portals",
+        "Workflow and approval systems",
+        "Data-intensive interfaces",
+        "API integrations",
+        "Multilingual and RTL experiences",
+        "Performance and accessibility improvements"
+      ],
+      "techLabel": "Technical capabilities",
+      "tech": [
+        "React and Next.js",
+        "TypeScript",
+        "Component-driven user interfaces",
+        "Server-side rendering and static generation",
+        "API and third-party service integration",
+        "Authentication and authorization flows",
+        "Responsive and accessible UI implementation",
+        "Performance and SEO foundations"
+      ]
+    },
+    "mobile": {
+      "eyebrow": "02 — Mobile product development",
+      "heading": "Mobile experiences designed for daily use, changing networks, and evolving product requirements.",
+      "description": "We develop mobile products for iOS and Android with attention to navigation, state management, API reliability, device behavior, accessibility, and release readiness. Depending on product constraints, we can use cross-platform development to maintain a shared product foundation while preserving a platform-appropriate experience.",
+      "paragraph": "Mobile delivery includes more than implementing screens. We consider session handling, slow or interrupted connections, local state, notifications, permissions, secure storage, analytics integration, and the operational work required to release and maintain the application.",
+      "supportLabel": "What we can support",
+      "support": [
+        "Customer and member applications",
+        "Field and operations applications",
+        "Booking and service applications",
+        "Content and community products",
+        "Offline-aware workflows",
+        "Camera, location, and device integrations",
+        "Push-notification flows",
+        "Store-release preparation"
+      ],
+      "techLabel": "Technical capabilities",
+      "tech": [
+        "React Native",
+        "Flutter where appropriate",
+        "iOS and Android delivery",
+        "Shared component and design systems",
+        "Secure local storage",
+        "API synchronization",
+        "Deep links and notifications",
+        "Mobile testing and release workflows"
+      ]
+    },
+    "ai": {
+      "eyebrow": "03 — AI-enabled products",
+      "heading": "Practical AI capabilities connected to product workflows and controlled by clear system boundaries.",
+      "description": "We integrate AI where it can improve a real product workflow: helping users find information, supporting internal decisions, extracting structured data, classifying content, generating assisted responses, or automating repetitive steps.",
+      "paragraph": "AI functionality should not operate as an isolated demo. We connect it to the product’s data, permissions, review process, fallback behavior, and monitoring. For knowledge-based assistants, we can structure retrieval workflows that ground responses in approved sources and expose relevant references to users or reviewers.",
+      "supportLabel": "What we can support",
+      "support": [
+        "AI assistants and copilots",
+        "Retrieval-augmented generation",
+        "Knowledge search",
+        "Document extraction and classification",
+        "Recommendation and personalization workflows",
+        "Content-assistance tools",
+        "Workflow automation",
+        "Human-review and escalation paths"
+      ],
+      "techLabel": "Engineering considerations",
+      "tech": [
+        "Prompt and context design",
+        "Model-provider integration",
+        "Access control around retrieved data",
+        "Structured output validation",
+        "Source attribution",
+        "Confidence and fallback handling",
+        "Observability and usage controls",
+        "Human-in-the-loop workflows"
+      ]
+    },
+    "cloud": {
+      "eyebrow": "04 — Cloud and infrastructure",
+      "heading": "Backend and cloud foundations designed for secure delivery and operational clarity.",
+      "description": "We design and implement APIs, data models, background processing, service integrations, deployment workflows, and cloud environments that support the product’s actual traffic, reliability, security, and operational needs.",
+      "paragraph": "The goal is not to introduce infrastructure complexity for its own sake. We choose deployment patterns based on the product stage, team capacity, expected usage, security requirements, and recovery needs. The resulting setup should remain observable, repeatable, and understandable to the people who operate it.",
+      "supportLabel": "What we can support",
+      "support": [
+        "API and backend development",
+        "Relational and document databases",
+        "Authentication and role-based access",
+        "Background jobs and queues",
+        "Object and document storage",
+        "Third-party integrations",
+        "Cloud deployment",
+        "Continuous integration and delivery",
+        "Monitoring and operational logging",
+        "Environment and configuration management"
+      ],
+      "techLabel": "Technology directions",
+      "tech": [
+        "Node.js and TypeScript",
+        "Python and FastAPI where appropriate",
+        "PostgreSQL and document databases",
+        "Redis and background queues",
+        "Docker",
+        "AWS, GCP, or Azure depending on requirements",
+        "CI/CD pipelines",
+        "Logging and application monitoring"
+      ]
+    },
+    "strategy": {
+      "eyebrow": "05 — Product strategy and experience design",
+      "heading": "Clarify what should be built before committing time and budget to delivery.",
+      "description": "We help teams translate business goals, user needs, operational constraints, and technical requirements into a product direction that engineering can execute. This may include discovery workshops, workflow mapping, feature prioritization, information architecture, interface design, and an initial delivery roadmap.",
+      "paragraph": "",
+      "supportLabel": "Supporting points",
+      "support": [
+        "Problem and opportunity framing",
+        "User and stakeholder workflows",
+        "Functional scope definition",
+        "Feature prioritization",
+        "Information architecture",
+        "Wireframes and interface design",
+        "Design-system foundations",
+        "Technical feasibility review",
+        "Delivery-roadmap preparation"
+      ],
+      "techLabel": "",
+      "tech": []
+    },
+    "quality": {
+      "eyebrow": "06 — Quality and product evolution",
+      "heading": "Quality practices that continue beyond the first release.",
+      "description": "A production release is one stage of the product lifecycle. We structure quality assurance, code review, automated checks, observability, release processes, and maintenance planning so teams can continue improving the product without losing control of its technical foundation.",
+      "paragraph": "",
+      "supportLabel": "Quality activities may include",
+      "support": [
+        "Acceptance criteria and test planning",
+        "Code review",
+        "Automated unit and integration tests",
+        "End-to-end testing where appropriate",
+        "Accessibility review",
+        "Performance review",
+        "Security-minded implementation",
+        "Release checklists",
+        "Error monitoring",
+        "Technical-debt prioritization",
+        "Post-release iteration"
+      ],
+      "techLabel": "",
+      "tech": []
+    },
+    "why": {
+      "eyebrow": "Why ValtQ",
+      "heading": "Engineering decisions connected to product outcomes.",
+      "description": "Our role is to keep product goals, user experience, implementation, and operations connected. That reduces handoff gaps and helps teams make technical decisions with a clear understanding of their product impact.",
+      "principles": [
+        {
+          "title": "Product context before implementation",
+          "description": "We begin by understanding the workflow, users, constraints, and purpose of the requested feature."
+        },
+        {
+          "title": "Architecture proportional to the product",
+          "description": "We avoid both fragile shortcuts and unnecessary complexity, selecting a foundation appropriate to the current stage and expected growth."
+        },
+        {
+          "title": "Visible delivery",
+          "description": "Work is divided into reviewable increments so decisions, risks, and progress remain visible."
+        },
+        {
+          "title": "Quality built into the workflow",
+          "description": "Review, testing, accessibility, performance, and operational readiness are treated as delivery activities rather than final-stage cleanup."
+        },
+        {
+          "title": "Clear ownership and communication",
+          "description": "Scope, decisions, dependencies, and blockers should remain explicit throughout the engagement."
+        },
+        {
+          "title": "Maintainability after launch",
+          "description": "Code structure, documentation, environments, and deployment workflows should support the team that will continue operating the product."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Engagement models",
+      "heading": "Engagement shaped around the stage of your product.",
+      "items": [
+        {
+          "title": "Discovery and technical definition",
+          "description": "Suitable when the problem is understood but scope, architecture, or delivery priorities still need clarification."
+        },
+        {
+          "title": "Focused product build",
+          "description": "Suitable for a defined product, module, platform, or application that needs design and engineering delivery."
+        },
+        {
+          "title": "Embedded product engineering",
+          "description": "Suitable for teams that need additional product, frontend, backend, mobile, AI, or infrastructure capacity integrated into their existing workflow."
+        },
+        {
+          "title": "Product evolution and modernization",
+          "description": "Suitable for existing systems that need performance improvement, interface renewal, architecture changes, new capabilities, or safer deployment practices."
+        }
+      ],
+      "note": "The right model depends on the product stage, existing team, technical constraints, and clarity of the current scope. Discovery is used to determine an appropriate path rather than applying the same delivery model to every project."
+    },
+    "journey": {
+      "eyebrow": "Connected delivery",
+      "heading": "One delivery journey, not disconnected service handoffs.",
+      "description": "Product strategy defines the right problem and scope. Experience design turns that scope into understandable workflows. Engineering implements the product and its integrations. Cloud and quality practices prepare it for reliable operation and continued evolution.",
+      "stages": [
+        "Define",
+        "Design",
+        "Build",
+        "Operate and evolve"
+      ],
+      "cta": "Explore our delivery process"
+    },
+    "finalCta": {
+      "heading": "Bring us the product challenge, not a preselected solution.",
+      "description": "Share the goals, users, constraints, current system, and delivery stage. We’ll use the discovery process to clarify the most appropriate technical path.",
+      "cta": "Start Discovery"
+    }
+  },
   "processSteps": {
     "eyebrow": "How we deliver",
     "title": "Our Six-Step Process",
@@ -196,13 +782,371 @@
       }
     ]
   },
+  "processPage": {
+    "hero": {
+      "eyebrow": "How we deliver",
+      "title": "A delivery process that turns complex product work into clear, reviewable progress.",
+      "description": "ValtQ connects product strategy, experience design, software engineering, quality, and cloud delivery through one visible workflow. Each phase reduces uncertainty, produces reviewable outputs, and prepares the next set of decisions.",
+      "primaryCta": "Start Discovery",
+      "secondaryCta": "Explore Our Services",
+      "principlesLabel": "Built on",
+      "principles": [
+        "Clear scope",
+        "Visible decisions",
+        "Reviewable delivery",
+        "Launch readiness"
+      ],
+      "visualNodes": [
+        "Define",
+        "Design",
+        "Build",
+        "Validate",
+        "Launch",
+        "Evolve"
+      ],
+      "visualCaptionStart": "Uncertainty",
+      "visualCaptionEnd": "Operational clarity"
+    },
+    "philosophy": {
+      "eyebrow": "A connected delivery framework",
+      "heading": "Every phase should make the product clearer, not simply move the project forward.",
+      "paragraphs": [
+        "The process begins by clarifying the problem, the users, the operating constraints, and the decisions that must be made. This prevents implementation from starting around assumptions that have not been examined.",
+        "As delivery continues, strategy, design, engineering, and quality remain connected. Decisions are documented, working increments are reviewed, and technical risks remain visible instead of being postponed until launch."
+      ],
+      "principlesLabel": "Guiding principles",
+      "principles": [
+        {
+          "title": "Clarity before commitment",
+          "description": "Important assumptions, dependencies, and boundaries are made visible before major implementation decisions."
+        },
+        {
+          "title": "Reviewable progress",
+          "description": "Work is delivered in understandable increments that can be evaluated by product and technical stakeholders."
+        },
+        {
+          "title": "Quality during delivery",
+          "description": "Testing, accessibility, performance, and operational readiness are addressed throughout the workflow."
+        },
+        {
+          "title": "Decisions with context",
+          "description": "Product, design, and engineering decisions are evaluated together rather than in isolated handoffs."
+        }
+      ]
+    },
+    "phases": {
+      "eyebrow": "The delivery journey",
+      "heading": "Six phases, one connected delivery path.",
+      "intro": "Each phase is reviewed against its purpose, outputs, and decision point before the next set of work begins. The emphasis changes with the product stage, but the structure remains consistent.",
+      "whatLabel": "What happens",
+      "outputsLabel": "Typical outputs",
+      "reviewLabel": "Review point",
+      "items": [
+        {
+          "number": "01",
+          "title": "Discovery & Strategy",
+          "purpose": "Create a shared understanding of the product challenge before defining the solution.",
+          "description": "We examine the business objective, target users, current workflow, existing systems, operational constraints, and known risks. The aim is to separate the actual product problem from early assumptions about features or technology.",
+          "what": [
+            "Stakeholder and requirement discussions",
+            "User and workflow exploration",
+            "Review of current systems and dependencies",
+            "Identification of assumptions and open questions",
+            "Scope and priority clarification",
+            "Initial technical feasibility review",
+            "Definition of meaningful success criteria"
+          ],
+          "outputs": [
+            "Discovery summary",
+            "Problem and opportunity definition",
+            "Prioritized product scope",
+            "Assumptions, dependencies, and risk register",
+            "Initial delivery roadmap",
+            "Recommended next-phase focus"
+          ],
+          "review": "The team agrees on the problem, initial scope, key constraints, and unresolved decisions before detailed design and implementation begin."
+        },
+        {
+          "number": "02",
+          "title": "Architecture & Experience Design",
+          "purpose": "Turn the clarified scope into understandable workflows and a practical technical foundation.",
+          "description": "Product experience and system architecture are developed together. User journeys, information structure, interfaces, data boundaries, integrations, permissions, and operational requirements are considered as parts of the same product.",
+          "what": [
+            "User-flow and journey mapping",
+            "Information architecture",
+            "Wireframes and interface direction",
+            "Design-system foundations",
+            "System-boundary definition",
+            "Data-model planning",
+            "API and integration planning",
+            "Authentication and permission modeling",
+            "Architecture trade-off review"
+          ],
+          "outputs": [
+            "User-flow and interface direction",
+            "Wireframes or approved design views",
+            "Solution architecture",
+            "Initial data and integration model",
+            "Technical decision record",
+            "Refined implementation backlog",
+            "Release and environment assumptions"
+          ],
+          "review": "Product and technical stakeholders confirm that the experience, system boundaries, dependencies, and delivery approach support the agreed scope."
+        },
+        {
+          "number": "03",
+          "title": "Iterative Development",
+          "purpose": "Turn the approved direction into working, reviewable product increments.",
+          "description": "The backlog is organized into delivery increments that connect interface work, backend behavior, integrations, data, and infrastructure. Progress is demonstrated through working functionality rather than status descriptions alone.",
+          "what": [
+            "Increment and backlog planning",
+            "Frontend and backend implementation",
+            "API and service integration",
+            "Data-model implementation",
+            "Authentication and permission development",
+            "Code review",
+            "Automated checks where appropriate",
+            "Working-product demonstrations",
+            "Feedback and backlog refinement"
+          ],
+          "outputs": [
+            "Working product increments",
+            "Reviewed source code",
+            "Integrated frontend and backend behavior",
+            "Updated backlog and technical decisions",
+            "Demonstration notes and feedback actions",
+            "Environment-ready builds",
+            "Updated implementation documentation"
+          ],
+          "review": "Each increment is reviewed against its acceptance criteria, product intent, and technical impact before the next set of work is finalized."
+        },
+        {
+          "number": "04",
+          "title": "Quality Assurance & Readiness",
+          "purpose": "Evaluate the product against functional, experience, technical, and operational expectations before release.",
+          "description": "Quality work is not postponed until the final days of delivery. Acceptance criteria, testing, accessibility, responsive behavior, integration reliability, performance concerns, and release readiness are addressed as the product develops.",
+          "what": [
+            "Acceptance-criteria review",
+            "Functional and integration testing",
+            "Responsive-layout verification",
+            "Accessibility review",
+            "Error and edge-case handling",
+            "Performance review",
+            "Regression testing",
+            "Defect prioritization and resolution",
+            "Release-readiness review"
+          ],
+          "outputs": [
+            "QA results",
+            "Confirmed acceptance criteria",
+            "Resolved and documented defects",
+            "Known limitations and follow-up items",
+            "Release checklist",
+            "Updated operational considerations",
+            "Approved release candidate"
+          ],
+          "review": "The release candidate is reviewed against the agreed scope, critical user journeys, known risks, and operational requirements."
+        },
+        {
+          "number": "05",
+          "title": "Deployment & Launch",
+          "purpose": "Move the approved product into production through a controlled and observable release.",
+          "description": "Launch planning covers environments, configuration, deployment automation, data preparation, integrations, monitoring, rollback considerations, and team handover. The objective is a release that can be operated and understood after it becomes available to users.",
+          "what": [
+            "Production-environment preparation",
+            "Configuration and secret review",
+            "CI/CD and deployment workflow confirmation",
+            "Data or migration preparation where required",
+            "Integration verification",
+            "Monitoring and logging setup",
+            "Rollback and recovery planning",
+            "Production deployment",
+            "Post-release validation",
+            "Technical handover"
+          ],
+          "outputs": [
+            "Production release",
+            "Deployment record",
+            "Environment and configuration documentation",
+            "Monitoring and error visibility",
+            "Handover documentation",
+            "Known post-launch actions",
+            "Initial support priorities"
+          ],
+          "review": "The released product is checked in its production environment, critical paths are validated, and ownership for monitoring and follow-up is confirmed."
+        },
+        {
+          "number": "06",
+          "title": "Support & Product Evolution",
+          "purpose": "Use operational evidence and product feedback to guide the next stage of improvement.",
+          "description": "After launch, the focus moves to product behavior in the real environment. Errors, support needs, user feedback, performance observations, new requirements, dependency updates, and technical debt are reviewed together to shape future priorities.",
+          "what": [
+            "Production monitoring and issue review",
+            "User and stakeholder feedback analysis",
+            "Support and defect prioritization",
+            "Performance and reliability improvements",
+            "Dependency and platform maintenance",
+            "Technical-debt review",
+            "New-feature discovery",
+            "Roadmap refinement",
+            "Release planning for future increments"
+          ],
+          "outputs": [
+            "Support and maintenance priorities",
+            "Improvement backlog",
+            "Production issue records",
+            "Recommended technical actions",
+            "Updated product roadmap",
+            "Future release scope",
+            "Ongoing operational documentation"
+          ],
+          "review": "The team agrees on what should be maintained, improved, investigated, or built next based on product goals and real operational evidence."
+        }
+      ]
+    },
+    "visibility": {
+      "eyebrow": "Shared visibility",
+      "heading": "The process should make important project information easier to understand.",
+      "intro": "Throughout the engagement, the team maintains visibility into the areas that influence delivery decisions. The exact tools and documentation depend on the project, but the information should remain accessible and current.",
+      "items": [
+        {
+          "title": "Scope and priorities",
+          "description": "What is included now, what is deferred, and why priorities have changed."
+        },
+        {
+          "title": "Decisions and assumptions",
+          "description": "Product and technical decisions, their context, and unresolved assumptions."
+        },
+        {
+          "title": "Dependencies and risks",
+          "description": "External services, data, stakeholders, integrations, and constraints that may affect delivery."
+        },
+        {
+          "title": "Working progress",
+          "description": "Reviewable product functionality, not only task completion."
+        },
+        {
+          "title": "Quality and release state",
+          "description": "Acceptance status, defects, known limitations, and release readiness."
+        },
+        {
+          "title": "Ownership and next actions",
+          "description": "Who is responsible for decisions, actions, and follow-up items."
+        }
+      ]
+    },
+    "collaboration": {
+      "eyebrow": "Working together",
+      "heading": "Collaboration is structured around decisions, feedback, and visible progress.",
+      "description": "The collaboration model is adapted to the client team, but effective delivery requires clear ownership, timely feedback, and access to the people who understand the product and its constraints.",
+      "practicesLabel": "Collaboration practices",
+      "practices": [
+        "A clear product and delivery contact",
+        "Agreed review points and decision owners",
+        "Working-product demonstrations",
+        "Accessible backlog and current priorities",
+        "Documented decisions and open questions",
+        "Direct discussion of blockers and trade-offs",
+        "Feedback connected to acceptance criteria",
+        "Technical handover throughout delivery, not only at the end"
+      ],
+      "note": "Meeting frequency and reporting cadence are agreed according to the size, stage, and needs of the engagement rather than imposed as one fixed model."
+    },
+    "deliverables": {
+      "eyebrow": "Reviewable outputs",
+      "heading": "Each phase leaves the project with something concrete.",
+      "description": "Outputs vary by engagement, but the process is designed to produce useful artifacts that support decisions, implementation, operation, and future development.",
+      "items": [
+        "Discovery and scope summary",
+        "Product roadmap",
+        "Workflow and experience direction",
+        "Interface designs or wireframes",
+        "Technical architecture",
+        "Data and integration model",
+        "Prioritized implementation backlog",
+        "Working software increments",
+        "Quality and release records",
+        "Deployment and environment documentation",
+        "Handover material",
+        "Support and evolution backlog"
+      ],
+      "note": "Deliverables are selected according to the project. Not every engagement produces every artifact."
+    },
+    "adaptation": {
+      "eyebrow": "Adapted to the product stage",
+      "heading": "The framework remains consistent, but the emphasis changes.",
+      "scenariosLabel": "Delivery scenarios",
+      "scenarios": [
+        {
+          "title": "New product",
+          "description": "Greater emphasis on discovery, user workflows, scope definition, and architectural foundations."
+        },
+        {
+          "title": "Existing product modernization",
+          "description": "Greater emphasis on system assessment, migration risks, compatibility, technical debt, and staged replacement."
+        },
+        {
+          "title": "Defined feature or module",
+          "description": "Greater emphasis on integration boundaries, acceptance criteria, and safe delivery into the existing product."
+        },
+        {
+          "title": "Embedded engineering support",
+          "description": "Greater emphasis on alignment with the client's backlog, standards, environments, review process, and ownership model."
+        },
+        {
+          "title": "AI-enabled capability",
+          "description": "Greater emphasis on data access, retrieval boundaries, validation, observability, fallback behavior, and human review."
+        }
+      ]
+    },
+    "benefits": {
+      "eyebrow": "Why the process matters",
+      "heading": "Better delivery comes from reducing uncertainty at the right time.",
+      "items": [
+        {
+          "title": "Fewer hidden assumptions",
+          "description": "Important uncertainties are identified before they become expensive implementation problems."
+        },
+        {
+          "title": "Better product and technical alignment",
+          "description": "Experience, scope, architecture, and operational needs are considered together."
+        },
+        {
+          "title": "More useful feedback",
+          "description": "Stakeholders review working outcomes and specific decisions rather than abstract progress reports."
+        },
+        {
+          "title": "Controlled change",
+          "description": "New information can affect scope and priorities without making the entire delivery process unclear."
+        },
+        {
+          "title": "Stronger release readiness",
+          "description": "Quality, deployment, monitoring, and ownership are considered before launch."
+        },
+        {
+          "title": "A maintainable path forward",
+          "description": "Documentation, technical decisions, and operational knowledge support the team after the first release."
+        }
+      ]
+    },
+    "finalCta": {
+      "eyebrow": "Next step",
+      "heading": "Start by clarifying the product challenge.",
+      "description": "Share your goals, current stage, constraints, and open questions. Discovery helps define the right scope and delivery path before implementation begins.",
+      "cta": "Start Discovery"
+    }
+  },
   "about": {
     "hero": {
       "eyebrow": "About ValtQ",
       "title": "We bring clarity to complex digital product challenges.",
       "description": "ValtQ combines product strategy, experience design, and software engineering to help teams move from opportunity to reliable digital delivery.",
       "visualLabel": "One connected delivery system",
-      "visualItems": ["Product Strategy", "Experience Design", "Software Engineering"]
+      "visualItems": [
+        "Product Strategy",
+        "Experience Design",
+        "Software Engineering"
+      ]
     },
     "whoWeAre": {
       "title": "A product partner from discovery through delivery.",
@@ -269,40 +1213,160 @@
     }
   },
   "faq": {
+    "sectionTitle": "Questions and answers",
+    "searchLabel": "Search questions",
+    "searchPlaceholder": "Search questions, services, or delivery topics...",
+    "clearSearch": "Clear search",
+    "resultsSummary": "Showing {count} of {total}",
+    "noResults": "No matching questions found. Try another phrase or contact us.",
+    "noResultsCta": "Contact us",
+    "categoryLabel": "Browse by category",
+    "allQuestions": "All questions",
+    "categories": [
+      {
+        "id": "starting",
+        "label": "Starting a project"
+      },
+      {
+        "id": "services",
+        "label": "Services and technology"
+      },
+      {
+        "id": "process",
+        "label": "Process and collaboration"
+      },
+      {
+        "id": "delivery",
+        "label": "Delivery, quality, and launch"
+      },
+      {
+        "id": "ownership",
+        "label": "Ownership, security, and support"
+      }
+    ],
     "items": [
       {
-        "question": "How long does a typical project take?",
-        "answer": "Timelines vary by scope. An MVP can take 6-8 weeks. A full-scale product typically runs 3-6 months. We provide detailed estimates after our discovery phase."
+        "id": "how-does-a-project-begin",
+        "category": "starting",
+        "question": "How does a project with ValtQ begin?",
+        "answer": "Most engagements begin with Discovery. We review the product goal, users, current workflow, existing systems, constraints, open questions, and delivery priorities. The purpose is to clarify the problem and define an appropriate scope before major design or engineering decisions are made."
       },
       {
-        "question": "Do you work with startups or only enterprises?",
-        "answer": "Both. We've built MVPs for seed-stage startups and scaled platforms for enterprise clients. Our process adapts to your stage and budget."
+        "id": "do-i-need-a-complete-specification",
+        "category": "starting",
+        "question": "Do I need a complete specification before contacting ValtQ?",
+        "answer": "No. You can begin with a problem, an opportunity, an existing system, or an initial product idea. Discovery is used to organize the available information, identify missing decisions, and determine what should be defined before delivery begins."
       },
       {
-        "question": "What technologies do you use?",
-        "answer": "We're technology-agnostic but opinionated. Our core stack includes React, Next.js, TypeScript, Node.js, Python, and cloud platforms (AWS, GCP, Azure). We choose the right tool for the job."
+        "id": "what-information-should-i-share",
+        "category": "starting",
+        "question": "What information should I share before Discovery?",
+        "answer": "Useful context includes the business objective, target users, current workflow, existing product or systems, required integrations, known constraints, important deadlines, available stakeholders, and the decisions you need help making."
       },
       {
-        "question": "How do you handle project communication?",
-        "answer": "Every project gets a dedicated Slack/Teams channel, weekly sync calls, and access to our project dashboard. You'll never wonder what's happening."
+        "id": "what-products-does-valtq-build",
+        "category": "services",
+        "question": "What types of products does ValtQ build?",
+        "answer": "ValtQ supports web applications, customer and internal platforms, operational dashboards, mobile products, AI-enabled workflows, backend systems, API integrations, and cloud delivery. The exact scope depends on the product stage and requirements."
       },
       {
-        "question": "What happens after launch?",
-        "answer": "We offer ongoing support and maintenance plans. Most clients transition to a monthly retainer for continuous improvements, monitoring, and feature development."
+        "id": "which-technologies-do-you-use",
+        "category": "services",
+        "question": "Which technologies do you use?",
+        "answer": "Technology choices are based on the product requirements, current system, team capacity, security needs, integration boundaries, and expected evolution. The website references capabilities such as React, Next.js, TypeScript, React Native, Node.js, Python, PostgreSQL, document databases, Docker, and cloud platforms, but no single stack is applied to every project."
       },
       {
-        "question": "Do you provide design services?",
-        "answer": "Yes. Our team includes UI/UX designers who work alongside engineers. We design interfaces that are both beautiful and technically feasible."
+        "id": "can-valtq-work-with-an-existing-product",
+        "category": "services",
+        "question": "Can ValtQ work with an existing product or codebase?",
+        "answer": "Yes. Existing-product work may include assessment, feature delivery, performance improvement, interface modernization, architecture changes, integration work, technical-debt review, deployment improvements, or staged migration. The first step is understanding the current system and its constraints."
       },
       {
-        "question": "Can you work with our existing team?",
-        "answer": "Absolutely. We frequently augment internal teams with senior engineers. We adapt to your processes, tools, and coding standards."
+        "id": "can-you-integrate-ai-into-an-existing-product",
+        "category": "services",
+        "question": "Can you integrate AI into an existing product?",
+        "answer": "AI can be integrated when it supports a defined workflow, such as knowledge search, document extraction, assisted responses, classification, recommendations, or automation. The implementation should also address data access, permissions, validation, monitoring, fallback behavior, and human review where required."
       },
       {
-        "question": "What's your pricing model?",
-        "answer": "We offer fixed-price projects, monthly retainers, and dedicated team arrangements. Pricing depends on scope, team size, and engagement duration. Contact us to discuss the right model for your goals."
+        "id": "how-is-the-delivery-process-structured",
+        "category": "process",
+        "question": "How is the delivery process structured?",
+        "answer": "The ValtQ process connects Discovery and Strategy, Architecture and Experience Design, Iterative Development, Quality Assurance, Deployment and Launch, and Support and Product Evolution. The emphasis of each phase is adapted to the product rather than applied as a rigid template."
+      },
+      {
+        "id": "how-will-we-review-progress",
+        "category": "process",
+        "question": "How will we review progress?",
+        "answer": "Progress should be visible through reviewable product increments, current priorities, documented decisions, open questions, known risks, and agreed review points. The specific tools, demonstrations, meetings, and reporting cadence are selected according to the engagement."
+      },
+      {
+        "id": "how-are-changes-in-scope-handled",
+        "category": "process",
+        "question": "How are changes in scope handled?",
+        "answer": "New information and changing priorities are expected during product delivery. Their effect on scope, architecture, dependencies, quality, and release plans should be reviewed explicitly before they are added to the active delivery work."
+      },
+      {
+        "id": "can-valtq-work-with-our-internal-team",
+        "category": "process",
+        "question": "Can ValtQ work with our internal team?",
+        "answer": "Yes. An engagement can be structured around a focused product build or integrated engineering support. Responsibilities, review practices, technical standards, access, environments, and decision ownership should be clarified before implementation begins."
+      },
+      {
+        "id": "how-is-quality-handled-during-delivery",
+        "category": "delivery",
+        "question": "How is quality handled during delivery?",
+        "answer": "Quality is addressed throughout delivery through acceptance criteria, code review, automated checks where appropriate, functional and integration testing, responsive verification, accessibility review, performance considerations, error handling, and release-readiness checks."
+      },
+      {
+        "id": "how-long-does-a-project-take",
+        "category": "delivery",
+        "question": "How long does a project take?",
+        "answer": "Duration depends on scope clarity, product complexity, existing systems, integrations, review availability, quality requirements, and release constraints. Discovery is used to produce a more informed delivery plan rather than providing a generic timeline before the product is understood."
+      },
+      {
+        "id": "what-happens-before-production-launch",
+        "category": "delivery",
+        "question": "What happens before production launch?",
+        "answer": "Launch preparation may include environment and configuration review, deployment workflow confirmation, data or migration preparation, integration verification, monitoring and logging, rollback considerations, release checks, production deployment, and post-release validation."
+      },
+      {
+        "id": "do-you-provide-support-after-launch",
+        "category": "delivery",
+        "question": "Do you provide support after launch?",
+        "answer": "Post-launch work can include production monitoring, issue review, maintenance, performance and reliability improvements, dependency updates, technical-debt review, new-feature discovery, and planning future releases. The scope is agreed according to the product’s operational needs."
+      },
+      {
+        "id": "who-owns-the-source-code",
+        "category": "ownership",
+        "question": "Who owns the source code and project deliverables?",
+        "answer": "Ownership and licensing terms should be defined explicitly in the engagement agreement. The project should also clarify access to repositories, environments, design files, documentation, third-party services, and handover material."
+      },
+      {
+        "id": "how-do-you-approach-security",
+        "category": "ownership",
+        "question": "How do you approach security?",
+        "answer": "Security considerations depend on the product and its risks. Delivery may include secure authentication, role-based access, data validation, secrets and configuration management, dependency review, protected integrations, audit visibility, and security-minded development practices. Formal compliance or penetration-testing claims should only be made when explicitly included in the engagement."
+      },
+      {
+        "id": "can-you-sign-a-confidentiality-agreement",
+        "category": "ownership",
+        "question": "Can you sign a confidentiality agreement?",
+        "answer": "Confidentiality requirements should be discussed before sensitive product, business, user, or technical information is exchanged. The specific agreement and legal terms are reviewed as part of the engagement setup."
+      },
+      {
+        "id": "how-do-we-start",
+        "category": "ownership",
+        "question": "How do we start?",
+        "answer": "Start the Discovery flow and share the product goal, current stage, users, constraints, existing systems, and open questions. That context is used to determine the most appropriate next step."
       }
-    ]
+    ],
+    "support": {
+      "eyebrow": "Still need help?",
+      "heading": "Share the context behind your question.",
+      "description": "Send us the product goal, current situation, or decision you are trying to make, and we’ll direct the conversation to the right next step.",
+      "contactCta": "Contact us",
+      "discoveryCta": "Start Discovery"
+    }
   },
   "work": {
     "viewCaseStudy": "View Case Study",
@@ -333,16 +1397,241 @@
     "snapchat": "Snapchat"
   },
   "whatsapp": {
-    "floatingLabel": "Chat with us",
-    "chatCta": "Start a conversation",
-    "chatDescription": "Prefer chatting? Message us on WhatsApp and we'll get back to you within minutes."
+    "floatingLabel": "Chat with us"
   },
   "contactPage": {
-    "title": "Let's Build Something Together",
-    "description": "Tell us about your project and we'll respond within 24 hours.",
-    "whatsappTitle": "Chat on WhatsApp",
-    "socialTitle": "Follow us",
-    "socialDescription": "Stay up to date with our latest work and engineering insights."
+    "eyebrow": "Project inquiry",
+    "title": "Share the context that will shape the discussion.",
+    "description": "The more useful project context you provide, the more prepared we are for the conversation.",
+    "formLabel": "Project inquiry form",
+    "requiredLabel": "Required",
+    "optionalLabel": "Optional",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "Work or contact email",
+    "emailPlaceholder": "you@company.com",
+    "companyLabel": "Company or organization",
+    "companyPlaceholder": "Acme Inc.",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "+966 5X XXX XXXX",
+    "channelLabel": "Preferred contact channel",
+    "channelPlaceholder": "Select a channel",
+    "serviceLabel": "Service area",
+    "servicePlaceholder": "Select a service area",
+    "stageLabel": "Current product stage",
+    "stagePlaceholder": "Select the current product stage",
+    "urlLabel": "Existing product URL",
+    "urlPlaceholder": "https://example.com",
+    "timingLabel": "Target timing",
+    "timingPlaceholder": "Select target timing",
+    "budgetLabel": "Budget range",
+    "budgetPlaceholder": "Select a budget range",
+    "summaryLabel": "Project or inquiry summary",
+    "summaryPlaceholder": "A short summary of the product or decision you want to discuss.",
+    "messageLabel": "Message / project context",
+    "messagePlaceholder": "Describe the product goal, current stage, users, existing systems, constraints, and any open decisions.",
+    "serviceOptions": [
+      "Product discovery and planning",
+      "Web application",
+      "Mobile application",
+      "AI-enabled product or workflow",
+      "Cloud, backend, or infrastructure",
+      "Existing product improvement",
+      "Other"
+    ],
+    "stageOptions": [
+      "Initial idea",
+      "Defining the scope",
+      "Designing the product",
+      "Building an initial version",
+      "Existing product in production",
+      "Modernizing or extending an existing system"
+    ],
+    "channelOptions": [
+      "Email",
+      "WhatsApp",
+      "Phone",
+      "Any channel"
+    ],
+    "timingOptions": [
+      "As soon as possible",
+      "Within 1–3 months",
+      "Within 3–6 months",
+      "Flexible / exploring"
+    ],
+    "budgetOptions": [
+      "Under $10k",
+      "$10k – $25k",
+      "$25k – $50k",
+      "$50k+",
+      "Not yet determined"
+    ],
+    "nameRequiredError": "Please enter your full name.",
+    "emailRequiredError": "Please enter your email address so we can follow up.",
+    "emailInvalidError": "Please enter a valid email address.",
+    "urlInvalidError": "Please enter a valid URL starting with http:// or https://.",
+    "summaryRequiredError": "Please provide a short summary of your inquiry.",
+    "summaryLengthError": "Please keep the summary under 200 characters.",
+    "messageRequiredError": "Please describe your project context and goals.",
+    "messageLengthError": "Please provide at least 10 characters so we can understand the context.",
+    "privacyNote": "We use the information you provide only to review and respond to your inquiry.",
+    "submitLabel": "Send inquiry",
+    "submittingLabel": "Sending…",
+    "errorSummary": "Please review the highlighted fields and correct them before sending.",
+    "successTitle": "Inquiry received",
+    "successMessage": "Your inquiry has been received. Our team will review the context and follow up through the contact details you provided.",
+    "errorTitle": "We couldn't send your inquiry",
+    "errorMessage": "Your information is still available in the form. Please try again, or use one of the direct contact options below.",
+    "channels": {
+      "eyebrow": "Direct contact",
+      "title": "Prefer a direct conversation?",
+      "description": "If you prefer to reach us directly, use the channels below.",
+      "whatsappTitle": "Continue on WhatsApp",
+      "whatsappDescription": "Use WhatsApp for a direct conversation when the configured business number is available.",
+      "whatsappCta": "Open WhatsApp",
+      "whatsappNumberLabel": "Business number",
+      "socialTitle": "Connect with ValtQ",
+      "socialDescription": "Follow our work and engineering notes."
+    },
+    "context": {
+      "eyebrow": "Useful project context",
+      "title": "The right context helps us understand the challenge before discussing a solution.",
+      "description": "Including these details helps the conversation start from a clear point.",
+      "items": [
+        {
+          "title": "Product goal",
+          "description": "What the product or improvement should enable for the business or users."
+        },
+        {
+          "title": "Current stage",
+          "description": "Whether the work is an initial idea, a defined scope, an active build, or an existing production system."
+        },
+        {
+          "title": "Users and workflows",
+          "description": "Who uses the product and which tasks or decisions it supports."
+        },
+        {
+          "title": "Existing systems",
+          "description": "Current products, codebases, APIs, platforms, data, or service integrations."
+        },
+        {
+          "title": "Constraints",
+          "description": "Technical, operational, security, timing, team, or integration constraints."
+        },
+        {
+          "title": "Open decisions",
+          "description": "The questions or trade-offs you need support evaluating."
+        }
+      ]
+    },
+    "next": {
+      "eyebrow": "After you submit",
+      "title": "The next step depends on the clarity and stage of the inquiry.",
+      "description": "No two inquiries are identical, so the process adapts to the context you share.",
+      "items": [
+        {
+          "title": "Context review",
+          "description": "The team reviews the goal, scope, constraints, and contact information."
+        },
+        {
+          "title": "Clarification",
+          "description": "Additional questions may be requested when important details are missing."
+        },
+        {
+          "title": "Recommended next step",
+          "description": "The conversation may continue through Discovery, a focused technical discussion, or another appropriate route."
+        },
+        {
+          "title": "Scope before delivery",
+          "description": "Implementation does not begin until responsibilities, scope, assumptions, and the delivery approach are understood."
+        }
+      ]
+    },
+    "faqLink": {
+      "text": "Have questions about process, services, ownership, or support?",
+      "cta": "Explore the FAQ"
+    }
+  },
+  "blog": {
+    "featuredLabel": "Featured",
+    "featuredEyebrow": "Featured article",
+    "searchLabel": "Search articles",
+    "searchPlaceholder": "Search by title or topic…",
+    "clearSearch": "Clear search",
+    "categoryLabel": "Filter articles by category",
+    "allArticles": "All articles",
+    "resultsSummary": "{count} of {total} articles",
+    "noResultsTitle": "No articles found",
+    "noResultsDescription": "Try a different search term, or clear the filters to browse everything.",
+    "clearFilters": "Clear filters",
+    "readArticle": "Read article",
+    "minutesRead": "{count} min read",
+    "publishedLabel": "Published",
+    "updatedLabel": "Updated",
+    "backToArticles": "Back to all articles",
+    "article": {
+      "tableOfContents": "On this page",
+      "relatedTitle": "Related articles",
+      "ctaEyebrow": "Continue the conversation",
+      "ctaTitle": "Bring your product challenge to a focused discussion.",
+      "ctaDescription": "Engineering judgment and structured Discovery, applied to your context — not a template.",
+      "ctaPrimary": "Start Discovery",
+      "ctaSecondary": "Contact ValtQ"
+    },
+    "topics": {
+      "eyebrow": "What we write about",
+      "title": "Practical topics, engineering depth.",
+      "description": "Long-form notes grounded in how real products get built and improved.",
+      "cards": [
+        {
+          "icon": "strategy",
+          "label": "Product strategy",
+          "description": "Discovery, prioritization, and deciding what to build."
+        },
+        {
+          "icon": "layers",
+          "label": "Engineering practice",
+          "description": "Architecture and delivery choices that age well."
+        },
+        {
+          "icon": "ai",
+          "label": "AI & automation",
+          "description": "Where language models create real product value."
+        },
+        {
+          "icon": "quality",
+          "label": "Quality & delivery",
+          "description": "Release readiness, modernization, and operations."
+        }
+      ],
+      "browseLabel": "Browse all articles"
+    }
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "onThisPage": "On this page",
+    "effectiveLabel": "Effective date",
+    "updatedLabel": "Last updated",
+    "printLabel": "Print document",
+    "relatedTitle": "Related policies",
+    "relatedDescription": "These policies work together. Read the documents that apply to your visit.",
+    "relatedList": {
+      "terms": {
+        "description": "The rules for using this website and its content."
+      },
+      "privacy": {
+        "description": "How we collect, use, and protect personal information."
+      },
+      "cookies": {
+        "description": "How we use cookies and similar browser technologies."
+      }
+    },
+    "storageKeyLabel": "Key",
+    "storageTypeLabel": "Type",
+    "storagePurposeLabel": "Purpose",
+    "storageEssentialLabel": "Essential",
+    "storagePreferenceLabel": "Preference",
+    "readLabel": "Read policy"
   },
   "loading": "Loading...",
   "footer": {

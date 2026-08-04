@@ -10,9 +10,11 @@ import { cn } from '@/lib/cn';
 import { useTheme } from './theme-provider';
 
 const navLinks = [
+  { key: 'home' as const, href: '/' },
   { key: 'work' as const, href: '/work' },
   { key: 'services' as const, href: '/services' },
   { key: 'process' as const, href: '/process' },
+  { key: 'pricing' as const, href: '/pricing' },
   { key: 'about' as const, href: '/about' },
   { key: 'faq' as const, href: '/faq' },
 ];
@@ -142,8 +144,11 @@ export function Header({ locale }: { locale: Locale }) {
             className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex lg:gap-1.5 xl:gap-2"
           >
             {navLinks.map(({ key, href }) => {
-              const fullHref = `/${locale}${href}`;
-              const isActive = pathname === fullHref || pathname.startsWith(`${fullHref}/`);
+              const fullHref = key === 'home' ? `/${locale}` : `/${locale}${href}`;
+              const isActive =
+                key === 'home'
+                  ? pathname === fullHref
+                  : pathname === fullHref || pathname.startsWith(`${fullHref}/`);
               return (
                 <Link
                   key={key}
@@ -220,8 +225,11 @@ export function Header({ locale }: { locale: Locale }) {
       >
         <nav aria-label={dict.nav.menu} className="space-y-1 px-1 py-4 sm:px-2">
           {navLinks.map(({ key, href }, index) => {
-            const fullHref = `/${locale}${href}`;
-            const isActive = pathname === fullHref || pathname.startsWith(`${fullHref}/`);
+            const fullHref = key === 'home' ? `/${locale}` : `/${locale}${href}`;
+            const isActive =
+              key === 'home'
+                ? pathname === fullHref
+                : pathname === fullHref || pathname.startsWith(`${fullHref}/`);
             return (
               <Link
                 ref={index === 0 ? firstMobileLinkRef : undefined}

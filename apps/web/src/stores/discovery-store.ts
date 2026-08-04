@@ -1,6 +1,13 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { ProjectType, ProjectBudget, ProjectTimeline } from '@valtq/types';
+import {
+  ProjectBudgetSchema,
+  ProjectTimelineSchema,
+  ProjectTypeSchema,
+  type ProjectBudget,
+  type ProjectTimeline,
+  type ProjectType,
+} from '@valtq/types';
 
 const STORAGE_KEY = 'valtq-discovery-v1';
 const TOTAL_STEPS = 6;
@@ -21,6 +28,20 @@ function normalizeNavigationDirection(
   value: unknown,
 ): 'forward' | 'backward' {
   return value === 'backward' ? 'backward' : 'forward';
+}
+
+/**
+ * Rehydrate a persisted enum field. Returns the value only when it still
+ * matches the current enum; otherwise null so the user re-selects instead of
+ * submitting a stale value that would fail schema validation (e.g. old
+ * budget/timeline ranges persisted in localStorage).
+ */
+function safeEnumValue<T>(
+  value: unknown,
+  schema: { safeParse: (input: unknown) => { success: boolean } },
+): T | null {
+  if (value === undefined || value === null) return null;
+  return schema.safeParse(value).success ? (value as T) : null;
 }
 
 interface DiscoveryState {
@@ -157,15 +178,24 @@ export const useDiscoveryStore = create<DiscoveryState & DiscoveryActions>()(
           navigationDirection: normalizeNavigationDirection(
             persisted.navigationDirection,
           ),
-          projectType: (persisted.projectType as ProjectType | null) ?? currentState.projectType,
+          projectType:
+            safeEnumValue<ProjectType>(persisted.projectType, ProjectTypeSchema) ??
+            currentState.projectType,
           description:
             typeof persisted.description === 'string'
               ? persisted.description
               : currentState.description,
-          budget: (persisted.budget as ProjectBudget | null) ?? currentState.budget,
-          timeline: (persisted.timeline as ProjectTimeline | null) ?? currentState.timeline,
+          budget:
+            safeEnumValue<ProjectBudget>(persisted.budget, ProjectBudgetSchema) ??
+            currentState.budget,
+          timeline:
+            safeEnumValue<ProjectTimeline>(persisted.timeline, ProjectTimelineSchema) ??
+            currentState.timeline,
           features: Array.isArray(persisted.features)
-            ? (persisted.features as string[])
+            ? (persisted.features as unknown[]).filter(
+                (feature): feature is string =>
+                  typeof feature === 'string' && feature.trim().length > 0,
+              )
             : currentState.features,
           name:
             typeof persisted.name === 'string'

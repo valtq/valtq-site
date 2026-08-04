@@ -105,21 +105,28 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
       return;
     }
 
+    const parsed = DiscoverySubmissionSchema.safeParse({
+      name: name.trim(),
+      email: email.trim(),
+      company: company.trim() || undefined,
+      projectType,
+      budget,
+      timeline,
+      description: description.trim(),
+      features: features.length > 0 ? features : undefined,
+    });
+
+    if (!parsed.success) {
+      setSubmitError(copy.contactInformation.submitIncompleteError);
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitError(null);
 
     void (async () => {
       try {
-        const result = await submitDiscovery({
-          name: name.trim(),
-          email: email.trim(),
-          company: company.trim() || undefined,
-          projectType,
-          budget,
-          timeline,
-          description: description.trim(),
-          features: features.length > 0 ? features : undefined,
-        });
+        const result = await submitDiscovery(parsed.data);
 
         setLeadId(result.leadId);
         startTransition(() => {

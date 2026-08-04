@@ -1,18 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import {
-  SCORE_MAX,
-  SCORE_MIN,
-  ScoringService,
-  SCORING_WEIGHTS,
-} from './scoring.service.js';
+import { SCORE_MAX, SCORE_MIN, ScoringService, SCORING_WEIGHTS } from './scoring.service.js';
 
 describe('ScoringService', () => {
   const service = new ScoringService();
 
   it('scores a high-intent lead near the top of the range', () => {
     const result = service.score({
-      budget: '50k-plus',
-      timeline: '1-2-months',
+      budget: 'OVER_15000_USD',
+      timeline: 'MONTHS_1_2',
       projectType: 'saas',
       email: 'cto@acme.com',
       website: 'https://acme.com',
@@ -23,15 +18,15 @@ describe('ScoringService', () => {
 
     expect(result.total).toBeGreaterThanOrEqual(90);
     expect(result.total).toBeLessThanOrEqual(SCORE_MAX);
-    expect(result.budget).toBe(SCORING_WEIGHTS.budget['50k-plus']);
+    expect(result.budget).toBe(SCORING_WEIGHTS.budget['OVER_15000_USD']);
     expect(result.businessEmail).toBe(SCORING_WEIGHTS.businessEmail);
     expect(result.decisionMaker).toBe(SCORING_WEIGHTS.decisionMaker);
   });
 
   it('scores a low-intent lead lower', () => {
     const result = service.score({
-      budget: 'under-5k',
-      timeline: '6-plus-months',
+      budget: 'UNDER_1000_USD',
+      timeline: 'OVER_6_MONTHS',
       projectType: 'other',
       email: 'person@gmail.com',
     });
@@ -44,8 +39,8 @@ describe('ScoringService', () => {
 
   it('never exceeds 0–100 bounds', () => {
     const result = service.score({
-      budget: '50k-plus',
-      timeline: '1-2-months',
+      budget: 'OVER_15000_USD',
+      timeline: 'MONTHS_1_2',
       projectType: 'saas',
       email: 'ceo@company.io',
       website: 'https://company.io',

@@ -44,14 +44,14 @@ export function ProcessSteps({ dict }: { dict: Dictionary }) {
                   delay={i * 0.06}
                 >
                   <li className="flex items-start gap-4 sm:grid sm:grid-cols-[minmax(0,1fr)_4.5rem_minmax(0,1fr)] sm:items-center sm:gap-6">
-                    <article className={`group relative min-w-0 flex-1 rounded-2xl border border-border bg-surface-container-lowest p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:row-start-1 sm:p-7 ${isEven ? 'sm:col-start-1 sm:text-end' : 'sm:col-start-3'}`}>
-                      <div className={`mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/5 text-primary transition-colors [&>svg]:h-5 [&>svg]:w-5 group-hover:bg-primary group-hover:text-primary-foreground ${isEven ? 'sm:ms-auto' : ''}`}>
+                    <article className={`group relative flex min-w-0 flex-1 flex-col items-start justify-start rounded-2xl border border-border bg-surface-container-lowest p-5 text-start shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:row-start-1 sm:p-7 ${isEven ? 'sm:col-start-1' : 'sm:col-start-3'}`}>
+                      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/5 text-primary transition-colors [&>svg]:h-5 [&>svg]:w-5 group-hover:bg-primary group-hover:text-primary-foreground">
                         {stepIcons[i]}
                       </div>
-                      <h3 className="font-display text-xl font-semibold tracking-tight text-on-surface sm:text-2xl">
+                      <h3 className="w-full text-start font-display text-xl font-semibold leading-snug tracking-tight text-on-surface sm:text-2xl rtl:leading-[1.45]">
                         {step.title}
                       </h3>
-                      <p className="mt-3 text-base leading-relaxed text-on-surface-variant">
+                      <p className="mt-3 w-full text-pretty text-start text-base leading-7 text-on-surface-variant rtl:leading-[1.9]">
                         {step.description}
                       </p>
                     </article>

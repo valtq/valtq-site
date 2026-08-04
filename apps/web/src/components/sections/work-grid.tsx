@@ -11,7 +11,7 @@ import type { Dictionary } from '@/i18n/get-dictionary';
 
 export function WorkGrid({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
-    <Section>
+    <Section id="case-studies" className="scroll-mt-20">
       <Container>
         <StaggerReveal className="grid gap-6 sm:grid-cols-2 lg:gap-8">
           {caseStudies.map((cs, index) => (

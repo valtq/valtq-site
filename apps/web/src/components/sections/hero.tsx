@@ -10,7 +10,7 @@ import { HeroVisual } from './hero-visual';
 
 interface HeroProps {
   dict: Dictionary;
-  variant: keyof Dictionary['hero'];
+  variant: Exclude<keyof Dictionary['hero'], 'careers' | 'blog'>;
   locale: Locale;
 }
 
@@ -89,7 +89,7 @@ export function Hero({ dict, variant, locale }: HeroProps) {
             </div>
 
             <ScrollReveal direction="scale" delay={0.12} className="min-w-0 lg:col-span-6">
-              <HeroVisual />
+              <HeroVisual capabilities={homeContent.visualCapabilities} />
             </ScrollReveal>
           </div>
         </Container>

@@ -1,8 +1,17 @@
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/i18n/config';
 import { getTranslations } from '@/i18n/get-dictionary';
-import { Hero } from '@/components/sections/hero';
-import { ProcessSteps } from '@/components/sections/process-steps';
+import { ProcessHero } from '@/components/sections/process-hero';
+import {
+  ProcessPhilosophy,
+  ProcessPhases,
+  ProcessVisibility,
+  ProcessCollaboration,
+  ProcessDeliverables,
+  ProcessAdaptation,
+  ProcessBenefits,
+  ProcessFinalCta,
+} from '@/components/sections/process-sections';
 
 export default async function ProcessPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -12,8 +21,15 @@ export default async function ProcessPage({ params }: { params: Promise<{ locale
 
   return (
     <>
-      <Hero dict={dict} variant="process" locale={locale as Locale} />
-      <ProcessSteps dict={dict} />
+      <ProcessHero dict={dict} locale={locale as Locale} />
+      <ProcessPhilosophy dict={dict} />
+      <ProcessPhases dict={dict} />
+      <ProcessVisibility dict={dict} />
+      <ProcessCollaboration dict={dict} />
+      <ProcessDeliverables dict={dict} />
+      <ProcessAdaptation dict={dict} />
+      <ProcessBenefits dict={dict} />
+      <ProcessFinalCta dict={dict} locale={locale as Locale} />
     </>
   );
 }

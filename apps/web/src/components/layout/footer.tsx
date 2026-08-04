@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { useTranslations } from '@/i18n/types';
 import type { Locale } from '@/i18n/config';
@@ -19,26 +20,44 @@ const serviceHrefs: Record<string, string> = {
   cloud: '/services#cloud',
 };
 
+interface FooterGroupProps {
+  heading: string;
+  children: ReactNode;
+}
+
+function FooterGroup({ heading, children }: FooterGroupProps) {
+  return (
+    <div>
+      <h4 className="text-sm font-semibold uppercase tracking-wide text-on-surface">{heading}</h4>
+      <ul className="mt-4 space-y-1 sm:space-y-1.5">{children}</ul>
+    </div>
+  );
+}
+
+const footerLinkClass =
+  'inline-flex min-h-11 items-center text-sm text-on-surface-variant transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:min-h-0 sm:py-1';
+
 export function Footer({ locale }: { locale: Locale }) {
   const dict = useTranslations();
 
   return (
     <footer className="border-t border-border bg-surface-container-low">
-      <Container>
-        <div className="grid gap-8 py-12 sm:grid-cols-2 sm:py-14 lg:grid-cols-4 lg:gap-12">
-          <div className="sm:col-span-2 lg:col-span-1">
+      <Container className="px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-10 py-12 sm:gap-12 sm:py-14 lg:grid-cols-12 lg:gap-10 lg:py-16">
+          <div className="max-w-sm lg:col-span-4">
             <Link
               href={`/${locale}`}
-              className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+              aria-label="ValtQ"
+              className="inline-flex rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
             >
-              <span className="font-display text-lg font-bold tracking-tight text-on-surface">
+              <span className="font-display text-xl font-bold tracking-tight text-on-surface">
                 ValtQ
               </span>
             </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-on-surface-variant">
+            <p className="mt-4 text-sm leading-relaxed text-on-surface-variant">
               {dict.footer.description}
             </p>
-            <div className="mt-5">
+            <div className="mt-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-on-surface">
                 {dict.social.followUs}
               </p>
@@ -46,76 +65,55 @@ export function Footer({ locale }: { locale: Locale }) {
             </div>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wide text-on-surface">
-              {dict.footer.company}
-            </h4>
-            <ul className="mt-3 space-y-2">
+          <div className="grid gap-10 sm:grid-cols-2 sm:gap-x-8 lg:col-span-8 lg:grid-cols-3 lg:gap-x-10">
+            <FooterGroup heading={dict.footer.company}>
               {companyLinks.map((key) => (
-                <li key={key}>
-                  <Link
-                    href={`/${locale}/${key === 'contact' ? 'contact' : key}`}
-                    className="text-sm text-on-surface-variant transition-all duration-150 hover:text-on-surface hover:translate-x-0.5 rtl:hover:-translate-x-0.5 inline-block"
-                  >
+                <li key={key} className="flex">
+                  <Link href={`/${locale}/${key}`} className={footerLinkClass}>
                     {dict.footer[key]}
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
+            </FooterGroup>
 
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wide text-on-surface">
-              {dict.footer.services}
-            </h4>
-            <ul className="mt-3 space-y-2">
+            <FooterGroup heading={dict.footer.services}>
               {serviceLinks.map((key) => (
-                <li key={key}>
-                  <Link
-                    href={`/${locale}${serviceHrefs[key]}`}
-                    className="text-sm text-on-surface-variant transition-all duration-150 hover:text-on-surface hover:translate-x-0.5 rtl:hover:-translate-x-0.5 inline-block"
-                  >
+                <li key={key} className="flex">
+                  <Link href={`/${locale}${serviceHrefs[key]}`} className={footerLinkClass}>
                     {dict.services[key].title}
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
+            </FooterGroup>
 
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wide text-on-surface">
-              {dict.footer.resources}
-            </h4>
-            <ul className="mt-3 space-y-2">
+            <FooterGroup heading={dict.footer.resources}>
               {resourceLinks.map((key) => (
-                <li key={key}>
-                  <Link
-                    href={`/${locale}/${key}`}
-                    className="text-sm text-on-surface-variant transition-all duration-150 hover:text-on-surface hover:translate-x-0.5 rtl:hover:-translate-x-0.5 inline-block"
-                  >
+                <li key={key} className="flex">
+                  <Link href={`/${locale}/${key}`} className={footerLinkClass}>
                     {dict.footer[key]}
                   </Link>
                 </li>
               ))}
-            </ul>
+            </FooterGroup>
           </div>
         </div>
 
         <Separator />
 
-        <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-          <p className="text-xs text-on-surface-variant">{dict.footer.copyright}</p>
-          <div className="flex gap-4">
+        <div className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:py-8">
+          <p className="text-xs text-on-surface-variant sm:text-sm">{dict.footer.copyright}</p>
+          <ul className="flex flex-wrap gap-x-5 gap-y-1 sm:gap-x-6">
             {legalLinks.map((key) => (
-              <Link
-                key={key}
-                href={`/${locale}/${key}`}
-                className="text-xs text-on-surface-variant transition-colors duration-150 hover:text-primary"
-              >
-                {dict.footer[key]}
-              </Link>
+              <li key={key} className="flex">
+                <Link
+                  href={`/${locale}/${key}`}
+                  className="inline-flex min-h-11 items-center text-xs text-on-surface-variant transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:min-h-0 sm:py-1 sm:text-sm"
+                >
+                  {dict.footer[key]}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </Container>
     </footer>

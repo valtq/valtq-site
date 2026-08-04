@@ -1,214 +1,290 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { AnimatedValtQMark } from '@/components/ui/animated-valtq-mark';
+import { usePrefersReducedMotion } from '@/components/ui/scroll-reveal';
+import { motion } from 'framer-motion';
 
 const PRIMARY = 'var(--color-primary)';
-const PRIMARY_SOFT = 'var(--color-primary-container)';
 const CYAN = 'var(--color-tertiary)';
-const BORDER = 'var(--color-border)';
 const OUTLINE = 'var(--color-outline-variant)';
 
-function useAnimation() {
-  const prefersReducedMotion = useReducedMotion();
-  return {
-    reduced: Boolean(prefersReducedMotion),
-    infinite: (value: Record<string, unknown>, duration: number, delay = 0) =>
-      prefersReducedMotion
-        ? undefined
-        : { animate: value, transition: { duration, repeat: Infinity, ease: 'easeInOut' as const, delay } },
-  };
-}
+const connectorPaths = [
+  'M304 222C264 184 220 126 144 104',
+  'M336 222C376 184 420 126 496 104',
+  'M304 258C264 296 220 354 144 376',
+  'M336 258C376 296 420 354 496 376',
+] as const;
 
-export function HeroVisual() {
-  const { reduced } = useAnimation();
+const nodeLayouts = [
+  'left-[3%] top-[9%]',
+  'right-[3%] top-[9%]',
+  'bottom-[9%] left-[3%]',
+  'bottom-[9%] right-[3%]',
+] as const;
+
+function CapabilityIcon({ index }: { index: number }) {
+  const sharedProps = {
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.6,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    className: 'h-4 w-4',
+    'aria-hidden': true,
+    focusable: false,
+  };
+
+  if (index === 0) {
+    return (
+      <svg {...sharedProps}>
+        <circle cx="12" cy="12" r="8.5" />
+        <path d="M12 7v5l3 2" />
+        <path d="M4.5 5.5 3 4m16.5 1.5L21 4" />
+      </svg>
+    );
+  }
+
+  if (index === 1) {
+    return (
+      <svg {...sharedProps}>
+        <rect width="14" height="20" x="5" y="2" rx="2" />
+        <path d="M9 6h6M9 9h6M9 12h4" />
+        <path d="M12 17h.01" />
+      </svg>
+    );
+  }
+
+  if (index === 2) {
+    return (
+      <svg {...sharedProps}>
+        <path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14" />
+      </svg>
+    );
+  }
 
   return (
-    <div className="relative mx-auto w-full max-w-full select-none">
-      <div className="absolute -inset-4 rounded-[2rem] bg-primary/10 blur-2xl" aria-hidden="true" />
-      <div className="relative overflow-hidden rounded-[1.75rem] border border-border bg-surface-container-lowest shadow-lg">
+    <svg {...sharedProps}>
+      <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+    </svg>
+  );
+}
+
+interface HeroVisualProps {
+  capabilities: readonly string[];
+}
+
+export function HeroVisual({ capabilities }: HeroVisualProps) {
+  const reducedMotion = usePrefersReducedMotion();
+
+  return (
+    <div
+      className="relative mx-auto w-full max-w-[44rem] select-none"
+      aria-hidden="true"
+    >
+      <motion.div
+        className="absolute -inset-3 rounded-[2rem] bg-primary/10 blur-2xl"
+        initial={reducedMotion ? false : { opacity: 0 }}
+        animate={reducedMotion ? undefined : { opacity: [0.12, 0.24, 0.16] }}
+        transition={
+          reducedMotion
+            ? undefined
+            : { duration: 5, delay: 2.15, repeat: Infinity, ease: 'easeInOut' }
+        }
+      />
+
+      <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-border bg-surface-container-lowest shadow-lg sm:aspect-[16/10] lg:aspect-[4/3]">
         <svg
           viewBox="0 0 640 480"
           fill="none"
-          className="block h-auto w-full"
-          role="img"
-          aria-label="ValtQ engineering schematic"
+          preserveAspectRatio="none"
+          className="absolute inset-0 h-full w-full"
         >
           <defs>
-            <pattern id="hero-grid" width="32" height="32" patternUnits="userSpaceOnUse">
-              <path d="M32 0H0V32" fill="none" stroke={OUTLINE} strokeWidth="0.5" opacity="0.35" />
+            <pattern id="product-engine-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+              <path
+                d="M32 0H0V32"
+                fill="none"
+                stroke={OUTLINE}
+                strokeWidth="0.65"
+                opacity="0.34"
+                vectorEffect="non-scaling-stroke"
+              />
             </pattern>
-            <linearGradient id="hero-glow" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor={PRIMARY} stopOpacity="0.14" />
-              <stop offset="55%" stopColor={PRIMARY} stopOpacity="0.03" />
-              <stop offset="100%" stopColor={CYAN} stopOpacity="0.1" />
+            <linearGradient id="product-engine-wash" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor={PRIMARY} stopOpacity="0.1" />
+              <stop offset="52%" stopColor={PRIMARY} stopOpacity="0.015" />
+              <stop offset="100%" stopColor={CYAN} stopOpacity="0.09" />
             </linearGradient>
-            <radialGradient id="hero-node" cx="0.5" cy="0.5" r="0.5">
-              <stop offset="0%" stopColor={CYAN} stopOpacity="0.9" />
-              <stop offset="100%" stopColor={CYAN} stopOpacity="0" />
+            <radialGradient id="product-engine-core" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor={PRIMARY} stopOpacity="0.16" />
+              <stop offset="70%" stopColor={PRIMARY} stopOpacity="0.035" />
+              <stop offset="100%" stopColor={PRIMARY} stopOpacity="0" />
             </radialGradient>
           </defs>
 
-          <rect x="0" y="0" width="640" height="480" fill="url(#hero-grid)" />
-          <rect x="0" y="0" width="640" height="480" fill="url(#hero-glow)" />
+          <motion.rect
+            width="640"
+            height="480"
+            fill="url(#product-engine-grid)"
+            initial={reducedMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={reducedMotion ? { duration: 0 } : { duration: 0.5, ease: 'easeOut' }}
+          />
+          <motion.rect
+            width="640"
+            height="480"
+            fill="url(#product-engine-wash)"
+            initial={reducedMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={reducedMotion ? { duration: 0 } : { duration: 0.65, delay: 0.08 }}
+          />
 
-          {/* ── Animated core panel ── */}
-          <motion.g
-            initial={reduced ? undefined : { opacity: 0, scale: 0.94 }}
-            animate={reduced ? undefined : { opacity: 1, scale: 1 }}
-            transition={reduced ? undefined : { duration: 0.9, ease: 'easeOut', delay: 0.15 }}
-          >
-            <rect x="168" y="96" width="304" height="288" rx="18" stroke={BORDER} strokeWidth="1" fill="rgba(255,255,255,0.55)" />
-            <rect x="168" y="96" width="304" height="288" rx="18" stroke={PRIMARY} strokeWidth="1" strokeOpacity="0.25" />
-            <line x1="168" y1="134" x2="472" y2="134" stroke={BORDER} strokeWidth="1" />
-
-            {/* window dots */}
-            {[188, 206, 224].map((cx) => (
-              <motion.circle
-                key={`win-${cx}`}
-                cx={cx}
-                cy={115}
-                r={3}
-                fill={PRIMARY_SOFT}
-                initial={reduced ? undefined : { opacity: 0 }}
-                animate={reduced ? undefined : { opacity: [0.2, 1, 0.2] }}
-                transition={reduced ? undefined : { duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: cx * 0.01 }}
-              />
-            ))}
-
-            {/* title bars */}
-            <motion.rect
-              x="206" y="106" width="120" height="7" rx="3.5" fill={PRIMARY} fillOpacity="0.35"
-              initial={reduced ? undefined : { opacity: 0 }}
-              animate={reduced ? undefined : { opacity: 1 }}
-              transition={reduced ? undefined : { duration: 0.6, delay: 0.5 }}
-            />
-            <motion.rect
-              x="206" y="122" width="84" height="5" rx="2.5" fill={PRIMARY} fillOpacity="0.18"
-              initial={reduced ? undefined : { opacity: 0 }}
-              animate={reduced ? undefined : { opacity: 1 }}
-              transition={reduced ? undefined : { duration: 0.6, delay: 0.65 }}
-            />
-
-            {/* blueprint lines */}
-            {[0, 1, 2, 3, 4].map((i) => {
-              const y = 170 + i * 34;
-              return (
-                <motion.line
-                  key={`line-${i}`}
-                  x1="188" y1={y} x2={432 + (i % 2) * 8} y2={y}
-                  stroke={i % 2 === 0 ? PRIMARY : CYAN}
-                  strokeWidth="1"
-                  strokeOpacity="0.4"
-                  initial={reduced ? undefined : { pathLength: 0 }}
-                  animate={reduced ? undefined : { pathLength: 1 }}
-                  transition={reduced ? undefined : { duration: 0.9, ease: 'easeInOut', delay: 0.5 + i * 0.16 }}
-                />
-              );
-            })}
-
-            {/* connector dots on lines */}
-            {[188, 280, 360].map((cx) => (
-              <motion.circle
-                key={`dot-${cx}`}
-                cx={cx} cy={170} r="3.5" fill={CYAN}
-                initial={reduced ? undefined : { scale: 0 }}
-                animate={reduced ? undefined : { scale: [0, 1, 0.6, 1], opacity: [0.4, 1, 1] }}
-                transition={reduced ? undefined : { duration: 3.2, repeat: Infinity, ease: 'easeInOut', delay: cx * 0.004 }}
-              />
-            ))}
-
-            {/* progress track */}
-            <rect x="188" y="346" width="264" height="6" rx="3" fill={PRIMARY} fillOpacity="0.08" />
-            <motion.rect
-              x="188" y="346" width="96" height="6" rx="3" fill={PRIMARY}
-              initial={reduced ? undefined : { width: 12 }}
-              animate={reduced ? undefined : { width: [12, 200, 96, 224, 96] }}
-              transition={reduced ? undefined : { duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            <motion.circle
-              cx="284" cy="349" r="5" fill="url(#hero-node)"
-              animate={reduced ? undefined : { cx: [196, 448, 284, 448, 284] }}
-              transition={reduced ? undefined : { duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            />
-          </motion.g>
-
-          {/* ── Orbiting rings ── */}
-          <motion.g
+          <motion.ellipse
+            cx="320"
+            cy="240"
+            rx="124"
+            ry="108"
+            fill="url(#product-engine-core)"
+            initial={reducedMotion ? false : { opacity: 0, scale: 0.82 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={
+              reducedMotion
+                ? { duration: 0 }
+                : { duration: 0.55, delay: 2.05, ease: 'easeOut' }
+            }
             style={{ transformOrigin: '320px 240px' }}
-            animate={reduced ? undefined : { rotate: 360 }}
-            transition={reduced ? undefined : { duration: 40, repeat: Infinity, ease: 'linear' }}
-          >
-            <circle cx="320" cy="240" r="172" stroke={PRIMARY} strokeWidth="0.8" strokeOpacity="0.22" fill="none" strokeDasharray="3 7" />
-            <circle cx="320" cy="240" r="212" stroke={CYAN} strokeWidth="0.6" strokeOpacity="0.14" fill="none" strokeDasharray="1 9" />
-          </motion.g>
+          />
 
-          {/* orbit node */}
-          <motion.g
-            style={{ transformOrigin: '320px 240px' }}
-            animate={reduced ? undefined : { rotate: 360 }}
-            transition={reduced ? undefined : { duration: 18, repeat: Infinity, ease: 'linear' }}
-          >
-            <motion.circle
-              cx="492" cy="240" r="6" fill={PRIMARY}
-              animate={reduced ? undefined : { opacity: [0.35, 1, 0.35] }}
-              transition={reduced ? undefined : { duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+          {connectorPaths.map((path, index) => (
+            <motion.path
+              key={path}
+              d={path}
+              stroke={index === 3 ? CYAN : PRIMARY}
+              strokeWidth="1.15"
+              strokeOpacity="0.42"
+              vectorEffect="non-scaling-stroke"
+              initial={reducedMotion ? false : { pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={
+                reducedMotion
+                  ? { duration: 0 }
+                  : {
+                      pathLength: { duration: 0.52, delay: 1.38 + index * 0.05, ease: 'easeOut' },
+                      opacity: { duration: 0.18, delay: 1.38 + index * 0.05 },
+                    }
+              }
             />
-            <motion.circle
-              cx="492" cy="240" r="12" fill="url(#hero-node)"
-              animate={reduced ? undefined : { r: [8, 16, 8], opacity: [0.2, 0.6, 0.2] }}
-              transition={reduced ? undefined : { duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-            />
-          </motion.g>
-
-          {/* ── Floating spec chips ── */}
-          {[
-            { x: 118, y: 168, w: 78, h: 34, label: 'LTR', delay: 0 },
-            { x: 448, y: 96, w: 96, h: 34, label: 'RTL', delay: 0.6 },
-            { x: 452, y: 356, w: 84, h: 34, label: 'DARK', delay: 1.2 },
-          ].map((chip) => (
-            <motion.g
-              key={`chip-${chip.label}`}
-              animate={reduced ? undefined : { y: [0, -7, 0] }}
-              transition={reduced ? undefined : { duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: chip.delay }}
-            >
-              <rect x={chip.x} y={chip.y} width={chip.w} height={chip.h} rx="9" fill="#fff" stroke={BORDER} strokeWidth="1" />
-              <rect x={chip.x} y={chip.y} width="4" height={chip.h} rx="2" fill={PRIMARY} />
-              <text
-                x={chip.x + chip.w / 2}
-                y={chip.y + chip.h / 2 + 3}
-                textAnchor="middle"
-                fontFamily="var(--font-mono)"
-                fontSize="10"
-                fontWeight="600"
-                fill={PRIMARY}
-                letterSpacing="0.08em"
-              >
-                {chip.label}
-              </text>
-            </motion.g>
           ))}
 
-          {/* corner ticks */}
-          {(
-            [
-              [28, 28], [612, 28], [28, 452], [612, 452],
-            ] as const
-          ).map((tick, i) => {
-            const [x, y] = tick;
-            return (
-              <motion.g key={`tick-${i}`}>
-                <motion.line x1={x} y1={y} x2={x + 14} y2={y} stroke={PRIMARY} strokeWidth="1.5" strokeOpacity="0.5"
-                  animate={reduced ? undefined : { opacity: [0.25, 0.7, 0.25] }}
-                  transition={reduced ? undefined : { duration: 3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 }}
-                />
-                <motion.line x1={x} y1={y} x2={x} y2={y + 14} stroke={PRIMARY} strokeWidth="1.5" strokeOpacity="0.5"
-                  animate={reduced ? undefined : { opacity: [0.25, 0.7, 0.25] }}
-                  transition={reduced ? undefined : { duration: 3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 }}
-                />
-              </motion.g>
-            );
-          })}
+          {connectorPaths.map((path, index) => (
+            <motion.path
+              key={`pulse-${path}`}
+              d={path}
+              stroke={index === 3 ? CYAN : PRIMARY}
+              strokeWidth="1.4"
+              strokeDasharray="2 18"
+              vectorEffect="non-scaling-stroke"
+              initial={{ opacity: 0 }}
+              animate={reducedMotion ? { opacity: 0 } : { opacity: [0, 0.22, 0] }}
+              transition={
+                reducedMotion
+                  ? { duration: 0 }
+                  : {
+                      duration: 4.8,
+                      delay: 2.55 + index * 0.35,
+                      repeat: Infinity,
+                      repeatDelay: 1.2,
+                      ease: 'easeInOut',
+                    }
+              }
+            />
+          ))}
+
+          <g stroke={PRIMARY} strokeWidth="1" strokeOpacity="0.3" vectorEffect="non-scaling-stroke">
+            <path d="M28 44V28h16M596 28h16v16M28 436v16h16M612 436v16h-16" />
+            <path d="M286 28h68M286 452h68" strokeDasharray="2 7" />
+          </g>
+
+          {[
+            [28, 80],
+            [612, 80],
+            [28, 400],
+            [612, 400],
+          ].map(([cx, cy], index) => (
+            <circle
+              key={`detail-${index}`}
+              cx={cx}
+              cy={cy}
+              r={2.25}
+              fill={index === 3 ? CYAN : PRIMARY}
+              opacity="0.48"
+            />
+          ))}
         </svg>
+
+        <div className="absolute left-1/2 top-1/2 w-[31%] max-w-[172px] -translate-x-1/2 -translate-y-1/2" dir="ltr">
+          <motion.div
+            className="relative aspect-square rounded-[1.4rem] border border-primary/20 bg-surface-container-lowest/95 shadow-sm"
+            initial={reducedMotion ? false : { opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={
+              reducedMotion
+                ? { duration: 0 }
+                : { duration: 0.5, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }
+            }
+          >
+            <motion.div
+              className="absolute inset-3 flex items-center justify-center rounded-[1.1rem] border border-border bg-white/95 dark:bg-[#f4f7fb]"
+              initial={reducedMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={reducedMotion ? { duration: 0 } : { duration: 0.4, delay: 0.28 }}
+            />
+
+            <AnimatedValtQMark className="absolute inset-0 h-full w-full overflow-visible" />
+
+            <motion.div
+              className="absolute inset-1 rounded-[1.25rem] border border-tertiary/20"
+              initial={reducedMotion ? false : { opacity: 0, scale: 0.92 }}
+              animate={
+                reducedMotion
+                  ? { opacity: 0.18, scale: 1 }
+                  : { opacity: [0.12, 0.26, 0.12], scale: [0.98, 1.015, 0.98] }
+              }
+              transition={
+                reducedMotion
+                  ? { duration: 0 }
+                  : { duration: 5.2, delay: 2.15, repeat: Infinity, ease: 'easeInOut' }
+              }
+            />
+          </motion.div>
+        </div>
+
+        {capabilities.slice(0, 4).map((label, index) => {
+          const layout = nodeLayouts[index];
+          if (!layout) return null;
+
+          return (
+            <motion.div
+              key={`${index}-${label}`}
+              className={`absolute flex w-[44%] items-center gap-2 rounded-xl border border-border bg-surface-container-lowest/95 px-2 py-2 shadow-sm sm:w-[38%] sm:gap-2.5 sm:px-2.5 lg:w-[36%] ${layout}`}
+              initial={reducedMotion ? false : { opacity: 0, y: 8, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={
+                reducedMotion
+                  ? { duration: 0 }
+                  : { duration: 0.35, delay: 1.72 + index * 0.1, ease: 'easeOut' }
+              }
+            >
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-primary/15 bg-primary/5 text-primary sm:h-8 sm:w-8">
+                <CapabilityIcon index={index} />
+              </span>
+              <span className="min-w-0 text-start text-[10px] font-semibold leading-[1.25] text-on-surface sm:text-xs lg:text-[13px]">
+                {label}
+              </span>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

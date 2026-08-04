@@ -11,8 +11,8 @@ describe('NotificationService', () => {
     email: 'jane@acme.com',
     company: 'Acme',
     projectType: 'saas',
-    budget: '30k-50k',
-    timeline: '2-4-months',
+    budget: 'USD_7500_15000',
+    timeline: 'MONTHS_2_4',
     description: 'Need a SaaS MVP with billing and auth.',
     score: 82,
   };

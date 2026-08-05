@@ -1368,6 +1368,18 @@
       "discoveryCta": "Start Discovery"
     }
   },
+  "projects": {
+    "eyebrow": "Selected projects",
+    "title": "Products engineered to ship and scale",
+    "description": "A closer look at what we've designed, built, and shipped — the stack behind each product and the outcomes it delivered in production.",
+    "featuredLabel": "Featured",
+    "techLabel": "Built with",
+    "viewProject": "View project",
+    "viewSource": "Source",
+    "viewCaseStudy": "Case study",
+    "moreTech": "and {count} more technologies",
+    "opensInNewTab": "opens in a new tab"
+  },
   "work": {
     "viewCaseStudy": "View Case Study",
     "backToWork": "Back to Work",

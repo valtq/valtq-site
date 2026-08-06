@@ -28,11 +28,7 @@
       "primaryCta": "Start your project",
       "secondaryCta": "Explore our work",
       "capabilitiesLabel": "What we do",
-      "capabilities": [
-        "Product Strategy",
-        "Experience Design",
-        "Software Engineering"
-      ],
+      "capabilities": ["Product Strategy", "Experience Design", "Software Engineering"],
       "visualCapabilities": [
         "Product Strategy",
         "Experience Design",
@@ -65,12 +61,7 @@
       "secondaryCta": "Contact us",
       "visual": {
         "questionLabel": "Question",
-        "categories": [
-          "Discovery",
-          "Delivery",
-          "Engineering",
-          "Support"
-        ],
+        "categories": ["Discovery", "Delivery", "Engineering", "Support"],
         "answerLabel": "Answer",
         "decisionLabel": "Clear decision",
         "captionStart": "Questions",
@@ -92,12 +83,7 @@
         "Delivery planning"
       ],
       "visual": {
-        "stages": [
-          "Challenge",
-          "Product direction",
-          "Experience",
-          "Engineering"
-        ],
+        "stages": ["Challenge", "Product direction", "Experience", "Engineering"],
         "deliveryLabel": "Delivery"
       }
     },
@@ -477,12 +463,7 @@
       ],
       "visual": {
         "central": "Product Platform",
-        "nodes": [
-          "Web Platforms",
-          "Mobile Products",
-          "AI Workflows",
-          "Cloud Systems"
-        ]
+        "nodes": ["Web Platforms", "Mobile Products", "AI Workflows", "Cloud Systems"]
       }
     },
     "overview": {
@@ -731,12 +712,7 @@
       "eyebrow": "Connected delivery",
       "heading": "One delivery journey, not disconnected service handoffs.",
       "description": "Product strategy defines the right problem and scope. Experience design turns that scope into understandable workflows. Engineering implements the product and its integrations. Cloud and quality practices prepare it for reliable operation and continued evolution.",
-      "stages": [
-        "Define",
-        "Design",
-        "Build",
-        "Operate and evolve"
-      ],
+      "stages": ["Define", "Design", "Build", "Operate and evolve"],
       "cta": "Explore our delivery process"
     },
     "finalCta": {
@@ -790,20 +766,8 @@
       "primaryCta": "Start Discovery",
       "secondaryCta": "Explore Our Services",
       "principlesLabel": "Built on",
-      "principles": [
-        "Clear scope",
-        "Visible decisions",
-        "Reviewable delivery",
-        "Launch readiness"
-      ],
-      "visualNodes": [
-        "Define",
-        "Design",
-        "Build",
-        "Validate",
-        "Launch",
-        "Evolve"
-      ],
+      "principles": ["Clear scope", "Visible decisions", "Reviewable delivery", "Launch readiness"],
+      "visualNodes": ["Define", "Design", "Build", "Validate", "Launch", "Evolve"],
       "visualCaptionStart": "Uncertainty",
       "visualCaptionEnd": "Operational clarity"
     },
@@ -1142,11 +1106,7 @@
       "title": "We bring clarity to complex digital product challenges.",
       "description": "ValtQ combines product strategy, experience design, and software engineering to help teams move from opportunity to reliable digital delivery.",
       "visualLabel": "One connected delivery system",
-      "visualItems": [
-        "Product Strategy",
-        "Experience Design",
-        "Software Engineering"
-      ]
+      "visualItems": ["Product Strategy", "Experience Design", "Software Engineering"]
     },
     "whoWeAre": {
       "title": "A product partner from discovery through delivery.",
@@ -1459,25 +1419,14 @@
       "Existing product in production",
       "Modernizing or extending an existing system"
     ],
-    "channelOptions": [
-      "Email",
-      "WhatsApp",
-      "Phone",
-      "Any channel"
-    ],
+    "channelOptions": ["Email", "WhatsApp", "Phone", "Any channel"],
     "timingOptions": [
       "As soon as possible",
       "Within 1–3 months",
       "Within 3–6 months",
       "Flexible / exploring"
     ],
-    "budgetOptions": [
-      "Under $10k",
-      "$10k – $25k",
-      "$25k – $50k",
-      "$50k+",
-      "Not yet determined"
-    ],
+    "budgetOptions": ["Under $10k", "$10k – $25k", "$25k – $50k", "$50k+", "Not yet determined"],
     "nameRequiredError": "Please enter your full name.",
     "emailRequiredError": "Please enter your email address so we can follow up.",
     "emailInvalidError": "Please enter a valid email address.",
@@ -1626,7 +1575,8 @@
     "onThisPage": "On this page",
     "effectiveLabel": "Effective date",
     "updatedLabel": "Last updated",
-    "printLabel": "Print document",
+    "downloadLabel": "Download PDF",
+    "downloadAriaLabel": "Download as a PDF document",
     "relatedTitle": "Related policies",
     "relatedDescription": "These policies work together. Read the documents that apply to your visit.",
     "relatedList": {
@@ -1647,6 +1597,107 @@
     "storagePreferenceLabel": "Preference",
     "readLabel": "Read policy"
   },
+  "serviceAgreementPage": {
+    "metadata": {
+      "title": "Software Services Agreement",
+      "description": "Review and download ValtQ's general unsigned Software Services Agreement template in English and Arabic — covering scope, deliverables, timeline, payments, intellectual property, confidentiality, and more."
+    },
+    "eyebrow": "Legal · Agreement",
+    "title": "Software Services Agreement",
+    "description": "A general unsigned template that defines how ValtQ delivers software projects and how the parties work together. Review it before we complete and sign a version for your project.",
+    "status": "Sample — Not Executed",
+    "statusDetail": "This document is a general sample for review only. It does not create a contractual relationship until it is completed with your project and party details, reviewed, and signed by authorized representatives.",
+    "document": {
+      "title": "ValtQ Software Services Agreement",
+      "type": "PDF Document",
+      "versionLabel": "Template version",
+      "version": "1.0",
+      "statusLabel": "Status",
+      "status": "Unsigned template",
+      "languagesLabel": "Available languages",
+      "languages": "English and Arabic",
+      "description": "A clean, general-purpose agreement template that captures the scope of work, deliverables, timeline, payment terms, intellectual property, confidentiality, change requests, acceptance criteria, termination, and party signatures."
+    },
+    "downloadOptions": {
+      "eyebrow": "Downloads",
+      "title": "Download the agreement in your preferred language."
+    },
+    "englishDocument": {
+      "title": "English Agreement",
+      "language": "English",
+      "format": "PDF",
+      "view": "View PDF",
+      "download": "Download PDF",
+      "viewAriaLabel": "View the English Service Agreement PDF in a new tab",
+      "downloadAriaLabel": "Download the English Service Agreement PDF"
+    },
+    "arabicDocument": {
+      "title": "Arabic Agreement",
+      "language": "Arabic",
+      "format": "PDF",
+      "view": "View PDF",
+      "download": "Download PDF",
+      "viewAriaLabel": "View the Arabic Service Agreement PDF in a new tab",
+      "downloadAriaLabel": "Download the Arabic Service Agreement PDF"
+    },
+    "coverage": {
+      "eyebrow": "What the template covers",
+      "title": "A structured foundation for a clear engagement.",
+      "description": "The template walks through the sections that matter most when starting a software project, so nothing important is left to assumptions.",
+      "items": [
+        {
+          "title": "Scope of work",
+          "description": "Defines the services and responsibilities ValtQ will deliver for the project."
+        },
+        {
+          "title": "Project deliverables",
+          "description": "Specifies the concrete outputs and artifacts included in the engagement."
+        },
+        {
+          "title": "Project timeline",
+          "description": "Sets milestones, deadlines, and how schedules are managed and revised."
+        },
+        {
+          "title": "Payment terms",
+          "description": "Clarifies fees, invoicing, payment schedule, and related financial terms."
+        },
+        {
+          "title": "Intellectual property",
+          "description": "States who owns the work produced and how it may be used after delivery."
+        },
+        {
+          "title": "Confidentiality",
+          "description": "Protects sensitive business and technical information shared during the project."
+        },
+        {
+          "title": "Change requests",
+          "description": "Establishes how scope or requirement changes are requested, priced, and approved."
+        },
+        {
+          "title": "Acceptance criteria",
+          "description": "Defines how completed work is reviewed, tested, and formally accepted."
+        },
+        {
+          "title": "Termination",
+          "description": "Explains the conditions under which either party may end the agreement."
+        },
+        {
+          "title": "Party signatures",
+          "description": "Provides the signature block that completes and activates the agreement."
+        }
+      ]
+    },
+    "notice": {
+      "title": "Legal notice",
+      "description": "This downloadable document is a general unsigned sample. It is provided for review only and does not create a binding contractual relationship. A final agreement must be completed with the relevant project and party details, reviewed, and signed by authorized representatives. The content is not legal advice."
+    },
+    "cta": {
+      "eyebrow": "Custom agreement",
+      "title": "Need an agreement tailored to your project?",
+      "description": "Every project has different scope, terms, and context. Tell us about your product and we can prepare a customized agreement that fits it.",
+      "action": "Contact us"
+    }
+  },
   "loading": "Loading...",
   "footer": {
     "description": "Premium software engineering for startups and enterprises.",
@@ -1661,6 +1712,7 @@
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
     "cookies": "Cookie Policy",
+    "serviceAgreement": "Service Agreement",
     "copyright": "© 2026 ValtQ. All rights reserved.",
     "home": "Home",
     "work": "Work",

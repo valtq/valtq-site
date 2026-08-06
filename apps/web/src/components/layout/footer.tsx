@@ -11,7 +11,12 @@ import { SocialLinks } from './social-links';
 const companyLinks = ['about', 'careers', 'blog', 'contact'] as const;
 const serviceLinks = ['web', 'mobile', 'ai', 'cloud'] as const;
 const resourceLinks = ['work', 'process', 'faq'] as const;
-const legalLinks = ['terms', 'privacy', 'cookies'] as const;
+const legalLinks = [
+  { href: 'terms', labelKey: 'terms' },
+  { href: 'privacy', labelKey: 'privacy' },
+  { href: 'cookies', labelKey: 'cookies' },
+  { href: 'service-agreement', labelKey: 'serviceAgreement' },
+] as const;
 
 const serviceHrefs: Record<string, string> = {
   web: '/services#web',
@@ -103,13 +108,13 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:py-8">
           <p className="text-xs text-on-surface-variant sm:text-sm">{dict.footer.copyright}</p>
           <ul className="flex flex-wrap gap-x-5 gap-y-1 sm:gap-x-6">
-            {legalLinks.map((key) => (
-              <li key={key} className="flex">
+            {legalLinks.map((link) => (
+              <li key={link.href} className="flex">
                 <Link
-                  href={`/${locale}/${key}`}
+                  href={`/${locale}/${link.href}`}
                   className="inline-flex min-h-11 items-center text-xs text-on-surface-variant transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:min-h-0 sm:py-1 sm:text-sm"
                 >
-                  {dict.footer[key]}
+                  {dict.footer[link.labelKey]}
                 </Link>
               </li>
             ))}

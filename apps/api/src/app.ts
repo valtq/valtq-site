@@ -11,6 +11,7 @@ import {
 import healthModule from './modules/health/index.js';
 import discoveryModule from './modules/discovery/index.js';
 import bookingModule from './modules/booking/index.js';
+import contactModule from './modules/contact/index.js';
 
 declare module 'fastify' {
   interface FastifyRequest {
@@ -68,6 +69,7 @@ function createApp() {
   app.register(healthModule);
   app.register(discoveryModule, { prefix: '/api' });
   app.register(bookingModule, { prefix: '/api' });
+  app.register(contactModule, { prefix: '/api' });
 
   return app;
 }

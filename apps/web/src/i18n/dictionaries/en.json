@@ -81,7 +81,7 @@
       "tag": "Our work",
       "title": "Product work shaped by clear thinking and thoughtful engineering.",
       "titleAccent": "thoughtful engineering.",
-      "description": "Explore case studies across web, mobile, AI-enabled products, and digital platforms. Each project shows how product direction, experience design, technical decisions, and delivery planning come together.",
+      "description": "Case studies across web, mobile, and AI-enabled products — each showing how direction, design, engineering, and delivery planning connect.",
       "primaryCta": "Explore case studies",
       "secondaryCta": "Start Discovery",
       "capabilitiesLabel": "Capabilities",
@@ -135,7 +135,7 @@
     "careers": {
       "eyebrow": "Careers at ValtQ",
       "title": "Do thoughtful product and engineering work with clarity, ownership, and care.",
-      "description": "ValtQ brings product strategy, experience design, software engineering, and cloud delivery into one connected workflow. Our work requires people who can understand the product context, communicate decisions clearly, and contribute to reliable, maintainable digital systems.",
+      "description": "ValtQ unifies strategy, design, engineering, and cloud delivery in one workflow — built by people who ship reliable products.",
       "supportingLine": "There are no open roles at the moment, but this page explains how we work and what we value in future collaborators.",
       "primaryCta": "How we work",
       "secondaryCta": "Explore our work",
@@ -158,7 +158,7 @@
       "eyebrow": "ValtQ Insights",
       "title": "Practical thinking for building and evolving ",
       "titleAccent": "digital products.",
-      "description": "Notes on product strategy, software engineering, AI, and delivery — grounded in how real products get built and improved. No inflated claims: just the decisions, trade-offs, and details that matter.",
+      "description": "Notes on product strategy, engineering, AI, and delivery — grounded in how real products get built. Just the decisions, trade-offs, and details that matter.",
       "topics": [
         "Product strategy",
         "Engineering practice",
@@ -177,7 +177,7 @@
     "why": {
       "eyebrow": "The work environment",
       "title": "Product context and engineering quality stay connected.",
-      "intro": "The quality of a technical solution depends on more than implementation speed. The team needs a shared understanding of the users, workflow, constraints, system boundaries, and decisions that shape the product.",
+      "intro": "Technical quality depends on shared understanding of the users, workflow, constraints, and decisions that shape the product.",
       "items": [
         {
           "title": "Meaningful product context",
@@ -465,7 +465,7 @@
       "eyebrow": "Software engineering services",
       "titleStart": "Design, build, and evolve digital products with one connected ",
       "titleHighlight": "engineering partner.",
-      "description": "ValtQ brings product strategy, experience design, software engineering, and cloud delivery into one practical workflow. We help teams turn complex requirements into reliable web platforms, mobile products, AI-enabled experiences, and scalable technical foundations.",
+      "description": "Strategy, design, engineering, and cloud delivery in one workflow — turning complex requirements into reliable products.",
       "primaryCta": "Start Discovery",
       "secondaryCta": "Explore Our Process",
       "capabilitiesLabel": "Core capabilities",
@@ -520,8 +520,8 @@
     "web": {
       "eyebrow": "01 — Web application engineering",
       "heading": "Web platforms designed around real workflows and long-term maintainability.",
-      "description": "We build customer-facing products, internal platforms, operational dashboards, portals, and data-driven applications. The work starts with the business workflow and user journey, then moves into architecture, interface design, implementation, testing, and deployment.",
-      "paragraph": "Our focus is not limited to producing pages or isolated features. We structure the frontend, backend integrations, data flow, permissions, performance, and deployment model so the product remains understandable and maintainable as its scope grows.",
+      "description": "Customer-facing platforms, internal tools, dashboards, and data-driven applications — built from the workflow and user journey through architecture, design, and delivery.",
+      "paragraph": "We structure the frontend, integrations, data flow, permissions, and performance so the product stays clear and maintainable as it grows.",
       "supportLabel": "What we can support",
       "support": [
         "Marketing and customer-facing platforms",
@@ -548,8 +548,8 @@
     "mobile": {
       "eyebrow": "02 — Mobile product development",
       "heading": "Mobile experiences designed for daily use, changing networks, and evolving product requirements.",
-      "description": "We develop mobile products for iOS and Android with attention to navigation, state management, API reliability, device behavior, accessibility, and release readiness. Depending on product constraints, we can use cross-platform development to maintain a shared product foundation while preserving a platform-appropriate experience.",
-      "paragraph": "Mobile delivery includes more than implementing screens. We consider session handling, slow or interrupted connections, local state, notifications, permissions, secure storage, analytics integration, and the operational work required to release and maintain the application.",
+      "description": "We build iOS and Android products focused on navigation, state, API reliability, accessibility, and release readiness — using cross-platform development when it fits.",
+      "paragraph": "Mobile delivery covers more than screens — sessions, offline behavior, local state, notifications, permissions, secure storage, and the operational work to release and maintain the app.",
       "supportLabel": "What we can support",
       "support": [
         "Customer and member applications",
@@ -576,8 +576,8 @@
     "ai": {
       "eyebrow": "03 — AI-enabled products",
       "heading": "Practical AI capabilities connected to product workflows and controlled by clear system boundaries.",
-      "description": "We integrate AI where it can improve a real product workflow: helping users find information, supporting internal decisions, extracting structured data, classifying content, generating assisted responses, or automating repetitive steps.",
-      "paragraph": "AI functionality should not operate as an isolated demo. We connect it to the product’s data, permissions, review process, fallback behavior, and monitoring. For knowledge-based assistants, we can structure retrieval workflows that ground responses in approved sources and expose relevant references to users or reviewers.",
+      "description": "We integrate AI where it improves a real workflow — search, internal decisions, document extraction, content classification, assisted responses, and automation.",
+      "paragraph": "AI should not run as an isolated demo. We connect it to data, permissions, review, fallbacks, and monitoring — and ground assistant answers in approved sources with clear references.",
       "supportLabel": "What we can support",
       "support": [
         "AI assistants and copilots",
@@ -604,8 +604,8 @@
     "cloud": {
       "eyebrow": "04 — Cloud and infrastructure",
       "heading": "Backend and cloud foundations designed for secure delivery and operational clarity.",
-      "description": "We design and implement APIs, data models, background processing, service integrations, deployment workflows, and cloud environments that support the product’s actual traffic, reliability, security, and operational needs.",
-      "paragraph": "The goal is not to introduce infrastructure complexity for its own sake. We choose deployment patterns based on the product stage, team capacity, expected usage, security requirements, and recovery needs. The resulting setup should remain observable, repeatable, and understandable to the people who operate it.",
+      "description": "We design APIs, data models, background processing, integrations, and cloud environments that match the product’s real traffic, reliability, security, and operational needs.",
+      "paragraph": "We match infrastructure to the product stage, security, and recovery needs — keeping systems observable and understandable.",
       "supportLabel": "What we can support",
       "support": [
         "API and backend development",
@@ -634,7 +634,7 @@
     "strategy": {
       "eyebrow": "05 — Product strategy and experience design",
       "heading": "Clarify what should be built before committing time and budget to delivery.",
-      "description": "We help teams translate business goals, user needs, operational constraints, and technical requirements into a product direction that engineering can execute. This may include discovery workshops, workflow mapping, feature prioritization, information architecture, interface design, and an initial delivery roadmap.",
+      "description": "We turn business goals, user needs, and constraints into a clear product direction and delivery roadmap.",
       "paragraph": "",
       "supportLabel": "Supporting points",
       "support": [
@@ -654,7 +654,7 @@
     "quality": {
       "eyebrow": "06 — Quality and product evolution",
       "heading": "Quality practices that continue beyond the first release.",
-      "description": "A production release is one stage of the product lifecycle. We structure quality assurance, code review, automated checks, observability, release processes, and maintenance planning so teams can continue improving the product without losing control of its technical foundation.",
+      "description": "A release is one stage of the product lifecycle. We build in quality, review, and monitoring so the product keeps improving.",
       "paragraph": "",
       "supportLabel": "Quality activities may include",
       "support": [
@@ -676,7 +676,7 @@
     "why": {
       "eyebrow": "Why ValtQ",
       "heading": "Engineering decisions connected to product outcomes.",
-      "description": "Our role is to keep product goals, user experience, implementation, and operations connected. That reduces handoff gaps and helps teams make technical decisions with a clear understanding of their product impact.",
+      "description": "We keep product goals, user experience, and engineering connected, so technical decisions reflect their product impact.",
       "principles": [
         {
           "title": "Product context before implementation",
@@ -730,7 +730,7 @@
     "journey": {
       "eyebrow": "Connected delivery",
       "heading": "One delivery journey, not disconnected service handoffs.",
-      "description": "Product strategy defines the right problem and scope. Experience design turns that scope into understandable workflows. Engineering implements the product and its integrations. Cloud and quality practices prepare it for reliable operation and continued evolution.",
+      "description": "Strategy defines the problem and scope, design shapes clear workflows, engineering builds the product, and quality and cloud practices keep it reliable as it evolves.",
       "stages": [
         "Define",
         "Design",
@@ -786,7 +786,7 @@
     "hero": {
       "eyebrow": "How we deliver",
       "title": "A delivery process that turns complex product work into clear, reviewable progress.",
-      "description": "ValtQ connects product strategy, experience design, software engineering, quality, and cloud delivery through one visible workflow. Each phase reduces uncertainty, produces reviewable outputs, and prepares the next set of decisions.",
+      "description": "A visible workflow connects strategy, design, engineering, quality, and cloud delivery. Each phase reduces uncertainty and produces reviewable progress.",
       "primaryCta": "Start Discovery",
       "secondaryCta": "Explore Our Services",
       "principlesLabel": "Built on",
@@ -811,8 +811,8 @@
       "eyebrow": "A connected delivery framework",
       "heading": "Every phase should make the product clearer, not simply move the project forward.",
       "paragraphs": [
-        "The process begins by clarifying the problem, the users, the operating constraints, and the decisions that must be made. This prevents implementation from starting around assumptions that have not been examined.",
-        "As delivery continues, strategy, design, engineering, and quality remain connected. Decisions are documented, working increments are reviewed, and technical risks remain visible instead of being postponed until launch."
+        "We start by clarifying the problem, users, constraints, and required decisions, so implementation never begins on unexamined assumptions.",
+        "Strategy, design, engineering, and quality stay connected — decisions documented, increments reviewed, and risks visible before launch."
       ],
       "principlesLabel": "Guiding principles",
       "principles": [
@@ -1151,8 +1151,8 @@
     "whoWeAre": {
       "title": "A product partner from discovery through delivery.",
       "paragraphs": [
-        "We work with teams to define the right problem, shape an intuitive product experience, and build the technical foundation required for long-term growth.",
-        "Our process keeps strategy, design, and engineering connected so decisions remain clear and delivery stays focused."
+        "We help teams define the right problem, shape an intuitive experience, and build the foundation for long-term growth.",
+        "Our process keeps strategy, design, and engineering connected — decisions stay clear, and delivery stays focused."
       ],
       "panelItems": [
         "Strategy that frames the opportunity",

@@ -10,43 +10,43 @@ import {
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/cn';
 
-function isInternalNavigationClick(event: MouseEvent): boolean {
-  if (event.defaultPrevented) return false;
-  if (event.button !== 0) return false;
+function getInternalNavigationDestination(event: MouseEvent): string | null {
+  if (event.defaultPrevented) return null;
+  if (event.button !== 0) return null;
   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
-    return false;
+    return null;
   }
 
   const target = event.target;
-  if (!(target instanceof Element)) return false;
+  if (!(target instanceof Element)) return null;
 
   const anchor = target.closest('a');
-  if (!anchor) return false;
-  if (anchor.hasAttribute('download')) return false;
-  if (anchor.getAttribute('target') === '_blank') return false;
+  if (!anchor) return null;
+  if (anchor.hasAttribute('download')) return null;
+  if (anchor.getAttribute('target') === '_blank') return null;
 
   const href = anchor.getAttribute('href');
-  if (!href) return false;
+  if (!href) return null;
   if (
     href.startsWith('#') ||
     href.startsWith('mailto:') ||
     href.startsWith('tel:')
   ) {
-    return false;
+    return null;
   }
 
   let url: URL;
   try {
     url = new URL(href, window.location.href);
   } catch {
-    return false;
+    return null;
   }
 
-  if (url.origin !== window.location.origin) return false;
+  if (url.origin !== window.location.origin) return null;
 
   const current = `${window.location.pathname}${window.location.search}`;
   const next = `${url.pathname}${url.search}`;
-  return current !== next;
+  return current !== next ? next : null;
 }
 
 /**
@@ -60,6 +60,7 @@ export function NavigationFeedback({ children }: { children: ReactNode }) {
     'idle',
   );
   const finishTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingDestinationRef = useRef<string | null>(null);
 
   const clearFinishTimer = useCallback(() => {
     if (finishTimerRef.current) {
@@ -68,14 +69,19 @@ export function NavigationFeedback({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const startNavigation = useCallback(() => {
-    clearFinishTimer();
-    setPending(true);
-    setBarState('loading');
-    document.documentElement.dataset.navigating = 'true';
-  }, [clearFinishTimer]);
+  const startNavigation = useCallback(
+    (destination: string | null) => {
+      clearFinishTimer();
+      pendingDestinationRef.current = destination;
+      setPending(true);
+      setBarState('loading');
+      document.documentElement.dataset.navigating = 'true';
+    },
+    [clearFinishTimer],
+  );
 
   const finishNavigation = useCallback(() => {
+    pendingDestinationRef.current = null;
     setBarState((current) => (current === 'idle' ? current : 'finishing'));
     setPending(false);
     delete document.documentElement.dataset.navigating;
@@ -89,13 +95,14 @@ export function NavigationFeedback({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
-      if (isInternalNavigationClick(event)) {
-        startNavigation();
+      const destination = getInternalNavigationDestination(event);
+      if (destination !== null) {
+        startNavigation(destination);
       }
     };
 
     const onPopState = () => {
-      startNavigation();
+      startNavigation(`${window.location.pathname}${window.location.search}`);
     };
 
     document.addEventListener('click', onClick, true);
@@ -109,6 +116,24 @@ export function NavigationFeedback({ children }: { children: ReactNode }) {
   useEffect(() => {
     finishNavigation();
   }, [pathname, finishNavigation]);
+
+  useEffect(() => {
+    if (!pending) return;
+
+    const startedAt = Date.now();
+    const interval = setInterval(() => {
+      const destination = pendingDestinationRef.current;
+      const current = `${window.location.pathname}${window.location.search}`;
+      if (
+        (destination !== null && current === destination) ||
+        Date.now() - startedAt > 8000
+      ) {
+        finishNavigation();
+      }
+    }, 120);
+
+    return () => clearInterval(interval);
+  }, [pending, finishNavigation]);
 
   useEffect(() => {
     return () => {
@@ -147,7 +172,7 @@ export function NavigationFeedback({ children }: { children: ReactNode }) {
         className={cn(
           'flex min-h-0 flex-1 flex-col transition-[opacity,transform] duration-200 ease-out',
           'motion-reduce:transition-none',
-          pending && 'pointer-events-none opacity-60',
+          pending && 'opacity-60',
         )}
       >
         {children}

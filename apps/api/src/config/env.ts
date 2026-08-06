@@ -34,8 +34,21 @@ const optionalFromEmail = z.preprocess(
         const email = match?.[1] ?? match?.[2];
         return !!email && z.string().email().safeParse(email).success;
       },
-      { message: 'RESEND_FROM_EMAIL must be an email or "Name <email>"' },
+      { message: 'SMTP_FROM must be an email or "Name <email>"' },
     )
+    .optional(),
+);
+
+const optionalPort = z.preprocess(
+  emptyToUndefined,
+  z.coerce.number().int().positive().optional(),
+);
+
+const optionalBoolean = z.preprocess(
+  emptyToUndefined,
+  z
+    .enum(['true', 'false'])
+    .transform((value) => value === 'true')
     .optional(),
 );
 
@@ -53,8 +66,12 @@ const envSchema = z.object({
   RATE_LIMIT_MAX: z.coerce.number().int().positive().default(100),
   RATE_LIMIT_TIME_WINDOW: z.string().default('1 minute'),
 
-  RESEND_API_KEY: optionalNonEmptyString,
-  RESEND_FROM_EMAIL: optionalFromEmail,
+  SMTP_HOST: optionalNonEmptyString,
+  SMTP_PORT: optionalPort,
+  SMTP_SECURE: optionalBoolean,
+  SMTP_USER: optionalNonEmptyString,
+  SMTP_PASS: optionalNonEmptyString,
+  SMTP_FROM: optionalFromEmail,
   CAL_API_KEY: optionalNonEmptyString,
   CAL_WEBHOOK_SECRET: optionalNonEmptyString,
   INTERNAL_NOTIFICATION_EMAIL: optionalEmail,

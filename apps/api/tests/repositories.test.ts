@@ -107,7 +107,7 @@ describe('Repositories', () => {
     const log = await notificationRepository.create({
       leadId: lead.id,
       type: 'internal_lead',
-      provider: 'resend',
+      provider: 'smtp',
       success: true,
       metadata: { messageId: 'msg_1' },
     });

@@ -1,6 +1,8 @@
 import {
+  ContactResponseSchema,
   DiscoveryResponseSchema,
   DiscoverySubmissionSchema,
+  type ContactResponse,
   type DiscoveryResponse,
   type DiscoverySubmission,
 } from '@valtq/types';
@@ -105,18 +107,11 @@ export async function submitDiscovery(
 
 /**
  * Submit a project inquiry from the Contact page.
- *
- * NOTE: No contact/inquiry endpoint currently exists in the backend (the API
- * exposes only `/api/discovery`, booking, and health routes). This integration
- * point validates the payload and reports a clear "not configured" error so the
- * form never fakes a successful submission and never silently discards input.
- *
- * When a backend contact/lead endpoint is introduced, wire it here following
- * the same fetch + envelope shape used by `submitDiscovery`.
+ * Validates locally with the shared Zod schema before calling the API.
  */
 export async function submitContact(
   payload: ContactFormValues,
-): Promise<{ received: boolean }> {
+): Promise<ContactResponse> {
   const parsed = ContactFormSchema.safeParse(payload);
   if (!parsed.success) {
     throw new ApiError(
@@ -127,9 +122,37 @@ export async function submitContact(
     );
   }
 
-  throw new ApiError(
-    'Contact submission is not configured yet. The form preserves your input so you can retry once a channel is available.',
-    501,
-    'NOT_CONFIGURED',
-  );
+  const response = await fetch(`${getApiBaseUrl()}/api/contact`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(parsed.data),
+  });
+
+  let body: unknown;
+  try {
+    body = await response.json();
+  } catch {
+    throw new ApiError('Invalid response from server', response.status);
+  }
+
+  if (!response.ok) {
+    const errorBody = body as ApiErrorEnvelope;
+    throw new ApiError(
+      errorBody.error?.message ?? 'Failed to submit inquiry',
+      response.status,
+      errorBody.error?.code,
+      errorBody.error?.details,
+    );
+  }
+
+  const successBody = body as ApiSuccessEnvelope<unknown>;
+  const data = ContactResponseSchema.safeParse(successBody.data);
+  if (!data.success) {
+    throw new ApiError('Unexpected contact response shape', 500);
+  }
+
+  return data.data;
 }

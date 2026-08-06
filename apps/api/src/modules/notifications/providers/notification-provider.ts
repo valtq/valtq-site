@@ -1,6 +1,8 @@
 export const NotificationType = {
   INTERNAL_LEAD: 'internal_lead',
   VISITOR_CONFIRMATION: 'visitor_confirmation',
+  INTERNAL_CONTACT_INQUIRY: 'internal_contact_inquiry',
+  CONTACT_VISITOR_CONFIRMATION: 'contact_visitor_confirmation',
 } as const;
 
 export type NotificationType =

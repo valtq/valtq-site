@@ -35,7 +35,10 @@ export function createNotificationService(
 
 export { NotificationService } from './notification.service.js';
 export { NotificationLogRepository } from './notification.repository.js';
-export type { LeadNotificationContext } from './notification.service.js';
+export type {
+  LeadNotificationContext,
+  ContactNotificationContext,
+} from './notification.service.js';
 export type {
   NotificationProvider,
   NotificationMessage,
@@ -49,6 +52,8 @@ export {
 export {
   buildInternalLeadEmail,
   buildVisitorConfirmationEmail,
+  buildInternalContactEmail,
+  buildContactConfirmationEmail,
 } from './templates/email-templates.js';
 
 /**

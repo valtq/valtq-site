@@ -14,6 +14,13 @@ export function createBookingRoutes(
   const { controller } = deps;
 
   return async (app) => {
+    app.get('/webhooks/cal', async (_request, reply) => {
+      await reply.status(200).send({
+        success: true,
+        message: 'Cal webhook endpoint is running',
+      });
+    });
+
     app.post(
       '/webhooks/cal',
       {

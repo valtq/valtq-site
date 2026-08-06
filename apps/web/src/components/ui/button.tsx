@@ -38,21 +38,31 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
 }
 
+/**
+ * Button appearance as a class string, so non-button elements (anchors, `next/link`)
+ * can adopt the exact same visual language without nesting a `<button>` inside a link.
+ */
+export function buttonClasses(options?: {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  className?: string;
+}): string {
+  const { variant = 'primary', size = 'default', className } = options ?? {};
+
+  return cn(
+    'inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-150',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+    'disabled:pointer-events-none disabled:opacity-50',
+    variants[variant],
+    sizes[size],
+    className,
+  );
+}
+
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'default', ...props }, ref) => {
     return (
-      <button
-        ref={ref}
-        className={cn(
-          'inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-150',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-          'disabled:pointer-events-none disabled:opacity-50',
-          variants[variant],
-          sizes[size],
-          className,
-        )}
-        {...props}
-      />
+      <button ref={ref} className={buttonClasses({ variant, size, className })} {...props} />
     );
   },
 );

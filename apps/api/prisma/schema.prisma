@@ -52,18 +52,46 @@ model Booking {
   @@map("bookings")
 }
 
+model ContactInquiry {
+  id               String   @id @default(cuid())
+  name             String
+  email            String
+  company          String?
+  phone            String?
+  preferredChannel String?  @map("preferred_channel")
+  serviceArea      String?  @map("service_area")
+  productStage     String?  @map("product_stage")
+  productUrl       String?  @map("product_url")
+  timing           String?
+  budget           String?
+  summary          String
+  message          String
+  status           String   @default("new")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  notificationLogs NotificationLog[]
+
+  @@index([email])
+  @@index([status])
+  @@map("contact_inquiries")
+}
+
 model NotificationLog {
   id        String   @id @default(cuid())
-  leadId    String   @map("lead_id")
+  leadId    String?  @map("lead_id")
+  contactId String?  @map("contact_id")
   type      String
   provider  String
   success   Boolean
   metadata  String? // JSON object
   createdAt DateTime @default(now()) @map("created_at")
 
-  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  lead    Lead?           @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  contact ContactInquiry? @relation(fields: [contactId], references: [id], onDelete: Cascade)
 
   @@index([leadId])
+  @@index([contactId])
   @@index([type])
   @@map("notification_logs")
 }

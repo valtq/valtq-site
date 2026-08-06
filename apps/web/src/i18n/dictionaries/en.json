@@ -1368,6 +1368,18 @@
       "discoveryCta": "Start Discovery"
     }
   },
+  "projects": {
+    "eyebrow": "Selected projects",
+    "title": "Products engineered to ship and scale",
+    "description": "A closer look at what we've designed, built, and shipped — the stack behind each product and the outcomes it delivered in production.",
+    "featuredLabel": "Featured",
+    "techLabel": "Built with",
+    "viewProject": "View project",
+    "viewSource": "Source",
+    "viewCaseStudy": "Case study",
+    "moreTech": "and {count} more technologies",
+    "opensInNewTab": "opens in a new tab"
+  },
   "work": {
     "viewCaseStudy": "View Case Study",
     "backToWork": "Back to Work",
@@ -1478,8 +1490,10 @@
     "submitLabel": "Send inquiry",
     "submittingLabel": "Sending…",
     "errorSummary": "Please review the highlighted fields and correct them before sending.",
-    "successTitle": "Inquiry received",
-    "successMessage": "Your inquiry has been received. Our team will review the context and follow up through the contact details you provided.",
+    "successTitle": "Inquiry submitted",
+    "successMessageEmail": "Your inquiry has been submitted successfully. We'll get back to you by email within 24 hours.",
+    "successMessageWhatsapp": "Your inquiry has been submitted successfully. We'll get back to you on WhatsApp within 24 hours.",
+    "successMessageOther": "Your inquiry has been submitted successfully. We'll get back to you within 24 hours using your preferred contact channel.",
     "errorTitle": "We couldn't send your inquiry",
     "errorMessage": "Your information is still available in the form. Please try again, or use one of the direct contact options below.",
     "channels": {

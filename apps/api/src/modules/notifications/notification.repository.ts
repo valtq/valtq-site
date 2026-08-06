@@ -1,7 +1,8 @@
 import type { NotificationLog, PrismaClient } from '../../generated/prisma/client.js';
 
 export type CreateNotificationLogInput = {
-  leadId: string;
+  leadId?: string;
+  contactId?: string;
   type: string;
   provider: string;
   success: boolean;
@@ -15,6 +16,7 @@ export class NotificationLogRepository {
     return this.prisma.notificationLog.create({
       data: {
         leadId: input.leadId,
+        contactId: input.contactId,
         type: input.type,
         provider: input.provider,
         success: input.success,

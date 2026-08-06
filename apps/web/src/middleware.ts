@@ -1,4 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import NextAuth from 'next-auth';
+import { NextResponse } from 'next/server';
+import type { NextMiddleware } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { authConfig } from './auth.config';
 import { locales, defaultLocale } from './i18n/config';
 
 function getLocaleFromHeaders(request: NextRequest): string {
@@ -15,13 +19,21 @@ function getLocaleFromHeaders(request: NextRequest): string {
   return preferred ?? defaultLocale;
 }
 
-export function middleware(request: NextRequest) {
+const { auth } = NextAuth(authConfig);
+
+const middleware = auth((request) => {
   const { pathname } = request.nextUrl;
 
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
-    pathname.includes('.') 
+    pathname.startsWith('/opengraph-image') ||
+    pathname.startsWith('/twitter-image') ||
+    pathname === '/icon' ||
+    pathname.startsWith('/icon-') ||
+    pathname === '/apple-icon' ||
+    pathname.startsWith('/apple-icon-') ||
+    pathname.includes('.')
   ) {
     return NextResponse.next();
   }
@@ -30,13 +42,39 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
-  if (pathnameHasLocale) return NextResponse.next();
+  if (!pathnameHasLocale) {
+    const locale = getLocaleFromHeaders(request);
+    const url = request.nextUrl.clone();
+    url.pathname = `/${locale}${pathname}`;
+    return NextResponse.redirect(url);
+  }
 
-  const locale = getLocaleFromHeaders(request);
-  request.nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
-}
+  const adminMatch = pathname.match(/^\/(en|ar)\/admin(?:\/(.*))?$/);
+  if (adminMatch) {
+    const locale = adminMatch[1] ?? defaultLocale;
+    const rest = adminMatch[2] ?? '';
+    const isLogin = rest === 'login' || rest.startsWith('login/');
+    const isAuthed = Boolean(request.auth?.user);
+
+    if (!isLogin && !isAuthed) {
+      const url = request.nextUrl.clone();
+      url.pathname = `/${locale}/admin/login`;
+      url.searchParams.set('callbackUrl', pathname);
+      return NextResponse.redirect(url);
+    }
+
+    if (isLogin && isAuthed) {
+      const url = request.nextUrl.clone();
+      url.pathname = `/${locale}/admin/projects`;
+      return NextResponse.redirect(url);
+    }
+  }
+
+  return NextResponse.next();
+}) as unknown as NextMiddleware;
+
+export default middleware;
 
 export const config = {
-  matcher: ['/((?!_next|api|favicon.ico|.*\\..*).*)'],
+  matcher: ['/((?!_next|api|favicon.ico|opengraph-image|twitter-image|icon|apple-icon|.*\\..*).*)'],
 };

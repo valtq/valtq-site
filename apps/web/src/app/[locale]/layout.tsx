@@ -27,9 +27,13 @@ export async function generateMetadata({
   const title = dict.meta.title;
   const description = dict.meta.description;
   return {
-    title,
+    title: {
+      absolute: title,
+      template: `%s | ${SITE_NAME}`,
+    },
     description,
     alternates: {
+      canonical: `/${locale}`,
       languages: {
         en: '/en',
         ar: '/ar',
@@ -43,9 +47,17 @@ export async function generateMetadata({
       type: 'website',
       url: `${SITE_URL}/${locale}`,
       locale: locale === 'ar' ? 'ar_SA' : 'en_US',
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title,
       description,
     },

@@ -41,7 +41,7 @@ describe('NotificationService', () => {
       provider,
       repository,
       logger: logger as never,
-      internalEmail: 'team@valtq.com',
+      internalEmail: 'team@valtq.net',
     });
 
     await service.notifyDiscoverySubmitted(lead);
@@ -96,5 +96,82 @@ describe('NotificationService', () => {
 
     expect(provider.send).toHaveBeenCalledTimes(1);
     expect(logger.warn).toHaveBeenCalled();
+  });
+
+  it('sends internal and visitor contact emails and logs both', async () => {
+    const inquiry = {
+      id: 'inquiry_1',
+      name: 'Jane Doe',
+      email: 'jane@acme.com',
+      company: 'Acme',
+      phone: '+10000000000',
+      preferredChannel: 'WhatsApp',
+      serviceArea: 'Web application',
+      productStage: 'Initial idea',
+      productUrl: 'https://acme.com',
+      timing: 'As soon as possible',
+      budget: '$10k – $25k',
+      summary: 'We want a new web application.',
+      message: 'We need help building our next product from scratch.',
+    };
+
+    const provider: NotificationProvider = {
+      name: 'mock',
+      send: vi.fn(async () => ({
+        success: true,
+        provider: 'mock',
+        messageId: 'msg_contact_1',
+      })),
+    };
+
+    const repository = {
+      create: vi.fn(async (input) => input),
+    } as unknown as NotificationLogRepository;
+
+    const logger = {
+      info: vi.fn(),
+      warn: vi.fn(),
+      error: vi.fn(),
+    };
+
+    const service = new NotificationService({
+      provider,
+      repository,
+      logger: logger as never,
+      internalEmail: 'team@valtq.net',
+    });
+
+    await service.notifyContactSubmitted(inquiry);
+
+    expect(provider.send).toHaveBeenCalledTimes(2);
+    expect(provider.send).toHaveBeenCalledWith(
+      expect.objectContaining({
+        to: inquiry.email,
+      }),
+    );
+    expect(provider.send).toHaveBeenCalledWith(
+      expect.objectContaining({
+        to: 'team@valtq.net',
+      }),
+    );
+    expect(repository.create).toHaveBeenCalledTimes(2);
+    expect(repository.create).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: NotificationType.INTERNAL_CONTACT_INQUIRY,
+        contactId: inquiry.id,
+        success: true,
+      }),
+    );
+    expect(repository.create).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: NotificationType.CONTACT_VISITOR_CONFIRMATION,
+        contactId: inquiry.id,
+        success: true,
+      }),
+    );
+    expect(logger.info).toHaveBeenCalledWith(
+      expect.objectContaining({ inquiryId: inquiry.id }),
+      'Email sent',
+    );
   });
 });

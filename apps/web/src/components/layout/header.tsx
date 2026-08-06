@@ -164,23 +164,30 @@ export function Header({ locale }: { locale: Locale }) {
             })}
           </nav>
 
-          <div className="flex shrink-0 items-center gap-1 sm:gap-2 lg:gap-2.5">
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={theme === 'dark' ? dict.nav.lightMode : dict.nav.darkMode}
-              className={cn(utilityIconClass, 'hidden lg:inline-flex')}
-            >
-              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-            </button>
+          <div className="flex shrink-0 items-center gap-0.5 sm:gap-1.5 lg:gap-2.5">
+            <div className="flex items-center gap-0.5 rounded-lg border border-border/70 bg-surface-container-low/60 p-0.5 sm:gap-1 sm:p-1 lg:border-0 lg:bg-transparent lg:p-0">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label={theme === 'dark' ? dict.nav.lightMode : dict.nav.darkMode}
+                className={utilityIconClass}
+              >
+                {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+              </button>
 
-            <Link
-              href={switchPath}
-              aria-label={dict.nav.language}
-              className={cn(utilityIconClass, 'hidden lg:inline-flex')}
-            >
-              <LanguageIcon />
-            </Link>
+              <span
+                aria-hidden="true"
+                className="h-5 w-px bg-border lg:hidden"
+              />
+
+              <Link
+                href={switchPath}
+                aria-label={dict.nav.language}
+                className={utilityIconClass}
+              >
+                <LanguageIcon />
+              </Link>
+            </div>
 
             <Link
               href={`/${locale}/discovery`}
@@ -245,29 +252,6 @@ export function Header({ locale }: { locale: Locale }) {
               </Link>
             );
           })}
-
-          <div className="mt-4 grid grid-cols-2 gap-2 border-t border-border pt-4">
-            <button
-              type="button"
-              onClick={() => {
-                toggleTheme();
-                closeMobile();
-              }}
-              className="flex min-h-11 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-on-surface-variant transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent"
-            >
-              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-              {theme === 'dark' ? dict.nav.lightMode : dict.nav.darkMode}
-            </button>
-
-            <Link
-              href={switchPath}
-              onClick={closeMobile}
-              className="flex min-h-11 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-on-surface-variant transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent"
-            >
-              <LanguageIcon />
-              {dict.nav.language}
-            </Link>
-          </div>
 
           <div className="mt-4 space-y-2 border-t border-border pt-4">
             <Link

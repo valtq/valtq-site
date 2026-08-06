@@ -23,7 +23,7 @@ export type NotificationSendResult = {
 };
 
 /**
- * Provider abstraction — swap Resend for SES/Postmark without changing callers.
+ * Provider abstraction — swap SMTP for SES/Postmark without changing callers.
  */
 export interface NotificationProvider {
   readonly name: string;

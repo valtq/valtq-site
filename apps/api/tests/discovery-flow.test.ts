@@ -47,6 +47,19 @@ describe('Discovery + Booking HTTP flow', () => {
     await prisma.$disconnect();
   });
 
+  it('returns a health check on the Cal webhook endpoint', async () => {
+    const response = await app.inject({
+      method: 'GET',
+      url: '/api/webhooks/cal',
+    });
+
+    expect(response.statusCode).toBe(200);
+    expect(response.json()).toEqual({
+      success: true,
+      message: 'Cal webhook endpoint is running',
+    });
+  });
+
   it('submits a discovery lead', async () => {
     const response = await app.inject({
       method: 'POST',

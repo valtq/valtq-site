@@ -5,7 +5,8 @@ import type { LegalDocument } from './types';
  *
  * Written conservatively from observable product behavior only: the contact
  * form fields, Discovery flow, Cal.com booking, WhatsApp link, localStorage
- * theme/discovery keys, and the confirmed absence of cookies and analytics.
+ * theme/discovery keys, and the Microsoft Clarity behavioral analytics
+ * integration.
  * Items that cannot be verified from the codebase (retention periods, exact
  * server logs, transfer jurisdictions, a legal contact office) are either
  * stated generically or flagged for legal review.
@@ -13,7 +14,7 @@ import type { LegalDocument } from './types';
 export const privacyDocument: LegalDocument = {
   slug: 'privacy',
   effectiveDate: '2026-08-03',
-  updatedDate: '2026-08-03',
+  updatedDate: '2026-08-06',
   content: {
     en: {
       title: 'Privacy Policy',
@@ -64,7 +65,7 @@ export const privacyDocument: LegalDocument = {
             },
             {
               type: 'p',
-              text: 'This website stores a small amount of information in your browser to remember your preferences and your progress through the Discovery wizard. This is described in more detail in our Cookie Policy. We do not use analytics or advertising scripts on this website.',
+              text: 'This website stores a small amount of information in your browser to remember your preferences and your progress through the Discovery wizard. It also uses Microsoft Clarity, a behavioral analytics service provided by Microsoft, to understand how visitors use the website. Clarity is described in more detail in our Cookie Policy. We do not use advertising scripts on this website.',
             },
           ],
         },
@@ -151,6 +152,7 @@ export const privacyDocument: LegalDocument = {
               items: [
                 'To respond to your inquiries and evaluate potential projects.',
                 'To operate and improve the website and its features.',
+                'To understand how visitors use the website through Microsoft Clarity behavioral analytics.',
                 'To schedule and manage calls booked through Cal.com.',
                 'To comply with legal obligations and protect our rights.',
               ],
@@ -186,7 +188,7 @@ export const privacyDocument: LegalDocument = {
             },
             {
               type: 'p',
-              text: 'Third-party platforms we integrate with, such as Cal.com and WhatsApp, process information under their own policies.',
+              text: 'Third-party platforms we integrate with, such as Microsoft (for Clarity analytics), Cal.com, and WhatsApp, process information under their own policies.',
             },
           ],
         },
@@ -196,11 +198,11 @@ export const privacyDocument: LegalDocument = {
           blocks: [
             {
               type: 'p',
-              text: 'This website does not use cookies for advertising or analytics. It stores a small amount of information in your browser using localStorage to remember your theme preference and to autosave your Discovery progress.',
+              text: 'Microsoft Clarity uses cookies and similar technologies to collect behavioral analytics, as described in our Cookie Policy. Apart from Clarity, this website does not use cookies for advertising or analytics. It stores a small amount of information in your browser using localStorage to remember your theme preference and to autosave your Discovery progress.',
             },
             {
               type: 'p',
-              text: 'Because this storage is limited and functional, the website currently does not display a cookie-consent banner. Our Cookie Policy lists exactly what is stored.',
+              text: 'Our Cookie Policy lists exactly what is stored and how you can manage it.',
             },
           ],
         },
@@ -369,7 +371,7 @@ export const privacyDocument: LegalDocument = {
             },
             {
               type: 'p',
-              text: 'يخزن هذا الموقع كمية صغيرة من المعلومات في متصفحك لتذكر تفضيلاتك وتقدمك في أداة الاكتشاف. هذا موصوف بمزيد من التفصيل في سياسة ملفات تعريف الارتباط لدينا. لا نستخدم نصوصًا برمجية للتحليلات أو الإعلانات في هذا الموقع.',
+              text: 'يخزن هذا الموقع كمية صغيرة من المعلومات في متصفحك لتذكر تفضيلاتك وتقدمك في أداة الاكتشاف. كما يستخدم Microsoft Clarity، وهي خدمة تحليلات سلوكية تقدمها شركة Microsoft، لفهم كيفية استخدام الزوار للموقع. تُوصف Clarity بمزيد من التفصيل في سياسة ملفات تعريف الارتباط لدينا. لا نستخدم نصوصًا برمجية للإعلانات في هذا الموقع.',
             },
           ],
         },
@@ -456,6 +458,7 @@ export const privacyDocument: LegalDocument = {
               items: [
                 'الرد على استفساراتك وتقييم المشاريع المحتملة.',
                 'تشغيل الموقع وتحسينه وميزاته.',
+                'فهم كيفية استخدام الزوار للموقع من خلال تحليلات Microsoft Clarity السلوكية.',
                 'جدولة وإدارة المكالمات المحجوزة عبر Cal.com.',
                 'الامتثال للالتزامات القانونية وحماية حقوقنا.',
               ],
@@ -491,7 +494,7 @@ export const privacyDocument: LegalDocument = {
             },
             {
               type: 'p',
-              text: 'تعالج المنصات الخارجية التي نتكامل معها، مثل Cal.com وواتساب، المعلومات وفق سياساتها الخاصة.',
+              text: 'تعالج المنصات الخارجية التي نتكامل معها، مثل Microsoft (لتحليلات Clarity) وCal.com وواتساب، المعلومات وفق سياساتها الخاصة.',
             },
           ],
         },
@@ -501,11 +504,11 @@ export const privacyDocument: LegalDocument = {
           blocks: [
             {
               type: 'p',
-              text: 'لا يستخدم هذا الموقع ملفات تعريف الارتباط لأغراض الإعلان أو التحليلات. يخزن كمية صغيرة من المعلومات في متصفحك باستخدام التخزين المحلي (localStorage) لتذكر تفضيل المظهر وحفظ تقدمك في أداة الاكتشاف.',
+              text: 'تستخدم Microsoft Clarity ملفات تعريف الارتباط وتقنيات مماثلة لجمع بيانات التحليلات السلوكية، كما هو موضح في سياسة ملفات تعريف الارتباط لدينا. إلى جانب Clarity، لا يستخدم هذا الموقع ملفات تعريف الارتباط لأغراض الإعلان أو التحليلات. كما يخزن كمية صغيرة من المعلومات في متصفحك باستخدام التخزين المحلي (localStorage) لتذكر تفضيل المظهر وحفظ تقدمك في أداة الاكتشاف.',
             },
             {
               type: 'p',
-              text: 'ونظرًا لأن هذا التخزين محدود ووظيفي، لا يعرض الموقع حاليًا لافتة موافقة على ملفات تعريف الارتباط. تسرد سياسة ملفات تعريف الارتباط لدينا بالضبط ما يتم تخزينه.',
+              text: 'تسرد سياسة ملفات تعريف الارتباط لدينا بالضبط ما يتم تخزينه وكيف يمكنك إدارته.',
             },
           ],
         },

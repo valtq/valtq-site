@@ -27,6 +27,12 @@ const middleware = auth((request) => {
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
+    pathname.startsWith('/opengraph-image') ||
+    pathname.startsWith('/twitter-image') ||
+    pathname === '/icon' ||
+    pathname.startsWith('/icon-') ||
+    pathname === '/apple-icon' ||
+    pathname.startsWith('/apple-icon-') ||
     pathname.includes('.')
   ) {
     return NextResponse.next();
@@ -70,5 +76,5 @@ const middleware = auth((request) => {
 export default middleware;
 
 export const config = {
-  matcher: ['/((?!_next|api|favicon.ico|.*\\..*).*)'],
+  matcher: ['/((?!_next|api|favicon.ico|opengraph-image|twitter-image|icon|apple-icon|.*\\..*).*)'],
 };

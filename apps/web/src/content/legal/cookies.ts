@@ -3,15 +3,17 @@ import type { LegalDocument } from './types';
 /**
  * Cookie Policy.
  *
- * Reflects the confirmed storage inventory: exactly two localStorage keys
- * (`valtq-theme`, `valtq-discovery-v1`), no cookies, no analytics, no
- * advertising, no consent banner. Cal.com is a third-party embed and is
- * intentionally described generically (no specific cookie names are assumed).
+ * Reflects the confirmed storage inventory: two localStorage keys
+ * (`valtq-theme`, `valtq-discovery-v1`) plus Microsoft Clarity analytics
+ * storage (`_clck`, `_clsk` cookies and additional localStorage data).
+ * Cal.com is a third-party embed and is intentionally described generically
+ * (no specific cookie names are assumed). Clarity's exact storage set is
+ * controlled by Microsoft and listed conservatively.
  */
 export const cookiesDocument: LegalDocument = {
   slug: 'cookies',
   effectiveDate: '2026-08-03',
-  updatedDate: '2026-08-03',
+  updatedDate: '2026-08-06',
   content: {
     en: {
       title: 'Cookie Policy',
@@ -40,7 +42,7 @@ export const cookiesDocument: LegalDocument = {
           blocks: [
             {
               type: 'p',
-              text: 'This website does not use cookies and does not load any third-party tracking scripts. It uses the browser storage mechanism called localStorage for a small number of functional purposes.',
+              text: 'This website uses Microsoft Clarity, a third-party behavioral analytics service, to understand how visitors use the site. Clarity loads its own script and stores analytics data on your device using cookies and localStorage. Beyond Clarity, the website uses the browser storage mechanism called localStorage for a small number of functional purposes.',
             },
             {
               type: 'p',
@@ -49,7 +51,7 @@ export const cookiesDocument: LegalDocument = {
             {
               type: 'notice',
               tone: 'info',
-              text: 'The localStorage entries described below are not cookies. They stay in your browser and are cleared when the website removes them or when you clear your browser\u2019s site data for this website.',
+              text: 'The localStorage entries described below are not cookies. They stay in your browser and are cleared when the website removes them or when you clear your browser\u2019s site data for this website. Microsoft Clarity, described below, uses its own cookies and localStorage data.',
             },
           ],
         },
@@ -115,8 +117,46 @@ export const cookiesDocument: LegalDocument = {
           ],
         },
         {
+          id: 'clarity-analytics',
+          heading: '6. Microsoft Clarity Analytics',
+          blocks: [
+            {
+              type: 'p',
+              text: 'Microsoft Clarity is a behavioral analytics service provided by Microsoft. It records how visitors use the website, such as which pages they view, where they click or move their cursor, how far they scroll, and what device and browser they use. This data is used to understand and improve the website\u2019s usability.',
+            },
+            {
+              type: 'p',
+              text: 'Clarity stores its own first-party cookies and localStorage data on your device so it can link actions into a single session. The main entries are:',
+            },
+            {
+              type: 'storageInventory',
+              items: [
+                {
+                  key: '_clck',
+                  mechanism: 'cookie',
+                  purpose:
+                    'Stores a Clarity user ID and preferences so behavior across visits to this website is attributed to the same visitor. Expires after about 12 months.',
+                  essential: false,
+                },
+                {
+                  key: '_clsk',
+                  mechanism: 'cookie',
+                  purpose:
+                    'Links multiple page views from the same visitor into a single session recording for anomaly detection. Expires after about 1 day.',
+                  essential: false,
+                },
+              ],
+            },
+            {
+              type: 'notice',
+              tone: 'caution',
+              text: 'Clarity may also use additional browser storage or set other identifiers, and the exact set can change. Microsoft controls these technologies; refer to Microsoft Clarity\u2019s own documentation for current details.',
+            },
+          ],
+        },
+        {
           id: 'third-party-embeds',
-          heading: '6. Third-Party Embeds — Cal.com',
+          heading: '7. Third-Party Embeds — Cal.com',
           blocks: [
             {
               type: 'p',
@@ -131,21 +171,21 @@ export const cookiesDocument: LegalDocument = {
         },
         {
           id: 'analytics-advertising',
-          heading: '7. Analytics and Advertising',
+          heading: '8. Analytics and Advertising',
           blocks: [
             {
               type: 'p',
-              text: 'We have not identified any analytics, advertising, or profiling technologies on this website. We do not currently use any analytics or advertising scripts.',
+              text: 'The only analytics technology on this website is Microsoft Clarity, described above. We do not use advertising scripts and have not identified any other analytics, advertising, or profiling technologies.',
             },
             {
               type: 'p',
-              text: 'If we introduce such technologies in the future, we will update this policy and, where required, ask for your consent before they are activated.',
+              text: 'If we introduce additional technologies in the future, we will update this policy and, where required, ask for your consent before they are activated.',
             },
           ],
         },
         {
           id: 'managing-storage',
-          heading: '8. Managing Browser Storage',
+          heading: '9. Managing Browser Storage',
           blocks: [
             {
               type: 'p',
@@ -153,27 +193,32 @@ export const cookiesDocument: LegalDocument = {
             },
             {
               type: 'p',
-              text: 'You can clear this website\u2019s data using your browser\u2019s site-data or storage settings. Removing valtq-theme will reset your theme preference; removing valtq-discovery-v1 will discard any unsaved Discovery progress.',
+              text: 'You can clear this website\u2019s data using your browser\u2019s site-data or storage settings. Removing valtq-theme will reset your theme preference; removing valtq-discovery-v1 will discard any unsaved Discovery progress; and clearing cookies and site data will also remove Microsoft Clarity\u2019s storage and end its session recording for this website.',
             },
           ],
         },
         {
           id: 'consent',
-          heading: '9. Consent Behavior',
+          heading: '10. Consent Behavior',
           blocks: [
             {
               type: 'p',
-              text: 'Because the website currently stores only functional or preference data in your browser and does not set non-essential cookies, we do not currently display a cookie-consent banner.',
+              text: 'Microsoft Clarity stores non-essential analytics data on your device, and in regions that require consent for such storage, your consent is required before Clarity runs.',
             },
             {
               type: 'p',
-              text: 'If we add non-essential cookies or similar technologies, this policy and the website\u2019s consent behavior will be updated before those technologies are activated.',
+              text: 'At the time this policy was last updated, the website did not yet display a cookie-consent banner.',
+            },
+            {
+              type: 'notice',
+              tone: 'caution',
+              text: 'Consent behavior should be reviewed with legal counsel and a consent mechanism should be implemented before Clarity is enabled for visitors in regions that require consent.',
             },
           ],
         },
         {
           id: 'changes',
-          heading: '10. Changes to This Policy',
+          heading: '11. Changes to This Policy',
           blocks: [
             {
               type: 'p',
@@ -187,7 +232,7 @@ export const cookiesDocument: LegalDocument = {
         },
         {
           id: 'contact',
-          heading: '11. Contact',
+          heading: '12. Contact',
           blocks: [
             {
               type: 'p',
@@ -227,7 +272,7 @@ export const cookiesDocument: LegalDocument = {
           blocks: [
             {
               type: 'p',
-              text: 'لا يستخدم هذا الموقع ملفات تعريف الارتباط ولا يحمّل أي نصوص برمجية خارجية للتتبع. يستخدم آلية تخزين المتصفح المسماة التخزين المحلي (localStorage) لعدد محدود من الأغراض الوظيفية.',
+              text: 'يستخدم هذا الموقع Microsoft Clarity، وهي خدمة تحليلات سلوكية من طرف ثالث، لفهم كيفية استخدام الزوار للموقع. تحمّل Clarity سكربتها الخاصة وتخزن بيانات التحليلات على جهازك باستخدام ملفات تعريف الارتباط والتخزين المحلي. إلى جانب Clarity، يستخدم الموقع آلية تخزين المتصفح المسماة التخزين المحلي (localStorage) لعدد محدود من الأغراض الوظيفية.',
             },
             {
               type: 'p',
@@ -236,7 +281,7 @@ export const cookiesDocument: LegalDocument = {
             {
               type: 'notice',
               tone: 'info',
-              text: 'المدخلات المخزنة محليًا الموضحة أدناه ليست ملفات تعريف ارتباط. تبقى في متصفحك وتُمسح عندما يزيلها الموقع أو عندما تمسح بيانات الموقع لهذا الموقع من متصفحك.',
+              text: 'المدخلات المخزنة محليًا الموضحة أدناه ليست ملفات تعريف ارتباط. تبقى في متصفحك وتُمسح عندما يزيلها الموقع أو عندما تمسح بيانات الموقع لهذا الموقع من متصفحك. تستخدم Microsoft Clarity، الموضحة أدناه، ملفات تعريف الارتباط وبيانات التخزين المحلي الخاصة بها.',
             },
           ],
         },
@@ -300,8 +345,46 @@ export const cookiesDocument: LegalDocument = {
           ],
         },
         {
+          id: 'clarity-analytics',
+          heading: '6. Microsoft Clarity — تحليلات السلوك',
+          blocks: [
+            {
+              type: 'p',
+              text: 'Microsoft Clarity خدمة تحليلات سلوكية تقدمها شركة Microsoft. تسجل كيفية استخدام الزوار للموقع، مثل الصفحات التي يعرضونها، وأماكن النقر أو تحريك المؤشر، ومدى التمرير، والجهاز والمتصفح المستخدمين. تُستخدم هذه البيانات لفهم وتحسين سهولة استخدام الموقع.',
+            },
+            {
+              type: 'p',
+              text: 'تخزن Clarity ملفات تعريف الارتباط الخاصة بها من الطرف الأول وبيانات التخزين المحلي على جهازك لربط الإجراءات في جلسة واحدة. أهم المدخلات هي:',
+            },
+            {
+              type: 'storageInventory',
+              items: [
+                {
+                  key: '_clck',
+                  mechanism: 'cookie',
+                  purpose:
+                    'يخزن معرّف مستخدم Clarity وتفضيلاته بحيث يُنسب سلوك الزيارات المتعددة لهذا الموقع إلى الزائر نفسه. تنتهي صلاحيته بعد حوالي 12 شهرًا.',
+                  essential: false,
+                },
+                {
+                  key: '_clsk',
+                  mechanism: 'cookie',
+                  purpose:
+                    'يربط مشاهدات متعددة للصفحات من الزائر نفسه في جلسة تسجيل واحدة لاكتشاف الحالات الشاذة. تنتهي صلاحيته بعد حوالي يوم واحد.',
+                  essential: false,
+                },
+              ],
+            },
+            {
+              type: 'notice',
+              tone: 'caution',
+              text: 'قد تستخدم Clarity أيضًا تخزينًا إضافيًا في المتصفح أو تعيّن معرفات أخرى، وقد يتغير النطاق الدقيق لها. تتحكم Microsoft في هذه التقنيات؛ راجع وثائق Microsoft Clarity الخاصة للحصول على التفاصيل الحالية.',
+            },
+          ],
+        },
+        {
           id: 'third-party-embeds',
-          heading: '6. عمليات الدمج الخارجية — Cal.com',
+          heading: '7. عمليات الدمج الخارجية — Cal.com',
           blocks: [
             {
               type: 'p',
@@ -316,21 +399,21 @@ export const cookiesDocument: LegalDocument = {
         },
         {
           id: 'analytics-advertising',
-          heading: '7. التحليلات والإعلانات',
+          heading: '8. التحليلات والإعلانات',
           blocks: [
             {
               type: 'p',
-              text: 'لم نحدد أي تقنيات تحليلات أو إعلانات أو تنميط في هذا الموقع. لا نستخدم حاليًا أي نصوص برمجية للتحليلات أو الإعلانات.',
+              text: 'التقنية الوحيدة للتحليلات في هذا الموقع هي Microsoft Clarity، الموضحة أعلاه. لا نستخدم نصوصًا برمجية للإعلانات، ولم نحدد أي تقنيات أخرى للتحليلات أو الإعلانات أو التنميط.',
             },
             {
               type: 'p',
-              text: 'إذا أضفنا مثل هذه التقنيات في المستقبل، فسنحدث هذه السياسة ونطلب موافقتك عند الحاجة قبل تفعيلها.',
+              text: 'إذا أضفنا تقنيات إضافية في المستقبل، فسنحدث هذه السياسة ونطلب موافقتك عند الحاجة قبل تفعيلها.',
             },
           ],
         },
         {
           id: 'managing-storage',
-          heading: '8. إدارة تخزين المتصفح',
+          heading: '9. إدارة تخزين المتصفح',
           blocks: [
             {
               type: 'p',
@@ -338,27 +421,32 @@ export const cookiesDocument: LegalDocument = {
             },
             {
               type: 'p',
-              text: 'يمكنك مسح بيانات هذا الموقع من خلال إعدادات بيانات الموقع أو التخزين في متصفحك. يؤدي إزالة valtq-theme إلى إعادة تعيين تفضيل المظهر؛ وإزالة valtq-discovery-v1 إلى التخلي عن أي تقدم غير محفوظ في معالج الاكتشاف.',
+              text: 'يمكنك مسح بيانات هذا الموقع من خلال إعدادات بيانات الموقع أو التخزين في متصفحك. يؤدي إزالة valtq-theme إلى إعادة تعيين تفضيل المظهر؛ وإزالة valtq-discovery-v1 إلى التخلي عن أي تقدم غير محفوظ في معالج الاكتشاف؛ كما أن مسح ملفات تعريف الارتباط وبيانات الموقع سيزيل أيضًا تخزين Microsoft Clarity وينهي تسجيل جلساتها لهذا الموقع.',
             },
           ],
         },
         {
           id: 'consent',
-          heading: '9. سلوك الموافقة',
+          heading: '10. سلوك الموافقة',
           blocks: [
             {
               type: 'p',
-              text: 'نظرًا لأن الموقع يخزن حاليًا بيانات وظيفية أو تفضيلات فقط في متصفحك ولا يعيّن ملفات تعريف ارتباط غير ضرورية، فإننا لا نعرض حاليًا لافتة موافقة على ملفات تعريف الارتباط.',
+              text: 'تخزن Microsoft Clarity بيانات تحليلات غير ضرورية على جهازك، ويُشترط في المناطق التي تتطلب موافقة على هذا النوع من التخزين الحصول على موافقتك قبل تشغيل Clarity.',
             },
             {
               type: 'p',
-              text: 'إذا أضفنا ملفات تعريف ارتباط غير ضرورية أو تقنيات مماثلة، فسيتم تحديث هذه السياسة وسلوك الموافقة في الموقع قبل تفعيل تلك التقنيات.',
+              text: 'في وقت آخر تحديث لهذه السياسة، لم يكن الموقع يعرض لافتة موافقة على ملفات تعريف الارتباط بعد.',
+            },
+            {
+              type: 'notice',
+              tone: 'caution',
+              text: 'يجب مراجعة سلوك الموافقة مع مستشار قانوني وتنفيذ آلية موافقة قبل تفعيل Clarity للزوار في المناطق التي تتطلب الموافقة.',
             },
           ],
         },
         {
           id: 'changes',
-          heading: '10. التغييرات على هذه السياسة',
+          heading: '11. التغييرات على هذه السياسة',
           blocks: [
             {
               type: 'p',
@@ -372,7 +460,7 @@ export const cookiesDocument: LegalDocument = {
         },
         {
           id: 'contact',
-          heading: '11. التواصل',
+          heading: '12. التواصل',
           blocks: [
             {
               type: 'p',

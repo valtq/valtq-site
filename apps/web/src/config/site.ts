@@ -1,11 +1,35 @@
 /**
  * Site-wide configuration and external links.
- * Production domain: valtq.com (see repo go-live checklist for DNS/SSL setup).
+ * Production domain: www.valtq.net
  */
 
-export const SITE_URL = 'https://valtq.com';
+export const SITE_URL = 'https://www.valtq.net';
 
 export const SITE_NAME = 'ValtQ';
+
+export const SITE_TITLE = 'ValtQ — Premium Software Development';
+
+export const SITE_DESCRIPTION =
+  'Building web, mobile, AI-integrated, and backend/cloud products for startups and businesses.';
+
+export const SITE_KEYWORDS = [
+  'software development',
+  'web development',
+  'mobile development',
+  'AI development',
+  'cloud solutions',
+  'backend development',
+  'product engineering',
+  'ValtQ',
+] as const;
+
+export const SITE_AUTHOR = SITE_NAME;
+
+export const CLARITY_PROJECT_ID = 'xxwsyfneec';
+
+// Verification placeholders — replace with the codes issued by each service.
+export const GOOGLE_SITE_VERIFICATION = 'REPLACE_WITH_GOOGLE_SITE_VERIFICATION';
+export const BING_SITE_VERIFICATION = 'REPLACE_WITH_BING_SITE_VERIFICATION';
 
 export const WHATSAPP_NUMBER = '966593081680';
 
@@ -21,3 +45,12 @@ export const socialLinks = {
 } as const;
 
 export type SocialPlatform = keyof typeof socialLinks;
+
+export const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/favicon-light.png`,
+  sameAs: [socialLinks.linkedin, socialLinks.facebook, socialLinks.instagram, socialLinks.snapchat],
+} as const;

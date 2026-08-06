@@ -12,7 +12,7 @@ process.env.RATE_LIMIT_TIME_WINDOW =
 process.env.CAL_WEBHOOK_SECRET =
   process.env.CAL_WEBHOOK_SECRET || 'test-cal-secret';
 process.env.INTERNAL_NOTIFICATION_EMAIL =
-  process.env.INTERNAL_NOTIFICATION_EMAIL || 'team@valtq.com';
+  process.env.INTERNAL_NOTIFICATION_EMAIL || 'team@valtq.net';
 
 // Clear blank placeholders so Zod optional secrets stay unset.
 for (const key of [
@@ -31,4 +31,4 @@ for (const key of [
 process.env.CAL_WEBHOOK_SECRET =
   process.env.CAL_WEBHOOK_SECRET || 'test-cal-secret';
 process.env.INTERNAL_NOTIFICATION_EMAIL =
-  process.env.INTERNAL_NOTIFICATION_EMAIL || 'team@valtq.com';
+  process.env.INTERNAL_NOTIFICATION_EMAIL || 'team@valtq.net';

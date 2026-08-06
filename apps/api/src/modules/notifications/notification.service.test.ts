@@ -41,7 +41,7 @@ describe('NotificationService', () => {
       provider,
       repository,
       logger: logger as never,
-      internalEmail: 'team@valtq.com',
+      internalEmail: 'team@valtq.net',
     });
 
     await service.notifyDiscoverySubmitted(lead);

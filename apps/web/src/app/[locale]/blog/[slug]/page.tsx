@@ -21,7 +21,7 @@ export async function generateMetadata({
 
   const lang = locale as 'en' | 'ar';
   return {
-    title: `${post.seoTitle[lang]} — ${SITE_NAME}`,
+    title: post.seoTitle[lang],
     description: post.seoDescription[lang],
     alternates: {
       canonical: `${SITE_URL}/${locale}/blog/${slug}`,
@@ -40,9 +40,17 @@ export async function generateMetadata({
       siteName: SITE_NAME,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: post.seoTitle[lang],
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: post.seoTitle[lang],
       description: post.seoDescription[lang],
     },

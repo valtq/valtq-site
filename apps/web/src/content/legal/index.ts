@@ -42,7 +42,7 @@ export function getLegalMetadata(slug: LegalDocumentSlug, locale: Locale): Metad
   const doc = documents[slug];
   const content = doc.content[locale];
   return {
-    title: `${content.title} — ${SITE_NAME}`,
+    title: content.title,
     description: content.description,
     alternates: {
       canonical: `${SITE_URL}/${locale}/${slug}`,
@@ -59,9 +59,17 @@ export function getLegalMetadata(slug: LegalDocumentSlug, locale: Locale): Metad
       url: `${SITE_URL}/${locale}/${slug}`,
       locale: locale === 'ar' ? 'ar_SA' : 'en_US',
       siteName: SITE_NAME,
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: content.title,
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: content.title,
       description: content.description,
     },

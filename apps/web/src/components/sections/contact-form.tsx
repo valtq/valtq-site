@@ -181,6 +181,14 @@ export function ContactForm({ dict }: ContactFormProps) {
   );
 
   if (status === 'success') {
+    const channelIndex = copy.channelOptions.indexOf(values.preferredChannel);
+    const successMessage =
+      channelIndex === 1
+        ? copy.successMessageWhatsapp
+        : channelIndex === 0 || channelIndex === -1
+          ? copy.successMessageEmail
+          : copy.successMessageOther;
+
     return (
       <div
         role="status"
@@ -207,7 +215,7 @@ export function ContactForm({ dict }: ContactFormProps) {
           {copy.successTitle}
         </h3>
         <p className="mx-auto mt-3 max-w-md text-base leading-relaxed text-on-surface-variant rtl:leading-[1.9]">
-          {copy.successMessage}
+          {successMessage}
         </p>
       </div>
     );

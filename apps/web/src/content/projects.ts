@@ -1,4 +1,5 @@
 import type { Locale } from '@/i18n/config';
+import { SITE_URL } from '@/config/site';
 
 export type LocalizedText = Record<Locale, string>;
 
@@ -161,7 +162,7 @@ export const projects: Project[] = [
       },
     },
     links: {
-      live: 'https://valtq-site-web.vercel.app',
+      live: SITE_URL,
       github: 'https://github.com/valtq/valtq-site',
     },
     featured: false,

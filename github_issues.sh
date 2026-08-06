@@ -86,7 +86,7 @@ create_issue "ui: Replace Icons with SVG Assets" "Replace temporary icons with o
 create_issue "feat: Add Animations & Transitions" "Implement smooth entrance animations, hover states, and transitions while keeping performance high." "mahmoudrabbas"
 create_issue "content: Populate Projects Section" "Add project cards including screenshots, tech stack, descriptions, and links." "Haithamgomaa"
 create_issue "deploy: Deploy Website on Render" "Configure production deployment, environment variables, verify build, and ensure HTTPS." "mahmoudrabbas"
-create_issue "infra: Configure Custom Domain" "Configure valtq.com DNS, SSL, redirects, and verify accessibility." "mahmoudrabbas"
+create_issue "infra: Configure Custom Domain" "Configure www.valtq.net DNS, SSL, redirects, and verify accessibility." "mahmoudrabbas"
 create_issue "qa: Final Responsive Testing & Polish" "Perform final QA, fix UI bugs, optimize performance, and verify responsive behavior." "marcoreda56-bot"
 
 echo "Done."

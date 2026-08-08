@@ -167,10 +167,6 @@ function ContactInformationScreen({ locale }: ContactInformationScreenProps) {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-          {copy.contactInformation.phaseLabel}
-        </span>
         <h1 className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl">
           {copy.contactInformation.heading}
         </h1>

@@ -260,10 +260,9 @@ export function ArticleDetail({
         <Section variant="muted">
           <Container>
             <ScrollReveal direction="up">
-              <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-                <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-                <span>{t.article.relatedTitle}</span>
-              </div>
+              <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl rtl:leading-[1.3]">
+                {t.article.relatedTitle}
+              </h2>
             </ScrollReveal>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {related.map((postItem, index) => (
@@ -281,11 +280,7 @@ export function ArticleDetail({
           <ScrollReveal direction="up">
             <div className="rounded-2xl border border-border bg-surface-container-lowest p-6 sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
               <div className="max-w-2xl">
-                <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-                  <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-                  <span>{t.article.ctaEyebrow}</span>
-                </div>
-                <h2 className="font-display mt-4 text-2xl font-bold tracking-tight text-on-surface sm:text-3xl rtl:leading-[1.4]">
+                <h2 className="font-display text-2xl font-bold tracking-tight text-on-surface sm:text-3xl rtl:leading-[1.4]">
                   {t.article.ctaTitle}
                 </h2>
                 <p className="mt-3 text-base leading-relaxed text-on-surface-variant rtl:leading-[1.9]">

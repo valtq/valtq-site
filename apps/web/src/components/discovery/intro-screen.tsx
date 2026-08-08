@@ -20,17 +20,6 @@ function IntroScreen({ locale }: IntroScreenProps) {
 
   return (
     <div className="mx-auto max-w-2xl space-y-10">
-      {/* Badge & sub-label */}
-      <div className="space-y-2">
-        <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-          {copy.intro.badge}
-        </span>
-        <p className="text-base font-medium text-on-surface-variant">
-          {copy.intro.subLabel}
-        </p>
-      </div>
-
       {/* Headline */}
       <h1 className="font-display text-balance text-4xl font-bold leading-[1.1] tracking-tight text-on-surface sm:text-5xl">
         {copy.intro.headline}

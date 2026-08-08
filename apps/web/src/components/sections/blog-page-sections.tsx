@@ -40,16 +40,9 @@ export function FeaturedArticle({
     <Section id="featured" className="scroll-mt-20">
       <Container>
         <ScrollReveal direction="up">
-          <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-            <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-            <span>{t.featuredEyebrow}</span>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal direction="up" delay={0.08}>
           <Link
             href={`/${locale}/blog/${post.slug}`}
-            className="group mt-6 grid overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:border-primary hover:shadow-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:grid-cols-2"
+            className="group grid overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:border-primary hover:shadow-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:grid-cols-2"
           >
             <div className="p-4 pb-0 sm:p-5 sm:pb-0 lg:p-6 lg:pb-0">
               <BlogCover category={post.category} className="rounded-lg lg:h-full lg:min-h-[260px]" />
@@ -92,11 +85,7 @@ export function TopicsSection({ dict, locale }: { dict: Dictionary; locale: Loca
       <Container>
         <ScrollReveal direction="up">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-              <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-              <span>{topics.eyebrow}</span>
-            </div>
-            <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-on-surface sm:text-4xl rtl:leading-[1.3]">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl rtl:leading-[1.3]">
               {topics.title}
             </h2>
             <p className="mt-3 text-base leading-relaxed text-on-surface-variant rtl:leading-[1.9]">

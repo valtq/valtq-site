@@ -443,10 +443,6 @@ function BookingScreen({ locale }: BookingScreenProps) {
           aria-live="polite"
           className="space-y-3"
         >
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-            <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-            {bookingCopy.phaseLabel}
-          </span>
           <h1
             ref={headingRef}
             tabIndex={-1}
@@ -471,10 +467,6 @@ function BookingScreen({ locale }: BookingScreenProps) {
           aria-live="assertive"
           className="space-y-3"
         >
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-            <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-            {bookingCopy.phaseLabel}
-          </span>
           <h1
             ref={headingRef}
             tabIndex={-1}
@@ -529,9 +521,6 @@ function BookingScreen({ locale }: BookingScreenProps) {
                 <path d="M20 6 9 17l-5-5" />
               </svg>
             </div>
-            <span className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-              {bookingCopy.phaseLabel}
-            </span>
             <h1 className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl">
               {bookingCopy.successHeading}
             </h1>
@@ -562,10 +551,6 @@ function BookingScreen({ locale }: BookingScreenProps) {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-          {bookingCopy.phaseLabel}
-        </span>
         <h1
           id={BOOKING_HEADING_ID}
           ref={headingRef}

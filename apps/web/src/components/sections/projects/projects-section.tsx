@@ -28,13 +28,9 @@ export function ProjectsSection({ dict, locale, projects }: ProjectsSectionProps
         <ScrollReveal>
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
             <div className="max-w-2xl">
-              <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-                <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-                {copy.eyebrow}
-              </p>
               <h2
                 id="projects-title"
-                className="mt-5 font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-5xl lg:leading-[1.08]"
+                className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-5xl lg:leading-[1.08]"
               >
                 {copy.title}
               </h2>

@@ -22,15 +22,8 @@ export function BlogHero({ dict }: BlogHeroProps) {
       <Container className="relative z-10">
         <div className="grid items-center gap-12 py-14 sm:gap-14 sm:py-16 lg:min-h-[640px] lg:grid-cols-12 lg:gap-8 lg:py-20 xl:gap-10">
           <div className="min-w-0 lg:col-span-6">
-            <ScrollReveal direction="up" delay={0}>
-              <div className="flex items-center gap-3 text-base font-semibold tracking-[-0.01em] text-[#6E93FF] sm:text-lg">
-                <span className="h-2 w-2 rounded-full bg-[#22E5FF]" aria-hidden="true" />
-                <span>{content.eyebrow}</span>
-              </div>
-            </ScrollReveal>
-
             <ScrollReveal direction="up-lg" delay={0.08}>
-              <h1 className="font-display mt-6 max-w-[32rem] text-balance text-[2.75rem] font-bold leading-[1.08] tracking-[-0.04em] text-white sm:text-5xl sm:leading-[1.08] lg:text-[3.75rem] lg:leading-[1.06] xl:text-[4rem] rtl:leading-[1.3]">
+              <h1 className="font-display max-w-[32rem] text-balance text-[2.75rem] font-bold leading-[1.08] tracking-[-0.04em] text-white sm:text-5xl sm:leading-[1.08] lg:text-[3.75rem] lg:leading-[1.06] xl:text-[4rem] rtl:leading-[1.3]">
                 {titleWithoutAccent}{' '}
                 <span className="text-[#6E93FF]">{content.titleAccent}</span>
               </h1>
@@ -45,7 +38,7 @@ export function BlogHero({ dict }: BlogHeroProps) {
             <ScrollReveal direction="up" delay={0.24}>
               <ul
                 className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-base font-medium text-[#93A3BD]"
-                aria-label={content.eyebrow}
+                aria-label={content.title}
               >
                 {content.topics.map((topic) => (
                   <li key={topic} className="flex items-center gap-2.5">

@@ -57,20 +57,15 @@ const visibilityIcons: ReactNode[] = [
 ];
 
 interface SectionHeaderProps {
-  eyebrow: string;
   heading: string;
   intro?: string;
   align?: 'start' | 'center';
 }
 
-function SectionHeader({ eyebrow, heading, intro, align = 'start' }: SectionHeaderProps) {
+function SectionHeader({ heading, intro, align = 'start' }: SectionHeaderProps) {
   return (
     <div className={align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
-      <div className={`flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary sm:text-base ${align === 'center' ? 'justify-center' : ''}`}>
-        <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-        <span>{eyebrow}</span>
-      </div>
-      <h2 className="font-display mt-5 max-w-2xl text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+      <h2 className="font-display max-w-2xl text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
         {heading}
       </h2>
       {intro ? (
@@ -90,11 +85,7 @@ export function ProcessPhilosophy({ dict }: { dict: Dictionary }) {
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <ScrollReveal className="min-w-0">
-            <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary sm:text-base">
-              <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-              <span>{content.eyebrow}</span>
-            </div>
-            <h2 className="font-display mt-5 max-w-2xl text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+            <h2 className="font-display max-w-2xl text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
               {content.heading}
             </h2>
             <div className="mt-6 max-w-xl space-y-4">
@@ -139,7 +130,7 @@ export function ProcessPhases({ dict }: { dict: Dictionary }) {
     <Section variant="muted" className="border-b border-border">
       <Container>
         <ScrollReveal>
-          <SectionHeader eyebrow={content.eyebrow} heading={content.heading} intro={content.intro} />
+          <SectionHeader heading={content.heading} intro={content.intro} />
         </ScrollReveal>
 
         <ScrollReveal delay={0.08}>
@@ -162,7 +153,7 @@ export function ProcessVisibility({ dict }: { dict: Dictionary }) {
     <Section className="border-b border-border bg-background">
       <Container>
         <ScrollReveal>
-          <SectionHeader eyebrow={content.eyebrow} heading={content.heading} intro={content.intro} />
+          <SectionHeader heading={content.heading} intro={content.intro} />
         </ScrollReveal>
 
         <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
@@ -193,11 +184,7 @@ export function ProcessCollaboration({ dict }: { dict: Dictionary }) {
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <ScrollReveal className="min-w-0">
-            <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary sm:text-base">
-              <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-              <span>{content.eyebrow}</span>
-            </div>
-            <h2 className="font-display mt-5 max-w-2xl text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+            <h2 className="font-display max-w-2xl text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
               {content.heading}
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-on-surface-variant rtl:leading-[1.9]">
@@ -242,7 +229,7 @@ export function ProcessDeliverables({ dict }: { dict: Dictionary }) {
     <Section variant="muted" className="border-b border-border">
       <Container>
         <ScrollReveal>
-          <SectionHeader eyebrow={content.eyebrow} heading={content.heading} intro={content.description} />
+          <SectionHeader heading={content.heading} intro={content.description} />
         </ScrollReveal>
 
         <ScrollReveal delay={0.08}>
@@ -278,7 +265,7 @@ export function ProcessAdaptation({ dict }: { dict: Dictionary }) {
     <Section className="border-b border-border bg-background">
       <Container>
         <ScrollReveal>
-          <SectionHeader eyebrow={content.eyebrow} heading={content.heading} />
+          <SectionHeader heading={content.heading} />
         </ScrollReveal>
 
         <ScrollReveal delay={0.08}>
@@ -311,7 +298,7 @@ export function ProcessBenefits({ dict }: { dict: Dictionary }) {
     <Section variant="card">
       <Container>
         <ScrollReveal>
-          <SectionHeader eyebrow={content.eyebrow} heading={content.heading} />
+          <SectionHeader heading={content.heading} />
         </ScrollReveal>
 
         <ScrollReveal delay={0.08}>
@@ -344,11 +331,7 @@ export function ProcessFinalCta({ dict, locale }: { dict: Dictionary; locale: Lo
       <Container>
         <ScrollReveal>
           <div className="mx-auto max-w-2xl text-center">
-            <div className="flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary sm:text-base">
-              <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-              <span>{content.eyebrow}</span>
-            </div>
-            <h2 className="font-display mt-5 text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+            <h2 className="font-display text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
               {content.heading}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-on-surface-variant rtl:leading-[1.9]">

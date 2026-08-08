@@ -124,11 +124,7 @@ export function AboutHero({ dict }: { dict: Dictionary }) {
       <Container className="relative z-10">
         <div className="grid min-h-[calc(100svh-4rem)] items-center gap-12 py-16 sm:py-20 lg:min-h-[600px] lg:grid-cols-12 lg:gap-10 lg:py-24">
           <ScrollReveal className="min-w-0 lg:col-span-6">
-            <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary sm:text-base">
-              <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-              {content.eyebrow}
-            </div>
-            <h1 className="mt-6 max-w-2xl text-balance font-display text-[2.75rem] font-bold leading-[1.08] tracking-[-0.04em] text-on-surface sm:text-5xl lg:text-[4rem] lg:leading-[1.05] rtl:leading-[1.2]">
+            <h1 className="max-w-2xl text-balance font-display text-[2.75rem] font-bold leading-[1.08] tracking-[-0.04em] text-on-surface sm:text-5xl lg:text-[4rem] lg:leading-[1.05] rtl:leading-[1.2]">
               {content.title}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-on-surface-variant sm:text-xl">
@@ -235,10 +231,7 @@ export function AboutPrinciples({ dict }: { dict: Dictionary }) {
       <Container>
         <ScrollReveal>
           <div className="max-w-2xl">
-            <div className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-              {content.eyebrow}
-            </div>
-            <h2 className="mt-4 text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
+            <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
               {content.title}
             </h2>
           </div>
@@ -279,10 +272,7 @@ export function AboutCapabilities({ dict }: { dict: Dictionary }) {
       <Container>
         <ScrollReveal>
           <div className="mx-auto max-w-2xl text-center">
-            <div className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-              {content.eyebrow}
-            </div>
-            <h2 className="mt-4 text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
+            <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
               {content.title}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-on-surface-variant">
@@ -329,10 +319,7 @@ export function AboutProcess({ dict, locale }: { dict: Dictionary; locale: Local
         <ScrollReveal>
           <div className="mx-auto flex max-w-4xl flex-col items-start justify-between gap-6 rounded-3xl border border-border bg-surface-container-lowest p-6 sm:p-8 lg:flex-row lg:items-center lg:p-10">
             <div className="max-w-2xl">
-              <div className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-                {content.eyebrow}
-              </div>
-              <h2 className="mt-4 text-balance font-display text-2xl font-bold tracking-tight text-on-surface sm:text-3xl">
+              <h2 className="text-balance font-display text-2xl font-bold tracking-tight text-on-surface sm:text-3xl">
                 {content.title}
               </h2>
               <p className="mt-3 text-base leading-relaxed text-on-surface-variant">

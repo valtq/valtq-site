@@ -15,18 +15,9 @@ const disciplineIcons: ServiceIconName[] = [
   'quality',
 ];
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary sm:text-base">
-      <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-      <span>{children}</span>
-    </div>
-  );
-}
-
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mt-5 max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+    <h2 className="max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
       {children}
     </h2>
   );
@@ -76,8 +67,7 @@ export function CareersStatus({ dict }: { dict: Dictionary }) {
               </div>
 
               <div className="min-w-0">
-                <Eyebrow>{content.eyebrow}</Eyebrow>
-                <h2 className="mt-5 text-balance font-display text-2xl font-bold tracking-tight text-on-surface sm:text-3xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+                <h2 className="text-balance font-display text-2xl font-bold tracking-tight text-on-surface sm:text-3xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
                   {content.title}
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg leading-relaxed text-on-surface-variant rtl:leading-[1.9]">
@@ -104,7 +94,6 @@ export function CareersWhy({ dict }: { dict: Dictionary }) {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <ScrollReveal className="lg:col-span-5">
             <div className="max-w-md">
-              <Eyebrow>{content.eyebrow}</Eyebrow>
               <SectionHeading>{content.title}</SectionHeading>
               <p className="mt-5 text-lg leading-relaxed text-on-surface-variant rtl:leading-[1.9]">
                 {content.intro}
@@ -145,7 +134,6 @@ export function CareersHowWeWork({ dict }: { dict: Dictionary }) {
       <Container>
         <ScrollReveal>
           <div className="max-w-2xl">
-            <Eyebrow>{content.eyebrow}</Eyebrow>
             <SectionHeading>{content.title}</SectionHeading>
           </div>
         </ScrollReveal>
@@ -182,7 +170,6 @@ export function CareersDisciplines({ dict }: { dict: Dictionary }) {
       <Container>
         <ScrollReveal>
           <div className="max-w-2xl">
-            <Eyebrow>{content.eyebrow}</Eyebrow>
             <SectionHeading>{content.title}</SectionHeading>
           </div>
         </ScrollReveal>
@@ -224,7 +211,6 @@ export function CareersLookFor({ dict }: { dict: Dictionary }) {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <ScrollReveal className="lg:col-span-5">
             <div className="max-w-md">
-              <Eyebrow>{content.eyebrow}</Eyebrow>
               <SectionHeading>{content.title}</SectionHeading>
             </div>
           </ScrollReveal>
@@ -262,7 +248,6 @@ export function CareersCandidateExperience({ dict }: { dict: Dictionary }) {
       <Container>
         <ScrollReveal>
           <div className="max-w-2xl">
-            <Eyebrow>{content.eyebrow}</Eyebrow>
             <SectionHeading>{content.title}</SectionHeading>
           </div>
         </ScrollReveal>

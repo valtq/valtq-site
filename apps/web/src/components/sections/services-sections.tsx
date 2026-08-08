@@ -33,15 +33,6 @@ const detailSections: {
 
 const engagementIcons: ServiceIconName[] = ['compass', 'layers', 'team', 'refresh'];
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex items-center gap-3 text-sm font-semibold tracking-[0.04em] text-primary sm:text-base">
-      <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-      <span>{children}</span>
-    </div>
-  );
-}
-
 function CheckIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -115,9 +106,9 @@ function ListPanel({ label, items }: { label: string; items: string[] }) {
   );
 }
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
+function SectionHeading({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <h2 className="mt-5 max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+    <h2 className={cn('max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]', className)}>
       {children}
     </h2>
   );
@@ -132,7 +123,6 @@ export function ServicesOverview({ dict }: { dict: Dictionary }) {
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
           <ScrollReveal>
             <div className="max-w-md">
-              <Eyebrow>{content.eyebrow}</Eyebrow>
               <SectionHeading>{content.title}</SectionHeading>
               <p className="mt-4 text-lg leading-relaxed text-on-surface-variant">
                 {content.description}
@@ -207,12 +197,9 @@ export function ServicesDetails({ dict }: { dict: Dictionary }) {
                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                         <ServiceIcon name={cfg.icon} className="h-5 w-5" />
                       </span>
-                      <span className="text-sm font-semibold text-on-surface-variant">
-                        {section.eyebrow}
-                      </span>
                     </div>
 
-                    <SectionHeading>{section.heading}</SectionHeading>
+                    <SectionHeading className="mt-5">{section.heading}</SectionHeading>
 
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-on-surface-variant">
                       {section.description}
@@ -261,7 +248,6 @@ export function ServicesWhy({ dict }: { dict: Dictionary }) {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <ScrollReveal className="lg:col-span-5">
             <div className="max-w-md">
-              <Eyebrow>{content.eyebrow}</Eyebrow>
               <SectionHeading>{content.heading}</SectionHeading>
               <p className="mt-5 text-lg leading-relaxed text-on-surface-variant">
                 {content.description}
@@ -302,7 +288,6 @@ export function ServicesEngagements({ dict }: { dict: Dictionary }) {
       <Container>
         <ScrollReveal>
           <div className="max-w-2xl">
-            <Eyebrow>{content.eyebrow}</Eyebrow>
             <SectionHeading>{content.heading}</SectionHeading>
           </div>
         </ScrollReveal>
@@ -353,11 +338,7 @@ export function ServicesJourney({ dict, locale }: { dict: Dictionary; locale: Lo
       <Container className="relative z-10">
         <ScrollReveal>
           <div className="max-w-2xl">
-            <div className="flex items-center gap-3 text-sm font-semibold tracking-[0.04em] text-primary sm:text-base">
-              <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-              <span>{content.eyebrow}</span>
-            </div>
-            <h2 className="mt-5 max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+            <h2 className="max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
               {content.heading}
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-on-surface-variant">

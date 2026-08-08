@@ -79,11 +79,7 @@ export function HomeServices({ dict, locale }: { dict: Dictionary; locale: Local
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
           <ScrollReveal>
             <div className="max-w-md">
-              <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-                <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-                {dict.homeServices.eyebrow}
-              </div>
-              <h2 className="mt-5 font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-5xl lg:leading-[1.08]">
+              <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-5xl lg:leading-[1.08]">
                 {dict.homeServices.title}
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-on-surface-variant">

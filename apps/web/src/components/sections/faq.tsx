@@ -235,11 +235,7 @@ export function FAQ({ dict, locale }: { dict: Dictionary; locale: Locale }) {
           <ScrollReveal>
             <div className="mx-auto max-w-4xl rounded-2xl border border-border bg-surface-container-lowest p-6 sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
               <div className="max-w-2xl">
-                <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-                  <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-                  <span>{faq.support.eyebrow}</span>
-                </div>
-                <h2 className="font-display mt-4 text-2xl font-bold tracking-tight text-on-surface sm:text-3xl rtl:leading-[1.4]">
+                <h2 className="font-display text-2xl font-bold tracking-tight text-on-surface sm:text-3xl rtl:leading-[1.4]">
                   {faq.support.heading}
                 </h2>
                 <p className="mt-3 text-base leading-relaxed text-on-surface-variant rtl:leading-[1.9]">

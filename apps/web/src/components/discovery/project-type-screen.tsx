@@ -155,12 +155,6 @@ function ProjectTypeScreen({ locale }: ProjectTypeScreenProps) {
     <div className="space-y-8">
       {/* Header */}
       <div className="space-y-3">
-        <div className="flex items-center gap-3">
-          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-            {copy.projectType.badge}
-          </span>
-        </div>
         <h1 className="font-display text-balance text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl">
           {copy.projectType.headline}
         </h1>

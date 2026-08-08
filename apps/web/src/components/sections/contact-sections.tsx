@@ -17,21 +17,15 @@ function formatIndex(index: number, locale: Locale): string {
 }
 
 function SectionHeading({
-  eyebrow,
   title,
   description,
 }: {
-  eyebrow: string;
   title: string;
   description?: string;
 }) {
   return (
     <div className="max-w-2xl text-start">
-      <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-        <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-        <span>{eyebrow}</span>
-      </div>
-      <h2 className="font-display mt-4 text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl rtl:leading-[1.4]">
+      <h2 className="font-display text-balance text-3xl font-bold tracking-tight text-on-surface sm:text-4xl rtl:leading-[1.4]">
         {title}
       </h2>
       {description && (
@@ -109,7 +103,6 @@ function ContactContextSection({ dict, locale }: { dict: Dictionary; locale: Loc
       <Container>
         <ScrollReveal direction="up">
           <SectionHeading
-            eyebrow={context.eyebrow}
             title={context.title}
             description={context.description}
           />
@@ -146,7 +139,7 @@ function ContactNextSection({ dict, locale }: { dict: Dictionary; locale: Locale
     <Section className="scroll-mt-20">
       <Container>
         <ScrollReveal direction="up">
-          <SectionHeading eyebrow={next.eyebrow} title={next.title} description={next.description} />
+          <SectionHeading title={next.title} description={next.description} />
         </ScrollReveal>
 
         <ol className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -209,7 +202,7 @@ export function ContactInquirySection({ dict }: { dict: Dictionary }) {
     <Section id="contact-form" className="scroll-mt-20">
       <Container>
         <ScrollReveal direction="up">
-          <SectionHeading eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
+          <SectionHeading title={copy.title} description={copy.description} />
         </ScrollReveal>
 
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-12">

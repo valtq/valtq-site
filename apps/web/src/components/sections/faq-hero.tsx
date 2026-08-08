@@ -25,15 +25,8 @@ export function FaqHero({ dict, locale }: FaqHeroProps) {
       <Container className="relative z-10">
         <div className="grid min-h-[calc(100svh-4rem)] items-center gap-12 py-14 sm:gap-14 sm:py-16 lg:min-h-[600px] lg:grid-cols-12 lg:gap-8 lg:py-20 xl:gap-10">
           <div className="min-w-0 lg:col-span-6">
-            <ScrollReveal direction="up" delay={0}>
-              <div className="flex items-center gap-3 text-base font-semibold tracking-[-0.01em] text-primary sm:text-lg">
-                <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-                <span>{content.tag}</span>
-              </div>
-            </ScrollReveal>
-
             <ScrollReveal direction="up-lg" delay={0.08}>
-              <h1 className="font-display mt-6 max-w-[36rem] text-balance text-[2.5rem] font-bold leading-[1.12] tracking-[-0.03em] text-on-surface sm:text-[3.25rem] sm:leading-[1.1] lg:text-[4.25rem] lg:leading-[1.06] xl:text-[4.5rem] rtl:leading-[1.3]">
+              <h1 className="font-display max-w-[36rem] text-balance text-[2.5rem] font-bold leading-[1.12] tracking-[-0.03em] text-on-surface sm:text-[3.25rem] sm:leading-[1.1] lg:text-[4.25rem] lg:leading-[1.06] xl:text-[4.5rem] rtl:leading-[1.3]">
                 {content.title}
               </h1>
             </ScrollReveal>

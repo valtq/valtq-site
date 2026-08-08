@@ -25,15 +25,8 @@ export function CareersHero({ dict, locale }: CareersHeroProps) {
       <Container className="relative z-10">
         <div className="grid items-center gap-12 py-14 sm:gap-14 sm:py-16 lg:grid-cols-12 lg:gap-8 lg:py-20 xl:gap-10">
           <div className="min-w-0 lg:col-span-6">
-            <ScrollReveal direction="up" delay={0}>
-              <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary sm:text-base">
-                <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-                <span>{content.eyebrow}</span>
-              </div>
-            </ScrollReveal>
-
             <ScrollReveal direction="up-lg" delay={0.08}>
-              <h1 className="font-display mt-6 max-w-[40rem] text-balance text-[2.75rem] font-bold leading-[1.08] tracking-[-0.04em] text-on-surface sm:text-[3.5rem] sm:leading-[1.08] lg:text-[3.75rem] lg:leading-[1.05] xl:text-[4rem] rtl:leading-[1.25]">
+              <h1 className="font-display max-w-[40rem] text-balance text-[2.75rem] font-bold leading-[1.08] tracking-[-0.04em] text-on-surface sm:text-[3.5rem] sm:leading-[1.08] lg:text-[3.75rem] lg:leading-[1.05] xl:text-[4rem] rtl:leading-[1.25]">
                 {content.title}
               </h1>
             </ScrollReveal>

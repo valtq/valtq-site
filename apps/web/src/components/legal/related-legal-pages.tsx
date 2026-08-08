@@ -19,10 +19,9 @@ export function RelatedLegalPages({ current, dict, locale }: RelatedLegalPagesPr
   return (
     <Section variant="muted" className="border-t-0 sm:border-t-0 lg:border-t-0">
       <Container>
-        <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-          <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-          <span>{t.relatedTitle}</span>
-        </div>
+        <h2 className="font-display text-2xl font-bold tracking-tight text-on-surface">
+          {t.relatedTitle}
+        </h2>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-on-surface-variant rtl:leading-[1.9]">
           {t.relatedDescription}
         </p>

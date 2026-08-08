@@ -34,11 +34,7 @@ export function CareersFaq({ dict }: { dict: Dictionary }) {
         <div className="mx-auto max-w-3xl">
           <ScrollReveal>
             <div className="text-center">
-              <div className="flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary sm:text-base">
-                <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-                <span>{faq.eyebrow}</span>
-              </div>
-              <h2 className="mt-5 text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl rtl:leading-[1.35]">
+              <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl rtl:leading-[1.35]">
                 {faq.title}
               </h2>
             </div>

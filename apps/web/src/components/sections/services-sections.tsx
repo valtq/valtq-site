@@ -33,15 +33,6 @@ const detailSections: {
 
 const engagementIcons: ServiceIconName[] = ['compass', 'layers', 'team', 'refresh'];
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex items-center gap-3 text-sm font-semibold tracking-[0.04em] text-primary sm:text-base">
-      <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-      <span>{children}</span>
-    </div>
-  );
-}
-
 function CheckIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -99,12 +90,12 @@ function TechPanel({ label, items }: { label: string; items: string[] }) {
 
 function ListPanel({ label, items }: { label: string; items: string[] }) {
   return (
-    <div className="rounded-2xl border border-border bg-surface-container-lowest p-6 sm:p-8">
+    <div className="rounded-2xl border border-border bg-surface-container-lowest p-5 sm:p-6">
       <p className="text-sm font-semibold text-primary">{label}</p>
-      <ol className="mt-3">
+      <ol className="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2">
         {items.map((item, index) => (
-          <li key={item} className="flex items-start gap-4 border-t border-border py-4 first:border-t-0 sm:gap-5">
-            <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 font-mono text-xs font-semibold text-primary">
+          <li key={item} className="flex items-start gap-3">
+            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-primary/10 font-mono text-xs font-semibold text-primary">
               0{index + 1}
             </span>
             <span className="min-w-0 text-base leading-relaxed text-on-surface">{item}</span>
@@ -115,9 +106,9 @@ function ListPanel({ label, items }: { label: string; items: string[] }) {
   );
 }
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
+function SectionHeading({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <h2 className="mt-5 max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+    <h2 className={cn('max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]', className)}>
       {children}
     </h2>
   );
@@ -132,7 +123,6 @@ export function ServicesOverview({ dict }: { dict: Dictionary }) {
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
           <ScrollReveal>
             <div className="max-w-md">
-              <Eyebrow>{content.eyebrow}</Eyebrow>
               <SectionHeading>{content.title}</SectionHeading>
               <p className="mt-4 text-lg leading-relaxed text-on-surface-variant">
                 {content.description}
@@ -197,7 +187,7 @@ export function ServicesDetails({ dict }: { dict: Dictionary }) {
             key={cfg.id}
             id={cfg.id}
             variant={isMuted ? 'muted' : 'default'}
-            className="scroll-mt-20"
+            className={cn('scroll-mt-20', isList && 'py-12 sm:py-14 lg:py-16')}
           >
             <Container>
               <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
@@ -207,12 +197,9 @@ export function ServicesDetails({ dict }: { dict: Dictionary }) {
                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                         <ServiceIcon name={cfg.icon} className="h-5 w-5" />
                       </span>
-                      <span className="text-sm font-semibold text-on-surface-variant">
-                        {section.eyebrow}
-                      </span>
                     </div>
 
-                    <SectionHeading>{section.heading}</SectionHeading>
+                    <SectionHeading className="mt-5">{section.heading}</SectionHeading>
 
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-on-surface-variant">
                       {section.description}
@@ -256,14 +243,13 @@ export function ServicesWhy({ dict }: { dict: Dictionary }) {
   const content = dict.servicesPage.why;
 
   return (
-    <Section variant="card">
+    <Section variant="card" className="py-14 sm:py-16 lg:py-20">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
           <ScrollReveal className="lg:col-span-5">
             <div className="max-w-md">
-              <Eyebrow>{content.eyebrow}</Eyebrow>
               <SectionHeading>{content.heading}</SectionHeading>
-              <p className="mt-5 text-lg leading-relaxed text-on-surface-variant">
+              <p className="mt-4 text-lg leading-relaxed text-on-surface-variant">
                 {content.description}
               </p>
             </div>
@@ -272,7 +258,7 @@ export function ServicesWhy({ dict }: { dict: Dictionary }) {
           <ScrollReveal delay={0.1} className="lg:col-span-7">
             <ol className="grid gap-x-12 gap-y-0 lg:grid-cols-2">
               {content.principles.map((principle, index) => (
-                <li key={principle.title} className="flex gap-4 border-t border-border py-6 sm:gap-5">
+                <li key={principle.title} className="flex gap-4 border-t border-border py-5 sm:gap-5">
                   <span className="shrink-0 font-mono text-sm font-semibold text-primary">
                     0{index + 1}
                   </span>
@@ -298,16 +284,15 @@ export function ServicesEngagements({ dict }: { dict: Dictionary }) {
   const content = dict.servicesPage.engagements;
 
   return (
-    <Section>
+    <Section className="py-14 sm:py-16 lg:py-20">
       <Container>
         <ScrollReveal>
           <div className="max-w-2xl">
-            <Eyebrow>{content.eyebrow}</Eyebrow>
             <SectionHeading>{content.heading}</SectionHeading>
           </div>
         </ScrollReveal>
 
-        <ul className="mt-12 grid gap-5 md:grid-cols-2">
+        <ul className="mt-10 grid gap-5 md:grid-cols-2">
           {content.items.map((item, index) => (
             <li key={item.title}>
               <article className="group flex h-full min-w-0 flex-col rounded-2xl border border-border bg-surface-container-lowest p-6 transition-all duration-200 hover:border-primary/50 hover:shadow-ring sm:p-7">
@@ -319,7 +304,7 @@ export function ServicesEngagements({ dict }: { dict: Dictionary }) {
                     0{index + 1}
                   </span>
                 </div>
-                <h3 className="mt-6 font-display text-xl font-semibold tracking-tight text-on-surface">
+                <h3 className="mt-5 font-display text-xl font-semibold tracking-tight text-on-surface">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-on-surface-variant">
@@ -331,7 +316,7 @@ export function ServicesEngagements({ dict }: { dict: Dictionary }) {
         </ul>
 
         <ScrollReveal delay={0.1}>
-          <p className="mt-8 max-w-3xl border-s-2 border-primary ps-5 text-base leading-relaxed text-on-surface-variant">
+          <p className="mt-6 max-w-3xl border-s-2 border-primary ps-5 text-base leading-relaxed text-on-surface-variant">
             {content.note}
           </p>
         </ScrollReveal>
@@ -344,41 +329,32 @@ export function ServicesJourney({ dict, locale }: { dict: Dictionary; locale: Lo
   const content = dict.servicesPage.journey;
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-border bg-background py-16 sm:py-20 lg:py-24">
+    <section className="relative isolate overflow-hidden border-b border-border bg-background py-14 sm:py-16 lg:py-20">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-primary/10 blur-3xl rtl:-left-32 rtl:right-auto" />
-        <div className="absolute inset-y-0 start-1/4 w-px bg-primary/5" />
       </div>
 
       <Container className="relative z-10">
         <ScrollReveal>
           <div className="max-w-2xl">
-            <div className="flex items-center gap-3 text-sm font-semibold tracking-[0.04em] text-primary sm:text-base">
-              <span className="h-2 w-2 rounded-full bg-tertiary" aria-hidden="true" />
-              <span>{content.eyebrow}</span>
-            </div>
-            <h2 className="mt-5 max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
+            <h2 className="max-w-2xl text-balance font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1] rtl:leading-[1.35]">
               {content.heading}
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-on-surface-variant">
+            <p className="mt-4 text-lg leading-relaxed text-on-surface-variant">
               {content.description}
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <div className="relative mt-14">
-            <div
-              className="pointer-events-none absolute start-[12.5%] end-[12.5%] top-7 hidden h-px bg-primary/15 lg:block"
-              aria-hidden="true"
-            />
-            <ol className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+          <div className="relative mt-10">
+            <ol className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
               {content.stages.map((stage, index) => (
                 <li key={stage} className="relative flex flex-col items-center text-center">
                   <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-background font-mono text-sm font-semibold text-primary">
                     0{index + 1}
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold tracking-tight text-on-surface">
+                  <h3 className="mt-4 font-display text-lg font-semibold tracking-tight text-on-surface">
                     {stage}
                   </h3>
                 </li>
@@ -388,7 +364,7 @@ export function ServicesJourney({ dict, locale }: { dict: Dictionary; locale: Lo
         </ScrollReveal>
 
         <ScrollReveal delay={0.16}>
-          <div className="mt-14">
+          <div className="mt-10">
             <Link href={`/${locale}/process`} className="inline-block">
               <Button variant="secondary" size="lg" className="group">
                 {content.cta}
@@ -406,10 +382,10 @@ export function ServicesFinalCta({ dict, locale }: { dict: Dictionary; locale: L
   const content = dict.servicesPage.finalCta;
 
   return (
-    <Section variant="muted">
+    <Section variant="muted" className="py-14 sm:py-16 lg:py-20">
       <Container>
         <ScrollReveal>
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-surface-container-lowest p-8 sm:p-12 lg:p-16">
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-surface-container-lowest p-8 sm:p-10 lg:p-12">
             <div className="pointer-events-none absolute inset-0" aria-hidden="true">
               <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl rtl:-left-24 rtl:right-auto" />
             </div>
@@ -420,7 +396,7 @@ export function ServicesFinalCta({ dict, locale }: { dict: Dictionary; locale: L
               <p className="mt-4 text-lg leading-relaxed text-on-surface-variant">
                 {content.description}
               </p>
-              <Link href={`/${locale}/discovery`} className="mt-8 inline-block">
+              <Link href={`/${locale}/discovery`} className="mt-6 inline-block">
                 <Button size="lg" className="group">
                   {content.cta}
                   <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />

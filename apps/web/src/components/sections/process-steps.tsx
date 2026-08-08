@@ -18,10 +18,7 @@ export function ProcessSteps({ dict }: { dict: Dictionary }) {
       <Container>
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-              {dict.processSteps.eyebrow}
-            </span>
-            <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-on-surface sm:text-4xl lg:text-5xl">
               {dict.processSteps.title}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-on-surface-variant">

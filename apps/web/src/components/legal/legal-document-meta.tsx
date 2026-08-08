@@ -2,7 +2,7 @@ import type { Dictionary } from '@/i18n/get-dictionary';
 import type { Locale } from '@/i18n/config';
 import type { LegalDocument } from '@/content/legal';
 import { formatLegalDate } from '@/content/legal';
-import { LegalPrintButton } from './legal-print-button';
+import { LegalDownloadButton } from './legal-download-button';
 
 interface LegalDocumentMetaProps {
   doc: LegalDocument;
@@ -24,7 +24,7 @@ export function LegalDocumentMeta({ doc, dict, locale }: LegalDocumentMetaProps)
         <span className="font-semibold text-white">{t.updatedLabel}: </span>
         <time dateTime={doc.updatedDate}>{formatLegalDate(doc.updatedDate, locale)}</time>
       </p>
-      <LegalPrintButton label={t.printLabel} />
+      <LegalDownloadButton slug={doc.slug} locale={locale} dict={dict} />
     </div>
   );
 }

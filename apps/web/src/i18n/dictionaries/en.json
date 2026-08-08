@@ -481,8 +481,9 @@
     },
     "web": {
       "heading": "Web platforms designed around real workflows and long-term maintainability.",
-      "description": "Customer-facing platforms, internal tools, dashboards, and data-driven applications — built from the workflow and user journey through architecture, design, and delivery.",
-      "paragraph": "We structure the frontend, integrations, data flow, permissions, and performance so the product stays clear and maintainable as it grows.",
+      "description": "We build customer-facing platforms, internal tools, and data-driven applications — from workflow through design, engineering, and deployment.",
+      "paragraph": "Structured so the product stays understandable and maintainable as it grows.",
+
       "supportLabel": "What we can support",
       "support": [
         "Marketing and customer-facing platforms",
@@ -508,8 +509,9 @@
     },
     "mobile": {
       "heading": "Mobile experiences designed for daily use, changing networks, and evolving product requirements.",
-      "description": "We build iOS and Android products focused on navigation, state, API reliability, accessibility, and release readiness — using cross-platform development when it fits.",
-      "paragraph": "Mobile delivery covers more than screens — sessions, offline behavior, local state, notifications, permissions, secure storage, and the operational work to release and maintain the app.",
+      "description": "iOS and Android products built for daily use, reliable connections, and dependable releases, using cross-platform development where it fits.",
+      "paragraph": "We cover sessions, offline behavior, notifications, secure storage, and release maintenance.",
+
       "supportLabel": "What we can support",
       "support": [
         "Customer and member applications",
@@ -535,8 +537,9 @@
     },
     "ai": {
       "heading": "Practical AI capabilities connected to product workflows and controlled by clear system boundaries.",
-      "description": "We integrate AI where it improves a real workflow — search, internal decisions, document extraction, content classification, assisted responses, and automation.",
-      "paragraph": "AI should not run as an isolated demo. We connect it to data, permissions, review, fallbacks, and monitoring — and ground assistant answers in approved sources with clear references.",
+      "description": "AI integrated into real product workflows — search, data extraction, classification, assisted responses, and automation.",
+      "paragraph": "Connected to your data, permissions, and review process, with responses grounded in approved sources.",
+
       "supportLabel": "What we can support",
       "support": [
         "AI assistants and copilots",
@@ -562,8 +565,9 @@
     },
     "cloud": {
       "heading": "Backend and cloud foundations designed for secure delivery and operational clarity.",
-      "description": "We design APIs, data models, background processing, integrations, and cloud environments that match the product’s real traffic, reliability, security, and operational needs.",
-      "paragraph": "We match infrastructure to the product stage, security, and recovery needs — keeping systems observable and understandable.",
+      "description": "APIs, data models, background processing, and cloud environments sized to your traffic, security, and operational needs.",
+      "paragraph": "Deployment stays observable, repeatable, and proportionate to the product stage.",
+
       "supportLabel": "What we can support",
       "support": [
         "API and backend development",
@@ -591,7 +595,8 @@
     },
     "strategy": {
       "heading": "Clarify what should be built before committing time and budget to delivery.",
-      "description": "We turn business goals, user needs, and constraints into a clear product direction and delivery roadmap.",
+      "description": "We turn business goals, user needs, and constraints into a clear, executable product direction and an initial delivery roadmap.",
+
       "paragraph": "",
       "supportLabel": "Supporting points",
       "support": [
@@ -610,7 +615,8 @@
     },
     "quality": {
       "heading": "Quality practices that continue beyond the first release.",
-      "description": "A release is one stage of the product lifecycle. We build in quality, review, and monitoring so the product keeps improving.",
+      "description": "QA, code review, automated checks, and observability that keep the product improving without eroding its technical foundation.",
+
       "paragraph": "",
       "supportLabel": "Quality activities may include",
       "support": [
@@ -631,31 +637,32 @@
     },
     "why": {
       "heading": "Engineering decisions connected to product outcomes.",
-      "description": "We keep product goals, user experience, and engineering connected, so technical decisions reflect their product impact.",
+      "description": "We keep product goals, implementation, and operations connected, so technical decisions serve product outcomes.",
+
       "principles": [
         {
           "title": "Product context before implementation",
-          "description": "We begin by understanding the workflow, users, constraints, and purpose of the requested feature."
+          "description": "We understand the workflow, users, and constraints first."
         },
         {
           "title": "Architecture proportional to the product",
-          "description": "We avoid both fragile shortcuts and unnecessary complexity, selecting a foundation appropriate to the current stage and expected growth."
+          "description": "We choose a foundation that fits the product stage and its expected growth."
         },
         {
           "title": "Visible delivery",
-          "description": "Work is divided into reviewable increments so decisions, risks, and progress remain visible."
+          "description": "Reviewable increments keep decisions, risks, and progress visible."
         },
         {
           "title": "Quality built into the workflow",
-          "description": "Review, testing, accessibility, performance, and operational readiness are treated as delivery activities rather than final-stage cleanup."
+          "description": "Quality is part of delivery, not a final-stage cleanup."
         },
         {
           "title": "Clear ownership and communication",
-          "description": "Scope, decisions, dependencies, and blockers should remain explicit throughout the engagement."
+          "description": "Scope, decisions, dependencies, and blockers stay explicit."
         },
         {
           "title": "Maintainability after launch",
-          "description": "Code structure, documentation, environments, and deployment workflows should support the team that will continue operating the product."
+          "description": "Code, documentation, and deployment workflows support the operating team."
         }
       ]
     },

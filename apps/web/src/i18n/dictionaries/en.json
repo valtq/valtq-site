@@ -650,31 +650,31 @@
     },
     "why": {
       "heading": "Engineering decisions connected to product outcomes.",
-      "description": "Our role is to keep product goals, user experience, implementation, and operations connected. That reduces handoff gaps and helps teams make technical decisions with a clear understanding of their product impact.",
+      "description": "We keep product goals, implementation, and operations connected, so technical decisions serve product outcomes.",
       "principles": [
         {
           "title": "Product context before implementation",
-          "description": "We begin by understanding the workflow, users, constraints, and purpose of the requested feature."
+          "description": "We understand the workflow, users, and constraints first."
         },
         {
           "title": "Architecture proportional to the product",
-          "description": "We avoid both fragile shortcuts and unnecessary complexity, selecting a foundation appropriate to the current stage and expected growth."
+          "description": "We choose a foundation that fits the product stage and its expected growth."
         },
         {
           "title": "Visible delivery",
-          "description": "Work is divided into reviewable increments so decisions, risks, and progress remain visible."
+          "description": "Reviewable increments keep decisions, risks, and progress visible."
         },
         {
           "title": "Quality built into the workflow",
-          "description": "Review, testing, accessibility, performance, and operational readiness are treated as delivery activities rather than final-stage cleanup."
+          "description": "Quality is part of delivery, not a final-stage cleanup."
         },
         {
           "title": "Clear ownership and communication",
-          "description": "Scope, decisions, dependencies, and blockers should remain explicit throughout the engagement."
+          "description": "Scope, decisions, dependencies, and blockers stay explicit."
         },
         {
           "title": "Maintainability after launch",
-          "description": "Code structure, documentation, environments, and deployment workflows should support the team that will continue operating the product."
+          "description": "Code, documentation, and deployment workflows support the operating team."
         }
       ]
     },

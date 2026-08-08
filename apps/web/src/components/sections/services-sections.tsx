@@ -332,7 +332,6 @@ export function ServicesJourney({ dict, locale }: { dict: Dictionary; locale: Lo
     <section className="relative isolate overflow-hidden border-b border-border bg-background py-14 sm:py-16 lg:py-20">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-primary/10 blur-3xl rtl:-left-32 rtl:right-auto" />
-        <div className="absolute inset-y-0 start-1/4 w-px bg-primary/5" />
       </div>
 
       <Container className="relative z-10">
@@ -349,10 +348,6 @@ export function ServicesJourney({ dict, locale }: { dict: Dictionary; locale: Lo
 
         <ScrollReveal delay={0.1}>
           <div className="relative mt-10">
-            <div
-              className="pointer-events-none absolute start-[12.5%] end-[12.5%] top-7 hidden h-px bg-primary/15 lg:block"
-              aria-hidden="true"
-            />
             <ol className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
               {content.stages.map((stage, index) => (
                 <li key={stage} className="relative flex flex-col items-center text-center">

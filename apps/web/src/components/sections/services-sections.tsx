@@ -90,12 +90,12 @@ function TechPanel({ label, items }: { label: string; items: string[] }) {
 
 function ListPanel({ label, items }: { label: string; items: string[] }) {
   return (
-    <div className="rounded-2xl border border-border bg-surface-container-lowest p-6 sm:p-8">
+    <div className="rounded-2xl border border-border bg-surface-container-lowest p-5 sm:p-6">
       <p className="text-sm font-semibold text-primary">{label}</p>
-      <ol className="mt-3">
+      <ol className="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2">
         {items.map((item, index) => (
-          <li key={item} className="flex items-start gap-4 border-t border-border py-4 first:border-t-0 sm:gap-5">
-            <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 font-mono text-xs font-semibold text-primary">
+          <li key={item} className="flex items-start gap-3">
+            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-primary/10 font-mono text-xs font-semibold text-primary">
               0{index + 1}
             </span>
             <span className="min-w-0 text-base leading-relaxed text-on-surface">{item}</span>
@@ -187,7 +187,7 @@ export function ServicesDetails({ dict }: { dict: Dictionary }) {
             key={cfg.id}
             id={cfg.id}
             variant={isMuted ? 'muted' : 'default'}
-            className="scroll-mt-20"
+            className={cn('scroll-mt-20', isList && 'py-12 sm:py-14 lg:py-16')}
           >
             <Container>
               <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-16">

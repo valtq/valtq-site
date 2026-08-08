@@ -500,8 +500,8 @@
     },
     "web": {
       "heading": "Web platforms designed around real workflows and long-term maintainability.",
-      "description": "We build customer-facing products, internal platforms, operational dashboards, portals, and data-driven applications. The work starts with the business workflow and user journey, then moves into architecture, interface design, implementation, testing, and deployment.",
-      "paragraph": "Our focus is not limited to producing pages or isolated features. We structure the frontend, backend integrations, data flow, permissions, performance, and deployment model so the product remains understandable and maintainable as its scope grows.",
+      "description": "We build customer-facing platforms, internal tools, and data-driven applications — from workflow through design, engineering, and deployment.",
+      "paragraph": "Structured so the product stays understandable and maintainable as it grows.",
       "supportLabel": "What we can support",
       "support": [
         "Marketing and customer-facing platforms",
@@ -527,8 +527,8 @@
     },
     "mobile": {
       "heading": "Mobile experiences designed for daily use, changing networks, and evolving product requirements.",
-      "description": "We develop mobile products for iOS and Android with attention to navigation, state management, API reliability, device behavior, accessibility, and release readiness. Depending on product constraints, we can use cross-platform development to maintain a shared product foundation while preserving a platform-appropriate experience.",
-      "paragraph": "Mobile delivery includes more than implementing screens. We consider session handling, slow or interrupted connections, local state, notifications, permissions, secure storage, analytics integration, and the operational work required to release and maintain the application.",
+      "description": "iOS and Android products built for daily use, reliable connections, and dependable releases, using cross-platform development where it fits.",
+      "paragraph": "We cover sessions, offline behavior, notifications, secure storage, and release maintenance.",
       "supportLabel": "What we can support",
       "support": [
         "Customer and member applications",
@@ -554,8 +554,8 @@
     },
     "ai": {
       "heading": "Practical AI capabilities connected to product workflows and controlled by clear system boundaries.",
-      "description": "We integrate AI where it can improve a real product workflow: helping users find information, supporting internal decisions, extracting structured data, classifying content, generating assisted responses, or automating repetitive steps.",
-      "paragraph": "AI functionality should not operate as an isolated demo. We connect it to the product’s data, permissions, review process, fallback behavior, and monitoring. For knowledge-based assistants, we can structure retrieval workflows that ground responses in approved sources and expose relevant references to users or reviewers.",
+      "description": "AI integrated into real product workflows — search, data extraction, classification, assisted responses, and automation.",
+      "paragraph": "Connected to your data, permissions, and review process, with responses grounded in approved sources.",
       "supportLabel": "What we can support",
       "support": [
         "AI assistants and copilots",
@@ -581,8 +581,8 @@
     },
     "cloud": {
       "heading": "Backend and cloud foundations designed for secure delivery and operational clarity.",
-      "description": "We design and implement APIs, data models, background processing, service integrations, deployment workflows, and cloud environments that support the product’s actual traffic, reliability, security, and operational needs.",
-      "paragraph": "The goal is not to introduce infrastructure complexity for its own sake. We choose deployment patterns based on the product stage, team capacity, expected usage, security requirements, and recovery needs. The resulting setup should remain observable, repeatable, and understandable to the people who operate it.",
+      "description": "APIs, data models, background processing, and cloud environments sized to your traffic, security, and operational needs.",
+      "paragraph": "Deployment stays observable, repeatable, and proportionate to the product stage.",
       "supportLabel": "What we can support",
       "support": [
         "API and backend development",
@@ -610,7 +610,7 @@
     },
     "strategy": {
       "heading": "Clarify what should be built before committing time and budget to delivery.",
-      "description": "We help teams translate business goals, user needs, operational constraints, and technical requirements into a product direction that engineering can execute. This may include discovery workshops, workflow mapping, feature prioritization, information architecture, interface design, and an initial delivery roadmap.",
+      "description": "We turn business goals, user needs, and constraints into a clear, executable product direction and an initial delivery roadmap.",
       "paragraph": "",
       "supportLabel": "Supporting points",
       "support": [
@@ -629,7 +629,7 @@
     },
     "quality": {
       "heading": "Quality practices that continue beyond the first release.",
-      "description": "A production release is one stage of the product lifecycle. We structure quality assurance, code review, automated checks, observability, release processes, and maintenance planning so teams can continue improving the product without losing control of its technical foundation.",
+      "description": "QA, code review, automated checks, and observability that keep the product improving without eroding its technical foundation.",
       "paragraph": "",
       "supportLabel": "Quality activities may include",
       "support": [

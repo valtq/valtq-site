@@ -2,17 +2,27 @@ import type { FastifyPluginAsync } from 'fastify';
 import { env } from '../../config/env.js';
 import {
   NoopEmailProvider,
-  ResendEmailProvider,
+  SmtpEmailProvider,
 } from './providers/email.provider.js';
 import type { NotificationProvider } from './providers/notification-provider.js';
 import { NotificationLogRepository } from './notification.repository.js';
 import { NotificationService } from './notification.service.js';
 
 export function createEmailProvider(): NotificationProvider {
-  if (env.RESEND_API_KEY && env.RESEND_FROM_EMAIL) {
-    return new ResendEmailProvider({
-      apiKey: env.RESEND_API_KEY,
-      fromEmail: env.RESEND_FROM_EMAIL,
+  if (
+    env.SMTP_HOST &&
+    env.SMTP_PORT &&
+    env.SMTP_USER &&
+    env.SMTP_PASS &&
+    env.SMTP_FROM
+  ) {
+    return new SmtpEmailProvider({
+      host: env.SMTP_HOST,
+      port: env.SMTP_PORT,
+      secure: env.SMTP_SECURE ?? false,
+      user: env.SMTP_USER,
+      pass: env.SMTP_PASS,
+      fromEmail: env.SMTP_FROM,
     });
   }
 
@@ -47,7 +57,7 @@ export type {
 export { NotificationType } from './providers/notification-provider.js';
 export {
   NoopEmailProvider,
-  ResendEmailProvider,
+  SmtpEmailProvider,
 } from './providers/email.provider.js';
 export {
   buildInternalLeadEmail,

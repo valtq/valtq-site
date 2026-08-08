@@ -1,55 +1,68 @@
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
+import type { Transporter } from 'nodemailer';
 import type {
   NotificationMessage,
   NotificationProvider,
   NotificationSendResult,
 } from './notification-provider.js';
 
-type ResendEmailProviderOptions = {
-  apiKey: string;
+type SmtpEmailProviderOptions = {
+  host: string;
+  port: number;
+  secure: boolean;
+  user: string;
+  pass: string;
   fromEmail: string;
 };
 
 /**
- * Resend-backed email provider.
+ * SMTP-backed email provider (Nodemailer).
  */
-export class ResendEmailProvider implements NotificationProvider {
-  readonly name = 'resend';
-  private readonly client: Resend;
+export class SmtpEmailProvider implements NotificationProvider {
+  readonly name = 'smtp';
+  private readonly transporter: Transporter;
   private readonly fromEmail: string;
 
-  constructor(options: ResendEmailProviderOptions) {
-    this.client = new Resend(options.apiKey);
+  constructor(options: SmtpEmailProviderOptions) {
+    this.transporter = nodemailer.createTransport({
+      host: options.host,
+      port: options.port,
+      secure: options.secure,
+      auth: {
+        user: options.user,
+        pass: options.pass,
+      },
+    });
     this.fromEmail = options.fromEmail;
   }
 
   async send(message: NotificationMessage): Promise<NotificationSendResult> {
-    const { data, error } = await this.client.emails.send({
-      from: this.fromEmail,
-      to: [message.to],
-      subject: message.subject,
-      html: message.html,
-      text: message.text,
-    });
+    try {
+      const info = await this.transporter.sendMail({
+        from: this.fromEmail,
+        to: message.to,
+        subject: message.subject,
+        html: message.html,
+        text: message.text,
+      });
 
-    if (error) {
+      return {
+        success: true,
+        provider: this.name,
+        messageId: info.messageId,
+      };
+    } catch (error) {
       return {
         success: false,
         provider: this.name,
-        error: error.message,
+        error: error instanceof Error ? error.message : String(error),
       };
     }
-
-    return {
-      success: true,
-      provider: this.name,
-      messageId: data?.id,
-    };
   }
 }
 
 /**
- * No-op provider used when Resend credentials are not configured.
+ * No-op provider used when SMTP credentials are not configured.
  * Keeps local/CI flows green without silently pretending delivery succeeded.
  */
 export class NoopEmailProvider implements NotificationProvider {

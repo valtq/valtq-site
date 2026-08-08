@@ -16,8 +16,12 @@ process.env.INTERNAL_NOTIFICATION_EMAIL =
 
 // Clear blank placeholders so Zod optional secrets stay unset.
 for (const key of [
-  'RESEND_API_KEY',
-  'RESEND_FROM_EMAIL',
+  'SMTP_HOST',
+  'SMTP_PORT',
+  'SMTP_SECURE',
+  'SMTP_USER',
+  'SMTP_PASS',
+  'SMTP_FROM',
   'CAL_API_KEY',
   'CAL_WEBHOOK_SECRET',
   'INTERNAL_NOTIFICATION_EMAIL',

@@ -786,7 +786,7 @@
     "hero": {
       "eyebrow": "How we deliver",
       "title": "A delivery process that turns complex product work into clear, reviewable progress.",
-      "description": "ValtQ connects product strategy, experience design, software engineering, quality, and cloud delivery through one visible workflow. Each phase reduces uncertainty, produces reviewable outputs, and prepares the next set of decisions.",
+      "description": "One visible workflow connecting strategy, design, engineering, and quality. Each phase reduces uncertainty and produces reviewable outputs.",
       "primaryCta": "Start Discovery",
       "secondaryCta": "Explore Our Services",
       "principlesLabel": "Built on",
@@ -811,33 +811,33 @@
       "eyebrow": "A connected delivery framework",
       "heading": "Every phase should make the product clearer, not simply move the project forward.",
       "paragraphs": [
-        "The process begins by clarifying the problem, the users, the operating constraints, and the decisions that must be made. This prevents implementation from starting around assumptions that have not been examined.",
-        "As delivery continues, strategy, design, engineering, and quality remain connected. Decisions are documented, working increments are reviewed, and technical risks remain visible instead of being postponed until launch."
+        "We clarify the problem, users, constraints, and decisions before building.",
+        "Strategy, design, engineering, and quality stay connected — risks remain visible until launch."
       ],
       "principlesLabel": "Guiding principles",
       "principles": [
         {
           "title": "Clarity before commitment",
-          "description": "Important assumptions, dependencies, and boundaries are made visible before major implementation decisions."
+          "description": "Assumptions, dependencies, and boundaries are made visible before building."
         },
         {
           "title": "Reviewable progress",
-          "description": "Work is delivered in understandable increments that can be evaluated by product and technical stakeholders."
+          "description": "Work is delivered in increments anyone can review."
         },
         {
           "title": "Quality during delivery",
-          "description": "Testing, accessibility, performance, and operational readiness are addressed throughout the workflow."
+          "description": "Quality is addressed throughout the workflow, not at the end."
         },
         {
           "title": "Decisions with context",
-          "description": "Product, design, and engineering decisions are evaluated together rather than in isolated handoffs."
+          "description": "Product, design, and engineering decisions are evaluated together."
         }
       ]
     },
     "phases": {
       "eyebrow": "The delivery journey",
       "heading": "Six phases, one connected delivery path.",
-      "intro": "Each phase is reviewed against its purpose, outputs, and decision point before the next set of work begins. The emphasis changes with the product stage, but the structure remains consistent.",
+      "intro": "Every phase is reviewed for purpose, outputs, and decisions before the next begins. Emphasis shifts with product stage; structure stays consistent.",
       "whatLabel": "What happens",
       "outputsLabel": "Typical outputs",
       "reviewLabel": "Review point",
@@ -846,120 +846,120 @@
           "number": "01",
           "title": "Discovery & Strategy",
           "purpose": "Create a shared understanding of the product challenge before defining the solution.",
-          "description": "We examine the business objective, target users, current workflow, existing systems, operational constraints, and known risks. The aim is to separate the actual product problem from early assumptions about features or technology.",
+          "description": "We examine goals, users, workflow, systems, and constraints to separate the real problem from early assumptions.",
           "what": [
-            "Stakeholder and requirement discussions",
+            "Stakeholder discussions",
             "User and workflow exploration",
-            "Review of current systems and dependencies",
-            "Identification of assumptions and open questions",
-            "Scope and priority clarification",
-            "Initial technical feasibility review",
-            "Definition of meaningful success criteria"
+            "Systems and dependencies review",
+            "Assumptions and open questions",
+            "Scope and priority clarity",
+            "Feasibility review",
+            "Success criteria"
           ],
           "outputs": [
             "Discovery summary",
             "Problem and opportunity definition",
             "Prioritized product scope",
-            "Assumptions, dependencies, and risk register",
+            "Assumptions and risks register",
             "Initial delivery roadmap",
-            "Recommended next-phase focus"
+            "Next-phase focus"
           ],
-          "review": "The team agrees on the problem, initial scope, key constraints, and unresolved decisions before detailed design and implementation begin."
+          "review": "Agree on problem, scope, constraints, and open decisions before building."
         },
         {
           "number": "02",
           "title": "Architecture & Experience Design",
           "purpose": "Turn the clarified scope into understandable workflows and a practical technical foundation.",
-          "description": "Product experience and system architecture are developed together. User journeys, information structure, interfaces, data boundaries, integrations, permissions, and operational requirements are considered as parts of the same product.",
+          "description": "Experience and architecture develop together — journeys, interfaces, data, integrations, and permissions are designed as one product.",
           "what": [
-            "User-flow and journey mapping",
+            "User-flow mapping",
             "Information architecture",
             "Wireframes and interface direction",
-            "Design-system foundations",
-            "System-boundary definition",
-            "Data-model planning",
-            "API and integration planning",
-            "Authentication and permission modeling",
-            "Architecture trade-off review"
+            "Design-system foundation",
+            "System boundaries",
+            "Data model",
+            "API and integrations",
+            "Auth and permissions",
+            "Architecture trade-offs"
           ],
           "outputs": [
-            "User-flow and interface direction",
-            "Wireframes or approved design views",
+            "User flows and interface direction",
+            "Wireframes or approved designs",
             "Solution architecture",
-            "Initial data and integration model",
+            "Data and integration model",
             "Technical decision record",
-            "Refined implementation backlog",
+            "Refined backlog",
             "Release and environment assumptions"
           ],
-          "review": "Product and technical stakeholders confirm that the experience, system boundaries, dependencies, and delivery approach support the agreed scope."
+          "review": "Confirm experience, boundaries, and delivery approach support the agreed scope."
         },
         {
           "number": "03",
           "title": "Iterative Development",
           "purpose": "Turn the approved direction into working, reviewable product increments.",
-          "description": "The backlog is organized into delivery increments that connect interface work, backend behavior, integrations, data, and infrastructure. Progress is demonstrated through working functionality rather than status descriptions alone.",
+          "description": "Backlog work ships in increments connecting interface, backend, integrations, data, and infrastructure. Progress is shown in working software, not status reports.",
           "what": [
             "Increment and backlog planning",
-            "Frontend and backend implementation",
-            "API and service integration",
+            "Frontend and backend builds",
+            "API and service integrations",
             "Data-model implementation",
-            "Authentication and permission development",
+            "Auth and permissions",
             "Code review",
-            "Automated checks where appropriate",
-            "Working-product demonstrations",
-            "Feedback and backlog refinement"
+            "Automated checks",
+            "Working-product demos",
+            "Feedback and backlog updates"
           ],
           "outputs": [
             "Working product increments",
             "Reviewed source code",
-            "Integrated frontend and backend behavior",
-            "Updated backlog and technical decisions",
-            "Demonstration notes and feedback actions",
+            "Integrated frontend and backend",
+            "Updated backlog and decisions",
+            "Demo notes and feedback",
             "Environment-ready builds",
-            "Updated implementation documentation"
+            "Updated documentation"
           ],
-          "review": "Each increment is reviewed against its acceptance criteria, product intent, and technical impact before the next set of work is finalized."
+          "review": "Each increment is reviewed against acceptance criteria and product intent."
         },
         {
           "number": "04",
           "title": "Quality Assurance & Readiness",
           "purpose": "Evaluate the product against functional, experience, technical, and operational expectations before release.",
-          "description": "Quality work is not postponed until the final days of delivery. Acceptance criteria, testing, accessibility, responsive behavior, integration reliability, performance concerns, and release readiness are addressed as the product develops.",
+          "description": "Quality is built in throughout delivery — acceptance criteria, testing, accessibility, performance, and readiness are reviewed as the product develops.",
           "what": [
-            "Acceptance-criteria review",
-            "Functional and integration testing",
-            "Responsive-layout verification",
-            "Accessibility review",
-            "Error and edge-case handling",
-            "Performance review",
-            "Regression testing",
-            "Defect prioritization and resolution",
-            "Release-readiness review"
+            "Acceptance criteria",
+            "Functional and integration tests",
+            "Responsive verification",
+            "Accessibility",
+            "Error and edge cases",
+            "Performance",
+            "Regression tests",
+            "Defect fixes",
+            "Release readiness"
           ],
           "outputs": [
             "QA results",
             "Confirmed acceptance criteria",
-            "Resolved and documented defects",
-            "Known limitations and follow-up items",
+            "Documented defect fixes",
+            "Known limitations and follow-ups",
             "Release checklist",
-            "Updated operational considerations",
+            "Operational considerations",
             "Approved release candidate"
           ],
-          "review": "The release candidate is reviewed against the agreed scope, critical user journeys, known risks, and operational requirements."
+          "review": "Review the release candidate against scope, critical journeys, and known risks."
         },
         {
           "number": "05",
           "title": "Deployment & Launch",
           "purpose": "Move the approved product into production through a controlled and observable release.",
-          "description": "Launch planning covers environments, configuration, deployment automation, data preparation, integrations, monitoring, rollback considerations, and team handover. The objective is a release that can be operated and understood after it becomes available to users.",
+          "description": "Launch covers environments, automation, monitoring, rollback, and handover — a release the team can operate and understand.",
           "what": [
-            "Production-environment preparation",
-            "Configuration and secret review",
-            "CI/CD and deployment workflow confirmation",
-            "Data or migration preparation where required",
-            "Integration verification",
-            "Monitoring and logging setup",
-            "Rollback and recovery planning",
+            "Production environment",
+            "Config and secrets review",
+            "CI/CD and deployment checks",
+            "Data migration preparation",
+            "Integration checks",
+            "Monitoring and logging",
+            "Rollback planning",
             "Production deployment",
             "Post-release validation",
             "Technical handover"
@@ -967,29 +967,29 @@
           "outputs": [
             "Production release",
             "Deployment record",
-            "Environment and configuration documentation",
+            "Environment and config docs",
             "Monitoring and error visibility",
-            "Handover documentation",
+            "Handover docs",
             "Known post-launch actions",
             "Initial support priorities"
           ],
-          "review": "The released product is checked in its production environment, critical paths are validated, and ownership for monitoring and follow-up is confirmed."
+          "review": "Validate the release in production, check critical paths, and confirm monitoring ownership."
         },
         {
           "number": "06",
           "title": "Support & Product Evolution",
           "purpose": "Use operational evidence and product feedback to guide the next stage of improvement.",
-          "description": "After launch, the focus moves to product behavior in the real environment. Errors, support needs, user feedback, performance observations, new requirements, dependency updates, and technical debt are reviewed together to shape future priorities.",
+          "description": "After launch, real-world behavior guides priorities — errors, feedback, performance, new requirements, and technical debt shape what comes next.",
           "what": [
-            "Production monitoring and issue review",
-            "User and stakeholder feedback analysis",
-            "Support and defect prioritization",
-            "Performance and reliability improvements",
-            "Dependency and platform maintenance",
-            "Technical-debt review",
+            "Monitoring and issue review",
+            "Feedback analysis",
+            "Support and defect priorities",
+            "Performance and reliability",
+            "Dependency maintenance",
+            "Technical debt",
             "New-feature discovery",
             "Roadmap refinement",
-            "Release planning for future increments"
+            "Future release planning"
           ],
           "outputs": [
             "Support and maintenance priorities",
@@ -998,64 +998,64 @@
             "Recommended technical actions",
             "Updated product roadmap",
             "Future release scope",
-            "Ongoing operational documentation"
+            "Operational documentation"
           ],
-          "review": "The team agrees on what should be maintained, improved, investigated, or built next based on product goals and real operational evidence."
+          "review": "Agree on what to maintain, improve, or build next, based on product goals."
         }
       ]
     },
     "visibility": {
       "eyebrow": "Shared visibility",
       "heading": "The process should make important project information easier to understand.",
-      "intro": "Throughout the engagement, the team maintains visibility into the areas that influence delivery decisions. The exact tools and documentation depend on the project, but the information should remain accessible and current.",
+      "intro": "The team keeps the information that shapes delivery decisions visible, accessible, and current.",
       "items": [
         {
           "title": "Scope and priorities",
-          "description": "What is included now, what is deferred, and why priorities have changed."
+          "description": "What is included now, deferred, and why."
         },
         {
           "title": "Decisions and assumptions",
-          "description": "Product and technical decisions, their context, and unresolved assumptions."
+          "description": "Decisions, their context, and open assumptions."
         },
         {
           "title": "Dependencies and risks",
-          "description": "External services, data, stakeholders, integrations, and constraints that may affect delivery."
+          "description": "Anything that may affect delivery."
         },
         {
           "title": "Working progress",
-          "description": "Reviewable product functionality, not only task completion."
+          "description": "Working functionality, not just task status."
         },
         {
           "title": "Quality and release state",
-          "description": "Acceptance status, defects, known limitations, and release readiness."
+          "description": "Acceptance, defects, and release readiness."
         },
         {
           "title": "Ownership and next actions",
-          "description": "Who is responsible for decisions, actions, and follow-up items."
+          "description": "Who owns decisions and next actions."
         }
       ]
     },
     "collaboration": {
       "eyebrow": "Working together",
       "heading": "Collaboration is structured around decisions, feedback, and visible progress.",
-      "description": "The collaboration model is adapted to the client team, but effective delivery requires clear ownership, timely feedback, and access to the people who understand the product and its constraints.",
+      "description": "The model adapts to each client, but effective delivery needs clear ownership, timely feedback, and access to the people who know the product.",
       "practicesLabel": "Collaboration practices",
       "practices": [
-        "A clear product and delivery contact",
-        "Agreed review points and decision owners",
-        "Working-product demonstrations",
-        "Accessible backlog and current priorities",
-        "Documented decisions and open questions",
-        "Direct discussion of blockers and trade-offs",
-        "Feedback connected to acceptance criteria",
-        "Technical handover throughout delivery, not only at the end"
+        "One clear delivery contact",
+        "Agreed review points and owners",
+        "Working-product demos",
+        "Accessible backlog and priorities",
+        "Documented decisions and questions",
+        "Direct discussion of blockers",
+        "Feedback tied to acceptance criteria",
+        "Handover throughout delivery"
       ],
-      "note": "Meeting frequency and reporting cadence are agreed according to the size, stage, and needs of the engagement rather than imposed as one fixed model."
+      "note": "Meeting and reporting cadence adapts to each engagement."
     },
     "deliverables": {
       "eyebrow": "Reviewable outputs",
       "heading": "Each phase leaves the project with something concrete.",
-      "description": "Outputs vary by engagement, but the process is designed to produce useful artifacts that support decisions, implementation, operation, and future development.",
+      "description": "Each phase leaves concrete, useful artifacts behind.",
       "items": [
         "Discovery and scope summary",
         "Product roadmap",
@@ -1063,14 +1063,14 @@
         "Interface designs or wireframes",
         "Technical architecture",
         "Data and integration model",
-        "Prioritized implementation backlog",
+        "Prioritized backlog",
         "Working software increments",
         "Quality and release records",
-        "Deployment and environment documentation",
+        "Deployment and environment docs",
         "Handover material",
         "Support and evolution backlog"
       ],
-      "note": "Deliverables are selected according to the project. Not every engagement produces every artifact."
+      "note": "Deliverables vary by project."
     },
     "adaptation": {
       "eyebrow": "Adapted to the product stage",
@@ -1079,23 +1079,23 @@
       "scenarios": [
         {
           "title": "New product",
-          "description": "Greater emphasis on discovery, user workflows, scope definition, and architectural foundations."
+          "description": "More focus on discovery, workflows, scope, and foundations."
         },
         {
           "title": "Existing product modernization",
-          "description": "Greater emphasis on system assessment, migration risks, compatibility, technical debt, and staged replacement."
+          "description": "More focus on assessment, migration risk, and staged replacement."
         },
         {
           "title": "Defined feature or module",
-          "description": "Greater emphasis on integration boundaries, acceptance criteria, and safe delivery into the existing product."
+          "description": "More focus on integration boundaries and safe delivery."
         },
         {
           "title": "Embedded engineering support",
-          "description": "Greater emphasis on alignment with the client's backlog, standards, environments, review process, and ownership model."
+          "description": "More focus on aligning with the client's standards and ownership."
         },
         {
           "title": "AI-enabled capability",
-          "description": "Greater emphasis on data access, retrieval boundaries, validation, observability, fallback behavior, and human review."
+          "description": "More focus on data access, validation, and human review."
         }
       ]
     },
@@ -1105,34 +1105,34 @@
       "items": [
         {
           "title": "Fewer hidden assumptions",
-          "description": "Important uncertainties are identified before they become expensive implementation problems."
+          "description": "Uncertainties surface before they become costly problems."
         },
         {
           "title": "Better product and technical alignment",
-          "description": "Experience, scope, architecture, and operational needs are considered together."
+          "description": "Experience, architecture, and operations are considered together."
         },
         {
           "title": "More useful feedback",
-          "description": "Stakeholders review working outcomes and specific decisions rather than abstract progress reports."
+          "description": "Stakeholders review working outcomes, not abstract reports."
         },
         {
           "title": "Controlled change",
-          "description": "New information can affect scope and priorities without making the entire delivery process unclear."
+          "description": "New information refines scope without derailing delivery."
         },
         {
           "title": "Stronger release readiness",
-          "description": "Quality, deployment, monitoring, and ownership are considered before launch."
+          "description": "Quality, deployment, and ownership are ready before launch."
         },
         {
           "title": "A maintainable path forward",
-          "description": "Documentation, technical decisions, and operational knowledge support the team after the first release."
+          "description": "Documentation and decisions support the team after release."
         }
       ]
     },
     "finalCta": {
       "eyebrow": "Next step",
       "heading": "Start by clarifying the product challenge.",
-      "description": "Share your goals, current stage, constraints, and open questions. Discovery helps define the right scope and delivery path before implementation begins.",
+      "description": "Share your goals, constraints, and open questions. Discovery defines the right scope before building.",
       "cta": "Start Discovery"
     }
   },
